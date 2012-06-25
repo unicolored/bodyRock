@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:79:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock/less/responsive.less";s:8:"compiled";s:12804:".clearfix { *zoom:1; }
+.clearfix { *zoom:1; }
 .clearfix:before, .clearfix:after {
   display:table;
   content:"";
@@ -464,4 +464,3 @@ body {
   padding-top:60px;
   padding-bottom:40px;
 }
-";s:5:"files";a:9:{s:79:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\responsive.less";i:1340644255;s:89:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive.less";i:1339057886;s:88:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\variables.less";i:1340644361;s:85:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\mixins.less";i:1339057886;s:99:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive-utilities.less";i:1339057886;s:99:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive-767px-max.less";i:1339057886;s:101:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive-768px-979px.less";i:1339057886;s:100:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive-1200px-min.less";i:1339057886;s:96:"D:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\less\bootstrap\responsive-navbar.less";i:1339057886;}s:7:"updated";i:1340644364;}

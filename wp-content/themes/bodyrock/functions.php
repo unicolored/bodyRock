@@ -20,7 +20,7 @@ function auto_compile_less($less_fname, $css_fname) {
 }
 
 auto_compile_less(dirname(__FILE__).'/less/style.less', dirname(__FILE__).'/css/style.css');
-//auto_compile_less(dirname(__FILE__).'/less/responsive.less', dirname(__FILE__).'/css/responsive.css');
+auto_compile_less(dirname(__FILE__).'/less/responsive.less', dirname(__FILE__).'/css/responsive.css');
 }
 
 ?>

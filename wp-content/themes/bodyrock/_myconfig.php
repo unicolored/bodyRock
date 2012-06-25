@@ -13,7 +13,7 @@ if(!is_child_theme()) :
 					'/wp-content/themes/bodyrock/style-important.css'=>0,
 					'http://fonts.googleapis.com/css?family=Russo+One'=>0,
 					'/wp-content/themes/bodyrock/css/style.css'=>1,
-					'/wp-content/themes/bodyrock/css/responsive.css'=>0,
+					'/wp-content/themes/bodyrock/css/responsive.css'=>1,
 					'/wp-content/themes/bodyrock/_config/js/libs/prettify/prettify.css'=>0
 					);
 					

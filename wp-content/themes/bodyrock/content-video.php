@@ -1,7 +1,7 @@
 <a class="thumbnail" href="<?php echo the_permalink() ?>">
 
 <?php
-$size="&w=270&q=100&s=1";
+$size="&w=274&h=366&s=1";
 $videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
 $videoType = get_post_meta(get_the_ID(), 'videoType', true);
 			
@@ -13,4 +13,4 @@ $videoType = get_post_meta(get_the_ID(), 'videoType', true);
 }
 ?> 
 
-<!--<h5><?php the_title() ?></h5>--></a>
+<?php the_title() ?></a>
