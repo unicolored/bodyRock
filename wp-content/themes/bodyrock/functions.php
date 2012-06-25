@@ -1,5 +1,7 @@
 <?php
 require_once '_myconfig.php';  // 
+require_once(ABSPATH.'/wp-content/themes/bodyrock/_config/inc/libs/mainnav_walker.php');
+
 if(!is_child_theme()) {
 function auto_compile_less($less_fname, $css_fname) {
   // load the cache

@@ -1,5 +1,4 @@
 	
-    </div><!-- /container -->
 	
 <!-- Footer
       ================================================== -->
@@ -16,7 +15,7 @@
           
   			<div class="nav-collapse">
 			
-		  	<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+		  	<?php wp_nav_menu( array( 'theme_location' => 'footer', 'walker' => new mainnav_walker() ) ); ?>
           </div>
 		  
         </div>

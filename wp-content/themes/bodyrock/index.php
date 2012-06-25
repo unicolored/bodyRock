@@ -1,13 +1,10 @@
 <?php get_header(); ?>
 
 <div class="container">
-	<div class="row">
-		<?php get_sidebar('left'); ?>
+	<div class="row">		
 		<div class="span8">
-			<div style="font-size: 24px;">
-			    <i class="icon-search"></i> qsdqsd
-				<i class="icon-star icon-white"></i>
-		    </div>
+			<i class="icon-search"></i> qsdqsd
+			<i class="icon-star icon-white"></i>
 			<div class="well">
 				<p>Use Font Awesome icons in:</p>
 				<ul class="icons">
@@ -37,7 +34,7 @@
 			<?php endif; ?>
 			
 		</div>
-		<?php get_sidebar('right'); ?>
+		<?php get_sidebar('left'); ?>
 	</div>
 </div>
 <?php get_footer();?>

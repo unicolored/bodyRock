@@ -35,17 +35,12 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
           <a class="brand" href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ) ?>" rel="home"><b class="unid"><span><?php echo get_bloginfo( 'name' ) ?></span></b></a>
           
   			<div class="nav-collapse">
-		  	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			<div class="pull-right">
-            <?php get_search_form() ?>
+			  	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new mainnav_walker() ) ); ?>
+				<div class="pull-right">
+	            <?php get_search_form() ?>
 			</div>
           </div>
 		  
@@ -54,4 +49,3 @@
       </div>
     </div>
 </div>
-	<div class="container-fluid">
