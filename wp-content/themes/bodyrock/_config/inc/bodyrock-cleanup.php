@@ -8,7 +8,6 @@ function bodyrock_nice_search_redirect() {
       exit();
   }
 }
-
 add_action('template_redirect', 'bodyrock_nice_search_redirect');
 
 function bodyrock_search_query($escaped = true) {
@@ -18,7 +17,6 @@ function bodyrock_search_query($escaped = true) {
   }
   return urldecode($query);
 }
-
 add_filter('get_search_query', 'bodyrock_search_query');
 
 // fix for empty search query
@@ -29,7 +27,6 @@ function bodyrock_request_filter($query_vars) {
   }
   return $query_vars;
 }
-
 add_filter('request', 'bodyrock_request_filter');
 
 // root relative URLs for everything
@@ -99,7 +96,6 @@ function bodyrock_root_relative_attachment_urls() {
     add_filter('wp_get_attachment_link', 'bodyrock_root_relative_url');
   }
 }
-
 add_action('pre_get_posts', 'bodyrock_root_relative_attachment_urls');
 
 // set lang="en" as default (rather than en-US)
@@ -123,7 +119,6 @@ function bodyrock_language_attributes() {
   $output = apply_filters('bodyrock_language_attributes', $output);
   return $output;
 }
-
 add_filter('language_attributes', 'bodyrock_language_attributes');
 
 // remove WordPress version from RSS feed
@@ -197,7 +192,6 @@ function bodyrock_head_cleanup() {
     wp_register_script('jquery', '', '', '', true);
   }
 }
-
 add_action('init', 'bodyrock_head_cleanup');
 
 // cleanup gallery_shortcode()
@@ -333,44 +327,8 @@ function bodyrock_nav_menu_args($args = '') {
   $args['items_wrap'] = '<ul id="%1$s" class="nav">%3$s</ul>';*/
   return $args;
 }
-
 add_filter('wp_nav_menu_args', 'bodyrock_nav_menu_args');
-/*
-class bodyrock_nav_walker extends Walker_Nav_Menu {
-  function start_el(&$output, $item, $depth, $args) {
-    global $wp_query;
-      $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-      $slug = sanitize_title($item->title);
-
-      $class_names = $value = '';
-      $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-      $classes = array_filter($classes, 'bodyrock_check_current');
-
-      $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-      $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
-      $id = apply_filters( 'nav_menu_item_id', 'menu-' . $slug, $item, $args );
-      $id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
-
-      $output .= $indent . '<li' . $id . $class_names . '>';
-
-      $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-      $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-      $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-      $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-
-      $item_output = $args->before;
-      $item_output .= '<a'. $attributes .'>';
-      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-      $item_output .= '</a>';
-      $item_output .= $args->after;
-
-      $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-  }
-}
-*/
 function bodyrock_check_current($val) {
   return preg_match('/current-menu/', $val);
 }
@@ -422,7 +380,6 @@ function bodyrock_notice_tagline() {
     echo '</div>';
     }
 }
-
 if (get_option('blogdescription') === 'Just another WordPress site') {
   add_action('admin_notices', 'bodyrock_notice_tagline');
 }
@@ -434,7 +391,6 @@ function bodyrock_notice_tagline_ignore() {
     add_user_meta($user_id, 'ignore_tagline_notice', 'true', true);
     }
 }
-
 add_action('admin_init', 'bodyrock_notice_tagline_ignore');
 
 // set the post revisions to 5 unless the constant
@@ -451,7 +407,6 @@ function bodyrock_change_mce_options($options) {
   }
   return $options;
 }
-
 add_filter('tiny_mce_before_init', 'bodyrock_change_mce_options');
 
 //clean up the default WordPress style tags

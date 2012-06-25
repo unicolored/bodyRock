@@ -1,16 +1,21 @@
 <?php
-require_once 'less/lessc.inc.php';  // LESSCPHP
+require_once 'less/lessc035.inc.php';  // LESSCPHP
 
-/*THEME SKELETON*/
+/*-----------------------------------------------------------------------------------------*/
+/*Base on theme SKELETON*/
+
 require_once 'inc/bodyrock-basics.php';  // basics
 // Personnaliser l'administration du wordpress
+
 require_once 'inc/bodyrock-options.php';     // theme options
 // Ajoute des options d'administration au thème
+
 require_once 'inc/bodyrock-cleanup.php';     // cleanup
 // Quelques filtres de nettoyage des textes par défaut
 
 require_once 'inc/bodyrock-activation.php';  // activation
 // Déclenche les actions automatiques à l'activation du thème
+
 require_once 'inc/bodyrock-htaccess.php';    // rewrites for assets, h5bp htaccess
 // Génère le htaccess
 
@@ -21,8 +26,10 @@ require_once 'inc/bodyrock-textes.php';  // textes
 
 require_once 'inc/bodyrock-sidebars.php';  // sidebars
 // Permet d'enregistrer des sidebars de widgets supplémentaires
+
 require_once 'inc/bodyrock-widgets.php';     // widgets
 // Répertorie les widgets persos à charger
+
 require_once 'inc/bodyrock-menus.php';     // widgets
 // Créer les menus persos à charger
 
@@ -32,6 +39,7 @@ require_once 'inc/bodyrock-actions.php';     // actions
 //require_once 'inc/shortcodes/more.php';     // shortcodes // inutile
 require_once 'inc/shortcodes/videos_embedded.php';     // shortcodes
 
+/*-----------------------------------------------------------------------------------------*/
 /* Types custom posts à activer */
 if($custom_types_to_activate) :
 	global $custom_types_to_activate;
@@ -43,6 +51,7 @@ if($custom_types_to_activate) :
 	if($i>0) require_once('inc/types/taxonomies.php');
 endif;
 
+/*-----------------------------------------------------------------------------------------*/
 /* Fonction globale pour timthumb */
 function get_image_path ($post_id = null) {
 	if ($post_id == null) {
@@ -63,4 +72,5 @@ function theImgSrc($blog_id,$src) {
 	}
 	return $src;
 }
+/*-----------------------------------------------------------------------------------------*/
 ?>

@@ -1,39 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="accordion.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716573487293" remote="129804693000000000" />
-<file name="alerts.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716573537296" remote="129804693000000000" />
-<file name="badges.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574157332" remote="129804693000000000" />
-<file name="bootstrap.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574197334" remote="129804693000000000" />
-<file name="breadcrumbs.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574207335" remote="129804693000000000" />
-<file name="button-groups.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574227336" remote="129804693000000000" />
-<file name="buttons.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574237336" remote="129804693000000000" />
-<file name="carousel.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574257337" remote="129804693000000000" />
-<file name="close.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574277339" remote="129804693600000000" />
-<file name="code.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574297340" remote="129804693600000000" />
-<file name="component-animations.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574317341" remote="129804693600000000" />
-<file name="dropdowns.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574337342" remote="129804693600000000" />
-<file name="forms.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574377344" remote="129804693600000000" />
-<file name="grid.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574397345" remote="129804693600000000" />
-<file name="hero-unit.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574417347" remote="129804693600000000" />
-<file name="labels.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574437348" remote="129804693600000000" />
-<file name="layouts.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574457349" remote="129804693600000000" />
-<file name="mixins.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574497351" remote="129804693600000000" />
-<file name="modals.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574527353" remote="129804693600000000" />
-<file name="navbar.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574537354" remote="129804693600000000" />
-<file name="navs.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574557355" remote="129804693600000000" />
-<file name="pager.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574587356" remote="129804693600000000" />
-<file name="pagination.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574617358" remote="129804693600000000" />
-<file name="popovers.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574637359" remote="129804693600000000" />
-<file name="progress-bars.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574647360" remote="129804693600000000" />
-<file name="reset.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574667361" remote="129804693600000000" />
-<file name="responsive.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574687362" remote="129804693600000000" />
-<file name="scaffolding.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574707363" remote="129804693600000000" />
-<file name="sprites.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574737365" remote="129804693600000000" />
-<file name="tables.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574757366" remote="129804693600000000" />
-<file name="thumbnails.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574767367" remote="129804693600000000" />
-<file name="tooltip.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574787368" remote="129804693600000000" />
-<file name="type.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574817370" remote="129804693600000000" />
-<file name="utilities.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574837371" remote="129804693600000000" />
-<file name="variables.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129809831597007737" remote="129809831400000000" />
-<file name="wells.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129791716574867372" remote="129804693600000000" />
+<file name="variables.less" server="s139647592.onlinehome.fr//public_html/wordpress-multi/" local="129847535445394538" remote="129847535400000000" />
 </dwsync>

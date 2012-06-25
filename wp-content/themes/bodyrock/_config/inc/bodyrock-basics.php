@@ -1,11 +1,12 @@
 <?php
 
-	// Make theme available for translation
-	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'bodyrock', TEMPLATEPATH . '/languages' );
+// Make theme available for translation
+// Translations can be filed in the /languages/ directory
+/*load_theme_textdomain( 'bodyrock', TEMPLATEPATH . '/languages' );
+Lire ça d'abord : http://www.catswhocode.com/blog/how-to-make-a-translatable-wordpress-theme*/
 
 // This theme styles the visual editor with editor-style.css to match the theme style.
-add_editor_style(); // == add_editor_style('editor-style.css');
+//add_editor_style(); // == add_editor_style('editor-style.css');
 
 add_theme_support( 'automatic-feed-links' );
 

@@ -16,9 +16,9 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
   add_action('admin_init', 'roots_htaccess_writable');
 
   // Rewrites DO NOT happen for child themes
-  // rewrite /wp-content/themes/roots/css/ to /css/
-  // rewrite /wp-content/themes/roots/js/  to /js/
-  // rewrite /wp-content/themes/roots/img/ to /js/
+  // rewrite /wp-content/themes/bodyrock/css/ to /css/
+  // rewrite /wp-content/themes/bodyrock/js/  to /js/
+  // rewrite /wp-content/themes/bodyrock/img/ to /js/
   // rewrite /wp-content/plugins/ to /plugins/
 
   function roots_flush_rewrites() {
