@@ -1,15 +1,12 @@
 <?php
-/**
- * The Template for displaying all single posts.
- *
- * @package WordPress
- * @subpackage bodyrock
- * @since bodyrock 0.1
- */
+
+$tpl_content = '/single'; // /page
 
 get_header();
 ?>
-	<?php get_template_part( 'loop', 'single'.get_post_format() ); ?>
+	<?php
+	get_template_part( 'tpl/loop'.$tpl_content, get_post_format() );
+	?>
 	
 <?php
 get_footer();

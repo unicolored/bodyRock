@@ -1,5 +1,5 @@
 	<div class="container">
-		<div class="span12">
+		<div class="row">
 			<footer class="br_footer">
 				<div class="navbar">
 					<div class="navbar-inner">
