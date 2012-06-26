@@ -4,6 +4,9 @@ require_once 'less/lessc035.inc.php';  // LESSCPHP
 /*-----------------------------------------------------------------------------------------*/
 /*Base on theme SKELETON*/
 
+require_once 'inc/bodyrock-functions.php';    // rewrites for assets, h5bp htaccess
+// Fonctions spécifiques à bodyrock
+
 require_once 'inc/bodyrock-basics.php';  // basics
 // Personnaliser l'administration du wordpress
 

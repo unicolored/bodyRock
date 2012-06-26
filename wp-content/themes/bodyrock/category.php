@@ -1,27 +1,31 @@
-<?php get_header(); ?>
+<?php
+
+$tpl_content = 'gallery'; // blog, gallery, complet
+
+get_header(); ?>
 
 <div class="container">
-	<div class="row">
-		
-		<ul class="thumbnails">    
-			<?php
-			if ( have_posts() ) :
-				while ( have_posts() ) : the_post(); ?>
-					<li class="span3">
-						<?php get_template_part( 'content', get_post_format() ); ?>
-					</li>
-				<?php endwhile;
-				else: ?>
-				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-			<?php endif;
-			wp_reset_query();
-			?>
-		</ul>
-			
-		<div class="navigation span2 visible-desktop ">
-			<p><?php posts_nav_link('','<span class="hide">Précédent</span>','<span class="navafter"><em class="hide">Suivant</em></span>'); ?></p>
+	<div class="row">		
+		<div class="span8">
+			<ul class="thumbnails">
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post(); ?>
+						<li class="span4">
+							<?php get_template_part( 'tpl/content/'.$tpl_content, get_post_format() ); ?>
+						</li>
+					<?php endwhile;
+				else: get_template_part( 'tpl/nocontent_found' ); 
+				endif; ?>
+			</ul>
+			<?php br_customsidebar('widgetarea-undercontent','br_undercontent'); ?>
 		</div>
-		
+		<div class="span4">
+			<div class="sidebar sidebar-right">
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
 	</div>
 </div>
+
 <?php get_footer();?>

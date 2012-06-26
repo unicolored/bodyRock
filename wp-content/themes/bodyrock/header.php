@@ -40,7 +40,10 @@
   			<div class="nav-collapse">
 			  	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new mainnav_walker() ) ); ?>
 				<div class="pull-right">
-	            <?php get_search_form() ?>
+	            <form class="navbar-search form-search" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+					<input type="text" value="" name="s" id="s" class="input-medium search-query" placeholder="Rechercher..." />
+					<input type="submit" id="searchsubmit" class="btn" value="Go" />
+				</form>
 			</div>
           </div>
 		  

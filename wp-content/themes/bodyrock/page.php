@@ -16,9 +16,8 @@
 
 get_header();
 ?>
-
 <?php
-get_template_part( 'loop', 'page' );
+get_template_part( 'tpl/loop', 'page' );
 ?>
 <?php
 get_footer();
