@@ -1,6 +1,6 @@
 <article>
 	<header>
-		<a class="thumbnail" href="<?php echo the_permalink() ?>"><?php the_title() ?></a>
+		<a href="<?php echo the_permalink() ?>"><?php the_title() ?></a>
 	</header>
 	<section>
 		<?php

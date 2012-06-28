@@ -13,9 +13,11 @@
 			</footer>
 		</div>	
 	</div>
+	
 <?php wp_footer(); ?>
 
 <?php bodyrock_javascripts_footer(); ?>
 <?php bodyrock_analytics(); ?>
+
 </body>
 </html>
