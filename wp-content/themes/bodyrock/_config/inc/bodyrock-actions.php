@@ -13,12 +13,24 @@ function bodyrock_google_analytics() {
 	  $bodyrock_google_analytics_id = $bodyrock_options['google_analytics_id'];
 	  $get_bodyrock_google_analytics_id = esc_attr($bodyrock_options['google_analytics_id']);
 	  if ($bodyrock_google_analytics_id !== '') {
-		echo "\n\t<script>\n";
+		/*echo "\n\t<script>\n";
 		echo "\t\tvar _gaq=[['_setAccount','$get_bodyrock_google_analytics_id'],['_trackPageview'],['_trackPageLoadTime']];\n";
 		echo "\t\t(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\n";
 		echo "\t\tg.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';\n";
 		echo "\t\ts.parentNode.insertBefore(g,s)}(document,'script'));\n";
-		echo "\t</script>\n";
+		echo "\t</script>\n";*/
+		echo "
+		<script type='text/javascript'>
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', '".$bodyrock_google_analytics_id."']);
+		  _gaq.push(['_trackPageview']);		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();		
+		</script>
+		";
 	  }
 	endif;
 }

@@ -1,6 +1,7 @@
 <?php
 
-$tpl_content = '/single'; // /page
+$type=(get_post_type()!='post' ? '-'.get_post_type() : false);
+$tpl_content = '/single'.$type; // /page
 
 get_header();
 ?>

@@ -1,9 +1,9 @@
 <?php
 
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( 930, 430, true );
+	//set_post_thumbnail_size( 930, 430, true );
 	//add_image_size( 'large-feature', 930, 430, true );
-	add_image_size( 'small-feature', 465, 215 );
+	//add_image_size( 'small-feature', 465, 215 );
 
 if(!is_child_theme()) :
 

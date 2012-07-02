@@ -15,4 +15,14 @@
 			</div>
 		<?php endif;
 	}
+	
+	function bodyrock_getTplContent($cat,$tpl_content="blog") {
+		global $categories_templates;
+
+		if(is_array($categories_templates))
+		{
+			if(isset($categories_templates[$cat])) $tpl_content = $categories_templates[$cat]; // blog, gallery, complet
+		}
+		return '/'.$tpl_content;
+	}
 ?>

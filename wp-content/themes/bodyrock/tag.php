@@ -2,9 +2,9 @@
 <div class="designed">
 	<div class="container">
 		<div class="row show-grid">		
-			<div class="span8">				
-				<div class="row br_content">
-					<div id="contentsingle">
+			<div class="span8">
+				<div id="contentsingle">
+					<div class="row br_content">
 						<?php
 						if ( have_posts() ) :
 							while ( have_posts() ) : the_post();
@@ -16,10 +16,9 @@
 							endwhile;
 						else: get_template_part( 'tpl/nocontent_found' ); 
 						endif; ?>
-						<hr class="clear">
 					</div>
-					<?php br_customsidebar('widgetarea-undercontent','br_undercontent'); ?>
 					<hr class="clear">
+					<?php br_customsidebar('widgetarea-undercontent','br_undercontent'); ?>
 				</div>
 			</div>
 			<div class="span4">
