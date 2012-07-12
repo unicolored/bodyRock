@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="designed">
 	<div class="container">
-		<div class="row show-grid">		
+		<div class="row">		
 			<div class="span8">				
 				<div class="row br_content">
 					<div id="contentsingle">
