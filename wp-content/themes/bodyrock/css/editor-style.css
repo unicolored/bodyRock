@@ -1,0 +1,30 @@
+.police-un {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police {
+  font-family: "Open Sans", sans-serif;
+}
+.police-int-h {
+  font-family: "Open Sans", sans-serif;
+}
+.police-int-p {
+  font-family: "Open Sans", sans-serif;
+}
+.police-art-h {
+  font-family: "Doppio One", sans-serif;
+}
+.police-art-p {
+  font-family: "Roboto", sans-serif;
+}
+body#tinymce.wp-editor {
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  color: #555555;
+  font-size: 14px;
+}
+body#tinymce.wp-editor h1 {
+  font-family: "Doppio One", sans-serif;
+}
+body#tinymce.wp-editor a {
+  color: #444;
+}

@@ -1,23 +1,17 @@
-	<div class="container">
-		<div class="row">
-			<footer class="br_footer">
-				<div class="navbar">
-					<div class="navbar-inner">
-						<div class="container">						
-							<div class="nav-collapse">							
-								<?php wp_nav_menu( array( 'theme_location' => 'footer', 'walker' => new mainnav_walker() ) ); ?>
-							</div>						
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>	
-	</div>
+<?php
+// Le <footer> et sa classe .footer
+echo '<footer class="footer">';
+get_template_part('tpl/bootstrap/navbars', 'footer');
+echo '</footer>';
+		
+// Termine la section qui commence dans le header.php
+echo '</section> <!-- end section int-'.$main_section_class.' -->';
 	
-<?php wp_footer(); ?>
+wp_footer(); // Indispensable pour le bon fonctionnement de Wordpress et des plugins
 
-<?php bodyrock_javascripts_footer(); ?>
-<?php bodyrock_analytics(); ?>
+// br_generateVideoImg(); // Sur les -post video-, cette fonction génère les images d'après la source et les enregistre sur le serveur
 
-</body>
-</html>
+echo '</body>';
+echo '</html>';
+
+?>

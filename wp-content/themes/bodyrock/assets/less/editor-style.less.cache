@@ -1,0 +1,31 @@
+a:4:{s:4:"root";s:88:"G:\Dropbox\_web\wordpress-multi/wp-content/themes/bodyrock/assets/less/editor-style.less";s:8:"compiled";s:596:".police-un {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police {
+  font-family: "Open Sans", sans-serif;
+}
+.police-int-h {
+  font-family: "Open Sans", sans-serif;
+}
+.police-int-p {
+  font-family: "Open Sans", sans-serif;
+}
+.police-art-h {
+  font-family: "Doppio One", sans-serif;
+}
+.police-art-p {
+  font-family: "Roboto", sans-serif;
+}
+body#tinymce.wp-editor {
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  color: #555555;
+  font-size: 14px;
+}
+body#tinymce.wp-editor h1 {
+  font-family: "Doppio One", sans-serif;
+}
+body#tinymce.wp-editor a {
+  color: #444;
+}
+";s:5:"files";a:4:{s:88:"G:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\assets\less\editor-style.less";i:1390663059;s:85:"G:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\assets\less\variables.less";i:1391123912;s:99:"G:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\assets\less\variables\media-queries.less";i:1390554534;s:97:"G:\Dropbox\_web\wordpress-multi\wp-content\themes\bodyrock\assets\less\variables\grid-system.less";i:1390554534;}s:7:"updated";i:1391123914;}

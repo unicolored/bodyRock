@@ -1,19 +1,26 @@
-/* Author: */
+	// CHARGEMENT DES FONTS
+	WebFontConfig = {
+		google: {
+		  families: [ 'Doppio+One::latin', 'Roboto+Slab::latin', 'Open+Sans::latin', 'Ubuntu::latin' ]
+		}
+	};
+	
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			'://ajax.googleapis.com/ajax/libs/webfont/1.5.0/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
 
-$(document).ready(function(){
-	$('ul.sub-menu').addClass('dropdown-menu'); // hack js du wp_nav_menu pour la compatibilité de la class avec le système bootstrap
-	$('ul.sub-menu').parent().addClass('dropdown'); // hack js du wp_nav_menu pour la compatibilité de la class avec le système bootstrap
-	$('li.dropdown').find('a:first').append(' <b class="caret"></b>').addClass('dropdown-toggle').attr('href',"#").attr('data-toggle',"dropdown"); // hack js du wp_nav_menu pour la compatibilité de la class avec le système bootstrap
-	$('.dropdown-toggle').dropdown();
+
+/* Author: Gilles Hoarau */
+
+jQuery(document).ready(function(){
 	
-	var thumbnailsHeight=$("ul.thumbnails").height();
-	$(".navbefore").height(thumbnailsHeight);
-	$(".navafter").height(thumbnailsHeight);
-	
-	$('footer .nav').addClass('pull-right');
-	$('footer ul.nav').append('<li class="navbar-text"> © uniD MagaZine </li>');
-	
-	$('.carousel').carousel({
-//	  interval: 2000
-	})
+	// ICONS DE LA NAVBAR
+	jQuery('.link_item').tooltip();
+
 });

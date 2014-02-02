@@ -1,32 +1,56 @@
 <?php
+get_header();
 
-$tpl_content = '/complet'; // /blog, /gallery, /complet
+// Sélection du Template $tpl
+$tpl = $post->post_type;
+$tpl = (is_archive()) ? 'archive' : $tpl;
+$tpl = (is_author()) ? 'author' : $tpl;
+$tpl = (is_category()) ? 'category' : $tpl;
+$tpl = (is_home()) ? 'home' : $tpl;
+$tpl = (is_search()) ? 'search' : $tpl;
+$tpl = (is_tag()) ? 'tag' : $tpl;
 
-get_header(); ?>
-<div class="designed">
-<div class="container">
-	<div class="row">		
-		<div class="span8">
-			<div id="contentsingle" class="br_content">
-				<div class="wrapped">
-					<?php
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
-							get_template_part( 'tpl/content'.$tpl_content, get_post_format() );
-						endwhile;
-					else: get_template_part( 'tpl/nocontent_found' ); 
-					endif; ?>
-					<?php br_customsidebar('widgetarea-undercontent','br_undercontent'); ?>
-				</div>
-			</div>
-		</div>
-		<div class="span4">
-			<div class="sidebardesigned sidebar-right">
-				<?php get_sidebar(); ?>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-<?php global $tpl_content; echo is_super_admin() ? '!!'.__FILE__.':'.$tpl_content.'!!' : false; ?>
-<?php get_footer();?>
+/************** HTML START **************/
+
+echo a('section.content');
+
+// BARRE DE RECHERCHE SUR search AND tag
+if ( is_search() || is_tag() ) {
+	echo '<div class="column">';
+	if ( is_search() ) {
+		echo '	<h1>'.__('Trouver','bodyrock').' <span class="red"><em>'.get_query_var('s').'</em></span></h1>';
+	}
+	elseif ( is_tag() ) {
+		echo '	<h1>'.__('Trouver','bodyrock').' <span class="red"><em>'.get_query_var('tag').'</em></span></h1>';
+	}
+	get_search_form();
+	echo '</div>';
+}
+echo a('div.galaxie');
+the_widget('br_widgetsBodyloop',array('apparence'=>'carousel','template'=>'articles'));
+echo z('div');
+
+echo a('div.galaxie');
+if ( have_posts() ) :
+
+	while ( have_posts() ) :
+	
+		the_post();
+
+		get_template_part(TPL_PATH.'index', $tpl); // Template $tpl sélectionnée dans les premières lignes de ce fichier
+	   
+	endwhile;
+	
+else:
+
+	echo '<p>'.__('Aucun article ne correspond à vos critères.', 'bodyrock').'</p>';
+	
+endif;
+echo z('/div');
+
+echo z('section');
+
+get_template_part(TPL_SIDEBAR_PATH.'sidebar','left');
+
+get_footer();
+?>

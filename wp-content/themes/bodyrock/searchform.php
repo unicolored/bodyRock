@@ -1,14 +1,7 @@
-<?php
-/**
- * The template for displaying search forms in Twenty Eleven
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
-?>
-<h3 class="widget-title">Rechercher</h3>
-	<form method="get" id="searchform" class="form-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<input type="text" class="field input-medium search-query" name="s" id="s" placeholder="<?php esc_attr_e( 'Rechercher', 'bodyrock' ); ?>" />
-		<input type="submit" class="btn submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Rechercher', 'bodyrock' ); ?>" />
-	</form>
+<form class="navbar-form navbar-left" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <div class="form-group">
+    <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'bodyrock' ); ?>" value="<?php if(isset($_GET['s'])) echo $_GET['s']; ?>" />
+  </div>
+  <button type="submit" class="btn btn-default"><?php br_Icon('search') ?></button>
+</form>
+
