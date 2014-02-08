@@ -60,15 +60,6 @@ function themeoptions_backofficeRegister() {
 	The final arguement is a function name that will validate your options. Basically perform checking on them, to make sure they make sense.
 	*/
 
-	add_settings_section('brthemeoptions_intro', 'Options du thème', 'brthemeoptions_backofficeCallback_sectiontext_intro', 'brthemeoptions');	
-	add_settings_section('brthemeoptions_cssjs', 'CSS &amp; JS', 'brthemeoptions_backofficeCallback_sectiontext_cssjs', 'brthemeoptions');
-	add_settings_section('brthemeoptions_layout', 'Structure', 'brthemeoptions_backofficeCallback_sectiontext_layout', 'brthemeoptions');
-	add_settings_section('brthemeoptions_fonts', 'Polices', 'brthemeoptions_backofficeCallback_sectiontext_fonts', 'brthemeoptions');
-	add_settings_section('brthemeoptions_colors', 'Couleurs', 'brthemeoptions_backofficeCallback_sectiontext_colors', 'brthemeoptions');
-	add_settings_section('brthemeoptions_image', 'Vidéo', 'brthemeoptions_backofficeCallback_sectiontext_image', 'brthemeoptions');
-	add_settings_section('brthemeoptions_video', 'Vidéo', 'brthemeoptions_backofficeCallback_sectiontext_video', 'brthemeoptions');
-	add_settings_section('brthemeoptions_customtypes', 'Vidéo', 'brthemeoptions_backofficeCallback_sectiontext_customtypes', 'brthemeoptions');
-	add_settings_section('brthemeoptions_seo', 'Référencement', 'brthemeoptions_backofficeCallback_sectiontext_seo', 'brthemeoptions');
 	/*	
 	This creates a “section” of settings.
 	The first argument is simply a unique id for the section.
@@ -79,22 +70,55 @@ function themeoptions_backofficeRegister() {
 	To add a new section, you:
 	1. Do a new add_settings_section call.
 	2. Make the function to display any descriptive text about it.
-	3. Add settings fields to it as above.
+	3. Add settings fields to it as below.
 	
 	*/
+	$brto = 'brthemeoptions';
+	$brto_Callback = $brto.'_backofficeCallback';
 	
-	add_settings_field('brthemeoptions_compilationless', 'Compilation Less', 'brthemeoptions_backofficeCallback_compilationless', 'brthemeoptions', 'brthemeoptions_cssjs');
-	add_settings_field('brthemeoptions_iconset', 'Set d\'icônes', 'brthemeoptions_backofficeCallback_iconset', 'brthemeoptions', 'brthemeoptions_cssjs');
-	add_settings_field('brthemeoptions_bootstrapjs', 'Boostrap Javascript', 'brthemeoptions_backofficeCallback_bootstrapjs', 'brthemeoptions', 'brthemeoptions_cssjs');
-	add_settings_field('brthemeoptions_layout_width', 'Largeur du container', 'brthemeoptions_backofficeCallback_layout_width', 'brthemeoptions', 'brthemeoptions_layout');
-	add_settings_field('brthemeoptions_fonts_google', 'Google Fonts chargée par Webfont', 'brthemeoptions_backofficeCallback_fonts_google', 'brthemeoptions', 'brthemeoptions_fonts');
-	add_settings_field('brthemeoptions_color_bodybg', 'Couleur du body', 'brthemeoptions_backofficeCallback_color_bodybg', 'brthemeoptions', 'brthemeoptions_colors');
-	add_settings_field('brthemeoptions_image_sizes', 'Tailles d\'image', 'brthemeoptions_backofficeCallback_image_sizes', 'brthemeoptions', 'brthemeoptions_image');
-	add_settings_field('brthemeoptions_video_autoplay', 'Lecture automatique', 'brthemeoptions_backofficeCallback_video_autoplay', 'brthemeoptions', 'brthemeoptions_video');
-	add_settings_field('brthemeoptions_video_height', 'Hauteur de l\'iframe', 'brthemeoptions_backofficeCallback_video_height', 'brthemeoptions', 'brthemeoptions_video');
-	add_settings_field('brthemeoptions_type_lieux', 'Type Lieux', 'brthemeoptions_backofficeCallback_type_lieux', 'brthemeoptions', 'brthemeoptions_customtypes');
-	add_settings_field('brthemeoptions_type_evenements', 'Type Evènements', 'brthemeoptions_backofficeCallback_type_evenements', 'brthemeoptions', 'brthemeoptions_customtypes');
-	add_settings_field('brthemeoptions_googleanalyticsid', 'Google Analytics ID', 'brthemeoptions_backofficeCallback_googleanalyticsid', 'brthemeoptions', 'brthemeoptions_seo');
+	$section = 'intro';
+	add_settings_section($brto.'_'.$section, 'Options du thème', $brto_Callback.'_sectiontext_'.$section, $brto);	
+
+	$section = 'cssjs';
+	add_settings_section($brto.'_'.$section, 'CSS &amp; JS', $brto_Callback.'_sectiontext_'.$section, $brto);	
+		add_settings_field($brto.'_compilationless', 'Compilation Less', $brto_Callback.'_compilationless', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_iconset', 'Set d\'icônes', $brto_Callback.'_iconset', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_bootstrapjs', 'Boostrap Javascript', $brto_Callback.'_bootstrapjs', $brto, $brto.'_'.$section);
+	
+	$section = 'layout';
+	add_settings_section($brto.'_'.$section, 'Structure', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_layout_width', 'Désactiver le .container', $brto_Callback.'_layout_width', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_noresponsive', 'Désactiver le "responsive"', $brto_Callback.'_noresponsive', $brto, $brto.'_'.$section);
+
+	$section = 'fonts';
+	add_settings_section($brto.'_'.$section, 'Polices', $brto_Callback.'_sectiontext_'.$section, $brto);	
+		add_settings_field($brto.'_fonts_google', 'Google Fonts chargée par Webfont', $brto_Callback.'_fonts_google', $brto, $brto.'_'.$section);
+		
+	$section = 'colors';	
+	add_settings_section($brto.'_'.$section, 'Couleurs', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_color_bodybg', 'Couleur du body', $brto_Callback.'_color_bodybg', $brto, $brto.'_'.$section);
+		
+	$section = 'image';
+	add_settings_section($brto.'_'.$section, 'Image', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_image_sizes', 'Tailles d\'image', $brto_Callback.'_image_sizes', $brto, $brto.'_'.$section);
+	
+	$section = 'video';
+	add_settings_section($brto.'_'.$section, 'Vidéo', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_video_autoplay', 'Lecture automatique', $brto_Callback.'_video_autoplay', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_video_height', 'Hauteur de l\'iframe', $brto_Callback.'_video_height', $brto, $brto.'_'.$section);
+		
+	$section = 'audio';
+	add_settings_section($brto.'_'.$section, 'Audio', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_audio_height', 'Hauteur de l\'iframe', $brto_Callback.'_audio_height', $brto, $brto.'_'.$section);
+		
+	$section = 'customtypes';
+	add_settings_section($brto.'_'.$section, 'Vidéo', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_type_lieux', 'Type Lieux', $brto_Callback.'_type_lieux', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_type_evenements', 'Type Evènements', $brto_Callback.'_type_evenements', $brto, $brto.'_'.$section);
+		
+	$section = 'seo';
+	add_settings_section($brto.'_'.$section, 'Référencement', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_googleanalyticsid', 'Google Analytics ID', $brto_Callback.'_googleanalyticsid', $brto, $brto.'_'.$section);
 	/*
 	The first argument is simply a unique id for the field.
 	The second is a title for the field.
@@ -143,6 +167,9 @@ function brthemeoptions_backofficeCallback_sectiontext_image() {
 function brthemeoptions_backofficeCallback_sectiontext_video() {
 	echo '<p>Les options pour articles de format vidéo.</p>';
 }
+function brthemeoptions_backofficeCallback_sectiontext_audio() {
+	echo '<p>Les options pour articles de format audio.</p>';
+}
 function brthemeoptions_backofficeCallback_sectiontext_customtypes() {
 	echo '<p>Activation des custom types.</p>';
 }
@@ -168,7 +195,7 @@ function brthemeoptions_backofficeCallback_iconset() {
 		
 	foreach ($sets as $S) {
 		echo '<input '.checked( $options['iconset'], $S['id'] , false).' name="brthemeoptions[iconset]" type="radio" value="'.$S['id'].'" id="brthemeoptions[iconset]" /> '.$S['label'];
-		echo ' '.$S['url'];
+		echo (isset($S['url']) ? ' '.$S['url'] : false);
 		echo '<br>';
 	}
 }
@@ -179,7 +206,11 @@ function brthemeoptions_backofficeCallback_bootstrapjs() {
 }
 function brthemeoptions_backofficeCallback_layout_width() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[layout_width]" id="brthemeoptions_layout_width" '.checked( $options['layout_width'], true, false ).' /> '.__('Fluidifier le container', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[layout_width]" id="brthemeoptions_layout_width" '.(isset($options['layout_width']) ? checked( $options['layout_width'], true, false ) : false).' /> '.__('Remplace .container par .fixedwith.<br><small>Entrer ensuite vos propres règles CSS pour .fixedwidth. Par exemple : .fixedwidth { width:940px; margin:0 auto; }</small>', 'bodyrock').'';
+}
+function brthemeoptions_backofficeCallback_noresponsive() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input type="checkbox" value="1" name="brthemeoptions[noresponsive]" id="brthemeoptions_noresponsive" '.(isset($options['noresponsive']) ? checked( $options['noresponsive'], true, false ) : false).' /> '.__('Désactiver le "responsive".<br><small>Désactive la balise &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</small>', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_fonts_google() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
@@ -195,19 +226,23 @@ function brthemeoptions_backofficeCallback_image_sizes() {
 }
 function brthemeoptions_backofficeCallback_video_autoplay() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[video_autoplay]" id="brthemeoptions_video_height" '.checked( $options['video_autoplay'], true, false ).' /> '.__('Lecture automatique de la vidéo au chargement de la page', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[video_autoplay]" id="brthemeoptions_video_height" '.(isset($options['video_autoplay']) ? checked( $options['video_autoplay'], true, false ) : false).' /> '.__('Lecture automatique de la vidéo au chargement de la page', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_video_height() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input name="brthemeoptions[video_height]" value="'.esc_attr($options['video_height']).'" size="5" type="text" id="brthemeoptions_video_height" /> px';
 }
+function brthemeoptions_backofficeCallback_audio_height() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input name="brthemeoptions[audio_height]" value="'.esc_attr($options['audio_height']).'" size="5" type="text" id="brthemeoptions_audio_height" /> px';
+}
 function brthemeoptions_backofficeCallback_type_lieux() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_lieux]" id="brthemeoptions_type_lieux" '.checked( $options['type_lieux'], true, false ).' /> '.__('Activer', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[type_lieux]" id="brthemeoptions_type_lieux" '.(isset($options['type_lieux']) ? checked( $options['type_lieux'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_type_evenements() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_evenements]" id="brthemeoptions_type_evenements" '.checked( $options['type_evenements'], true, false ).' /> '.__('Activer', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[type_evenements]" id="brthemeoptions_type_evenements" '.(isset($options['type_lieux']) ? checked( $options['type_lieux'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_googleanalyticsid() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());

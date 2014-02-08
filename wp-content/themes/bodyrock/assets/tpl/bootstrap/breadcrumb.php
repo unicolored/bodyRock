@@ -2,6 +2,7 @@
 global $active_categorie;
 wp_reset_query();
 ?>
+<hr class="clearfix">
 <ol class="breadcrumb">
 	<?php
 	// FRONT PAGE

@@ -20,7 +20,7 @@ class bodyrock_categories extends WP_Widget {
 		'parent'                   => $parent,
 		'orderby'                  => 'category_count',
 		'order'                    => 'ASC',
-		'hide_empty'               => 0,
+		'hide_empty'               => 1,
 		'hierarchical'             => 1,
 		'exclude'                  => '',
 		'include'                  => '',

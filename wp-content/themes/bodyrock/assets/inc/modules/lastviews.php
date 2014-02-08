@@ -59,7 +59,7 @@ function br_modules_lastviewsSet() {
 		$articles[] = 'cat:'.get_query_var('cat');
 	}
 	for ($i=0;$i<=5;$i++) {
-		$navbar_items[$i] = $articles[$i];
+		$navbar_items[$i] = (isset($articles[$i]) ? $articles[$i] : false);
 	}
 	return array_values($navbar_items);
 }

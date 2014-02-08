@@ -20,8 +20,10 @@
 <!-- You can start editing here. -->
 		
 <?php
+echo '<section class="comments">';
+
 if ( have_comments() ) :
-	echo '<section class="comments">';
+	
 	
 	echo '<h2>';
 	printf(
@@ -44,13 +46,12 @@ if ( have_comments() ) :
 		echo '</div>';
 	echo '</div>';
 	
-	echo '</section>';
+
 endif;
 
 if ( comments_open() ) :
 	echo '<div id="respond">';
-	
-	echo '<h3 id="reply-title">'.comment_form_title( br_getIcon('comment').' '.__('Leave a comment','bodyrock')).'</h3>';
+	echo '<h1>'.br_getIcon('comment').' '.__('Leave a comment','bodyrock').'</h1>';
 	echo '<div class="cancel-comment-reply">';
 	echo '<small>'.cancel_comment_reply_link().'</small>';
 	echo '</div>';
@@ -75,17 +76,18 @@ if ( comments_open() ) :
 			echo '<input class="form-control" type="text" name="url" id="url" value="'.esc_attr($comment_author_url).'" size="22" tabindex="3" />';
 			echo '</p>';
 		endif;
-		
-		echo '<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>'.allowed_tags().'</code></small></p>-->';
 
 		echo '<p><textarea class="form-control" name="comment" id="comment" rows="10" tabindex="4"></textarea></p>';
 
-		echo '<p><button class="btn btn-default btn-block" type="submit" id="submit" tabindex="5">'.br_getIcon('plus').' '.__('Post comment','bodyrock').'</button>';
+		echo '<button class="btn btn-primary btn-block" type="submit" id="submit" tabindex="5">'.br_getIcon('plus').' '.__('Post comment','bodyrock').'</button>';
 		comment_id_fields();
-		echo '</p>';
+
 		do_action('comment_form', $post->ID);
 		echo '</form>';
 	endif; // If registration required and not logged in
 	
 	echo '</div>';
-endif; // if you delete this the sky will fall on your head ?>
+endif; // if you delete this the sky will fall on your head
+
+echo '</section>';
+?>

@@ -27,7 +27,10 @@ function themeoptions_validation($input) {
 	$options['iconset'] = isset($input['iconset']) ? $input['iconset'] : $defaults['iconset'];
 
   	// LAYOUT Width
-	$options['layout_width'] = isset($input['layout_width']) ? $input['layout_width'] : $defaults['image_sizes']; // 0 : fixed, 1 : fluid
+	$options['layout_width'] = isset($input['layout_width']) ? $input['layout_width'] : $defaults['layout_width']; // 0 : fixed, 1 : fluid
+	
+  	// LAYOUT Noresponsive
+	$options['noresponsive'] = isset($input['noresponsive']) ? $input['noresponsive'] : $defaults['noresponsive']; // 0 : fixed, 1 : fluid
 	
   	// FONTS Google
 	$options['fonts_google'] = isset($input['fonts_google']) ? $input['fonts_google'] : $defaults['fonts_google'];
@@ -43,6 +46,9 @@ function themeoptions_validation($input) {
 	
 	// VIDEO Height
 	$options['video_height'] = isset($input['video_height']) ? $input['video_height'] : $defaults['video_height'];
+	
+	// AUDIO Height
+	$options['audio_height'] = isset($input['audio_height']) ? $input['audio_height'] : $defaults['audio_height'];
 	
 	// ALL BS JS
 	$options['allbsjs'] = isset($input['allbsjs']) && $input['allbsjs']==1 ? $input['allbsjs'] : false;

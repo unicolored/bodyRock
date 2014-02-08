@@ -21,12 +21,12 @@
 		
 			case "text":
 				$form_item .= '<label for="'.$this->get_field_id($name).'">'.$label.'</label> ';
-				$form_item .= '<input id="'.$this->get_field_id($name).'" name="'.$this->get_field_name($name).'" type="text" value="'.$instance[$name].'" />';
+				$form_item .= '<input id="'.$this->get_field_id($name).'" name="'.$this->get_field_name($name).'" type="text" value="'.(isset($instance[$name]) && $instance[$name]!=false ? $instance[$name] : getDefaultLoop($name)).'" />';
 			break;
 			
 			case "number":
 				$form_item .= '<label for="'.$this->get_field_id($name).'">'.$label.'</label> ';
-				$form_item .= '<input id="'.$this->get_field_id($name).'" name="'.$this->get_field_name($name).'" type="number" value="'.$instance[$name].'" size="5" />';
+				$form_item .= '<input id="'.$this->get_field_id($name).'" name="'.$this->get_field_name($name).'" type="number" value="'.(isset($instance[$name]) && $instance[$name]!=false ? $instance[$name] : getDefaultLoop($name)).'" size="5" />';
 			break;
 			
 			case "select":
@@ -37,7 +37,7 @@
 				$form_item .= '<select name="'.$this->get_field_name($name).'" id="'.$this->get_field_id($name).'">';
 					foreach($O as $res) {
 						$X = explode(",",$res);
-						$form_item .= '<option value="'.$X[1].'" '.selected( $instance[$name], $X[1],false ).'>'.$X[0].'</option>';
+						$form_item .= '<option value="'.$X[1].'" '.(isset($instance[$name]) ? selected( $instance[$name], $X[1],false ) : selected( getDefaultLoop($name), $X[1],false )).'>'.$X[0].'</option>';
 					}
 				$form_item .= '</select>';
 			break;
@@ -46,7 +46,7 @@
 			if ( strpos($name,"()") ) {
 				$name = str_replace("()","",$name);
 				$resultats = $this->getOptions($name);
-				$form_item .= '<h4>'.$label.'</h4>';
+//				$form_item .= '<h4>'.$label.'</h4>';
 				foreach($resultats as $R) {
 					$form_item .= '<input type="checkbox" class="checkbox" name="'.$this->get_field_name($name.'_'.$R->term_id).'" '.checked( (bool) $instance[$name.'_'.$R->term_id], true,false ).' id="'.$this->get_field_id($name.'_'.$R->term_id).'" />';
 					$form_item .= '<label for="'.$this->get_field_id($name.'_'.$R->term_id).'">'.$R->name.'</label> ';

@@ -22,9 +22,6 @@ function br_register_widgets() {
 	
 	require_once 'widgets/recentposts.php';  // basics
 	register_widget('bodyrock_recentposts');
-	
-	require_once 'widgets/relatedposts.php';  // Display Related Posts
-	register_widget('bodyrock_relatedposts');
 }
 
 // AJOUT D'UN WIDGET DANS SUR LA DASHBOARD WORDPRESS

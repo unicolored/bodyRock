@@ -1,0 +1,73 @@
+@import "../variables.less"; /* Définition des variables globales : font-sizes, colors, heights, backgrounds, grids, layouts, ... */
+@import "../variables_components.less"; /* Définition des variables et chargement des CSS des composants Bootstrap */
+@import "../variables_sup.less"; /* Définition des variables globales spécifiques à ce thème */
+
+body {
+	.police-int-p;
+	cursor:default;
+	
+	background:@body-bg;
+	color:@text-color;
+	
+	font-size:@font-size-base; /* 16px */
+	
+	font-style:normal;
+	font-weight:normal;
+	
+	font-variant:normal;
+	letter-spacing:normal;
+	
+	line-height:@line-height-base*1em;
+	
+	margin:0;
+	padding:0;
+	padding-bottom:@navbar-height*2em;
+	
+
+}
+
+strong { font-weight:700; font-style:normal; }
+em { font-style:italic; font-weight:400; }
+
+a {
+	color:@link-color;
+	cursor:pointer;
+	&:hover {
+		color:@link-hover-color;
+		text-decoration:none;
+	}
+	&:active {
+		color:@brand-warning;
+		text-decoration:none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+h1.int-h, h2.int-h, h3.int-h, h4.int-h, h5.int-h, h6.int-h {
+	cursor:default;
+	color:darken(@text-color,15%);
+	.police-int-h;
+	font-size:@font-size-base;
+	color:#686868;
+	text-transform:uppercase;
+	
+	span.glyphicon, i.fa { color:@brand-primary; text-shadow:1px -1px 1px #fff; }
+}
+
+p { }
+
+/* Ajouts de classes complémentaires */
+
+hr { border-color:@int-color-border; }
+
+hr.clearfix {
+	.clearfix();
+	clear:both;
+	border:none; margin:0; padding:0; height:0;
+}
+hr.margin { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*1em; }
+hr.margin2 { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*2em; }
+
+iframe { z-index:0; } /* Fix Youtube Videos over fixed sidebar */
+
+/****************************************/

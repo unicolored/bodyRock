@@ -52,7 +52,7 @@ class br_widgetsBodyloop extends WP_Widget {
 		$active_single_type = get_post_type();
         
         $my_args=array(						   
-            'showposts' => $number+$instance['jump'],
+            'posts_per_page' => $number+$instance['jump'],
             'category__in'=> $cats,			
             'orderby' => $sort_by,			
             'order' => $sort_order,				

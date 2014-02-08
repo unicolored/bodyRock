@@ -1,24 +1,9 @@
 @import "bootstrap3/bootstrap.min.less";
 
-@import "variables.less"; /* Définition des variables globales : font-sizes, colors, heights, backgrounds, grids, layouts, ... */
-@import "variables_components.less"; /* Définition des variables et chargement des CSS des composants Bootstrap */
-@import "variables_sup.less"; /* Définition des variables globales spécifiques à ce thème */
-
 /*Start STYLING*/
-body {
-	.police-int-p;
-	cursor:default;
-	
-	background:@body-bg;
-	color:@text-color;
-}
+@import "interfaces/default.less"; /* Styles des éléments constituant l'interface : p,ul,h1,h2,h3,... (= styles par défaut d'après variables.less) */
 @import "structure.less"; /* Zones constituant la structure d'une page : header, navbar, sidebar, footer */
-
-@import "interface.less"; /* Styles des éléments constituant l'interface : p,ul,h1,h2,h3,... (= styles par défaut d'après variabales.less) */
-
-@import "articles.less"; /* Styles des éléments constituant les articles */
 
 /*Autres composants (ex: carousel, disqus, etc...)*/
 @import "bootstrap3/carousel.less";
-@import "components/carousel.less";
 /*@import "disqus.less";*/

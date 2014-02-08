@@ -14,7 +14,7 @@ $custom_types = false;
 $available_custom_types = array('lieux','evenements');
 $bodyrock_options = get_option('brthemeoptions');
 foreach($available_custom_types as $k) {
-	if($bodyrock_options['type_'.$k]==true) $custom_types[$k]=$k;
+	if(isset($bodyrock_options['type_'.$k]) && $bodyrock_options['type_'.$k]==true) $custom_types[$k]=$k;
 }
 // activateCustomTypes(array('type1','type2',...));
 // où type1 et type2 sont des dossiers distincts dans bodyrock/inc/types/bodyrock/inc/types/

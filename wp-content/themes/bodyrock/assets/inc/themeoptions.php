@@ -53,7 +53,9 @@ function themeoptionsGet_default()
     'layout_width'		=> 0,
 	'image_sizes' 		=> 'thumb,200,200,1;bigmedium,900,750,0',
 	'fonts_google'		=> 'Doppio+One::latin,Roboto+Slab::latin,Open+Sans::latin,Ubuntu::latin',
-	'color_bodybg'		=> '000'
+	'color_bodybg'		=> '000',
+	'noresponsive'		=> true,
+	'audio_height'		=> 450
   );
 
   return apply_filters('brthemeoptions', $default);

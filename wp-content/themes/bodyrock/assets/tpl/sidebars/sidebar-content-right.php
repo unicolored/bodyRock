@@ -1,6 +1,5 @@
 <div class="column">
 <h6><i class="fa fa-bullhorn"></i> Recommandations</h6>
-<?php the_widget( 'bodyrock_relatedposts' ); ?>
 </div>
 <hr>
 

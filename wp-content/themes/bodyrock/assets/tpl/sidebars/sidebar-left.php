@@ -1,6 +1,7 @@
-
 <?php
-echo '<aside class="aside">';
+echo a('aside.aside');
+echo a('div.galaxie');
 dynamic_sidebar('sidebar-left');
-echo '</aside>';
+echo z('div');
+echo z('aside');
 ?>

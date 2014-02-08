@@ -54,3 +54,4 @@ function bodyrock_body_class() {
 		return;
 	}
 }
+

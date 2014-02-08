@@ -1,7 +1,12 @@
 	// CHARGEMENT DES FONTS
 	WebFontConfig = {
 		google: {
-		  families: [ 'Doppio+One::latin', 'Roboto+Slab::latin', 'Open+Sans::latin', 'Ubuntu::latin' ]
+		  families: [
+		  'Doppio+One::latin',
+		  'Roboto:400,400italic,700,700italic:latin',
+		  'Open+Sans:400,400italic,700,700italic:latin',
+		  'Ubuntu:400,400italic,700,700italic:latin'
+		  ]
 		}
 	};
 	

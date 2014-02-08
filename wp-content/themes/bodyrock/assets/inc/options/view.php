@@ -17,7 +17,8 @@ function themeoptions_viewRender_page() {
 	'editorial-calendar',
 	'regenerate-thumbnails',
 	'wordpress-seo',
-	'wp-super-cache'
+	'wp-super-cache',
+	'embed-chessboard'
 	);
 	$plugins = get_option('active_plugins');
 

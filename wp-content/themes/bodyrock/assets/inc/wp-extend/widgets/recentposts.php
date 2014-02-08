@@ -68,7 +68,7 @@ class bodyrock_recentposts extends WP_Widget {
         // post info array.
         
         $my_args=array(						   
-            'showposts' => $number+$instance['jump'],
+            'posts_per_page' => $number+$instance['jump'],
             'category__in'=> $cats,			
             'orderby' => $sort_by,			
             'order' => $sort_order,				

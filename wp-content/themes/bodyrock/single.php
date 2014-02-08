@@ -12,9 +12,7 @@ if (get_post_format()=='video') {
 }
 /************** HTML START **************/
 
-get_template_part(TPL_SIDEBAR_PATH.'sidebar','left');
-
-echo '<section class="content">';
+echo a('section.content');
 
 	if ( have_posts() ) :
 	
@@ -61,6 +59,10 @@ if (get_post_format()=='video') {
 	echo '});'."\n";
 	echo "</script>\n";
 }
+	
+get_template_part(TPL_SIDEBAR_PATH.'sidebar','left');
+
+get_template_part(TPL_SIDEBAR_PATH.'sidebar','right');
 	
 get_footer();
 ?>

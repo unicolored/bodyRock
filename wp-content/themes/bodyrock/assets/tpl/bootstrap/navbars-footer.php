@@ -25,6 +25,8 @@ get_currentuserinfo();
 					//echo $post_id[$i];
 //					echo 'da'.$i.'::'.$post_id[$i].'!!';
 					if($post_id[$i]!=false) {
+						$format = get_post_format($post_id[$i]);
+						
 						if(strpos($post_id[$i],'tag:')===0) {
 							$x = explode(':',$post_id[$i]);
 							$tag = $x[1];
@@ -80,27 +82,29 @@ get_currentuserinfo();
 						}
 						elseif(get_post_type($post_id[$i]) == 'post') {
 							//echo 'single';
-							$image_src=wp_get_attachment_image_src( get_post_thumbnail_id($post_id[$i]), 'thumbnail' );
-
-							$format = get_post_format($post_id[$i]);
-
 							
 							$span = false;
 							
-							if ($format=='video') {
+							if ($format=='video' && !has_post_thumbnail($post_id[$i])) {
 								$videoCode = get_post_meta($post_id[$i], 'videoCode', true);
 								$videoType = get_post_meta($post_id[$i], 'videoType', true);
 
-								$image_src[0] = CDN_PATH.'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg';
+								$image_src[0] = 'senzu/'.strtolower(get_bloginfo('name')).'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg';
+							}
+							elseif(has_post_thumbnail($post_id[$i])) {
+								$image_src=wp_get_attachment_image_src( get_post_thumbnail_id($post_id[$i]), 'thumbnail' );
 							}
 							//echo $image_src[0];
+							echo $format;
 							?>
 							<li>
 								<a class="link_item" href="<?php echo get_permalink($post_id[$i]); ?>" data-toggle="tooltip" title="<?php echo strip_tags(get_the_title($post_id[$i])); ?>">
 									<div class="nav_item <?php echo get_the_ID()==$post_id[$i] ? 'active' : false ?>" style="background-image:url(<?php echo $image_src[0] ?>);">
-										<?php 
-										if ( $image_src == false ) {
-											echo '<h3>'.br_getIcon($format).'</h3>';
+										<?php
+										if ( $image_src[0] == false ) {
+											echo 'da';
+											vardump(br_getIcon($format));
+											echo '<h3>'.br_getIcon('film').'</h3>';
 										} ?>
 									</div>
 								</a>
@@ -125,7 +129,9 @@ get_currentuserinfo();
 			}
 			?>
 		</ul>
-		
+			<?php
+	debugStructure(); // Affiche des colonnes, des galaxies.
+	?>
     </div>
-	
+
 </nav>

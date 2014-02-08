@@ -24,7 +24,7 @@
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fff;
+@body-bg:               #ededed;
 @editor-bg:             #fff;
 @text-color:            @gray;
 
@@ -45,12 +45,13 @@
 @alfaslab: "Alfa Slab One", cursive;
 @abel: "Abel", sans-serif;
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-base:        @alfaslab;
+/*@font-family-base:        @alfaslab;*/
+@font-family-base:        @font-family-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
@@ -70,11 +71,11 @@
 
 /*Polices*/
 .police-un { font-family:@font-family-sans-serif; } /* La police sans style, sans font particulière (ex: arial, verdana, trebuchet, ...) */
-.police { font-family:@open-sans; } /* La police associée au logo, à la marque */
-.police-int-h { font-family:@open-sans; } /* Titres d''interface */
-.police-int-p { font-family:@open-sans;  } /* Textes d''interface */
+.police { font-family:@font-family-sans-serif; } /* La police associée au logo, à la marque */
+.police-int-h { font-family:@font-family-sans-serif; } /* Titres d''interface */
+.police-int-p { font-family:@font-family-sans-serif;  } /* Textes d''interface */
 .police-art-h { font-family:@doppio; } /* Titres d'articles */
-.police-art-p { font-family:@roboto; } /* Textes d'articles */
+.police-art-p { font-family:@font-family-base; } /* Textes d'articles */
 /*.police-sup { font-family: 'Open Sans', sans-serif; } /* Une police supplémentaire si besoin */
 
 // Components

@@ -17,9 +17,7 @@ echo z('/header');
 	}
 	
 	echo a('section.art-content');
-		echo a('p.lead');
 		echo get_the_excerpt();
-		echo z('/p');
 	echo z('/section');
 	
 //echo z('/div');

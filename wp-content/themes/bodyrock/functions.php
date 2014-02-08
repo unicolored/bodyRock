@@ -41,6 +41,8 @@ br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-optio
 */
 
 add_image_size( 'article', 960, 320, 1 );
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+add_action('wp_footer', 'getImgVideo', 100);
 
 define( 'THEME_PATH' , 'wp-content/themes/bodyrock/' ); // Liens absolus.
 define( 'BR_PATH' , ABSPATH.THEME_PATH ); // Liens absolus.
@@ -77,10 +79,12 @@ require_once 'assets/inc/wp-extend/_wp-extend.php';	// Chargement des fonctions 
 // Les options sont converties en constantes pour être accessible dans tout le code.
 $options = get_option('brthemeoptions', themeoptionsGet_default());
 
-define('BR_ICON_SET',$options['iconset']);
-define('BR_COMPILELESS_ON',$options['compileless_on']);
-define('BR_VIDEO_AUTOPLAY',$options['video_autoplay']);
-define('BR_VIDEO_HEIGHT',$options['video_height']);
+define('BR_ICON_SET',$options['iconset']); // Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
+define('BR_COMPILELESS_ON',$options['compileless_on']); // Active la compilation .less en .css (utile si les .less ont été modifiés)
+define('BR_VIDEO_AUTOPLAY',$options['video_autoplay']); // Active l'autoplay des vidéos sur les pages single
+define('BR_VIDEO_HEIGHT',$options['video_height']); // La hauteur de l'iframe contenant le lecteur vidéo
+define('BR_NORESPONSIVE',$options['noresponsive']); // Desactiver le "responsive"
+define('BR_AUDIO_HEIGHT',$options['audio_height']); // La hauteur de l'iframe contenant le lecteur audio
 
 // AUTRES VARIABLES (A mettre en option) ///////////////////////////////////////////// BODYROCK
 // Récupération des options du thème BODYROCK
@@ -100,6 +104,7 @@ function styles_scripts() {
 	if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la compilation du fichier less est activée.
 		backend_filesWrite_less(LESS_PATH.'editor-style.less', BR_CSS_PATH.'editor-style.css');
 		backend_filesWrite_less(LESS_PATH.'style.less', BR_CSS_PATH.'style.css');
+		backend_filesWrite_less(LESS_PATH.'debug.less', BR_CSS_PATH.'debug.css');
 	}
 	
     if(!is_child_theme()) {
@@ -107,6 +112,7 @@ function styles_scripts() {
         wp_enqueue_style( 'style-bodyrock', get_template_directory_uri() . '/css/style.css', false, '1.0.0', false  );
 		
         wp_enqueue_style( 'style-prettify', get_template_directory_uri() . '/assets/js/libs/prettify/prettify.css', false, 'mar13', false  );
+	    wp_enqueue_style( 'style-prettify', get_template_directory_uri() . '/assets/js/libs/prettify/sons-of-obsidian.css', false, 'mar13', false  );
 	    wp_enqueue_script( 'script-prettify', JS_PATH.'libs/prettify/run_prettify.js', 'mar13', false );
     }
 	
@@ -126,7 +132,7 @@ if(is_child_theme()) {
 
 	// Compilation du fichier less si l'option est activée
 	if( BR_COMPILELESS_ON == 1 ) {
-	    backend_filesWrite_less(get_stylesheet_directory().'/css/less/style.less', get_stylesheet_directory().'/css/style.css');
+	    backend_filesWrite_less(get_stylesheet_directory().'/assets/less/style.less', get_stylesheet_directory().'/css/style.css');
 	}
     // Mise en file des scripts CSS et JS
     function Child_styles_scripts() {

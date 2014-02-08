@@ -216,22 +216,7 @@ function z($balise) {
 	return "\n</".str_replace('/','',$balise).">\n";
 }
 
-function img($thumbnail="large",$class="img-rounded img-responsive") {
-	if (is_int($thumbnail)) {
-		return false;
-	}
-	foreach( get_intermediate_image_sizes() as $s ){
-		$sizes[ $s ] = array( 0, 0 );
-		if( in_array( $s, array( 'thumbnail', 'medium', 'large' ) ) ){
-			$sizes[ $s ][0] = get_option( $s . '_size_w' );
-			$sizes[ $s ][1] = get_option( $s . '_size_h' );
-		}else{
-			if( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) )
-				$sizes[ $s ] = array( $_wp_additional_image_sizes[ $s ]['width'], $_wp_additional_image_sizes[ $s ]['height'], );
-		}
-	}
-	return "<img src='http://placehold.it/".$sizes[$thumbnail][0]."x".$sizes[$thumbnail][1]."' class='".$class."' width='".$sizes[$thumbnail][0]."' height='".$sizes[$thumbnail][1]."' alt='Image'>";
-}
+
 
 ?>
 
