@@ -6,7 +6,85 @@ echo a('article.article','#post-'.get_the_ID());
 
 
 if( get_post_format()=='video' ) {
-	echo '<div id="singlevideo'.$videoType.'" class="code_'.$videoCode.'"></div>';
+	// La hauteur de la vidéo est définie d'abord dans les options du thème
+	// puis par article, il est possible de spécifier une taille distincte
+	$custom = get_post_custom($post->ID);
+	
+	$videoCode = isset($custom["videoCode"][0]) ? $custom["videoCode"][0] : false;
+	$videoType = isset($custom["videoType"][0]) ? $custom["videoType"][0] : false;
+	$videoHeight = isset($custom["videoHeight"][0]) && $custom["videoHeight"][0]!=false ? $custom["videoHeight"][0] : BR_VIDEO_HEIGHT;
+
+	// Pour les vidéos Youtube, on charge le lecteur html5
+	// Pour vimeo, il ne semble pas possible de trouver le lien du mp4 même via l'api.
+	if($videoType=='you') {
+		require('/wp-content/themes/bodyrock/assets/inc/_libs/youtubedownloader/curl.php');
+		require('/wp-content/themes/bodyrock/assets/inc/_libs/youtubedownloader/youtube.php');
+	  
+		$tube = new youtube();
+		
+		$links = $tube->get('http://www.youtube.com/watch?v='.$videoCode);
+	   
+		if($links) {
+//		vardump($links);
+			foreach($links as $k=>$v) {
+				$videolink[$k]['ext']=$v['ext'];
+				$videolink[$k]['type']=$v['type'];
+				$videolink[$k]['url']=$v['url'];
+			}
+			echo '		
+				<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="500"
+				poster="/senzu/'.strtolower(get_bloginfo('name')).'/images/videos/'.$videoType.'/'.$videoCode.'.jpg"
+				data-setup="{}">';
+			
+			foreach($videolink as $V) {
+				echo '<source src="'.$V['url'].'" type="video/'.$V['ext'].'" data-quality="'.$V['type'].'" />'."\n";
+				/*		<source src="http://video-js.zencoder.com/oceans-clip.webm" type="video/webm" />
+				<source src="http://video-js.zencoder.com/oceans-clip.ogv" type="video/ogg" />*/
+			}
+			/*	<track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+			<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->*/
+			echo '</video>';
+		}
+		else {	
+			echo $tube->error;	
+			echo '<div id="singlevideo'.$videoType.'" class="code_'.$videoCode.'"></div>';
+			
+			// Spécifique aux formats video
+			// Chargement des objets vidéos
+			echo "<script>\n";
+			echo 'jQuery(document).ready(function(){'."\n";
+			echo "// AFFICHAGE DES VIDEOS Si le conteneur identifié est trouvé\n"."\n"."\n";
+			
+			echo '
+				jQuery(\'#singlevideoyou\').html(\'<iframe width="100%" height="'.$videoHeight.'" src="//www.youtube.com/embed/\'+(jQuery(\'#singlevideoyou\').attr(\'class\').replace(\'code_\', \'\'))+\'?rel=0&amp;autoplay='.BR_VIDEO_AUTOPLAY.'&related=0" frameborder="0" allowfullscreen></iframe>\');
+				//jQuery(\'#singlevideovim\').html(\'<iframe src="//player.vimeo.com/video/\'+(jQuery(\'#singlevideovim\').attr(\'class\').replace(\'code_\', \'\'))+\'?badge=0&amp;color=db0000&amp;autoplay='.BR_VIDEO_AUTOPLAY.'" width="100%" height="'.BR_VIDEO_HEIGHT.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\');
+			';
+			
+			echo '});'."\n";
+			echo "</script>\n";
+		}
+	  
+		
+	}
+	elseif($videoType=='vim') {
+		echo '<div id="singlevideo'.$videoType.'" class="code_'.$videoCode.'"></div>';
+		
+		// Spécifique aux formats video
+		// Chargement des objets vidéos
+		echo "<script>\n";
+		echo 'jQuery(document).ready(function(){'."\n";
+		echo "// AFFICHAGE DES VIDEOS Si le conteneur identifié est trouvé\n"."\n"."\n";
+		
+		echo '
+			//if(jQuery(\'#singlevideoyou\').length>0) { // Youtube
+				//jQuery(\'#singlevideoyou\').html(\'<iframe width="100%" height="'.$videoHeight.'" src="//www.youtube.com/embed/\'+(jQuery(\'#singlevideoyou\').attr(\'class\').replace(\'code_\', \'\'))+\'?rel=0&amp;autoplay='.BR_VIDEO_AUTOPLAY.'&related=0" frameborder="0" allowfullscreen></iframe>\');
+			//}
+			jQuery(\'#singlevideovim\').html(\'<iframe src="//player.vimeo.com/video/\'+(jQuery(\'#singlevideovim\').attr(\'class\').replace(\'code_\', \'\'))+\'?badge=0&amp;color=db0000&amp;autoplay='.BR_VIDEO_AUTOPLAY.'" width="100%" height="'.BR_VIDEO_HEIGHT.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\');
+		';
+		
+		echo '});'."\n";
+		echo "</script>\n";
+	}
 }
 
 

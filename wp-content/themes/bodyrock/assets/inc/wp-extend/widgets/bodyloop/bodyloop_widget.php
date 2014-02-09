@@ -164,6 +164,8 @@ $carousel_javascript = "
 // Wrapper_
 	$Wrapper_START['carousel'] = a('div.carousel-inner');
 	$Wrapper_END['carousel'] = z('div').$carousel_javascript;
+	$Wrapper_START['wallpin'] = a('div.galaxie');
+	$Wrapper_END['wallpin'] = z('div');
 
 // Group_
 	$Group_START = isset($disposition_group_start[$instance['affichage_modele']]) ? $disposition_group_start[$instance['affichage_modele']] : false;
@@ -172,7 +174,7 @@ $carousel_javascript = "
 // Colonne_
 //	$Colonne_START['wallpin'] = a('div.col-lg-%s').a('div.galaxie'); // '<div class="item '.($c==1?'active':false).'">'
 //	$Colonne_END['wallpin'] = z('div').z('div');
-	$Colonne_START['wallpin'] = a('div.col-lg-%s'); // '<div class="item '.($c==1?'active':false).'">'
+	$Colonne_START['wallpin'] = a('div.col-xs-12.col-lg-%s'); // '<div class="item '.($c==1?'active':false).'">'
 	$Colonne_END['wallpin'] = z('div');
 	
 ////////// 4. ENCADREMENT D'UN ITEM
@@ -289,7 +291,7 @@ else {
 //	$wp_query->posts__per_page=2;
 //	query_posts('posts_per_page='.$instance['filtres_combien'].'&paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ));
 
-	query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ));
+	query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s'));
 //	$wp_query->have_post();
 //	vardump($wp_query);
 	$QUERY = $wp_query;

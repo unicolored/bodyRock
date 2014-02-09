@@ -17,7 +17,8 @@ $args_section = array(
 	'before_title' => '<h1>',
 	'after_title' => '</h1>'
 );
-
+vardump($_SESSION['lastpost_cats']);
+vardump($_SESSION['lastpost_tags']);
 if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 	// QUERY
 	$exclude = explode(',',$posts_recommande);
@@ -55,19 +56,17 @@ if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 }
 /************** HTML START **************/
 
+if ( have_posts() ) :
 echo a('section.content');
 	echo a('div.galaxie');
-	
-		if ( have_posts() ) :
-			the_widget('br_widgetsBodyloop',array('titre'=>'Articles récents','name'=>'home-widget-first','titre_icone'=>'bookmark','apparence_disposition'=>'wallpin'),$args_section);
-			// Previous/next post navigation.
-			echo '<div class="visible-lg">';
-			br_paging_nav();
-			echo '</div>';
-		endif;
-	
+			the_widget('br_widgetsBodyloop',array('titre'=>'Articles récents','name'=>'home-widget-first','titre_icone'=>'bookmark','apparence_disposition'=>'wallpin','apparence_wallpin_colonnes'=>'a/b/c/d/e/f','filtres_off'=>'on'),$args_section);
 	echo z('div');
+	// Previous/next post navigation.
+	echo '<div class="col-ff visible-lg">';
+	br_paging_nav();
+	echo '</div>';
 echo z('section');
+endif;
 /*
 echo a('section.content');
 	echo a('div.galaxie');

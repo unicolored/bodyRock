@@ -47,3 +47,6 @@ jQuery(document).ready(function(){
 	jQuery('.link_item').tooltip();
 
 });
+
+// VIDEO JS FallBack : active le lecteur flash si le html5 n'est pas utilisé
+videojs.options.flash.swf = "/wp-content/themes/bodyrock/assets/js/video-js/video-js.swf";

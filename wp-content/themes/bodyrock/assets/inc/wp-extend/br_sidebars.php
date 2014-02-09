@@ -2,7 +2,16 @@
 
 
 
-function br_register_sidebars() {    
+function br_register_sidebars() {  
+
+	register_sidebar( array(
+		'name' => __( 'Dummy', 'bodyrock' ),
+		'id' => 'Dummy',
+		'before_widget' => '<aside class="hidden">',
+		'after_widget' => "</aside>",
+		'before_title' => '',
+		'after_title' => '',
+	) );  
     
 	register_sidebar( array(
 		'name' => __( 'Sidebar Left', 'bodyrock' ),

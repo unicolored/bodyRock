@@ -47,7 +47,7 @@ get_currentuserinfo();
 							<li>
 								<a class="link_item" href="/?s=<?php echo $search ?>" data-toggle="tooltip" title="<?php echo get_query_var('s')==$search ? 'Vous êtes ici' : ucfirst($search) ?>">
 									<div class="nav_item <?php echo get_query_var('s')==$search ? 'active' : false ?>">
-										<h3><?php br_Icon('search') ?></h3> 
+										<h3><?php br_Icon('search'); echo '<br><em>'.$search.'</em>' ?> </h3> 
 									</div>
 								</a>
 							</li>
@@ -60,7 +60,7 @@ get_currentuserinfo();
 							<li>
 								<a class="link_item" href="<?php echo get_category_link($cat->term_id) ?>" data-toggle="tooltip" title="<?php echo ucfirst($cat->name) ?>">
 									<div class="nav_item <?php echo get_query_var('cat')==$cat ? 'active' : false ?>">
-										<h3><?php br_Icon($cat->slug) ?></h3> 
+										<h3><?php br_Icon($cat->slug) ?><br><?php echo ucfirst($cat->name) ?></h3> 
 									</div>
 								</a>
 							</li>
@@ -94,15 +94,13 @@ get_currentuserinfo();
 							elseif(has_post_thumbnail($post_id[$i])) {
 								$image_src=wp_get_attachment_image_src( get_post_thumbnail_id($post_id[$i]), 'thumbnail' );
 							}
-							//echo $image_src[0];
-							echo $format;
+//							echo $image_src[0];
 							?>
 							<li>
 								<a class="link_item" href="<?php echo get_permalink($post_id[$i]); ?>" data-toggle="tooltip" title="<?php echo strip_tags(get_the_title($post_id[$i])); ?>">
-									<div class="nav_item <?php echo get_the_ID()==$post_id[$i] ? 'active' : false ?>" style="background-image:url(<?php echo $image_src[0] ?>);">
+									<div class="nav_item <?php echo get_the_ID()==$post_id[$i] ? 'active' : false ?>" style="background-image:url(/<?php echo $image_src[0] ?>);">
 										<?php
 										if ( $image_src[0] == false ) {
-											echo 'da';
 											vardump(br_getIcon($format));
 											echo '<h3>'.br_getIcon('film').'</h3>';
 										} ?>

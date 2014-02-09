@@ -18,19 +18,36 @@ $args_section = array(
 	'after_title' => '</h1>'
 );
 
+$titre_content = __("Articles récents", "bodyrock");
+
 /************** HTML START **************/
 
 echo a('section.content');
 	echo a('div.galaxie');
 	
+		// TITRE DE LA PAGE
+		if ( is_search() || is_tag() ) {
+			echo '<div class="column">';
+			if ( is_search() ) {
+				echo '	<h1>Trouver <span class="red"><em>'.get_query_var('s').'</em></span></h1>';
+			}
+			elseif ( is_tag() ) {
+				echo '	<h1>Trouver <span class="red"><em>'.get_query_var('tag').'</em></span></h1>';
+			}
+			get_search_form();
+			echo '</div>';
+			echo '<hr class="clearfix">';
+			
+			$titre_content = "<h1>Résultats</h1>";
+		}
+	
 		if ( have_posts() ) :
-			$titre = __("Articles récents", "bodyrock");
 			if(is_category()) {
 				$cat = get_query_var('cat');
 				$active_categorie = get_category ($cat);
 				$titre = ucfirst(str_replace('<br>','',$active_categorie->name));
 			}
-			the_widget('br_widgetsBodyloop',array('titre'=>$titre,'name'=>'home-widget-first','titre_icone'=>$active_categorie->slug,'apparence_disposition'=>'wallpin','filtres_off'=>'on','filtres_combien'),$args_section);
+			the_widget('br_widgetsBodyloop',array('titre'=>$titre_content,'name'=>'home-widget-first','titre_icone'=>$active_categorie->slug,'apparence_disposition'=>'wallpin','filtres_off'=>'on','filtres_combien'),$args_section);
 			// Previous/next post navigation.
 			echo '<div class="visible-lg">';
 			br_paging_nav();

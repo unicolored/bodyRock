@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Class Name: wp_bootstrap_listgroupwalker
+* Class Name: wp_bootstrap_navpillswalker
 * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
 * Description: A custom WordPress nav walker class to implement the Twitter Bootstrap 2.3.2 navigation style in a custom theme using the WordPress built in menu manager.
 * Version: 2.0.2
@@ -10,7 +10,7 @@
 * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
-class wp_bootstrap_listgroupwalker extends Walker_Nav_Menu {
+class wp_bootstrap_navpillswalker extends Walker_Nav_Menu {
 
 	/**
 	* @see Walker::start_lvl()
@@ -18,10 +18,18 @@ class wp_bootstrap_listgroupwalker extends Walker_Nav_Menu {
 	*
 	* @param string $output Passed by reference. Used to append additional content.
 	* @param int $depth Depth of page. Used for padding.
+	
+	<ul class="nav nav-pills">
+	  <li class="active"><a href="#">Home</a></li>
+	  <li><a href="#">Profile</a></li>
+	  <li><a href="#">Messages</a></li>
+	</ul>
+	
+
 	*/
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		$output .= "\n$indent<ul role=\"menu\" class=\"nav nav-pills\">\n";
 	}
 
 	/**
@@ -46,22 +54,23 @@ class wp_bootstrap_listgroupwalker extends Walker_Nav_Menu {
 		* comparison that is not case sensitive. The strcasecmp() function returns
 		* a 0 if the strings are equal.
 		*/
-		if (strcasecmp($item->attr_title, 'divider') == 0 && $depth === 1) {
-			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if (strcasecmp($item->title, 'divider') == 0 && $depth === 1) {
-			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if (strcasecmp($item->attr_title, 'dropdown-header') == 0 && $depth === 1) {
-			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-		} else if (strcasecmp($item->attr_title, 'disabled') == 0) {
-			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
-		} else {
-		
 		$class_names = $value = '';
 		
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
 		
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+		if(in_array('current-menu-item', $classes)) { $class_names = ' active'; }
+		
+		if (strcasecmp($item->attr_title, 'divider') == 0 && $depth === 1) {
+			$output .= $indent . '<li role="presentation" class="'.$class_names.'">';
+		} else if (strcasecmp($item->title, 'divider') == 0 && $depth === 1) {
+			$output .= $indent . '<li role="presentation" class="'.$class_names.'">';
+		} else if (strcasecmp($item->attr_title, 'dropdown-header') == 0 && $depth === 1) {
+			$output .= $indent . '<li role="presentation" class="'.$class_names.'">' . esc_attr( $item->title );
+		} else if (strcasecmp($item->attr_title, 'disabled') == 0) {
+			$output .= $indent . '<li role="presentation" class="'.$class_names.'"><a href="#">' . esc_attr( $item->title ) . '</a>';
+		} else {
 		
 		if($args->has_children) {	$class_names .= ' dropdown'; }
 		if(in_array('current-menu-item', $classes)) { $class_names .= ' active'; }

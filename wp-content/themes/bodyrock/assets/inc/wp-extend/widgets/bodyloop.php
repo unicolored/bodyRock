@@ -244,17 +244,22 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['titre_format'] = "h1";
 		$default['titre_separator'] = "span.brsep";
 		$default['titre_masquer'] = false;
-		$random_icone = array("adjust","align-center","align-left","align-right","align-justify",
-		"arrow-down","arrow-left","arrow-right","arrow-up","asterisk","barcode","bold",
-		"bell","book","bookmark","briefcase",
-		"bullhorn","calendar","camera","certificate","check",
-		"chevron-down","chevron-up","chevron-left","chevron-right",
-		"cloud","cog","comment","credit-card","dashboard","download","edit","eject","envelope",
-		"fast-backward","fast-forward","file","film","filter","fire","flag","folder-open","font","forward","gbp",
+		$random_icone = array(
+		"adjust",
+		"align-center","align-left","align-right","align-justify","bold",		
+		"arrow-down","arrow-left","arrow-right","arrow-up",
+		"chevron-down","chevron-up","chevron-left","chevron-right",		
+		"asterisk",
+		"calendar","camera","bell","book","briefcase","bullhorn",
+		"barcode","bookmark","certificate","check",		
+		"comment","edit",		
+		"cloud","cog","credit-card","dashboard","download","eject","envelope",
+		"fast-backward","fast-forward","file","film","filter","fire","flag","folder-open","font","forward",
+		"gbp","usd",
 		"gift","glass","globe","headphones","heart","home","inbox","italic","leaf","link","list","list-alt","lock","magnet","map-marker",
 		"minus","music","pause","pencil","phone","plane","play","play-circle","plus","print","qrcode","random","refresh","repeat","retweet","road",
 		"search","share","shopping-cart","signal","star","step-backward","step-forward","stop","tag","tags","tasks","text-height","text-width",
-		"th","th-large","th-list","thumbs-down","thumbs-up","tint","upload","usd","user","volume-down","volume-off","volume-up","wrench"
+		"th","th-large","th-list","thumbs-down","thumbs-up","tint","upload","user","volume-down","volume-off","volume-up","wrench"
 		);
 		$default['titre_icone'] = $random_icone[rand(0,(count($random_icone)-1))];	
 		$default['edit_article_titre'] = false; // Fonction qui édite le titre avant son affichage. Exemple : replace_br()

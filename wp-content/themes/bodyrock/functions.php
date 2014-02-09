@@ -105,7 +105,11 @@ function styles_scripts() {
 		backend_filesWrite_less(LESS_PATH.'editor-style.less', BR_CSS_PATH.'editor-style.css');
 		backend_filesWrite_less(LESS_PATH.'style.less', BR_CSS_PATH.'style.css');
 		backend_filesWrite_less(LESS_PATH.'debug.less', BR_CSS_PATH.'debug.css');
+		backend_filesWrite_less(LESS_PATH.'video-js.less', ASSETS_PATH.'js/libs/video-js/video-js.css');
 	}
+	
+	wp_register_style( 'video-js', get_template_directory_uri() . '/assets/js/libs/video-js/video-js.css' );
+	wp_enqueue_style( 'video-js', get_template_directory_uri() . '/assets/js/libs/video-js/video-js.css' );
 	
     if(!is_child_theme()) {
 		wp_register_style( 'style-bodyrock', get_template_directory_uri() . '/css/style.css' );
@@ -124,6 +128,7 @@ function styles_scripts() {
     
     wp_enqueue_script( 'script-bodyrock', JS_PATH.'libs/bootstrap/bootstrap.min.js', array('jquery'), '3.0.0', false );
     wp_enqueue_script( 'script', get_template_directory_uri().'/js/script.php', array(), '1.0.0', false  );
+    wp_enqueue_script( 'video-js', JS_PATH.'libs/video-js/video.js', array(), '1.0.0', false  );
 }
 
 // CHILD /////////////////////////////////////////////
