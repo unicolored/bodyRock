@@ -1,5 +1,5 @@
 <?php
-echo a('article.article');
+echo a('article.article.affichage.mod-liste',"#post-".get_the_ID());
 
 if($instance['contenu_header_masquer']==false) {
 	echo a('header.art-header');

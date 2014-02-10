@@ -86,11 +86,7 @@ class br_widgetsBodyloop extends WP_Widget {
 			
 			if($instance['vignette_background']=="on") {
 				
-				$res .= '<div class="vignette-bg" style="background-image:url('.$attrs['src'].');"><h1><a href="'.get_permalink().'"><span>'.get_the_title().'</span></a></h1></div>';
-				
-				if($instance['affichage_listemedias_unlink_img']==false) {
-					$res .= '<span class="hover"></span></a>';
-				}
+				$res .= '<section class="vignette-bg" style="background-image:url('.$attrs['src'].');"><h1><a href="'.get_permalink().'"><span>'.get_the_title().'</span></a></h1></section>';
 			
 			}
 			else {

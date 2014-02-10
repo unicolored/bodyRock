@@ -50,3 +50,9 @@ jQuery(document).ready(function(){
 
 // VIDEO JS FallBack : active le lecteur flash si le html5 n'est pas utilisé
 videojs.options.flash.swf = "/wp-content/themes/bodyrock/assets/js/video-js/video-js.swf";
+
+// FLUIDVIDS : rend "responsive" les lecteurs youtube et vimeo
+Fluidvids.init({
+    selector: 'iframe',
+    players: ['googlevideo.com', 'youtube.com', 'www.youtube.com', 'player.vimeo.com', 'vimeo.com', 'vimeocdn.com']
+  });

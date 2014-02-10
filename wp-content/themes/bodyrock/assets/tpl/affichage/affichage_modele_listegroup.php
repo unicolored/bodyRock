@@ -1,6 +1,6 @@
 <?php
 
-echo a('article.article');
+echo a('article.article.affichage.mod-listegroup',"#post-".get_the_ID());
 
 	if($instance['affichage_listegroup_unlink']==false) {
 		echo '<a href="'.get_permalink().'" class="list-group-item '.(get_the_ID()==$active_single_id && is_single() ? 'active' : false).'">';

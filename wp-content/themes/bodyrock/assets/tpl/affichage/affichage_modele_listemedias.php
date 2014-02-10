@@ -1,6 +1,6 @@
 <?php
 
-echo a('article.article');
+echo a('article.article.affichage.mod-listemedias',"#post-".get_the_ID());
 
 if(has_post_thumbnail() || get_post_format()=="video") {
 	echo a('section.art-vignette');

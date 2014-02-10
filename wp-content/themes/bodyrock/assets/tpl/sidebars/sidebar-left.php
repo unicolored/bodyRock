@@ -47,19 +47,7 @@ echo '</div>
 dynamic_sidebar('sidebar-left');
 
 /* AJOUT */
-/*MODULE : Affichage de l'article en cours sur article single*/
-if (is_single()) {
-	echo '<h6><i class="fa fa-eye"></i> '.__("Vous êtes ici","uni").'</h6>';
-	echo '<div class="thumbnail">';
-	echo br_getPostThumbnail('medium');
-	echo '</div>';
-	
-	echo '<div class="posts_navigation clearfix">';
-	previous_post_link( '%link', __( '<button type="button" class="btn btn-primary btn-md pull-left">&laquo; Précédent</button>', 'twentyeleven' ) );
-	next_post_link( '%link', __( '<button type="button" class="btn btn-primary btn-md pull-right">Suivant &raquo;</button>', 'twentyeleven' ) );
-	echo '</div>';
-	echo '<hr>';
-}
+
 ?>
 <h6><i class="fa fa-chevron-circle-right"></i> Guide</h6>
 <?php get_template_part('tpl/bootstrap/breadcrumb', 'sidebar'); ?>
