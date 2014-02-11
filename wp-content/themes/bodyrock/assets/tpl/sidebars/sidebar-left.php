@@ -34,7 +34,16 @@ echo '
         </a>
       </h4>
     </div>
-	<div class="panel-body">    <div id="collapseOne" class="panel-collapse collapse in">';
+	<div class="panel-">    <div id="collapseOne" class="panel-collapse collapse in">
+	<div class="list-group">
+                <a href="#" class="list-group-item active">
+                  Cras justo odio
+                </a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in
+                </a>
+                <a href="#" class="list-group-item">Morbi leo risus
+                </a>
+              </div>';
 	wp_nav_menu( $defaults );
 echo '</div>
     </div>

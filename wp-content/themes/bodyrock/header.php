@@ -70,10 +70,3 @@ echo '<body data-spy="scroll" data-target=".subnav" data-offset="50" '; body_cla
 	echo a('div.br-breadcrumb');
 		get_template_part(TPL_BOOTSTRAP_PATH.'breadcrumb');
 	echo z('/div');
-		
-	global $main_section_class;
-	$ide = 'defaut';
-	$column = 'nomargin';	
-	
-	//echo '<div class="'.$column.'">';
-	//echo '<section class="'.br_getSectionClass($ide).'">';
