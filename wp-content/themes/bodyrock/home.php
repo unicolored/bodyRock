@@ -17,8 +17,8 @@ $args_section = array(
 	'before_title' => '<h1>',
 	'after_title' => '</h1>'
 );
-//vardump($_SESSION['lastpost_cats']);
-//vardump($_SESSION['lastpost_tags']);
+vardump($_SESSION['lastpost_cats']);
+vardump($_SESSION['lastpost_tags']);
 if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 	// QUERY
 	$exclude = explode(',',$posts_recommande);

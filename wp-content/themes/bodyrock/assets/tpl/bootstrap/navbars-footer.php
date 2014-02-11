@@ -2,7 +2,7 @@
 global $current_user;
 get_currentuserinfo();
 ?>
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -12,7 +12,7 @@ get_currentuserinfo();
         </button>
     </div>
     
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <div class="collapse navbar-inverse-collapse navbar-ex1-collapse">
         <!--<button type="button" class="btn btn-default navbar-btn pull-right"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login; ?></button>-->
 		<ul class="nav navbar-nav">
 			<?php

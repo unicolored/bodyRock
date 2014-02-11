@@ -1,20 +1,10 @@
 <?php
 $defaults = array(
 	'theme_location'  => 'primary',
+	'container_class' => 'list-group',
 	'menu'            => 'Top',
-/*	'container'       => 'div',
-	'container_class' => '',
-	'container_id'    => '',
-	'menu_class'      => 'menu',
-	'menu_id'         => '',*/
-	'echo'            => true,
-/*	'fallback_cb'     => 'wp_page_menu',
-	'before'          => '',
-	'after'           => '',
-	'link_before'     => '',
-	'link_after'      => '',*/
-	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-	'depth'           => 2,
+	'depth'			  => 1,
+	'items_wrap'	  => '%3$s',
 	'walker'          => new wp_bootstrap_listgroupwalker()
 );
 
@@ -23,41 +13,20 @@ $defaults = array(
 echo a('aside.aside');
 echo a('div.galaxie');
 
+wp_nav_menu( $defaults );
+
 echo '
 
 <div class="panel-group" id="guide">
-  <div class="panel panel-default" style="overflow:visible;">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#guide" href="#collapseOne">
-          Guide
-        </a>
-      </h4>
-    </div>
-	<div class="panel-">    <div id="collapseOne" class="panel-collapse collapse in">
-	<div class="list-group">
-                <a href="#" class="list-group-item active">
-                  Cras justo odio
-                </a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in
-                </a>
-                <a href="#" class="list-group-item">Morbi leo risus
-                </a>
-              </div>';
-	wp_nav_menu( $defaults );
-echo '</div>
-    </div>
-  </div>
-
-';
-
-
-dynamic_sidebar('sidebar-left');
-
-/* AJOUT */
+	<div class="panel panel-default" style="overflow:visible;">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a data-toggle="collapse" data-parent="#guide" href="#collapseOne">'.br_getIcon('chevron-circle-right').' '.__('Guide','bodyrock').'</a></h4>
+		</div>
+			<div id="collapseOne" class="panel-collapse collapse">
+		<div class="panel-body">
+		';
 
 ?>
-<h6><i class="fa fa-chevron-circle-right"></i> Guide</h6>
 <?php get_template_part('tpl/bootstrap/breadcrumb', 'sidebar'); ?>
 
 <p>
@@ -87,26 +56,47 @@ echo '#'.ucfirst($categorie->name).'<br>' ;
 
 
 <?php
+	echo '
+			</div>
+		</div>
+	</div>
+</div>
+';
+
+
+dynamic_sidebar('sidebar-left');
+
+/* AJOUT */
+echo '
+
+<div class="panel-group" id="guideTwo">
+	<div class="panel panel-default" style="overflow:visible;">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a data-toggle="collapse" data-parent="#guideTwo" href="#collapseTwo">'.br_getIcon('camera').' '.__('Image de la semaine','bodyrock').'</a></h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse in">
+		';
+
 // QUERY - Récupération de l'image de la semaine
 $cat = get_term_by('slug', 'image-de-la-semaine', 'category');
 $args['posts_per_page'] = 1;
 $args['cat'] = $cat->term_id;
 
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) :
+$args_section = array(
+	'before_widget' => '',
+	'after_widget' => ""
+);
 
-echo '<hr>';
-echo '<h6><i class="fa fa-picture-o"></i> Image de la semaine</h6>';
-echo '<section class="">';
-while ( $the_query->have_posts() ) :
+the_widget('br_widgetsBodyloop',array('name'=>'aside-widget-picoftheweek','apparence_disposition'=>'blog','affichage_modele'=>'affichage_modele_liste','vignette_background'=>'on','filtres_combien'=>1,'contenu_header_masquer'=>'on'),$args_section);
 
-$the_query->the_post();
-get_template_part('tpl/content/item'); // Affichage d'un résultat
-
-endwhile;
-echo '</section>';
-endif;
 /*FIN DE LAJOUT*/
+	echo '
+		</div>
+	</div>
+</div>
+';
+
+
 
 echo z('div');
 echo z('aside');

@@ -101,6 +101,7 @@ if( get_post_format()=='audio' ) {
 echo a('header.art-header');
 echo '<h1>'.get_the_title().'</h1>';
 //echo '<p>'.br_content_textesGet_posted_on(' • ').'</p>';
+get_template_part(TPL_PATH.'parts/article-share', get_post_format());
 echo z('/header');
 
 ?>

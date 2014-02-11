@@ -1,30 +1,6 @@
 <?php
 load_theme_textdomain('uni', get_stylesheet_directory().'/languages');
 
-/**
- * Proper way to enqueue scripts and styles
- */
-function bodyrockChildPlus_styles_scripts() {
-	//    wp_enqueue_style( 'font-russo',         'http://fonts.googleapis.com/css?family=Russo+One' );
-	//    wp_enqueue_style( 'style-pPlayer',      get_template_directory_uri().'/js/libs/pragmaticplayer/pplayer.css' );
-
-	//wp_enqueue_style( 'style-doppioone',    'http://fonts.googleapis.com/css?family=Doppio+One' );
-	//wp_enqueue_style( 'style-roboto',    	'http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' );
-//	wp_enqueue_style( 'style-readable',    	'//netdna.bootstrapcdn.com/bootswatch/3.1.0/readable/bootstrap.min.css', array('style-child') );
-    
-//    wp_enqueue_script( 'script-pPlayer',    get_template_directory_uri().'/js/libs/pragmaticplayer/jquery.pplayer.js', array('jquery'), '1.0.0', false );
-//    wp_enqueue_script('jquery-ui-autocomplete');
-    
-	//wp_enqueue_script( 'webfont',         'https://ajax.googleapis.com/ajax/libs/webfont/1.5.0/webfont.js' );
-//    wp_enqueue_script( 'addthis',         'https://s7.addthis.com/js/300/addthis_widget.js#pubid=unicolored' );
-//    wp_enqueue_script( 'addthisscripts',         get_stylesheet_directory_uri().'/js/addthis.js', array('addthis'), 'dec', true );
-//    wp_enqueue_script( 'analytics',         get_stylesheet_directory_uri().'/js/analytics.js', array(), 'oldtotransfer', true );
-}
-
-//add_action( 'wp_enqueue_scripts', 'bodyrockChildPlus_styles_scripts' );
-
-
-
 function br_getPageIcon($id = false) {
 	/* br_function OVERRIDE */
 	/* Récupérer l'icône d'une page d'après un identifiant texte. */

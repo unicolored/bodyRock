@@ -160,11 +160,13 @@ $carousel_javascript = "
 // First_
 	$First_START['carousel'] = a('div.bodyloop-carousel.slide');
 	$First_END['carousel'] = z('div');
+	$First_START['wallpin'] = a('div.galaxie');
+	$First_END['wallpin'] = z('div');
 
 // Wrapper_
 	$Wrapper_START['carousel'] = a('div.carousel-inner');
 	$Wrapper_END['carousel'] = z('div').$carousel_javascript;
-	$Wrapper_START['wallpin'] = a('div.galaxie');
+	$Wrapper_START['wallpin'] = a('div.wallpin');
 	$Wrapper_END['wallpin'] = z('div');
 
 // Group_
@@ -277,7 +279,6 @@ if($instance['filtres_off']==false) {
 	}
 
 	// posts_per_page
-	$query_args['posts_per_page'] = $filtres_combien;	
 	// WP_QUERY
 	$QUERY = new WP_Query($query_args);			
 }

@@ -21,7 +21,7 @@ function AdminView() {
 // Fait un affichage propre de var_dump()
 function vardump($v) {
 	echo '<pre>';
-	if(is_array($v)) {
+	if(is_array($v) || is_object($v)) {
 		var_dump($v);
 	}
 	else {
