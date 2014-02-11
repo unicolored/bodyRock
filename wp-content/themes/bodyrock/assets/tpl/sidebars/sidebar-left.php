@@ -15,7 +15,7 @@ $defaults = array(
 	'link_after'      => '',*/
 	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 	'depth'           => 2,
-	'walker'          => false
+	'walker'          => new wp_bootstrap_listgroupwalker()
 );
 
 /* Html START */
@@ -34,9 +34,8 @@ echo '
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-footer">';
-wp_nav_menu( $defaults );
+	<div class="panel-body">    <div id="collapseOne" class="panel-collapse collapse in">';
+	wp_nav_menu( $defaults );
 echo '</div>
     </div>
   </div>

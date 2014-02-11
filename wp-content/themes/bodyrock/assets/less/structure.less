@@ -27,7 +27,7 @@
 
 /* Components */
 nav.navbar {
-	.navbar-form { padding:@padding-base-vertical @padding-base-horizontal; }
+	.navbar-form {  }
 }
 footer {
 
@@ -63,37 +63,5 @@ footer.footer {
 	@import "structures/footer.less";
 }
 
-@import "articles/default.less"; /* Tous les éléments inclus dans une SIDEBAR : widgets, etc... */
 /************************************************************************/
 
-#pbd-alp-load-posts { .center-block(); }
-
-#guide .panel-footer {
-	padding:0;
-	
-	ul {
-	margin:0;
-	padding:0;
-	font-size:@font-size-small/1.4;
-		
-		li {
-			padding:0;
-			list-style:none;
-			margin:0;
-			
-			a {
-				display:block;
-				#gradient > .vertical(#fefefe, #efefef);
-				border-bottom:1px solid #efefef;
-				padding:@padding-small-vertical  @padding-small-horizontal;
-				line-height:@line-height-small/1.125;
-				
-				&:hover {
-					#gradient > .vertical(lighten(#fefefe,10%), lighten(#efefef,10%));
-				}
-			}
-			
-			li a { padding-left:@padding-large-horizontal; }
-		}
-	}
-}

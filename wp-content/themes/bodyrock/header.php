@@ -67,10 +67,8 @@ echo '<body data-spy="scroll" data-target=".subnav" data-offset="50" '; body_cla
 		get_template_part(TPL_BOOTSTRAP_PATH.'navbars');
 	echo z('/header');
 	
-	echo a('div.col-ff');
-		echo a('div.galaxie');
+	echo a('div.br-breadcrumb');
 		get_template_part(TPL_BOOTSTRAP_PATH.'breadcrumb');
-		echo z('/div');
 	echo z('/div');
 		
 	global $main_section_class;
