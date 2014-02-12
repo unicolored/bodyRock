@@ -3,6 +3,12 @@ global $urlfinale, $videoType, $videoCode;
 
 echo a('article.article','#post-'.get_the_ID());
 
+require_once INC_PATH.'_libs/soundcloudphp/Soundcloud.php';
+
+// create a client object with your app credentials
+$client = new Services_Soundcloud('5a725ad30c035ffa4003a2870f85aad2', 'cbe36c1104bf03e67f516885795910ff');
+$client->setCurlOptions(array(CURLOPT_FOLLOWLOCATION => 1));
+
 
 
 if( get_post_format()=='video' ) {
@@ -177,7 +183,7 @@ echo z('/header');
 	</section>
 
 	<?php
-	$instance_footer['contenu_footer_afficher']=true;
+	$instance_footer['contenu_footer_masquer']=false;
 	$instance_footer['contenu_footer_separateur']=" | ";
 	$instance_footer['contenu_footer_date']=true;
 	$instance_footer['contenu_footer_vues']=true;

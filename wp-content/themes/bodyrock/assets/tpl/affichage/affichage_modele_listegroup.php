@@ -27,7 +27,7 @@ echo a('article.article.affichage.mod-listegroup',"#post-".get_the_ID());
 				echo z('section');
 			}
 			
-			if($instance['contenu_footer_afficher']) {
+			if($instance['contenu_footer_masquer']==false) {
 				echo a('footer.art-footer');
 					echo Get_artfooter($instance);
 				echo z('section');

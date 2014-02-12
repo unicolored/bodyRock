@@ -23,15 +23,16 @@ if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 	$exclude = explode(',',$posts_recommande);
 	
 	$instance_recommandations_categories = array(
-	'titre' => "Recommandations ".$_SESSION['lastpost_cats'],
+	'titre' => "Recommandations",
 	'titre_icone' => "star",
-	'name' => 'recommandations',
+	'name' => 'recommandations_cats',
+	'class' => 'recommandations',
 	'contenu_excerpt' => false,
 	'apparence_disposition' => 'wallpin',
 	'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+	'affichage_modele' => 'affichage_modele_thumbnail',
 	'filtres_combien' => 6,
 	'vignette_background' => 'on',
-	'contenu_header_masquer' => 'on',
 	'filtres_similaires_selon' => 'cats',
 	'filtres_ignoreposts' => array($_SESSION['lastpost_id'])
 	);
@@ -48,20 +49,25 @@ if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 	// Uniquement si un post contenant des tags a été visité avant cette page		
 
+	$ignore_posts = explode(',',$_SESSION['wposts_recommandations_cats']);
+	$ignore_posts[] = $_SESSION['lastpost_id'];
+
 	$instance_recommandations_tags = array(
 		'titre_masquer' => false,
-		'name' => 'recommandations',
+		'name' => 'recommandations_tags',
+		'class' => 'recommandations',
 		'edit_article_titre' => 'replace_br',		
 		'contenu_excerpt' => false,
 		'apparence_disposition' => 'wallpin',
 		'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+		'affichage_modele' => 'affichage_modele_thumbnail',
 		'filtres_combien' => 6,
 		'vignette_background' => 'on',
-		'contenu_header_masquer' => 'on',
+//		'contenu_header_masquer' => 'on',
 		'filtres_similaires_selon' => 'tags',
 		'filtres_article_reference' => $_SESSION['lastpost_id'],
 //		'filtres_tags' => $_SESSION['lastpost_tags']!=false ? $_SESSION['lastpost_tags'] : false,
-		'filtres_ignoreposts' => array($_SESSION['lastpost_id'])
+		'filtres_ignoreposts' => $ignore_posts
 	);
 }
 /************** HTML START **************/
@@ -84,7 +90,18 @@ echo a('section.content');
 	echo '<hr class="clearfix">';
 	if ( have_posts() ) :
 		echo a('div.galaxie');
-				the_widget('br_widgetsBodyloop',array('titre'=>'Articles récents','name'=>'home-widget-first','titre_icone'=>'bookmark','apparence_disposition'=>'wallpin','apparence_wallpin_colonnes'=>'a/b/c/d/e/f','filtres_off'=>'on'),$args_section);
+				the_widget('br_widgetsBodyloop',array(
+					'titre'=>'Articles récents',
+					'class' => 'recommandations',
+					'name'=>'home-widget-first',
+					'titre_icone'=>'bookmark',
+					'apparence_disposition' => 'wallpin',
+					'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+					'vignette_background' => 'on',
+					'affichage_modele' => 'affichage_modele_thumbnail',
+					'filtres_off'=>'on'
+				),$args_section);
+				
 		echo z('div');
 		// Previous/next post navigation.
 		echo '<div class="col-ff visible-lg">';

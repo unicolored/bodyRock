@@ -290,6 +290,7 @@ the_widget('br_widgetsBodyloop',".'$instance'.");
 				echo $this->doFormInput("Icône,titre_icone",$instance,false,'<br>');
 			}
 			echo $this->doFormInput("Nom identifiant,name",$instance,false,'');
+			echo $this->doFormInput("Classe du widget,class",$instance,false,'');
 			// TOFIX : Ajouter un footer au widget : lien, bouton	
 			
 		echo z('fieldset');		
@@ -351,8 +352,8 @@ the_widget('br_widgetsBodyloop',".'$instance'.");
 				echo $this->doFormInput("Couleur du bouton,contenu_lirelasuite_btncolor::",$instance,"Défaut,default;Primaire,primary;Infos,info;Succès,success;Avertissement,warning;Danger,danger",'<br>');
 				echo $this->doFormInput("Label -Lire la suite-,contenu_lirelasuite_txt",$instance,false,'<br>');
 			}
-			echo $this->doFormInput("Afficher le footer,contenu_footer_afficher?",$instance,false,'<br>');
-			if($instance['contenu_footer_afficher']=="on") {
+			echo $this->doFormInput("Masquer le footer,contenu_footer_masquer?",$instance,false,'<br>');
+			if($instance['contenu_footer_masquer']==false) {
 				echo '<h4>Options de Footer</h4>';
 				echo $this->doFormInput("Afficher la date,contenu_footer_date?",$instance,false,'<br>');
 				echo $this->doFormInput("Afficher l'auteur,contenu_footer_auteur?",$instance,false,'<br>');

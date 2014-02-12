@@ -12,6 +12,9 @@ jQuery(document).ready(function($) {
 	// The link of the next page of posts.
 	var nextLink = pbd_alp.nextLink;
 	
+	// The link of the next page of posts.
+	var widgetName = pbd_alp.widgetName;
+	
 	var loadBtn = pbd_alp.loadBtn;
 	var loadText = pbd_alp.loadText;
 	var loadNomore = pbd_alp.loadNomore;

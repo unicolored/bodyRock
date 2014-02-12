@@ -4,7 +4,7 @@ echo a('div.galaxie');
 /*MODULE : Affichage de l'article en cours sur article single*/
 if (is_single()) {
 	the_post(get_the_ID());
-	echo '<h6><i class="fa fa-eye"></i> '.__("Vous êtes ici","uni").'</h6>';
+	echo '<h1 class="widget-title"><i class="fa fa-eye"></i> '.__("Vous êtes ici","uni").'</h1>';
 	echo '<div class="thumbnail">';
 	echo br_getPostThumbnail('medium');
 	echo '</div>';

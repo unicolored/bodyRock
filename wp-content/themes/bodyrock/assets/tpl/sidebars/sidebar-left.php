@@ -80,7 +80,7 @@ echo '
 				'after_widget' => ""
 			);
 
-			the_widget('br_widgetsBodyloop',array('name'=>'aside-widget-picoftheweek','apparence_disposition'=>'blog','affichage_modele'=>'affichage_modele_liste','vignette_background'=>'on','filtres_combien'=>1,'contenu_header_masquer'=>'on'),$args_section);
+			the_widget('br_widgetsBodyloop',array('class'=>'aside-widget-picoftheweek','apparence_disposition'=>'blog','affichage_modele'=>'affichage_modele_liste','vignette_background'=>'on','filtres_combien'=>1,'contenu_header_masquer'=>'on'),$args_section);
 
 			/*FIN DE LAJOUT*/
 			echo '

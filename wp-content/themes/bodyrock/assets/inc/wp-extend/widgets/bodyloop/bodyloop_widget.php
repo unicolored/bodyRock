@@ -18,16 +18,6 @@ $new_excerpt_more= create_function('$more', 'return " ";');
 
 // Variables du widget
 extract( $args ); // Les paramètres du widget liés à la sidebar : $before_widget, $after_widget, $before_title, $after_title
-//vardump($args);
-//extract( $instance );
-/*$default_instance = getDefaultLoop();
-foreach($default_instance as $k => $val) {
-	//echo $k.'::'.$val.'<br>';
-	
-	if(!isset($instance[$k])) {
-		$instance[$k] = $val;
-	}
-}*/
 
 ////////// 0. ETENDUE DU WIDGET
 // Gestion de l'affichage en fonction de l'environnement Wordpress
@@ -139,14 +129,14 @@ $carousel_javascript = "
 // $widget_start,$widget_end
 
 // Widget_
-	if(isset($instance['name']) && $instance['name']!=false) {
-		$before_widget = a('div.'.$instance['name']).$before_widget;
+	if(isset($instance['class']) && $instance['class']!=false) {
+		$before_widget = a('div.'.$instance['class']).$before_widget;
 		$after_widget = $after_widget.z('div');
 	}
 	// Création de Widget_START
 	$icone_widget = (isset($instance['titre_icone']) ? br_getIcon($instance['titre_icone']).'&nbsp;' : false);
 	$titre_format = (isset($instance['titre_format']) ? $instance['titre_format'] : getDefaultLoop('titre_format'));
-	$titre_widget = ($instance['titre_masquer']==false && isset($instance['titre']) ? a($titre_format).$icone_widget.$instance['titre'].z($titre_format) : false);
+	$titre_widget = ($instance['titre_masquer']==false && isset($instance['titre']) ? a($titre_format.'.widget-title').$icone_widget.$instance['titre'].z($titre_format) : false);
 	$Widget_START = $before_widget.$titre_widget;
 
 	// Création de Widget_END
@@ -184,6 +174,8 @@ $carousel_javascript = "
 
 	$WIrapper_START['carousel'] = '<div class="item %s">'; // '<div class="item '.($c==1?'active':false).'">'
 	$WIrapper_END['carousel'] = z('div');
+	$WIrapper_START['wallpin'] = '<div class="galaxie">'; // '<div class="item '.($c==1?'active':false).'">'
+	$WIrapper_END['wallpin'] = z('div');
 	
 	$Item_START = isset($modele_item_start[$instance['affichage_liste_type']]) ? $modele_item_start[$instance['affichage_liste_type']] : false;
 	$Item_END = isset($modele_item_end[$instance['affichage_liste_type']]) ? $modele_item_end[$instance['affichage_liste_type']] : false;
@@ -281,13 +273,22 @@ $c=1;
 // Paramètres Wallpin
 $a='a';
 
-if($instance['apparence_disposition']!="wallpin") { $instance['apparence_wallpin_colonnes']="a"; } // Seul le mode Wallpin permet d'afficher des colonnes de résultats
-
-$COLS = explode('/',($instance['apparence_wallpin_colonnes']!=false ? $instance['apparence_wallpin_colonnes'] : getDefaultLoop('apparence_wallpin_colonnes'))); // Uniquement dans le cas Wallpin
-for($z=0;$z<=(count($COLS)-1);$z++) {
-	$counter[$COLS[$z]]=1;
+if($instance['apparence_disposition']!="wallpin") {  // Mode Blog et Carousel : une seule colonne
+	$instance['apparence_wallpin_colonnes']=false;
+	$COLS = array("a");
+	for($z=0;$z<=(count($COLS)-1);$z++) {
+		$counter[$COLS[$z]]=1;
+	}
+	$n = $counter['a'];
 }
-$n = $counter['a'];
+else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de résultats pour le moment. Il faudra le proposer pour Blog (ajouter un wrapper à l'item avec une classe colonne.)
+	$COLS = explode('/',($instance['apparence_wallpin_colonnes']!=false ? $instance['apparence_wallpin_colonnes'] : getDefaultLoop('apparence_wallpin_colonnes'))); // Uniquement dans le cas Wallpin
+
+	for($z=0;$z<=(count($COLS)-1);$z++) {
+		$counter[$COLS[$z]]=1;
+	}
+	$n = $counter['a'];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -300,6 +301,8 @@ echo $Widget_START;
 $separators = array('hr','br');
 echo (in_array($instance['titre_separator'],$separators) ? a($instance['titre_separator']) : false);
 
+$_SESSION['widget_posts'] = false;
+
 // Loop
 if ( $QUERY->have_posts() ) {
 	
@@ -308,10 +311,14 @@ if ( $QUERY->have_posts() ) {
 	
 		global $post;
 		$articles[$a][$n]=$post;
+		$_SESSION['wposts_'.$instance['name']] .= $post->ID.',';
+		
 		if(get_the_excerpt()) {
 			$articles[$a][$n]->exxcerpt=get_the_excerpt();
 		}
 		else $articles[$a][$n]->exxcerpt = false;
+
+		// Ici, on sort de la boucle et on change de colonne.
 		for($z=0;$z<=(count($COLS)-1);$z++) {
 			if($z==(count($COLS)-1)) { $a=$COLS[0]; $counter[$COLS[$z]]++; $n=$counter[$COLS[0]]; break; }
 			elseif($a==$COLS[$z]) { $a=$COLS[$z+1]; $counter[$COLS[$z]]++; $n=$counter[$COLS[$z+1]]; break; }
@@ -358,17 +365,16 @@ if ( $QUERY->have_posts() ) {
 	}
 
 		// BOUCLE START
-		//if($instance['apparence_disposition']=='wallpin') {
-		//echo a('div.galaxie');
-		$x = 12/count($COLS);
+		$largeur_colonne = 12/count($COLS); // Largeur d'une colonne
+
 		foreach($COLS as $ID) {
 			
 			if(isset($Colonne_START[$instance['apparence_disposition']])) {
 				// C COLONNE_START
-				printf ( $Colonne_START[$instance['apparence_disposition']] , $x );
+				printf ( $Colonne_START[$instance['apparence_disposition']] , $largeur_colonne );
 			}
 			
-			for ( $i=1;isset($articles[$ID][$i]);$i++ ) {
+			for ( $i=1;isset($articles[$ID][$i]);$i++ ) { // $i = ligne de résultat
 				$post=$articles[$ID][$i];
 				$excerpt[$i] = $articles[$ID][$i]->exxcerpt;
 				
@@ -381,7 +387,6 @@ if ( $QUERY->have_posts() ) {
 						// I ITEM_START
 						echo $Item_START[$instance['affichage_modele']];
 					}				
-					
 					
 						// CONTENT
 						$instance['affichage_modele'] = $instance['affichage_modele']!=false ? $instance['affichage_modele'] : getDefaultLoop('affichage_modele');					
@@ -433,7 +438,7 @@ if ( $QUERY->have_posts() ) {
 	}
 }
 else { // Si aucun résultat;
-	echo 'yo, ya pas de résultat';
+	echo __('Aucun résultat.','bodyrock');
 }
 
 echo $Widget_END;

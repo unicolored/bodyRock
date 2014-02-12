@@ -130,30 +130,30 @@ class br_widgetsBodyloop extends WP_Widget {
 	}
 	
 	function Get_artfooter($instance) {
-		if($instance['contenu_footer_afficher']==true) {
-			if($instance['contenu_footer_date']==true || $instance['contenu_footer_auteur']==true || $instance['contenu_footer_commentaires']==true || $instance['contenu_footer_vues']==true) {
+		if($instance['contenu_footer_masquer']==false) {
+			if($instance['contenu_footer_date']==false || $instance['contenu_footer_auteur']==false || $instance['contenu_footer_commentaires']==false || $instance['contenu_footer_vues']==false) {
 				echo a('footer.art-footer');
 					//echo a('div.well.well-sm');
 					
-					$sep = $instance['contenu_footer_separateur'];
+					$sep = (isset($instance['contenu_footer_separateur']) ? $instance['contenu_footer_separateur'] : getDefaultLoop('contenu_footer_separateur'));
 					
 					$i=0;
-					if($instance['contenu_footer_vues']==true) {
+					if($instance['contenu_footer_vues']==false) {
 						if($i==1) echo $sep;
 						echo br_getIcon('stats').'&nbsp;'.getPostViews(get_the_ID());
 						$i=1;
 					}
-					if($instance['contenu_footer_date']==true) {
+					if($instance['contenu_footer_date']==false) {
 						if($i==1) echo $sep;
 						echo br_getIcon('calendar').'&nbsp;'.__('Posté le','bodyrock').' <time class="entry-date" datetime="'.esc_attr( get_the_date( 'c' ) ).'" pubdate>'.esc_html( get_the_date() ).'</time>';
 						$i=1;
 					}
-					if($instance['contenu_footer_auteur']==true) {
+					if($instance['contenu_footer_auteur']==false) {
 						if($i==1) echo $sep;
 						echo br_getIcon('user').'&nbsp;'.__('Ajouté par','bodyrock').' <a href="'.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ).'" title="'.esc_attr( sprintf( __( 'Voir tous les articles de %s', 'bodyrock' ), get_the_author() ) ).'">'.get_the_author().'</a>';
 						$i=1;
 					}
-					if($instance['contenu_footer_commentaires']==true) {
+					if($instance['contenu_footer_commentaires']==false) {
 						if(get_comments_number()>0) {
 							if($i==1) echo $sep;
 							echo $sep.br_getPageIcon('comment')."&nbsp;".get_comments_number()." ".__('commentaire(s)','bodyrock');
@@ -212,11 +212,11 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['contenu_lirelasuite_btn'] = false;
 		$default['contenu_lirelasuite_btncolor'] = "primary";
 		$default['contenu_lirelasuite_txt'] = "Lire la suite";
-		$default['contenu_footer_afficher'] = "on";
-		$default['contenu_footer_date'] = "on";
-		$default['contenu_footer_auteur'] = "on";
-		$default['contenu_footer_commentaires'] = "on";
-		$default['contenu_footer_vues'] = "on";
+		$default['contenu_footer_masquer'] = false;
+		$default['contenu_footer_date'] = false;
+		$default['contenu_footer_auteur'] = false;
+		$default['contenu_footer_commentaires'] = false;
+		$default['contenu_footer_vues'] = false;
 		$default['contenu_footer_separateur'] = " | ";
 		
 		$default['articles_separator'] = "span.brsep";
@@ -259,6 +259,7 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['edit_article_titre'] = false; // Fonction qui édite le titre avant son affichage. Exemple : replace_br()
 		$random_name = array("verycool","pasmal","sympathique","jeanlouis","jaimebien","nomsympa","whynot");
 		$default['name'] = $random_name[rand(0,(count($random_name)-1))];
+		$default['class'] = false;
 		
 		if($val!=false) {			
 			return $default[$val];
