@@ -207,7 +207,7 @@ if($instance['filtres_off']==false) {
 	}
 	
 	// post__not_in
-	if($instance['filtres_ignoresingle']==true) {
+	if($instance['filtres_ignoreposts']==true) {
 		// Ne pas inclure l\'article single
 		if(is_singular()) {
 			$posts_notin = get_the_ID();

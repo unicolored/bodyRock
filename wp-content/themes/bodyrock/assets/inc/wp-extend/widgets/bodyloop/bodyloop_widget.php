@@ -224,58 +224,39 @@ if($instance['filtres_off']==false) {
 	
 	// $FILTRES_OFFSET
 	if ($instance['filtres_offset']!=false) $query_args['offset'] = $instance['filtres_offset'];
-	
-	// $FILTRES_CATSIN
-	$filtres_catsin = "";
-	$i=1;
-	foreach($instance as $label=>$value) {
-	//			echo preg_replace("/filtres_categories_/","",$label).'<br>';
-		if ( preg_match("/filtres_categories_/",$label,$cat)==1 ) {
-			$cat = preg_replace("/filtres_categories_/","",$label);
-			$filtres_catsin .= ($i>1?",":false).$cat;
-			$i++;
-		}
-	}
-	if ($filtres_catsin!=false) $query_args['category__'.$instance['filtres_catsinornot']] = "".$filtres_catsin."";
 
 	// SELON LES CATEGORIES
-	if($instance['filtres_similaires_selon']=='both' || $instance['filtres_similaires_selon']=='cats') {
-		// Articles similaires
-		// aux catégories du single
-		$pc = wp_get_post_categories( get_the_ID() );
-		$cats = array();
-		$param_cat = "";
-		foreach($pc as $c) {
-			$cat = get_category( $c );
-			$cats[] = array(
-			"name" => $cat->name,
-			"slug" => $cat->slug
-			);
-			$param_cat .= $cat->cat_ID.",";
+	if($instance['filtres_similaires_selon']=='cats') {
+
+		// $FILTRES_CATSIN
+		$filtres_catsin = "";
+		$i=1;
+		foreach($instance as $label=>$value) {
+			if ( preg_match("/filtres_categories_/",$label,$cat)==1 ) {
+				
+				$cat = preg_replace("/filtres_categories_/","",$label);
+				$filtres_catsin .= ($i>1?",":false).$cat;
+				$i++;
+			}
 		}
-		$query_args['category__in'] = $param_cat;
+		if ($filtres_catsin!=false) $query_args['category__'.(isset($instance['filtres_catsinornot']) ? $instance['filtres_catsinornot'] : getDefaultLoop('filtres_catsinornot'))] = "".$filtres_catsin."";
 	}
 	
 	// SELON LES TAGS
-	if($instance['filtres_similaires_selon']=='both' || $instance['filtres_similaires_selon']=='tags') {
+	if($instance['filtres_similaires_selon']=='tags') {
 		// Articles similaires
 		// aux tags du single
-		if(is_singular()) {
-			$tags = wp_get_post_tags(get_the_ID());
-			foreach($tags as $individual_tag) {
-				$tag_ids[] = $individual_tag->term_id;
-			}
+		$tags = wp_get_post_tags($instance['filtres_article_reference']);
+		foreach($tags as $individual_tag) {
+			$tag_ids[] = $individual_tag->term_id;
 		}
 		$query_args['tag__in'] = $tag_ids;
 	}
 	
 	// post__not_in
-	if($instance['filtres_ignoresingle']==true) {
+	if($instance['filtres_ignoreposts']==true) {
 		// Ne pas inclure l\'article single
-		if(is_singular()) {
-			$posts_notin = get_the_ID();
-		}
-		$query_args['post__not_in'] = array($posts_notin);
+		$query_args['post__not_in'] = $instance['filtres_ignoreposts'];
 	}
 
 	// posts_per_page
@@ -288,13 +269,10 @@ elseif($instance['calldata']!=false) {
 }
 else {
 	// EDITION DE LA LOOP GLOBALE :: filtres_off = on :: les filtres sont éteints par défaut
-	global $wp_query;
-//	$wp_query->posts__per_page=2;
-//	query_posts('posts_per_page='.$instance['filtres_combien'].'&paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ));
-
-	query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s'));
-//	$wp_query->have_post();
-//	vardump($wp_query);
+	global $wp_query; // Récupération de la boucle globale avant execution
+	
+	query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s')); // Modification de la loop en cours
+	
 	$QUERY = $wp_query;
 }
 

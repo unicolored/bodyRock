@@ -140,7 +140,7 @@ foreach($tags as $individual_tag) {
 			}
 			
 			// post__not_in
-			if($instance['filtres_ignoresingle']==true) {
+			if($instance['filtres_ignoreposts']==true) {
 				$args['post__not_in'] = 'array($posts_notin)';
 				$preargs[$args['post__not_in']] = '
 // Ne pas inclure l\'article single
@@ -236,7 +236,7 @@ if(is_singular()) {'."\n".'$posts_notin = get_the_ID();'."\n".'}
 				if($instance['filtres_resultats_lies']=="resultats_similaires") {
 					echo $this->doFormInput("...selon,filtres_similaires_selon::",$instance,"---,---;Catégories,cats;Tags,tags;Les deux,both",'<br>');
 				}
-				echo $this->doFormInput("Ne pas inclure l'article single,filtres_ignoresingle?",$instance,false,'<br>');
+				echo $this->doFormInput("Ne pas inclure l'article single,filtres_ignoreposts?",$instance,false,'<br>');
 			}
 			else {
 				echo '<p>Le widget se base sur la loop $wp_query globale lorsque tous les filtres sont activés.</p>';

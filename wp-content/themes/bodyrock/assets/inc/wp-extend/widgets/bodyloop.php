@@ -70,7 +70,6 @@ class br_widgetsBodyloop extends WP_Widget {
 			$attrs = false;
 			$vignette_dimensions = 	(isset($instance['vignette_dimensions']) ? $instance['vignette_dimensions'] : getDefaultLoop('vignette_dimensions'));
 			$attrs = br_getPostThumbnail($vignette_dimensions,false);
-//			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), $instance['vignette_dimensions']);
 
 			$image_url = $attrs['src'];
 			$wh = false;
@@ -97,7 +96,6 @@ class br_widgetsBodyloop extends WP_Widget {
 				if($instance['affichage_listemedias_unlink_img']==false) {
 					$res .= '<a class="'.$align[$instance['vignette_alignement']].'" href="'.get_permalink().'">';
 				}
-	//			echo '<img class="media-object" src="'.$image_url[0].'" '.$wh.' alt="'.get_the_title().'">';
 				$styles=array('style_cercle'=>'img-circle','style_thumbnail'=>'img-thumbnail','style_arrondi'=>'img-rounded');
 	
 				$res .= '<img class="media-object '.(isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false).' '.($instance['vignette_nonresponsive']==false ? 'img-responsive' : false).'" src="'.$attrs['src'].'" '.$wh.' alt="'.get_the_title().'">';
@@ -190,7 +188,7 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['filtres_tags'] = false;
 		$default['filtres_resultats_lies'] = "resultats_select";
 		$default['filtres_similaires_selon'] = "both";
-		$default['filtres_ignoresingle'] = "on";
+		$default['filtres_ignoreposts'] = "on";
 		
 		$default['apparence_disposition'] = "blog";
 		$default['apparence_carousel_indicators'] = false;
