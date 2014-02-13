@@ -75,43 +75,54 @@ if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 /************** HTML START **************/
 
 echo a('section.content');
-	echo a('div.galaxie');
-		
-		//MODULE:: RECOMMANDATIONS basées sur les CATEGORIES 
-		if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
-			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
-		}
-		
-		//MODULE:: RECOMMANDATIONS basées sur les TAGS 
-		if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
-			// Uniquement si un post contenant des tags a été visité avant cette page
-			the_widget('br_widgetsBodyloop',$instance_recommandations_tags,$args_section);
-		}
-	
-	echo z('div');
-	echo '<hr class="clearfix">';
-	if ( have_posts() ) :
+
+	if(get_query_var('paged')<2) {
 		echo a('div.galaxie');
-				the_widget('br_widgetsBodyloop',array(
-					'titre'=>'Articles récents',
-					'class' => 'home-widget-first',
-					'name'=>'recommandations',
-					'titre_icone'=>'bookmark',
-					'apparence_disposition' => 'wallpin',
-					'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
-					'vignette_background' => 'on',
-					'affichage_modele' => 'affichage_modele_thumbnail',
-					'filtres_off'=>'on',
-					'ajax'=>'on'
-				),$args_section);
-				
+			
+			//MODULE:: RECOMMANDATIONS basées sur les CATEGORIES 
+			if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
+				the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+			}
+			
+			//MODULE:: RECOMMANDATIONS basées sur les TAGS 
+			if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
+				// Uniquement si un post contenant des tags a été visité avant cette page
+				the_widget('br_widgetsBodyloop',$instance_recommandations_tags,$args_section);
+			}
+		
 		echo z('div');
+		
+		echo '<hr class="clearfix">';
+	}
+	
+	if ( have_posts() ) {
+		
+		$instance_articles_recents = array(
+			'titre'=>'Articles récents',
+			'class' => 'home-widget-first',
+			'name'=>'recommandations',
+			'titre_icone'=>'bookmark',
+			'apparence_disposition' => 'wallpin',
+			'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+			'vignette_background' => 'on',
+			'affichage_modele' => 'affichage_modele_thumbnail',
+			'contenu_footer_masquer' => 'on',
+			'filtres_off'=>'on',
+			'ajax'=>'on'
+		);
+		
+		if(get_query_var('paged')>1) {
+			$instance_articles_recents['titre'] = "Médiathèque";
+			$instance_articles_recents['ajax'] = false;
+		}
+		
+		the_widget('br_widgetsBodyloop',$instance_articles_recents,$args_section);
+				
 		// Previous/next post navigation.
 		echo '<div class="col-ff visible-lg">';
 		br_paging_nav();
-		echo '</div>';
-	
-	endif;
+		echo '</div>';	
+	}
 echo z('section');
 
 

@@ -1,0 +1,30 @@
+.police-un {
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police {
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police-int-h {
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police-int-p {
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.police-art-h {
+  font-family: "Doppio One", sans-serif;
+}
+.police-art-p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+body#tinymce.wp-editor {
+  background: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555555;
+  font-size: 16px;
+}
+body#tinymce.wp-editor h1 {
+  font-family: "Doppio One", sans-serif;
+}
+body#tinymce.wp-editor a {
+  color: #444;
+}

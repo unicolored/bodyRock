@@ -44,6 +44,10 @@ add_image_size( 'article', 960, 320, 1 );
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 add_action('wp_footer', 'getImgVideo', 100);
 
+// Retire une partie des variables disqus non utiles à mon avis.
+// Evite notamment l'inclusion de code sur les pages qui ne comportent pas de commentaires.
+remove_action('wp_footer', 'dsq_output_footer_comment_js');
+
 define( 'THEME_PATH' , 'wp-content/themes/bodyrock/' ); // Liens absolus.
 define( 'BR_PATH' , ABSPATH.THEME_PATH ); // Liens absolus.
 define( 'ASSETS_PATH' , BR_PATH.'assets/' );
@@ -95,17 +99,16 @@ define('CDN_PATH','http://senzu.fr/'.strtolower(get_bloginfo('name')).'/'); // C
 // Création des liens CSS et JS
 // Register style sheet.
 
-add_action( 'wp_enqueue_scripts', 'styles_scripts' );
+add_action( 'wp_enqueue_scripts', 'head_scripts' );
+add_action( 'wp_footer', 'footer_scripts' );
 
-function styles_scripts() {
+function head_scripts() {
 	switch ( BR_ICON_SET ) {
 		case 'elusive': 	wp_enqueue_style( 'icon_set-elusive', get_template_directory_uri() . '/assets/icon_set/elusive-webfont.css', array(), '2.0.0', false  ); break;
-		case 'font-awesome': wp_enqueue_style( 'icon_set-fontawesome', get_template_directory_uri().'/assets/icon_set/font-awesome.min.css', array(), '4.0.3', false  ); break;
+//		case 'font-awesome': wp_enqueue_style( 'icon_set-fontawesome', get_template_directory_uri().'/assets/icon_set/font-awesome.min.css', array(), '4.0.3', false  ); break;
+		case 'font-awesome': wp_enqueue_style( 'icon_set-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3', false  ); break;
 		case 'glyphicon': wp_enqueue_style( 'icon_set-glyphicon', get_template_directory_uri() . '/assets/icon_set/glyphicons.css', array(), '1.0.0', false  ); break;
 	}
-//    wp_enqueue_script( 'script-bodyrock', JS_PATH.'libs/bootstrap/bootstrap.min.js', array('jquery'), '3.0.0', false );
-//	wp_enqueue_script( 'script-bodyrock', 		"//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js", array('jquery'), '3.0.0', false );
-//	wp_enqueue_script( 'jquery' );
 
     if(!is_child_theme()) {
 //		wp_enqueue_style( 'bs', 				"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css", false, 'fev14', false  );
@@ -116,17 +119,30 @@ function styles_scripts() {
 		// CHILD /////////////////////////////////////////////
 		wp_enqueue_style( 'style-child',    	get_stylesheet_directory_uri().'/css/style.css', false, '1.0.0', false );
 	}
-	
-//    wp_enqueue_script( 'video-js', 				JS_PATH.'libs/video-js/video.js', array(), '4.3.0', false  );
+}
+
+function footer_scripts() {
+
     wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('jquery'), '1.0.0', false  );
 	
-    if(!is_child_theme()) {
-        // Do that...
-    }
-	else {
-//		wp_enqueue_script( 'rock-unid',    get_stylesheet_directory_uri().'/assets/js/unid.js', array('jquery','script'), '1.0.0', false ); // Framework JS à développer
-//		wp_enqueue_script( 'rock-child',    get_stylesheet_directory_uri().'/js/script.js', array('rock-unid','rock-unid'), '1.0.0', false );
+	global $options;
+
+	$FG = explode(';',$options['fonts_google']);
+	$i=0;
+	$families = '';
+	foreach ($FG as $F) {
+		$families .= ($i>0 ? ', ' : false)."'".$F."'";
+		$i++;
 	}
+	
+	// Add some parameters for the JS.
+	wp_localize_script(
+	'script',
+	'sc_val',
+		array(
+			'families' => json_encode($families)
+		)
+	);
 }
 
 if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la compilation du fichier less est activée.

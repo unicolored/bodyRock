@@ -39,13 +39,18 @@ function pbd_alp_init() {
 	}
 }
 
-function br_ajaxWidgetInstance($instance=false) {
+// Injecte le widget dans une page (actuellement cette fonction est appellée par home.php).
+// Fonctionne avec js/script.php
+function br_ajaxWidgetInstance($instance=false,$args=false) {
 	if($instance==false) return;
 	
 	$instance = json_decode(stripslashes(urldecode($_GET['instance'])),true);
+	$args = json_decode(stripslashes(urldecode($_GET['args'])),true);
+	
 	$instance['ajax']=false; // On force ajax à false pour ne pas répéter la boucle
+	
 	get_header('ajax');
-	the_widget('br_widgetsBodyloop',$instance,$args_section);
+	the_widget('br_widgetsBodyloop',$instance,$args);
 	get_footer('ajax');
 	
 	exit;

@@ -1,7 +1,5 @@
 <?php
 session_start();
-require_once("../../../../wp-load.php");
-
 //header('Content-Description: File Transfer');
 header('Content-Type: application/javascript');
 //header('Content-Disposition: attachment; filename='.basename($file));
@@ -10,39 +8,12 @@ header('Expires: 0');
 header('Pragma: public');
 //header('Content-Length: ' . filesize($file));
 
-$options = get_option('brthemeoptions');
-
-$FG = explode(';',$options['fonts_google']);
-$i=0;
-$families = '';
-foreach ($FG as $F) {
-	$families .= ($i>0 ? ', ' : false)."'".$F."'";
-	$i++;
-}
-
-
-/*
-wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
-	// Enregistrer le script ci-dessous en session et charger l'ensemble des widgets ajax à part de script.php
-	$_SESSION['ajax-widget-'.$instance['class']] = urlencode(json_encode($instance));
-	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['class'].'//';
-	
-	// Add some parameters for the JS.
-	wp_localize_script(
-	'ajax-widget-'.$instance['class'],
-	'pbd_alp',
-	array(
-	'instance' => urlencode(json_encode($instance)),
-	'widgetclass' => (isset($instance['class']) ? $instance['class'] : 'votre_nom_de_classe'),
-	)
-	);
-*/
 ?>
 
 // CHARGEMENT DES FONTS
 	WebFontConfig = {
 		google: {
-		  families: [ <?php echo $families; ?> ]
+		  families: [ sc_val.families ]
 		}
 	};
 	
@@ -58,6 +29,18 @@ wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-
 
 
 /* Author: Gilles Hoarau */
+
+//Réécriture de getscript pour activer le cache des fichiers chargés.
+// cache = true pour activation
+jQuery.getScript = function(url, callback, cache){
+  $.ajax({
+    type: "GET",
+    url: url,
+    success: callback,
+    dataType: "script",
+    cache: cache
+  });
+};
 
 jQuery(document).ready(function(){
 
@@ -76,7 +59,7 @@ jQuery(document).ready(function(){
 			?>
 			
 			// The link of the next page of posts.
-			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>';
+			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>&args=<?php echo $_SESSION['args-'.$A] ?>';
 			
 		<?php // echo '.holder-'.$A; ?>
 			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " .<?php echo str_replace('ajax-widget-','',$A); ?>",
@@ -99,20 +82,20 @@ jQuery(document).ready(function(){
 		alert( "Load was performed." );
 	});*/
 
-	jQuery.getScript('http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/unid.js?v=1.0.0', function() { });
+	jQuery.getScript('http://senzu.fr/bodyrock/js/unid.js?v=1.0.1', function() { }, true);
 
 	// Chargement des scripts supplémentaires
 	var myVideoJsStyle = 'http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/video-js/video-js.css?ver=3.8';
 
 	jQuery('<link rel="stylesheet" type="text/css" href="'+myVideoJsStyle+'" >').appendTo("head");
 	
-	jQuery.getScript('http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/video-js/video.js?ver=4.3.0', function() { });
+	jQuery.getScript('http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/video-js/video.js?ver=4.3.0', function() { }, true);
 	
-	jQuery.getScript('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.0', function() { });	
+	jQuery.getScript('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.0', function() { }, true);	
 	
-	jQuery.getScript('https://s7.addthis.com/js/300/addthis_widget.js?ver=3.8#pubid=unicolored', function() { });
+	jQuery.getScript('https://s7.addthis.com/js/300/addthis_widget.js?ver=3.8#pubid=unicolored', function() { }, true);
 	
-	jQuery.getScript('http://unicolored.com/wp-content/themes/rock-unicolored/js/script.js?ver=1.0.0', function() { });
+	jQuery.getScript('http://unicolored.com/wp-content/themes/rock-unicolored/js/script.js?ver=1.0.0', function() { }, true);
 
 
 	
