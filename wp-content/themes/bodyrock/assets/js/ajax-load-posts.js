@@ -20,6 +20,7 @@ jQuery(document).ready(function($) {
 	 * Replace the traditional navigation with our own,
 	 * but only if there is at least one page of new posts to load.
 	 */
+	 
 	if(pageNum <= max) {
 		// Insert the "More Posts" link.
 		$('section.content')

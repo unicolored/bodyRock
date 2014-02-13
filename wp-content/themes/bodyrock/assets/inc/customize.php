@@ -7,6 +7,11 @@
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
 
+// On retire les liens xml vers les fichiers permettant l'édition par Live Writer
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_shortlink_wp_head');
+
 add_action( 'login_enqueue_scripts', 'my_custom_login_logo' );
 
 

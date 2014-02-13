@@ -3,6 +3,8 @@
 // je récupère par SESSIONS via single.php, les tags et les catégories de ce post pour faire des recommandations ici-même.
 /*TOFIX : Translate this page*/
 
+br_ajaxWidgetInstance(isset($_GET['instance']) ? $_GET['instance'] : false);
+
 get_header();
 
 $args = array(
@@ -92,14 +94,15 @@ echo a('section.content');
 		echo a('div.galaxie');
 				the_widget('br_widgetsBodyloop',array(
 					'titre'=>'Articles récents',
-					'class' => 'recommandations',
-					'name'=>'home-widget-first',
+					'class' => 'home-widget-first',
+					'name'=>'recommandations',
 					'titre_icone'=>'bookmark',
 					'apparence_disposition' => 'wallpin',
 					'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
 					'vignette_background' => 'on',
 					'affichage_modele' => 'affichage_modele_thumbnail',
-					'filtres_off'=>'on'
+					'filtres_off'=>'on',
+					'ajax'=>'on'
 				),$args_section);
 				
 		echo z('div');
@@ -113,6 +116,7 @@ echo z('section');
 
 
 get_template_part(TPL_SIDEBAR_PATH.'sidebar','left');
+
 
 get_footer();
 

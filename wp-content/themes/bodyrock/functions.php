@@ -104,7 +104,8 @@ function styles_scripts() {
 		case 'glyphicon': wp_enqueue_style( 'icon_set-glyphicon', get_template_directory_uri() . '/assets/icon_set/glyphicons.css', array(), '1.0.0', false  ); break;
 	}
 //    wp_enqueue_script( 'script-bodyrock', JS_PATH.'libs/bootstrap/bootstrap.min.js', array('jquery'), '3.0.0', false );
-	wp_enqueue_script( 'script-bodyrock', 		"//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js", array('jquery'), '3.0.0', false );
+//	wp_enqueue_script( 'script-bodyrock', 		"//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js", array('jquery'), '3.0.0', false );
+//	wp_enqueue_script( 'jquery' );
 
     if(!is_child_theme()) {
 //		wp_enqueue_style( 'bs', 				"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css", false, 'fev14', false  );
@@ -116,19 +117,15 @@ function styles_scripts() {
 		wp_enqueue_style( 'style-child',    	get_stylesheet_directory_uri().'/css/style.css', false, '1.0.0', false );
 	}
 	
-	wp_enqueue_style( 'video-js', 				get_template_directory_uri() . '/assets/js/libs/video-js/video-js.css' );
-    wp_enqueue_style( 'style-prettify', 		get_template_directory_uri() . '/assets/js/libs/prettify/prettify.css', false, 'mar13', false  );
-	
-    wp_enqueue_script( 'script-prettify', 		JS_PATH.'libs/prettify/run_prettify.js', 'mar13', false );
-    wp_enqueue_script( 'video-js', 				JS_PATH.'libs/video-js/video.js', array(), '4.3.0', false  );
-    wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('script-bodyrock'), '1.0.0', false  );
+//    wp_enqueue_script( 'video-js', 				JS_PATH.'libs/video-js/video.js', array(), '4.3.0', false  );
+    wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('jquery'), '1.0.0', false  );
 	
     if(!is_child_theme()) {
         // Do that...
     }
 	else {
-		wp_enqueue_script( 'rock-unid',    get_stylesheet_directory_uri().'assets/js/unid.js', array('jquery','script'), '1.0.0', false ); // Framework JS à développer
-		wp_enqueue_script( 'rock-child',    get_stylesheet_directory_uri().'/js/script.js', array('rock-unid','rock-unid'), '1.0.0', false );
+//		wp_enqueue_script( 'rock-unid',    get_stylesheet_directory_uri().'/assets/js/unid.js', array('jquery','script'), '1.0.0', false ); // Framework JS à développer
+//		wp_enqueue_script( 'rock-child',    get_stylesheet_directory_uri().'/js/script.js', array('rock-unid','rock-unid'), '1.0.0', false );
 	}
 }
 

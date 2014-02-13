@@ -38,4 +38,16 @@ function pbd_alp_init() {
 		);
 	}
 }
+
+function br_ajaxWidgetInstance($instance=false) {
+	if($instance==false) return;
+	
+	$instance = json_decode(stripslashes(urldecode($_GET['instance'])),true);
+	$instance['ajax']=false; // On force ajax à false pour ne pas répéter la boucle
+	get_header('ajax');
+	the_widget('br_widgetsBodyloop',$instance,$args_section);
+	get_footer('ajax');
+	
+	exit;
+}
 ?>

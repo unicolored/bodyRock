@@ -62,34 +62,15 @@ if(is_single()) {
 
 dynamic_sidebar('sidebar-left');
 
-echo '
-<div class="panel-group" id="guideTwo">
-	<div class="panel panel-default" style="overflow:visible;">
-		<div class="panel-heading">
-			<h4 class="panel-title"><a data-toggle="collapse" data-parent="#guideTwo" href="#collapseTwo">'.br_getIcon('camera').' '.__('Image de la semaine','bodyrock').'</a></h4>
-		</div>
-		<div id="collapseTwo" class="panel-collapse collapse in">';
-
-			// QUERY - Récupération de l'image de la semaine
-			$cat = get_term_by('slug', 'image-de-la-semaine', 'category');
-			$args['posts_per_page'] = 1;
-			$args['cat'] = $cat->term_id;
-
-			$args_section = array(
-				'before_widget' => '',
-				'after_widget' => ""
-			);
-
-			the_widget('br_widgetsBodyloop',array('class'=>'aside-widget-picoftheweek','apparence_disposition'=>'blog','affichage_modele'=>'affichage_modele_liste','vignette_background'=>'on','filtres_combien'=>1,'contenu_header_masquer'=>'on'),$args_section);
-
-			/*FIN DE LAJOUT*/
-			echo '
-		</div>
-	</div>
-</div>';
-
-
-
 echo z('div');
+
+// QUERY - Récupération de l'image de la semaine en AJAX
+$args_section = array(
+	'before_widget' => '',
+	'after_widget' => ""
+);
+
+the_widget('br_widgetsBodyloop',array('ajax'=>'on','titre'=>'Image de la semaine','titre_icone'=>'camera','name'=>'imagedelasemaine','class'=>'aside-widget-picoftheweek','apparence_disposition'=>'blog','affichage_modele'=>'affichage_modele_liste','vignette_background'=>'on','filtres_combien'=>1,'contenu_header_masquer'=>'on'),$args_section);
+
 echo z('aside');
 ?>

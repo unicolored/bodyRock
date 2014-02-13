@@ -253,7 +253,9 @@ if($instance['filtres_off']==false) {
 
 	// posts_per_page
 	// WP_QUERY
-	$QUERY = new WP_Query($query_args);			
+	if($instance['ajax']==false) {
+		$QUERY = new WP_Query($query_args);
+	}
 }
 elseif($instance['calldata']!=false) {
 // Rarement utilisé
@@ -261,11 +263,13 @@ elseif($instance['calldata']!=false) {
 }
 else {
 	// EDITION DE LA LOOP GLOBALE :: filtres_off = on :: les filtres sont éteints par défaut
-	global $wp_query; // Récupération de la boucle globale avant execution
-	
-	query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s')); // Modification de la loop en cours
-	
-	$QUERY = $wp_query;
+	if($instance['ajax']==false) {	
+		global $wp_query; // Récupération de la boucle globale avant execution
+		
+		query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s')); // Modification de la loop en cours
+		
+		$QUERY = $wp_query;
+	}
 }
 
 ////////// 6. LA BOUCLE	
@@ -295,37 +299,58 @@ else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// WIDGET_START
-echo $Widget_START;
-
-$separators = array('hr','br');
-echo (in_array($instance['titre_separator'],$separators) ? a($instance['titre_separator']) : false);
-
-$_SESSION['widget_posts'] = false;
-
-// Loop
-if ( $QUERY->have_posts() ) {
+if($instance['ajax']==true) {
+	echo a('div.widget-ajax-load').z('div');
 	
-	while ( $QUERY->have_posts() ) {
-		$QUERY->the_post();
+	wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
+	// Enregistrer le script ci-dessous en session et charger l'ensemble des widgets ajax à part de script.php
 	
-		global $post;
-		$articles[$a][$n]=$post;
-		$_SESSION['wposts_'.$instance['name']] .= $post->ID.',';
-		
-		if(get_the_excerpt()) {
-			$articles[$a][$n]->exxcerpt=get_the_excerpt();
-		}
-		else $articles[$a][$n]->exxcerpt = false;
+	// Add some parameters for the JS.
+	wp_localize_script(
+	'ajax-widget-'.$instance['class'],
+	'pbd_alp',
+	array(
+	'instance' => urlencode(json_encode($instance)),
+	'widgetclass' => (isset($instance['class']) ? $instance['class'] : 'votre_nom_de_classe'),
+	)
+	);
+	add_action('template_redirect', 'pbd_alp_init');
+}
+else {
 
-		// Ici, on sort de la boucle et on change de colonne.
-		for($z=0;$z<=(count($COLS)-1);$z++) {
-			if($z==(count($COLS)-1)) { $a=$COLS[0]; $counter[$COLS[$z]]++; $n=$counter[$COLS[0]]; break; }
-			elseif($a==$COLS[$z]) { $a=$COLS[$z+1]; $counter[$COLS[$z]]++; $n=$counter[$COLS[$z+1]]; break; }
-		}
-		$nombrecolumns = (count($COLS)-1);
+	// WIDGET_START
+	echo $Widget_START;
+	
+	$separators = array('hr','br');
+	echo (in_array($instance['titre_separator'],$separators) ? a($instance['titre_separator']) : false);
+	
+	$_SESSION['widget_posts'] = false;
+	
+	
+	if ( $QUERY->have_posts() ) {
 		
-		// AJAX
+		// Loop
+		while ( $QUERY->have_posts() ) {
+			$QUERY->the_post();
+		
+			global $post;
+			$articles[$a][$n]=$post;
+			$_SESSION['wposts_'.$instance['name']] .= $post->ID.',';
+			
+			if(get_the_excerpt()) {
+				$articles[$a][$n]->exxcerpt=get_the_excerpt();
+			}
+			else $articles[$a][$n]->exxcerpt = false;
+	
+			// Ici, on sort de la boucle et on change de colonne.
+			for($z=0;$z<=(count($COLS)-1);$z++) {
+				if($z==(count($COLS)-1)) { $a=$COLS[0]; $counter[$COLS[$z]]++; $n=$counter[$COLS[0]]; break; }
+				elseif($a==$COLS[$z]) { $a=$COLS[$z+1]; $counter[$COLS[$z]]++; $n=$counter[$COLS[$z+1]]; break; }
+			}
+			$nombrecolumns = (count($COLS)-1);
+		}
+		
+		// Ajax load more
 		// Add code to index pages.
 		if( !is_singular() ) { 		
 			wp_enqueue_script( 'script-ajax-load-posts', JS_PATH.'ajax-load-posts.js', array('jquery'), 'fev14' );
@@ -349,100 +374,100 @@ if ( $QUERY->have_posts() ) {
 			);
 		}
 		add_action('template_redirect', 'pbd_alp_init');
-	}
-
-	if(isset($First_START[$instance['apparence_disposition']])) {
-		// F FIRST_START
-		echo $First_START[$instance['apparence_disposition']];
-	}	
-	if(isset($Wrapper_START[$instance['apparence_disposition']])) {
-		// W WRAPPER_START
-		echo $Wrapper_START[$instance['apparence_disposition']];
-	}
-	if(isset($Group_START)) {
-		// G GROUP_START
-		echo $Group_START;
-	}
-
-		// BOUCLE START
-		$largeur_colonne = 12/count($COLS); // Largeur d'une colonne
-
-		foreach($COLS as $ID) {
-			
-			if(isset($Colonne_START[$instance['apparence_disposition']])) {
-				// C COLONNE_START
-				printf ( $Colonne_START[$instance['apparence_disposition']] , $largeur_colonne );
-			}
-			
-			for ( $i=1;isset($articles[$ID][$i]);$i++ ) { // $i = ligne de résultat
-				$post=$articles[$ID][$i];
-				$excerpt[$i] = $articles[$ID][$i]->exxcerpt;
-				
-				if(isset($WIrapper_START[$instance['apparence_disposition']])) {
-					// WI WIRAPPER_START
-					printf ( $WIrapper_START[$instance['apparence_disposition']] , ($i==1 ? 'active' : false) );
-				}
 	
-					if(isset($Item_START[$instance['affichage_modele']])) {
-						// I ITEM_START
-						echo $Item_START[$instance['affichage_modele']];
-					}				
-					
-						// CONTENT
-						$instance['affichage_modele'] = $instance['affichage_modele']!=false ? $instance['affichage_modele'] : getDefaultLoop('affichage_modele');					
-						include(locate_template('assets/tpl/affichage/'.$instance['affichage_modele'].'.php'));
-						
-					
-					if(isset($Item_END[$instance['affichage_modele']])) {
-						// ITEM_END
-						echo $Item_END[$instance['affichage_modele']];
-					}
-					
-					// Enfin, on affiche la description dans la balise dd si la liste est de type dl-dt-dd
-					if ( $instance['contenu_excerpt']=='on' && $instance['affichage_modele']=='liste' && $instance['affichage_liste_type'] == 'dl-dt-dd' ) {
-						echo a('dd');
-							echo Get_thumbnail($instance);
-							echo Get_excerpt($instance);
-							echo Get_artfooter($instance);
-						echo z('dd');
-					}
-					
-					$separators = array('hr','br');
-					echo (in_array($instance['articles_separator'],$separators) ? a($instance['articles_separator']) : false);
-				
-				if(isset($WIrapper_END[$instance['apparence_disposition']])) {
-					// WI WIRAPPER_START
-					echo $WIrapper_END[$instance['apparence_disposition']];
-				}
-			}
-			
-			if(isset($Colonne_END[$instance['apparence_disposition']])) {
-				// C COLONNE_END
-				echo $Colonne_END[$instance['apparence_disposition']];
-			}
-			
+		if(isset($First_START[$instance['apparence_disposition']])) {
+			// F FIRST_START
+			echo $First_START[$instance['apparence_disposition']];
+		}	
+		if(isset($Wrapper_START[$instance['apparence_disposition']])) {
+			// W WRAPPER_START
+			echo $Wrapper_START[$instance['apparence_disposition']];
 		}
-		// BOUCLE FIN
+		if(isset($Group_START)) {
+			// G GROUP_START
+			echo $Group_START;
+		}
 	
-	if ( isset($Group_END) ) {
-		// GROUP_END
-		echo $Group_END;
-	}	
-	if ( isset($Wrapper_END[$instance['apparence_disposition']]) ) {
-		// WRAPPER_END
-		echo $Wrapper_END[$instance['apparence_disposition']];
+			// BOUCLE START
+			$largeur_colonne = 12/count($COLS); // Largeur d'une colonne
+	
+			foreach($COLS as $ID) {
+				
+				if(isset($Colonne_START[$instance['apparence_disposition']])) {
+					// C COLONNE_START
+					printf ( $Colonne_START[$instance['apparence_disposition']] , $largeur_colonne );
+				}
+				
+				for ( $i=1;isset($articles[$ID][$i]);$i++ ) { // $i = ligne de résultat
+					$post=$articles[$ID][$i];
+					$excerpt[$i] = $articles[$ID][$i]->exxcerpt;
+					
+					if(isset($WIrapper_START[$instance['apparence_disposition']])) {
+						// WI WIRAPPER_START
+						printf ( $WIrapper_START[$instance['apparence_disposition']] , ($i==1 ? 'active' : false) );
+					}
+		
+						if(isset($Item_START[$instance['affichage_modele']])) {
+							// I ITEM_START
+							echo $Item_START[$instance['affichage_modele']];
+						}				
+						
+							// CONTENT
+							$instance['affichage_modele'] = $instance['affichage_modele']!=false ? $instance['affichage_modele'] : getDefaultLoop('affichage_modele');					
+							include(locate_template('assets/tpl/affichage/'.$instance['affichage_modele'].'.php'));
+							
+						
+						if(isset($Item_END[$instance['affichage_modele']])) {
+							// ITEM_END
+							echo $Item_END[$instance['affichage_modele']];
+						}
+						
+						// Enfin, on affiche la description dans la balise dd si la liste est de type dl-dt-dd
+						if ( $instance['contenu_excerpt']=='on' && $instance['affichage_modele']=='liste' && $instance['affichage_liste_type'] == 'dl-dt-dd' ) {
+							echo a('dd');
+								echo Get_thumbnail($instance);
+								echo Get_excerpt($instance);
+								echo Get_artfooter($instance);
+							echo z('dd');
+						}
+						
+						$separators = array('hr','br');
+						echo (in_array($instance['articles_separator'],$separators) ? a($instance['articles_separator']) : false);
+					
+					if(isset($WIrapper_END[$instance['apparence_disposition']])) {
+						// WI WIRAPPER_START
+						echo $WIrapper_END[$instance['apparence_disposition']];
+					}
+				}
+				
+				if(isset($Colonne_END[$instance['apparence_disposition']])) {
+					// C COLONNE_END
+					echo $Colonne_END[$instance['apparence_disposition']];
+				}
+				
+			}
+			// BOUCLE FIN
+		
+		if ( isset($Group_END) ) {
+			// GROUP_END
+			echo $Group_END;
+		}	
+		if ( isset($Wrapper_END[$instance['apparence_disposition']]) ) {
+			// WRAPPER_END
+			echo $Wrapper_END[$instance['apparence_disposition']];
+		}
+		if(isset($First_END[$instance['apparence_disposition']])) {
+			// F FIRST_START
+			echo $First_END[$instance['apparence_disposition']];
+		}
 	}
-	if(isset($First_END[$instance['apparence_disposition']])) {
-		// F FIRST_START
-		echo $First_END[$instance['apparence_disposition']];
+	else { // Si aucun résultat;
+		echo __('Aucun résultat.','bodyrock');
 	}
-}
-else { // Si aucun résultat;
-	echo __('Aucun résultat.','bodyrock');
-}
+	
+	echo $Widget_END;
 
-echo $Widget_END;
-
-wp_reset_query();
+	wp_reset_query();
+}
 
 ?>

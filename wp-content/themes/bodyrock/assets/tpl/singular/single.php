@@ -23,8 +23,8 @@ if( get_post_format()=='video' ) {
 	// Pour les vidéos Youtube, on charge le lecteur html5
 	// Pour vimeo, il ne semble pas possible de trouver le lien du mp4 même via l'api.
 	if($videoType=='you') {
-		require('/wp-content/themes/bodyrock/assets/inc/_libs/youtubedownloader/curl.php');
-		require('/wp-content/themes/bodyrock/assets/inc/_libs/youtubedownloader/youtube.php');
+		require(INC_PATH.'_libs/youtubedownloader/curl.php');
+		require(INC_PATH.'_libs/youtubedownloader/youtube.php');
 	  
 		$tube = new youtube();
 		
@@ -50,6 +50,7 @@ if( get_post_format()=='video' ) {
 			/*	<track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
 			<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->*/
 			echo '</video>';
+			echo a('div.scripts_video').z('div');
 		}
 		else {	
 			echo $tube->error;	
@@ -57,17 +58,18 @@ if( get_post_format()=='video' ) {
 			
 			// Spécifique aux formats video
 			// Chargement des objets vidéos
+			/*
 			echo "<script>\n";
 			echo 'jQuery(document).ready(function(){'."\n";
 			echo "// AFFICHAGE DES VIDEOS Si le conteneur identifié est trouvé\n"."\n"."\n";
 			
 			echo '
 				jQuery(\'#singlevideoyou\').html(\'<iframe width="100%" height="'.$videoHeight.'" src="//www.youtube.com/embed/\'+(jQuery(\'#singlevideoyou\').attr(\'class\').replace(\'code_\', \'\'))+\'?rel=0&amp;autoplay='.BR_VIDEO_AUTOPLAY.'&related=0" frameborder="0" allowfullscreen></iframe>\');
-				//jQuery(\'#singlevideovim\').html(\'<iframe src="//player.vimeo.com/video/\'+(jQuery(\'#singlevideovim\').attr(\'class\').replace(\'code_\', \'\'))+\'?badge=0&amp;color=db0000&amp;autoplay='.BR_VIDEO_AUTOPLAY.'" width="100%" height="'.BR_VIDEO_HEIGHT.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\');
+				jQuery(\'#singlevideovim\').html(\'<iframe src="//player.vimeo.com/video/\'+(jQuery(\'#singlevideovim\').attr(\'class\').replace(\'code_\', \'\'))+\'?badge=0&amp;color=db0000&amp;autoplay='.BR_VIDEO_AUTOPLAY.'" width="100%" height="'.BR_VIDEO_HEIGHT.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\');
 			';
 			
 			echo '});'."\n";
-			echo "</script>\n";
+			echo "</script>\n";*/
 		}
 	  
 		
