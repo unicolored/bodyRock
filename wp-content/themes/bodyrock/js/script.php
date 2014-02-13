@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../../../../wp-load.php");
 
 //header('Content-Description: File Transfer');
@@ -18,9 +19,26 @@ foreach ($FG as $F) {
 	$families .= ($i>0 ? ', ' : false)."'".$F."'";
 	$i++;
 }
+
+
+/*
+wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
+	// Enregistrer le script ci-dessous en session et charger l'ensemble des widgets ajax à part de script.php
+	$_SESSION['ajax-widget-'.$instance['class']] = urlencode(json_encode($instance));
+	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['class'].'//';
+	
+	// Add some parameters for the JS.
+	wp_localize_script(
+	'ajax-widget-'.$instance['class'],
+	'pbd_alp',
+	array(
+	'instance' => urlencode(json_encode($instance)),
+	'widgetclass' => (isset($instance['class']) ? $instance['class'] : 'votre_nom_de_classe'),
+	)
+	);
+*/
 ?>
 
-alert('<?php echo $_SESSION['instance'] ?>');
 // CHARGEMENT DES FONTS
 	WebFontConfig = {
 		google: {
@@ -81,4 +99,26 @@ jQuery(document).ready(function(){
 	if(jQuery('.link_item').length>0) {
 		jQuery('.link_item').tooltip();
 	}
+	
+	<?php
+	$S = explode('//',$_SESSION['ajax-widgets']);
+	
+	foreach($S as $A) {
+		if($A!=false) {
+		?>
+		
+		// The link of the next page of posts.
+		var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>';
+		
+		var varhtml = jQuery('.loader').html();
+	<?php // echo '.holder-'.$A; ?>
+		jQuery('.holder-<?php echo $A; ?>').html(varhtml).load(nextLink + " .<?php echo str_replace('ajax-widget-','',$A); ?>",
+			function() {
+				
+			}
+		);
+		
+		<?php
+		}
+	} ?>
 });

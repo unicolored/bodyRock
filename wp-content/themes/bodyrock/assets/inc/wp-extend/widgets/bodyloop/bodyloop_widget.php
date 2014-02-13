@@ -300,13 +300,16 @@ else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 if($instance['ajax']==true) {
-	echo a('div.widget-ajax-load').z('div');
+
+	echo a('div.holder-ajax-widget-'.$instance['class']).z('div');
 	
-	wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
+	//wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
 	// Enregistrer le script ci-dessous en session et charger l'ensemble des widgets ajax à part de script.php
+	$_SESSION['ajax-widget-'.$instance['class']] = urlencode(json_encode($instance));
+	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['class'].'//';
 	
 	// Add some parameters for the JS.
-	wp_localize_script(
+	/*wp_localize_script(
 	'ajax-widget-'.$instance['class'],
 	'pbd_alp',
 	array(
@@ -314,7 +317,7 @@ if($instance['ajax']==true) {
 	'widgetclass' => (isset($instance['class']) ? $instance['class'] : 'votre_nom_de_classe'),
 	)
 	);
-	add_action('template_redirect', 'pbd_alp_init');
+	add_action('template_redirect', 'pbd_alp_init');*/
 }
 else {
 
