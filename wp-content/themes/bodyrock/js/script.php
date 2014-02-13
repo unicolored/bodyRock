@@ -61,12 +61,42 @@ wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-
 
 jQuery(document).ready(function(){
 
-	/*var myLoader = 'http://unicolored.com/wp-content/themes/bodyrock/assets/tpl/parts/loader.php';
-	jQuery.get(myLoader, function(loader)
-	{
-	   jQuery('<div class="loader">')
-		  .html(loader)
-		  .appendTo("aside.aside");
+	var myLoader = 'http://unicolored.com/wp-content/themes/bodyrock/assets/tpl/parts/loader.php';
+	
+	jQuery
+	.get(myLoader, function(loader) {
+	
+		jQuery('<div class="hidden">').html(loader).appendTo(".loader");
+		
+		<?php
+		$S = explode('//',$_SESSION['ajax-widgets']);
+		
+		foreach($S as $A) {
+			if($A!=false) {
+			?>
+			
+			// The link of the next page of posts.
+			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>';
+			
+		<?php // echo '.holder-'.$A; ?>
+			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " .<?php echo str_replace('ajax-widget-','',$A); ?>",
+				function() {
+					
+				}
+			);
+			
+			<?php
+			}
+		} ?>
+		
+	})		
+	.done(function() {  })
+	.fail(function() {  })
+	.always(function() {  });
+	/*
+	jQuery.get( "ajax/test.html", function( data ) {
+		jQuery( ".result" ).html( data );
+		alert( "Load was performed." );
 	});*/
 
 	jQuery.getScript('http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/unid.js?v=1.0.0', function() { });
@@ -100,25 +130,5 @@ jQuery(document).ready(function(){
 		jQuery('.link_item').tooltip();
 	}
 	
-	<?php
-	$S = explode('//',$_SESSION['ajax-widgets']);
-	
-	foreach($S as $A) {
-		if($A!=false) {
-		?>
-		
-		// The link of the next page of posts.
-		var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>';
-		
-		var varhtml = jQuery('.loader').html();
-	<?php // echo '.holder-'.$A; ?>
-		jQuery('.holder-<?php echo $A; ?>').html(varhtml).load(nextLink + " .<?php echo str_replace('ajax-widget-','',$A); ?>",
-			function() {
-				
-			}
-		);
-		
-		<?php
-		}
-	} ?>
+
 });

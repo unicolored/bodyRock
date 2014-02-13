@@ -1,5 +1,4 @@
 
-<div class="loader hidden">
 	<style>
 	#spinningSquaresG{
 	position:relative;
@@ -199,4 +198,3 @@
 	<div id="spinningSquaresG_8" class="spinningSquaresG">
 	</div>
 	</div>
-</div>

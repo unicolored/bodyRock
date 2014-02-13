@@ -63,6 +63,7 @@ echo a('head');
 echo a('/head');
 echo "\r";
 echo '<body data-spy="scroll" data-target=".subnav" data-offset="50" '; body_class(); echo '>'."\n";
+	echo a('div.loader').z('div');
 	echo a('div.scripts_body').z('div');
 	echo '<a href="#content" class="sr-only">Skip to content</a>'."\n";
 	echo '<div class="container"><div class="galaxie"><div class="col-xs-12"><noscript><div class="alert alert-warning">'.br_getIcon('warning').' Activer Javascript dans votre navigateur pour profiter de toutes les fonctionnalités du site.</div></noscript></div></div></div>'."\n";

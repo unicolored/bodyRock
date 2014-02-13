@@ -1,3 +1,5 @@
+// Ces fichiers ne sont plus utilisés et sont remplacés par js/script.php + unid.js
+
 // Thanks to http://www.problogdesign.com/wordpress/load-next-wordpress-posts-with-ajax/
 // By Michael Martin
 
@@ -11,7 +13,7 @@ jQuery(document).ready(function($) {
 	
 	var varhtml = jQuery('.loader').html();
 
-	$('.widget-ajax-load').html(varhtml).load(nextLink + " ."+widgetclass+"",
+	jQuery('.widget-ajax-load').html(varhtml).load(nextLink + " ."+widgetclass+"",
 		function() {
 			
 		}
