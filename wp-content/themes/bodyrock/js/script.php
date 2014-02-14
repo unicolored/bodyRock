@@ -44,12 +44,12 @@ jQuery.getScript = function(url, callback, cache){
 
 jQuery(document).ready(function(){
 
-	var myLoader = 'http://unicolored.com/wp-content/themes/bodyrock/assets/tpl/parts/loader.php';
+	var myLoader = 'http://unicolored.com/wp-content/themes/bodyrock/assets/tpl/parts/loader-progressbar.php';
 	
 	jQuery
 	.get(myLoader, function(loader) {
 	
-		jQuery('<div class="hidden">').html(loader).appendTo(".loader");
+		jQuery('<div id="loader" class="hidden">').html(loader).appendTo(".loader");
 		
 		<?php
 		$S = explode('//',$_SESSION['ajax-widgets']);
@@ -62,9 +62,12 @@ jQuery(document).ready(function(){
 			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>&args=<?php echo $_SESSION['args-'.$A] ?>';
 			
 		<?php // echo '.holder-'.$A; ?>
+//			jQuery('.holder-<?php echo $A; ?>').hide();
 			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " #<?php echo str_replace('ajax-widget-','',$A); ?>",
-				function() {
-//					alert('<?php echo $A; ?>');
+				function(response, status, xhr) {
+			
+					
+					jQuery('#<?php echo str_replace('ajax-widget-','',$A); ?>').hide().fadeIn(500);
 				}
 			);
 			
@@ -73,7 +76,7 @@ jQuery(document).ready(function(){
 		} ?>
 		
 	})		
-	.done(function() {  })
+	.done(function() { 					jQuery(".progress-bar").css("width","25%").animate({'width' : '100%'});  })
 	.fail(function() {  })
 	.always(function() {  });
 	/*

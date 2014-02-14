@@ -1,5 +1,4 @@
 <?php
-
 // BODYLOOP Widget /////////////////////////////////////////////
 
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
@@ -255,7 +254,7 @@ if($instance['filtres_off']==false) {
 		else
 			$query_args['post__not_in'] = unserialize($instance['filtres_ignoreposts']);
 	}
-	vardump($query_args['post__not_in']);
+//	vardump($query_args['post__not_in']);
 
 	// posts_per_page
 	// WP_QUERY
@@ -331,6 +330,10 @@ else {
 	if ( $QUERY->have_posts() ) {
 		
 		// Loop
+		// Les ID de posts chargés par ce widget vont être stockés en session
+		// Ces articles peuvent ainsi être filtrés par d'autres widgets avec filtres_ignoreposts par exemple.
+		$_SESSION['wposts_'.$instance['name']] = false;
+		
 		while ( $QUERY->have_posts() ) {
 			$QUERY->the_post();
 		

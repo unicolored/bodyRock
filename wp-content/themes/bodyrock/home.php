@@ -37,7 +37,6 @@ if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 	'vignette_background' => 'on',
 	'filtres_similaires_selon' => 'cats',
 	'filtres_ignoreposts' => array($_SESSION['lastpost_id']),
-	'ajax'=>'on'
 	);
 	
 	$categories_recommandees = $_SESSION['lastpost_cats'];				
@@ -54,7 +53,7 @@ if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 
 	$ignore_posts = explode(',',$_SESSION['wposts_recommandations_cats']);
 	$ignore_posts[] = $_SESSION['lastpost_id'];
-
+	
 	$instance_recommandations_tags = array(
 		'titre_masquer' => false,
 		'name' => 'recommandations_tags',
@@ -71,7 +70,7 @@ if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 		'filtres_article_reference' => $_SESSION['lastpost_id'],
 //		'filtres_tags' => $_SESSION['lastpost_tags']!=false ? $_SESSION['lastpost_tags'] : false,
 		'filtres_ignoreposts' => serialize($ignore_posts),
-		'ajax'=>'on'
+//		'ajax'=>'on'
 	);
 }
 /************** HTML START **************/
@@ -112,6 +111,11 @@ echo a('section.content');
 			'filtres_off'=>'on',
 			'ajax'=>false
 		);
+
+		if($_SESSION['lastpost_id']!=false) {
+			$instance_articles_recents['ajax'] = "on";
+		}
+		$_SESSION['lastpost_id'] = false;
 		
 		if(get_query_var('paged')>1) {
 			$instance_articles_recents['titre'] = "Médiathèque";
