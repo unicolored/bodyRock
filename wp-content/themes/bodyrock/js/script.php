@@ -13,7 +13,7 @@ header('Pragma: public');
 // CHARGEMENT DES FONTS
 	WebFontConfig = {
 		google: {
-		  families: [ sc_val.families ]
+		  families: [ 'Doppio+One::latin', 'Roboto+Slab::latin', 'Open+Sans::latin', 'Ubuntu::latin' ]
 		}
 	};
 	
@@ -33,7 +33,7 @@ header('Pragma: public');
 //Réécriture de getscript pour activer le cache des fichiers chargés.
 // cache = true pour activation
 jQuery.getScript = function(url, callback, cache){
-  $.ajax({
+  jQuery.ajax({
     type: "GET",
     url: url,
     success: callback,
@@ -62,9 +62,9 @@ jQuery(document).ready(function(){
 			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>&args=<?php echo $_SESSION['args-'.$A] ?>';
 			
 		<?php // echo '.holder-'.$A; ?>
-			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " .<?php echo str_replace('ajax-widget-','',$A); ?>",
+			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " #<?php echo str_replace('ajax-widget-','',$A); ?>",
 				function() {
-					
+//					alert('<?php echo $A; ?>');
 				}
 			);
 			

@@ -85,7 +85,7 @@ class br_widgetsBodyloop extends WP_Widget {
 			
 			if($instance['vignette_background']=="on") {
 				
-				$res .= '<section class="vignette-bg" style="background-image:url('.$attrs['src'].');"><h1><a href="'.get_permalink().'"><span>'.get_the_title().'</span></a></h1></section>';
+				$res .= '<section class="vignette-bg" style="background-image:url('.$attrs['src'].');"><img src="'.$attrs['src'].'" class="hidden" itemprop="thumbnailUrl"><h1><a href="'.get_permalink().'"><span>'.get_the_title().'</span></a></h1></section>';
 			
 			}
 			else {
@@ -98,7 +98,7 @@ class br_widgetsBodyloop extends WP_Widget {
 				}
 				$styles=array('style_cercle'=>'img-circle','style_thumbnail'=>'img-thumbnail','style_arrondi'=>'img-rounded');
 	
-				$res .= '<img class="media-object '.(isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false).' '.($instance['vignette_nonresponsive']==false ? 'img-responsive' : false).'" src="'.$attrs['src'].'" '.$wh.' alt="'.get_the_title().'">';
+				$res .= '<img src="'.$attrs['src'].'" '.$wh.' alt="'.get_the_title().'" itemprop="thumbnailUrl" class="media-object '.(isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false).' '.($instance['vignette_nonresponsive']==false ? 'img-responsive' : false).'">';
 				
 				if($instance['affichage_listemedias_unlink_img']==false) {
 					$res .= '<span class="hover"></span></a>';

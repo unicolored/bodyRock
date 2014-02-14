@@ -205,7 +205,11 @@ function a($balise, $id=false) {
 		}
 	}
 	
-	return "\n<".$balise.($class!=false ? " class='".$class."'" : false).$id.">\n";
+	// Toutes les balises article se voient attribuées un itemscope
+	// Voir schema.org . Le balisage supplémentaire est fait dans les tpl.
+	$item['article'] = 'itemscope itemtype="http://schema.org/CreativeWork"';
+	
+	return "\n<".$balise.($class!=false ? " class='".$class."'" : false).$id." ".(isset($item[$balise]) ? $item[$balise] : false).">\n";
 }
 // OUVERTURE DE BALISE ///////////////////////////////////////////////
 // Ferme une balise

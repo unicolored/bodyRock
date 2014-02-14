@@ -14,13 +14,13 @@ echo a('article.article.affichage.mod-thumbnail',"#post-".get_the_ID());
 		
 			if($instance['contenu_header_masquer']==false) {
 				echo a('header.art-header');
-				echo '<h1><a href="'.get_permalink().'">'.get_the_title().'</a></h1>';
+				echo '<h1 itemprop="name"><a href="'.get_permalink().'" itemprop="url">'.get_the_title().'</a></h1>';
 				echo z('header');
 			}
 			
 			$br_excerpt = Get_excerpt($instance,a('section.art-content'),z('section'),$excerpt[$i]);
 			if ( $instance['contenu_excerpt']=='on' && $br_excerpt!=false) {
-				echo $br_excerpt;
+				echo "<div itemprop='description'>".$br_excerpt."</div>";
 			}
 			
 			echo Get_artfooter($instance);

@@ -130,7 +130,7 @@ $carousel_javascript = "
 
 // Widget_
 	if(isset($instance['class']) && $instance['class']!=false) {
-		$before_widget = a('div.'.$instance['class']).$before_widget;
+		$before_widget = a('div.'.$instance['class'],"#".$instance['name']).$before_widget;
 		$after_widget = $after_widget.z('div');
 	}
 	// Création de Widget_START
@@ -248,8 +248,14 @@ if($instance['filtres_off']==false) {
 	// post__not_in
 	if($instance['filtres_ignoreposts']==true) {
 		// Ne pas inclure l\'article single
-		$query_args['post__not_in'] = $instance['filtres_ignoreposts'];
+
+		if(is_array($instance['filtres_ignoreposts'])) {
+			$query_args['post__not_in'] = $instance['filtres_ignoreposts'];
+		}
+		else
+			$query_args['post__not_in'] = unserialize($instance['filtres_ignoreposts']);
 	}
+	vardump($query_args['post__not_in']);
 
 	// posts_per_page
 	// WP_QUERY
@@ -301,14 +307,14 @@ else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de 
 
 if($instance['ajax']==true) {
 
-	echo a('div.holder-ajax-widget-'.$instance['class']).z('div');
+	echo a('div.holder-ajax-widget-'.$instance['name']).z('div');
 	
 	//wp_enqueue_script( 'ajax-widget-'.$instance['class'], JS_PATH.'ajax-widget-load-posts.js', array('jquery'), 'fev14' );
 	// Enregistrer le script ci-dessous en session et charger l'ensemble des widgets ajax à part de script.php
-	$_SESSION['ajax-widget-'.$instance['class']] = urlencode(json_encode($instance));
+	$_SESSION['ajax-widget-'.$instance['name']] = urlencode(json_encode($instance));
 	
-	$_SESSION['args-ajax-widget-'.$instance['class']] = urlencode(json_encode($args));
-	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['class'].'//';
+	$_SESSION['args-ajax-widget-'.$instance['name']] = urlencode(json_encode($args));
+	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['name'].'//';
 	
 }
 else {

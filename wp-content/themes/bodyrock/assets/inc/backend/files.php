@@ -6,6 +6,8 @@
 // Génération de fichiers.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
+require_once ABSPATH.THEME_PATH.'assets/inc/_libs/less/lessc040.inc.php';  // LESSCPHP
+
 // WRITE VIDEO IMG /////////////////////////////////////////////
 // Génère les images de vidéos et les enregistre dans senzu
 function br_backend_filesWrite_videoimg() {
@@ -67,8 +69,6 @@ function backend_filesWrite_less($less_fname, $css_fname) {
 	} else {
 		$cache = $less_fname;
 	}
-	
-	require_once '/../_libs/less/lessc040.inc.php';  // LESSCPHP
 	
 	$new_cache = lessc::cexecute($cache);
 	

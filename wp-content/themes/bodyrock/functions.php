@@ -52,7 +52,7 @@ define( 'THEME_PATH' , 'wp-content/themes/bodyrock/' ); // Liens absolus.
 define( 'BR_PATH' , ABSPATH.THEME_PATH ); // Liens absolus.
 define( 'ASSETS_PATH' , BR_PATH.'assets/' );
 define( 'INC_PATH' , ASSETS_PATH.'inc/' );
-define( 'LESS_PATH' , ASSETS_PATH.'less/' );
+define( 'LESS_PATH' , THEME_PATH.'assets/less/' );
 define( 'JS_PATH' , '/'.THEME_PATH.'assets/js/' );
 
 define( 'BR_CSS_PATH' , BR_PATH.'css/' );
@@ -123,15 +123,15 @@ function head_scripts() {
 
 function footer_scripts() {
 
-    wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('jquery'), '1.0.0', false  );
+    wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('jquery'), '1.0.1', false  );
 	
 	global $options;
 
-	$FG = explode(';',$options['fonts_google']);
+	$FG = explode(',',$options['fonts_google']);
 	$i=0;
 	$families = '';
 	foreach ($FG as $F) {
-		$families .= ($i>0 ? ', ' : false)."'".$F."'";
+		$families .= ($i>0 ? ',' : false)."'".$F."'";
 		$i++;
 	}
 	
@@ -140,16 +140,16 @@ function footer_scripts() {
 	'script',
 	'sc_val',
 		array(
-			'families' => json_encode($families)
+			'families' => $families
 		)
 	);
 }
 
 if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la compilation du fichier less est activée.
-	backend_filesWrite_less(LESS_PATH.'editor-style.less', BR_CSS_PATH.'editor-style.css');
-	backend_filesWrite_less(LESS_PATH.'style.less', BR_CSS_PATH.'style.css');
-	backend_filesWrite_less(LESS_PATH.'debug.less', BR_CSS_PATH.'debug.css');
-	backend_filesWrite_less(LESS_PATH.'video-js.less', ASSETS_PATH.'js/libs/video-js/video-js.css');
+	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/editor-style.less', BR_CSS_PATH.'editor-style.css');
+	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/style.less', BR_CSS_PATH.'style.css');
+	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/debug.less', BR_CSS_PATH.'debug.css');
+	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/video-js.less', ASSETS_PATH.'js/libs/video-js/video-js.css');
 	// Compilation du fichier less si l'option est activée
 	if( is_child_theme() ) {
 		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/style.less', get_stylesheet_directory().'/css/style.css');

@@ -36,7 +36,8 @@ if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
 	'filtres_combien' => 6,
 	'vignette_background' => 'on',
 	'filtres_similaires_selon' => 'cats',
-	'filtres_ignoreposts' => array($_SESSION['lastpost_id'])
+	'filtres_ignoreposts' => array($_SESSION['lastpost_id']),
+	'ajax'=>'on'
 	);
 	
 	$categories_recommandees = $_SESSION['lastpost_cats'];				
@@ -69,7 +70,8 @@ if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
 		'filtres_similaires_selon' => 'tags',
 		'filtres_article_reference' => $_SESSION['lastpost_id'],
 //		'filtres_tags' => $_SESSION['lastpost_tags']!=false ? $_SESSION['lastpost_tags'] : false,
-		'filtres_ignoreposts' => $ignore_posts
+		'filtres_ignoreposts' => serialize($ignore_posts),
+		'ajax'=>'on'
 	);
 }
 /************** HTML START **************/
@@ -100,7 +102,7 @@ echo a('section.content');
 		$instance_articles_recents = array(
 			'titre'=>'Articles récents',
 			'class' => 'home-widget-first',
-			'name'=>'recommandations',
+			'name'=>'articlesrecents',
 			'titre_icone'=>'bookmark',
 			'apparence_disposition' => 'wallpin',
 			'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
@@ -108,12 +110,11 @@ echo a('section.content');
 			'affichage_modele' => 'affichage_modele_thumbnail',
 			'contenu_footer_masquer' => 'on',
 			'filtres_off'=>'on',
-			'ajax'=>'on'
+			'ajax'=>false
 		);
 		
 		if(get_query_var('paged')>1) {
 			$instance_articles_recents['titre'] = "Médiathèque";
-			$instance_articles_recents['ajax'] = false;
 		}
 		
 		the_widget('br_widgetsBodyloop',$instance_articles_recents,$args_section);
