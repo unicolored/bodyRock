@@ -123,7 +123,9 @@ function head_scripts() {
 
 function footer_scripts() {
 
+//    wp_enqueue_script( 'libs', 				get_template_directory_uri().'/js/libs.php', array('jquery'), '1.0.1', false  );
     wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('jquery'), '1.0.1', false  );
+    wp_enqueue_script( 'bootstrap', 				'//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), '1.0.1', 1  );
 	
 	global $options;
 
@@ -140,6 +142,9 @@ function footer_scripts() {
 	'script',
 	'sc_val',
 		array(
+			'families' => $families,
+			'path_to_child_theme' => 'http://unicolored.com/wp-content/themes/rock-unicolored/',
+			'path_to_theme' => 'http://unicolored.com/wp-content/themes/bodyrock/',
 			'families' => $families
 		)
 	);

@@ -194,6 +194,7 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['apparence_carousel_indicators'] = false;
 		$default['apparence_carousel_controls'] = "on";
 		$default['apparence_carousel_controlsbas'] = false;
+		$default['apparence_carousel_duration'] = 4000;
 		$default['apparence_carousel_hauteur'] = 0;
 		$default['apparence_wallpin_colonnes'] = "a/b/c/d";
 		$default['apparence_wallpin_bootstrap'] = "on";

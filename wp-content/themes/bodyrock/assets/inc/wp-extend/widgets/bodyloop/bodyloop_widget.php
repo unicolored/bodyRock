@@ -112,17 +112,21 @@ $modele_item_end['ul-li'] = z('li');
 $modele_item_end['ol-li'] = z('li');
 $modele_item_end['ol-li'] = z('dt');		
 
-$carousel_javascript = "
-	<script type='application/x-javascript'>
-	// CAROUSEL // TOFIX : changer la classe en fonction de l'identifiant du widget + mettre en option l'intervalle de temps
-	if(jQuery('.bodyloop-carousel').length>0) {
-		jQuery('.bodyloop-carousel').carousel({
-		  interval: 4000
-		});
-		jQuery('.bodyloop-carousel-control').show();
-	}
-	</script>
-	";
+	$instance['name'] = (isset($instance['name']) ? $instance['name'] : getDefaultLoop('name'));
+
+    wp_enqueue_script( 'script-carousel-'.$instance['name'], get_template_directory_uri().'/js/carousel.php', array('script'), '1.0.1', false  );
+	// Add some parameters for the JS.
+	$carouselname = 'br_carousel_'.$instance['name'];
+	wp_localize_script(
+	'script-carousel-'.$instance['name'],
+	'sc_val',
+		array(
+			'duration' => (isset($instance['apparence_carousel_duration']) ? $instance['apparence_carousel_duration'] : getDefaultLoop('apparence_carousel_duration')),
+			'carouselname' => $carouselname
+		)
+	);
+	
+
 
 ////////// 2. ENCADREMENT DU WIDGET
 // $widget_start,$widget_end
@@ -147,7 +151,7 @@ $carousel_javascript = "
 		
 
 // First_
-	$First_START['carousel'] = a('div.bodyloop-carousel.slide');
+	$First_START['carousel'] = a('div.'.$carouselname.'.slide');
 	$First_END['carousel'] = z('div');
 	$First_START['wallpin'] = a('div.galaxie');
 	$First_END['wallpin'] = z('div');

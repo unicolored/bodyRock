@@ -91,8 +91,11 @@ function getImgVideo() {
             case 'you':
                 $urlimg = 'http://img.youtube.com/vi/'.$videoCode.'/hqdefault.jpg';
             break;
-        }            
-        copy($urlimg , ABSPATH.$destination);
+        }
+		if (file_exists($urlimg)) {
+	        copy($urlimg , ABSPATH.$destination);
+		}
+		else return;
     }
     if (!file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-1024xh.jpg')
     || !file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg')) {

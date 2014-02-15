@@ -5,7 +5,8 @@ $defaults = array(
 	'menu'            => 'Top',
 	'depth'			  => 1,
 	'items_wrap'	  => '%3$s',
-	'walker'          => new wp_bootstrap_listgroupwalker()
+	'walker'          => new wp_bootstrap_listgroupwalker(),
+	'fallback_cb'     => false,
 );
 
 /* Html START */
