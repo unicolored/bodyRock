@@ -87,24 +87,9 @@ if(!function_exists('br_getIcon')) { // Permet l'override par le thème child
 	}
 }
 function br_Icon($id = false) { echo br_getIcon($id); }
-
-// GET SECTION CLASS /////////////////////////////////////////////
-// Définit la classe générale de section dans le header en fonction de la page chargée
-if(!function_exists('br_getSectionClass')) { // Permet l'override par le thème child
-	function br_getSectionClass($id = 'defaut') {
-		$page['default'] = 'int-page';
-		$page['front-page'] = 'int-page';
-		$page['single'] = 'int-single';
-		$page['category'] = 'int-category';
-		$page['search'] = $page['tag'] = 'int-column-right';
-		$page['404'] = 'int-page';
-		$page['home'] = 'int-home';
-		
-		return $page[$id];
-	}
-}
     
 function br_paging_nav() {
+	// Copie de la fonction twentyfourteen_paging_nav()
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;

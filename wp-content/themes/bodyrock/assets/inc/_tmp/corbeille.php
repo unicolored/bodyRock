@@ -181,4 +181,21 @@ function bodyrock_notice_tagline_ignore() {
 // was set in wp-config.php to avoid DB bloat
 if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 5);
 
+
+// GET SECTION CLASS /////////////////////////////////////////////
+// Définit la classe générale de section dans le header en fonction de la page chargée
+if(!function_exists('br_getSectionClass')) { // Permet l'override par le thème child
+	function br_getSectionClass($id = 'defaut') {
+		$page['default'] = 'int-page';
+		$page['front-page'] = 'int-page';
+		$page['single'] = 'int-single';
+		$page['category'] = 'int-category';
+		$page['search'] = $page['tag'] = 'int-column-right';
+		$page['404'] = 'int-page';
+		$page['home'] = 'int-home';
+		
+		return $page[$id];
+	}
+}
+
 ?>
