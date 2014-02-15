@@ -38,7 +38,8 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 			$attr['src'] = CDN_PATH.'images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
 
 			if(!file_exists($attr['src'])) {
-				$attr['src']='/senzu/'.strtolower(get_bloginfo('name')).'/images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
+				$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
+				$attr['src']='/senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
 			}
 		}
 		else {
@@ -76,55 +77,57 @@ if(!function_exists('br_getImgVideoSize')) { // Permet l'override par le fichier
 }
 
 function getImgVideo() {
-	$path_name = strtolower(get_bloginfo('name'));
-	if ( get_post_format() == 'video' ) {
-    $videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
-    $videoType = get_post_meta(get_the_ID(), 'videoType', true);
-    
-    $destination = 'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'.jpg';
-    if (!file_exists(ABSPATH.$destination)) {
-        switch($videoType) {
-            case 'vim':
-                $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoCode.php"));
-                $urlimg = $hash[0]['thumbnail_large'];
-                break;
-            case 'you':
-                $urlimg = 'http://img.youtube.com/vi/'.$videoCode.'/hqdefault.jpg';
-            break;
-        }
-		if (file_exists($urlimg)) {
-	        copy($urlimg , ABSPATH.$destination);
+	if ( is_single() && get_post_format() == 'video' ) {
+		$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
+		
+		$videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
+		$videoType = get_post_meta(get_the_ID(), 'videoType', true);
+
+		$destination = 'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'.jpg';
+		if (!file_exists(ABSPATH.$destination)) {
+			switch($videoType) {
+				case 'vim':
+					$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoCode.php"));
+					$urlimg = $hash[0]['thumbnail_large'];
+					break;
+				case 'you':
+					$urlimg = 'http://img.youtube.com/vi/'.$videoCode.'/hqdefault.jpg';
+				break;
+			}
+//			if (file_exists($urlimg)) {
+				copy($urlimg , ABSPATH.$destination);
+//			}
+	//		else return;
 		}
-		else return;
-    }
-    if (!file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-1024xh.jpg')
-    || !file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg')) {
-        $img = wp_get_image_editor( ABSPATH.$destination );
-        if ( ! is_wp_error( $img ) ) {
-            $img->set_quality( 100 );
-            $size = $img->get_size();
-    
-            $sizes_array = 	array(
-                array ('width' => 200, 'height' => 200, 'crop' => true)
-            );                
-            $resize = $img->multi_resize( $sizes_array );
-            
-            $img->crop( 0, 0, $size['width'], $size['height'], 1024, ($size['height']*(1024/$size['width'])));
-            $filename = $img->generate_filename( '1024xh', ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/', 'jpg' );
-            $img->save($filename);
-        }
-    }
-    if (!file_exists(ABSPATH.'senzu/unicolored/images/videos/'.$videoType.'/'.$videoCode.'-320xh.jpg')) {
-        $img2 = wp_get_image_editor( ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-1024xh.jpg' );
-        if ( ! is_wp_error( $img2 ) ) {
-            $img2->set_quality( 100 );
-            $size = $img2->get_size();
-            $resize = $img2->resize( 320, ($size['height']*(320/$size['height'])) );
-            $filename = $img2->generate_filename( '320xh', ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/', 'jpg' );
-            $img2->save(str_replace('-1024xh','',$filename));
-        }
-    }
-}
+
+		if (!file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-1024xh.jpg')
+		|| !file_exists(ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg')) {
+			$img = wp_get_image_editor( ABSPATH.$destination );
+			if ( ! is_wp_error( $img ) ) {
+				$img->set_quality( 100 );
+				$size = $img->get_size();
+		
+				$sizes_array = 	array(
+					array ('width' => 200, 'height' => 200, 'crop' => true)
+				);                
+				$resize = $img->multi_resize( $sizes_array );
+				
+				$img->crop( 0, 0, $size['width'], $size['height'], 1024, ($size['height']*(1024/$size['width'])));
+				$filename = $img->generate_filename( '1024xh', ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/', 'jpg' );
+				$img->save($filename);
+			}
+		}
+		if (!file_exists(ABSPATH.'senzu/unicolored/images/videos/'.$videoType.'/'.$videoCode.'-320xh.jpg')) {
+			$img2 = wp_get_image_editor( ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'-1024xh.jpg' );
+			if ( ! is_wp_error( $img2 ) ) {
+				$img2->set_quality( 100 );
+				$size = $img2->get_size();
+				$resize = $img2->resize( 320, ($size['height']*(320/$size['height'])) );
+				$filename = $img2->generate_filename( '320xh', ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/', 'jpg' );
+				$img2->save(str_replace('-1024xh','',$filename));
+			}
+		}
+	}
 }
 
 

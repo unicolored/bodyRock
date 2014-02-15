@@ -1,17 +1,42 @@
-/*
-Chargement de tous les styles qui vont composés css/style.css
+/*Start STYLING*/
 
-Il est recommandé de modifier uniquement :
-bswatch/unicolored/variables.less
-bswatch/unicolored/bootswatch.less
-*/
+/* Bootstrap 3 */ /* Bootstrap 3.0.1 nécessiterait d'utiliser un compiler plus récent que leafo/lessphp */
+	/* Tous les composants sauf variables.less qui est défini par Bootswatch par la suite */
+	@import "../../../bodyrock/assets/less/bootstrap3/bootstrap.less";
+	
+/* Fonts */ /*Doit être en accord avec les fonts chargés via la variable JS WebFontConfig dans js/scripts.js ou autre */
+@import "../../../bodyrock/assets/less/fonts.less"; /* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
 
-@import "../../../bodyrock/assets/less/bootstrap3/bootstrap.less";
-@import "bswatch/unicolored/variables.less";
-@import "../../../bodyrock/assets/less/bswatch/global/global.less";
-@import "bswatch/unicolored/bootswatch.less";
+/* Bootswatch */ /* http://www.bootstrapcdn.com/#bootswatch_tab */
+@import "../../../bodyrock/assets/less/bswatch/global/global.less"; /* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
 
+	/* Les variables du skin */
+	/* TOFIX : ici c'est le skin flatly qui est sélectionné par défaut. */
+	/* Il faut permettre le choix de ce skin via les options du thème Bodyrock (assets/inc/themeoptions.php themeoptionsGet_default()), */
+	/* et ensuite passer la variable dans .less au moment de la compilation : */
+	/* http://leafo.net/lessphp/docs/#setting_variables_from_php */
+//	@import "../../../bodyrock/assets/less/bswatch/bodyrock/variables.less"; /* Si vous désactivez bswatch ci-dessous, ces variables doivent être activées. Et inversement. */
+//	@import "../../../bodyrock/assets/less/bswatch/bodyrock/bootswatch.less"; /* Contient les modifications de composants */
+	@import "bswatch/custom/variables.less"; /* Contient les variables de couleurs, de path, de fonts, de composants */
+	@import "bswatch/custom/bootswatch.less"; /* Contient les modifications de composants */
+
+/* Plugins inclus */
+@import "../../../bodyrock/assets/less/video-js.less"; // Le lecteur vidéo Html5 http://www.videojs.com/
+
+/* ITEMS */
+/* article.article,header.art-header,section.art-vignette,section.art-vignette,section.art-content,footer.art-footer */
+@import "items.less";
+
+/* WRAPPERS */
+/* section.widget,header.wid-header,section.wid-vignette,section.wid-content,footer.wid-footer */
+/* div.mod_article,div.mod_liste,div.mod_listegroup,div.mod_listemedias,div.mod_thumbnail */
+@import "wrappers.less";
+
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
 @import "structure.less";
-@import "articles.less";
-
-@import "../../../bodyrock/assets/less/bootstrap3/utilities.less";
+/* Pour personnaliser une structure en fonction de body_class(), il faut créer une copie de structure en structure-home.less par exemple */
+/* @import "structure-home.less": */
+/* @import "structure-page.less": */
+/* @import "structure-single.less": */
+/* @import "structure-category.less": */

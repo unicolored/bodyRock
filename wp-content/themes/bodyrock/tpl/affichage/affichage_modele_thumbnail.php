@@ -4,10 +4,8 @@ echo a('article.article.affichage.mod-thumbnail',"#post-".get_the_ID());
 
 	echo a('div.thumbnail');
 
-		if(has_post_thumbnail() || get_post_format()=="video") {
-			echo a('section.art-vignette');
-				echo Get_thumbnail($instance);
-			echo z('section');
+		if($instance['vignette_masquer'] == false) {
+			echo Get_thumbnail($instance);
 		}
 		
 		echo a('div.caption');

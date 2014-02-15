@@ -37,9 +37,10 @@ if( get_post_format()=='video' ) {
 				$videolink[$k]['type']=$v['type'];
 				$videolink[$k]['url']=$v['url'];
 			}
+			$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
 			echo '		
 				<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="500"
-				poster="/senzu/'.strtolower(get_bloginfo('name')).'/images/videos/'.$videoType.'/'.$videoCode.'.jpg"
+				poster="/senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.'.jpg"
 				data-setup="{}">';
 			
 			foreach($videolink as $V) {

@@ -3,8 +3,9 @@
 /* Bootstrap 3 */ /* Bootstrap 3.0.1 nécessiterait d'utiliser un compiler plus récent que leafo/lessphp */
 	/* Tous les composants sauf variables.less qui est défini par Bootswatch par la suite */
 	@import "bootstrap3/bootstrap.less";
-	@import "bootstrap3/variables.less"; /* Si vous désactivez bswatch ci-dessous, ces variables doivent être activées. Et inversement. */
-
+	
+/* Fonts */ /*Doit être en accord avec les fonts chargés via la variable JS WebFontConfig dans js/scripts.js ou autre */
+@import "fonts.less"; /* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
 
 /* Bootswatch */ /* http://www.bootstrapcdn.com/#bootswatch_tab */
 @import "bswatch/global/global.less"; /* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
@@ -14,7 +15,8 @@
 	/* Il faut permettre le choix de ce skin via les options du thème Bodyrock (assets/inc/themeoptions.php themeoptionsGet_default()), */
 	/* et ensuite passer la variable dans .less au moment de la compilation : */
 	/* http://leafo.net/lessphp/docs/#setting_variables_from_php */
-	/* Si vous activez bswatch, vous devez désactiver les variables de bootstrap, et inversement. */
+	@import "bswatch/bodyrock/variables.less"; /* Si vous désactivez bswatch ci-dessous, ces variables doivent être activées. Et inversement. */
+	@import "bswatch/bodyrock/bootswatch.less"; /* Contient les modifications de composants */
 //	@import "bswatch/flatly/variables.less"; /* Contient les variables de couleurs, de path, de fonts, de composants */
 //	@import "bswatch/flatly/bootswatch.less"; /* Contient les modifications de composants */
 

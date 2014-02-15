@@ -142,6 +142,8 @@ function footer_scripts() {
 	'script',
 	'sc_val',
 		array(
+			'ganalytics' => $options['google_analytics_id'],
+			'domaine' => stripslashes(str_replace('http://','',get_bloginfo('url'))),
 			'families' => $families,
 			'path_to_child_theme' => 'http://unicolored.com/wp-content/themes/rock-unicolored/',
 			'path_to_theme' => 'http://unicolored.com/wp-content/themes/bodyrock/',

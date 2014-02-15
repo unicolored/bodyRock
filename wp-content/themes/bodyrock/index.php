@@ -53,10 +53,7 @@ echo a('section.content');
 			'class'=>'recommandations',
 			'name'=>'home-widget-first',
 			'titre_icone'=>$active_categorie->slug,
-			'apparence_disposition' => 'wallpin',
-			'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
 			'vignette_background' => 'on',
-			'affichage_modele' => 'affichage_modele_thumbnail',
 			'contenu_footer_date' => "on",
 			'filtres_off'=>'on',
 			'ajax'=>false

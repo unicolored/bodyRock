@@ -1,87 +1,32 @@
-/* style/STRUCTURE/sections */
-/* Ne pas ajouter de margin, padding dans ces classes.
-/* Les déclarations ne doivent concerner que la structure Bootstrap.
-*********************************************************************/
-@import "../../../bodyrock/assets/less/structure.less"; /* Tous les éléments inclus dans une SIDEBAR : widgets, etc... */
+@import "../../../bodyrock/assets/less/structure.less";
 
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
 
-
-/*****************************************************/
-
-body { padding-top:@navbar-height; }
-
-/* Components */
-/*Structure*/
-nav.navbar {
-
-}
-footer {
-	nav.navbar {
-		.visible-lg;
+body {
+	
+	
+	
+	/* Entêtes */
+	
+	header.header {
+		@import "structures/header.less";
+	}
+	
+	footer.footer {
+		@import "structures/footer.less";
+	}
+	
+	/* Sections */
+	
+	aside {
+		@import "structures/aside.less";
+	}
+	aside.aside {
+	}
+	section.content {
+		@import "structures/content.less"; // except items & wrappers
+	}
+	aside.aside-right {
 	}
 }
-.br-breadcrumb {
-	.make-xs-column(12);
-	.visible-lg;
-	ol.breadcrumb {
-	
-	}
-}
-
-/* Header */
-header.header {
-}
-
-aside.aside {	
-	.make-lg-column(1);
-	.make-lg-column-pull(7);
-	
-	.visible-lg;
-}
-
-.home aside.aside {
-	.make-lg-column(1);
-	.make-lg-column-pull(9);
-}
-
-aside.widget, section.widget {
-	font-size:@font-size-small/1.125;
-	.list-group-item { font-variant:small-caps; span.badge { font-size:@font-size-small/1.125; } }
-}
-
-section.content {
-	.make-lg-column(7);
-	.make-lg-column-push(1);
-}
-
-.home section.content {
-	.make-lg-column(9);
-	.make-lg-column-push(1);
-}
-
-aside.aside-right {	
-	.make-lg-column(1);
-	
-	.vignette-bg {
-		height:100px;
-		background-position:center center;
-		background-repeat:no-repeat;
-		background-size:100%;
-		.border-top-radius(2px);
-		.border-bottom-radius(2px);
-		
-		h1 { margin:0; span { .hidden(); } }
-	}
-}
-
-/* Footer */
-footer.footer {
-	.make-lg-column(12);
-	.make-lg-column-push(1);
-	.visible-lg;
-	
-	
-	/* Footer */
-	@import "structures/footer.less"
-}
-/************************************************************************/

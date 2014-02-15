@@ -3,7 +3,7 @@ echo a('article.article.affichage.mod-liste',"#post-".get_the_ID());
 
 if($instance['contenu_header_masquer']==false) {
 	echo a('header.art-header');
-	echo '<a href="'.get_permalink().'" rel="bookmark" title="'.the_title_attribute( 'echo=0' ).'" class="post-title">'.get_the_title().'</a>';
+	echo '<a href="'.get_permalink().'" rel="bookmark" title="'.the_title_attribute( 'echo=0' ).'" class="post-title" itemprop="name">'.get_the_title().'</a>';
 	echo z('header');
 }
 
@@ -14,10 +14,8 @@ if ($instance['contenu_excerpt']=='on' && $instance['affichage_liste_type'] != '
 	echo z('section');
 }
 
-if(has_post_thumbnail() || get_post_format()=="video") {
-	echo a('section.art-vignette');
-		echo Get_thumbnail($instance);
-	echo z('section');
+if($instance['vignette_masquer'] == false) {
+	echo Get_thumbnail($instance);
 }
 
 echo Get_artfooter($instance);

@@ -10,7 +10,8 @@ $defaults = array(
 );
 
 /* Html START */
-
+echo '<hr class="clearfix">';
+echo '<hr class="margin">';
 echo a('aside.aside');
 
 wp_nav_menu( $defaults );

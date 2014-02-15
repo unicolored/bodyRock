@@ -5,13 +5,10 @@ $_SESSION['ajax-widgets']="";
 $_SESSION['br_lastviews'] = br_modules_lastviewsSet();
 $options = get_option('brthemeoptions', themeoptionsGet_default());
 $meta_og_image = false;
-if ( get_post_format() == 'video' ) {
-	$videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
-	$videoType = get_post_meta(get_the_ID(), 'videoType', true);
-
-	$urlfinale = CDN_PATH.'images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize('medium').'.jpg';	
+if ( get_post_format() == 'video' ) {	
+	$image = br_getPostThumbnail('medium',false);
 	
-	$meta_og_image = '<meta property="og:image" content="'.$urlfinale.'" />'."\n";
+	$meta_og_image = '<meta property="og:image" content="'.$image['src'].'" />'."\n";
 }
 
 /* Html Start */

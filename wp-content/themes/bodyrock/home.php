@@ -43,9 +43,6 @@ echo a('section.content');
 					'name' => $category_name[$i],
 					'class' => 'recommandations',
 					'contenu_excerpt' => false,
-					'apparence_disposition' => 'wallpin',
-					'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
-					'affichage_modele' => 'affichage_modele_thumbnail',
 					'filtres_combien' => 6,
 					'contenu_footer_date' => "on",
 					'vignette_background' => 'on',
@@ -72,11 +69,6 @@ echo a('section.content');
 			'titre_icone'=>'bookmark',
 			'name'=>'articlesrecents',
 			'class' => 'recommandations',
-			
-			'apparence_disposition' => 'wallpin',
-			'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
-			
-			'affichage_modele' => 'affichage_modele_thumbnail',
 			
 			'contenu_footer_date' => "on",
 			

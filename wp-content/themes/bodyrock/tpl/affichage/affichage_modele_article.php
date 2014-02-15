@@ -4,7 +4,7 @@ echo a('article.article.affichage.mod-article','#post-'.get_the_ID());
 
 if($instance['contenu_header_masquer']==false) {
 	echo a('header.art-header');
-	echo '<h1><a href="'.get_permalink().'">'.get_the_title().'</a></h1>';
+	echo '<h1 itemprop="name"><a href="'.get_permalink().'">'.get_the_title().'</a></h1>';
 	echo z('/header');
 }
 	

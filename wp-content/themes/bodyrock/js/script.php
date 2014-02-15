@@ -10,10 +10,13 @@ header('Pragma: public');
 
 ?>
 
+var families = sc_val.families;
+
 // CHARGEMENT DES FONTS
 	WebFontConfig = {
 		google: {
-		  families: [ 'Doppio+One::latin', 'Roboto+Slab::latin', 'Open+Sans::latin', 'Ubuntu::latin' ]
+//		  	families: [ 'Doppio+One::latin', 'Roboto+Slab::latin', 'Open+Sans::latin', 'Ubuntu::latin' ]
+			families: families
 		}
 	};
 	
@@ -117,3 +120,37 @@ jQuery(document).ready(function(){
 	
 
 });
+
+// ADDTHIS
+  var addthis_config = {"data_track_addressbar":false,"ui_use_css":true};
+  
+  var addthis_share = {
+		 url_transforms : {
+			  shorten: {
+				   twitter: 'bitly',
+				   facebook: 'bitly',
+				   google: 'bitly',
+				   pinterest: 'bitly'
+			  }
+		 }, 
+		 shorteners : {
+			  bitly : {}
+		 }
+	};
+	
+// ANALYTICS
+var ganalytics = sc_val.ganalytics;
+var domaine = sc_val.domaine;
+
+if(ganalytics!=null){
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', ganalytics]);
+	_gaq.push(['_setDomainName', domaine]);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+}

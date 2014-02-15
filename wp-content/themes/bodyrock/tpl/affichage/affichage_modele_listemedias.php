@@ -2,17 +2,15 @@
 
 echo a('article.article.affichage.mod-listemedias',"#post-".get_the_ID());
 
-if(has_post_thumbnail() || get_post_format()=="video") {
-	echo a('section.art-vignette');
-		echo Get_thumbnail($instance);
-	echo z('section');
+if($instance['vignette_masquer'] == false) {
+	echo Get_thumbnail($instance);
 }
 
 echo a('div.media-body');
 
 	if($instance['contenu_header_masquer']==false) {
 		echo a('header.art-header');
-		echo '<h4 class="media-heading">'.get_the_title().'</h4>';
+		echo '<h4 class="media-heading" itemprop="name">'.get_the_title().'</h4>';
 		echo z('header');
 	}
 

@@ -8,15 +8,13 @@ echo a('article.article.affichage.mod-listegroup',"#post-".get_the_ID());
 		
 		if($instance['contenu_header_masquer']==false) {
 			echo a('header.art-header');
-				echo '<h4 class="list-group-item-heading">'.get_the_title().'</h4>';
+				echo '<h4 class="list-group-item-heading" itemprop="name">'.get_the_title().'</h4>';
 			echo z('header');
 		}
 		
 		echo a('p.list-group-item-text');
-		if(has_post_thumbnail() || get_post_format()=="video") {
-			echo a('section.art-vignette');
-				echo Get_thumbnail($instance);
-			echo z('section');
+		if($instance['vignette_masquer'] == false) {
+			echo Get_thumbnail($instance);
 		}
 		
 		$br_excerpt = Get_excerpt($instance,false,false,$excerpt[$i]);
@@ -27,11 +25,7 @@ echo a('article.article.affichage.mod-listegroup',"#post-".get_the_ID());
 				echo z('section');
 			}
 			
-			if($instance['contenu_footer_masquer']==false) {
-				echo a('footer.art-footer');
-					echo Get_artfooter($instance);
-				echo z('section');
-			}
+			echo Get_artfooter($instance);
 		}
 		echo z('p');
 	
