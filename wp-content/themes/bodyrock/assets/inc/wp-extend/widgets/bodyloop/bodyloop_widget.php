@@ -422,7 +422,7 @@ else {
 						
 							// CONTENT
 							$instance['affichage_modele'] = $instance['affichage_modele']!=false ? $instance['affichage_modele'] : getDefaultLoop('affichage_modele');					
-							include(locate_template('assets/tpl/affichage/'.$instance['affichage_modele'].'.php'));
+							include(locate_template('tpl/affichage/'.$instance['affichage_modele'].'.php'));
 							
 						
 						if(isset($Item_END[$instance['affichage_modele']])) {

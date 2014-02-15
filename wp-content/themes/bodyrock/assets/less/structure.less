@@ -1,70 +1,8 @@
-/* style/STRUCTURE/sections */
-/* Ne pas ajouter de margin, padding dans ces classes.
-/* Les déclarations ne doivent concerner que la structure Bootstrap.
-*********************************************************************/
-
-.galaxie,.line { .make-row(); .clearfix(); }
-.column { .make-lg-column(12) }
-
-.col-a { .make-column-lg(1); }
-.col-b { .make-column-lg(2); }
-.col-c { .make-column-lg(3); }
-.col-d { .make-column-lg(4); }
-.col-e { .make-column-lg(5); }
-.col-f { .make-column-lg(6); }
-.col-fa { .make-column-lg(7); }
-.col-fb { .make-column-lg(8); }
-.col-fc { .make-column-lg(9); }
-.col-fd { .make-column-lg(10); }
-.col-fe { .make-column-lg(11); }
-.col-ff { .make-column-lg(12); }
-
-/*****************************************************/
-
-/* Components */
-nav.navbar {
-	.navbar-form {  }
-	z-index:1000; /* Fix Youtube Videos over fixed sidebar */
-}
-footer {
-
-}
-ol.breadcrumb {
-	.clearfix();
-}
-
-/* Header */
-header.header {
-	.make-xs-column(12);
-}
-
-aside.aside {	
-	.make-xs-column(12);
-}
-
-aside.widget, section.widget {
-	.make-xs-column(12);
-}
-
-section.content {
-	.make-xs-column(12);
-}
-
-aside.aside-right {	
-	.make-xs-column(12);
-}
-
-/* Footer */
-footer.footer {
-	margin:0;
-	padding:0;
-	width:auto;
-	.make-xs-column(12);
-}
-
-/************************************************************************/
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
 
 body {
+	
 	cursor:default;
 		
 	font-style:normal;
@@ -74,19 +12,32 @@ body {
 	letter-spacing:normal;
 	
 	padding-bottom:@navbar-height*2em;
+
+	strong { font-weight:700; font-style:normal; }
+	em { font-style:italic; font-weight:400; }
 	
-
+	/* Entêtes */
+	
+	header.header {
+		.make-xs-column(12);
+	}
+	
+	footer.footer {
+		margin:0;
+		padding:0;
+		width:auto;
+		.make-xs-column(12);
+	}
+	
+	/* Sections */
+	
+	aside.aside {	
+		.make-xs-column(12);
+	}
+	section.content {
+		.make-xs-column(12);
+	}
+	aside.aside-right {	
+		.make-xs-column(12);
+	}
 }
-
-strong { font-weight:700; font-style:normal; }
-em { font-style:italic; font-weight:400; }
-
-hr.clearfix {
-	.clearfix();
-	clear:both;
-	border:none; margin:0; padding:0; height:0;
-}
-hr.margin { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*1em; }
-hr.margin2 { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*2em; }
-
-iframe { z-index:0; } /* Fix Youtube Videos over fixed sidebar */

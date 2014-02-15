@@ -58,7 +58,7 @@ define( 'JS_PATH' , '/'.THEME_PATH.'assets/js/' );
 define( 'BR_CSS_PATH' , BR_PATH.'css/' );
 
 // Attention ici, pour la fonction get_template_part(), il faut utiliser des liens relatifs.
-define( 'TPL_PATH' , 'assets/tpl/' );
+define( 'TPL_PATH' , 'tpl/' );
 define( 'TPL_SIDEBAR_PATH' , TPL_PATH.'sidebars/' );
 define( 'TPL_BOOTSTRAP_PATH' , TPL_PATH.'bootstrap/' );
 define( 'TPL_SINGULAR_PATH' , TPL_PATH.'singular/' );

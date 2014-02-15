@@ -1,2 +1,43 @@
+/* GLOBAL */
+
+/* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
+
 @iconSpritePath:          "../img/glyphicons-halflings.png";
 @iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+
+header,
+article,
+aside,
+section,
+footer {
+	margin:0;
+	padding:0;
+	height:auto;
+}
+
+.galaxie,.line { .make-row(); .clearfix(); }
+.column { .make-lg-column(12) }
+
+.col-a { .make-column-lg(1); }
+.col-b { .make-column-lg(2); }
+.col-c { .make-column-lg(3); }
+.col-d { .make-column-lg(4); }
+.col-e { .make-column-lg(5); }
+.col-f { .make-column-lg(6); }
+.col-fa { .make-column-lg(7); }
+.col-fb { .make-column-lg(8); }
+.col-fc { .make-column-lg(9); }
+.col-fd { .make-column-lg(10); }
+.col-fe { .make-column-lg(11); }
+.col-ff { .make-column-lg(12); }
+
+hr.clearfix {
+	.clearfix();
+	clear:both;
+	border:none; margin:0; padding:0; height:0;
+}
+hr.margin { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*1em; }
+hr.margin2 { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*2em; }
+hr.margin3 { clear:both; margin:0; padding:0; height:0; border:none; margin:@line-height-base*3em; }
+
+iframe { z-index:0; } /* Fix Youtube Videos over fixed sidebar */

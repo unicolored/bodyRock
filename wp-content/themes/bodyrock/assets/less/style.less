@@ -1,18 +1,40 @@
-/*@import "bootstrap3/bootstrap.min.less";
-
 /*Start STYLING*/
-/*@import "interfaces/default.less"; /* Styles des éléments constituant l'interface : p,ul,h1,h2,h3,... (= styles par défaut d'après variables.less) */
-/*@import "structure.less"; /* Zones constituant la structure d'une page : header, navbar, sidebar, footer */
 
-/*Autres composants (ex: carousel, disqus, etc...)*/
-/*@import "bootstrap3/carousel.less";
-/*@import "disqus.less";*/
+/* Bootstrap 3 */ /* Bootstrap 3.0.1 nécessiterait d'utiliser un compiler plus récent que leafo/lessphp */
+	/* Tous les composants sauf variables.less qui est défini par Bootswatch par la suite */
+	@import "bootstrap3/bootstrap.less";
+	@import "bootstrap3/variables.less"; /* Si vous désactivez bswatch ci-dessous, ces variables doivent être activées. Et inversement. */
 
 
-@import "bootstrap3/bootstrap.less";
-@import "bswatch/cupid/variables.less";
-@import "bswatch/global/global.less";
-@import "bswatch/cupid/bootswatch.less";
-@import "bootstrap3/utilities.less";
+/* Bootswatch */ /* http://www.bootstrapcdn.com/#bootswatch_tab */
+@import "bswatch/global/global.less"; /* Mixins personnalisés + Reset des balises header, aside, section, footer, article */
 
-@import "video-js.less";
+	/* Les variables du skin */
+	/* TOFIX : ici c'est le skin flatly qui est sélectionné par défaut. */
+	/* Il faut permettre le choix de ce skin via les options du thème Bodyrock (assets/inc/themeoptions.php themeoptionsGet_default()), */
+	/* et ensuite passer la variable dans .less au moment de la compilation : */
+	/* http://leafo.net/lessphp/docs/#setting_variables_from_php */
+	/* Si vous activez bswatch, vous devez désactiver les variables de bootstrap, et inversement. */
+//	@import "bswatch/flatly/variables.less"; /* Contient les variables de couleurs, de path, de fonts, de composants */
+//	@import "bswatch/flatly/bootswatch.less"; /* Contient les modifications de composants */
+
+/* Plugins inclus */
+@import "video-js.less"; // Le lecteur vidéo Html5 http://www.videojs.com/
+
+/* ITEMS */
+/* article.article,header.art-header,section.art-vignette,section.art-vignette,section.art-content,footer.art-footer */
+@import "items.less";
+
+/* WRAPPERS */
+/* section.widget,header.wid-header,section.wid-vignette,section.wid-content,footer.wid-footer */
+/* div.mod_article,div.mod_liste,div.mod_listegroup,div.mod_listemedias,div.mod_thumbnail */
+@import "wrappers.less";
+
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
+@import "structure.less";
+/* Pour personnaliser une structure en fonction de body_class(), il faut créer une copie de structure en structure-home.less par exemple */
+/* @import "structure-home.less": */
+/* @import "structure-page.less": */
+/* @import "structure-single.less": */
+/* @import "structure-category.less": */

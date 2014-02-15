@@ -12,7 +12,6 @@ $defaults = array(
 /* Html START */
 
 echo a('aside.aside');
-echo a('div.galaxie');
 
 wp_nav_menu( $defaults );
 
@@ -63,7 +62,6 @@ if(is_single()) {
 
 dynamic_sidebar('sidebar-left');
 
-echo z('div');
 
 // QUERY - Récupération de l'image de la semaine en AJAX
 $args_section = array(
