@@ -20,6 +20,12 @@ $args_section = array(
 
 $titre_content = __("Articles récents", "bodyrock");
 
+if(is_category()) {
+	$cat = get_query_var('cat');
+	$active_categorie = get_category ($cat);
+	$titre_content = ucfirst(str_replace('<br>','',$active_categorie->name));
+}
+
 /************** HTML START **************/
 
 echo a('section.content');
@@ -42,12 +48,20 @@ echo a('section.content');
 		}
 	
 		if ( have_posts() ) :
-			if(is_category()) {
-				$cat = get_query_var('cat');
-				$active_categorie = get_category ($cat);
-				$titre = ucfirst(str_replace('<br>','',$active_categorie->name));
-			}
-			the_widget('br_widgetsBodyloop',array('titre'=>$titre_content,'name'=>'home-widget-first','titre_icone'=>$active_categorie->slug,'apparence_disposition'=>'wallpin','filtres_off'=>'on','filtres_combien'),$args_section);
+			
+			the_widget('br_widgetsBodyloop',array(
+				'titre'=>$titre_content,
+				'class'=>'recommandations',
+				'name'=>'home-widget-first',
+				'titre_icone'=>$active_categorie->slug,
+				'apparence_disposition' => 'wallpin',
+				'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+				'vignette_background' => 'on',
+				'affichage_modele' => 'affichage_modele_thumbnail',
+				'contenu_footer_date' => "on",
+				'filtres_off'=>'on',
+				'ajax'=>false
+				),$args_section);
 			// Previous/next post navigation.
 			echo '<div class="visible-lg">';
 			br_paging_nav();

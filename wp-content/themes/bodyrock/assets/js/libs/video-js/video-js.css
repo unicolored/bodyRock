@@ -1,23 +1,5 @@
-.police-un {
-  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.police {
-  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.police-int-h {
-  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.police-int-p {
-  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.police-art-h {
-  font-family: "Doppio One", sans-serif;
-}
-.police-art-p {
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
 .vjs-default-skin {
-  color: #5cb85c;
+  color: ;
 }
 @font-face {
   font-family: 'VideoJS';

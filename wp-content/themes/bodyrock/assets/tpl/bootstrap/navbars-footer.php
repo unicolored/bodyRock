@@ -12,7 +12,8 @@ get_currentuserinfo();
         </button>
     </div>
     
-    <div class="collapse navbar-inverse-collapse navbar-ex1-collapse">
+	
+    <div class="navbar-inverse-collapse navbar-ex1-collapse">
         <!--<button type="button" class="btn btn-default navbar-btn pull-right"><span class="glyphicon glyphicon-user"></span> <?php echo $current_user->user_login; ?></button>-->
 		<ul class="nav navbar-nav">
 			<?php
@@ -84,24 +85,14 @@ get_currentuserinfo();
 							//echo 'single';
 							
 							$span = false;
-							
-							if ($format=='video' && !has_post_thumbnail($post_id[$i])) {
-								$videoCode = get_post_meta($post_id[$i], 'videoCode', true);
-								$videoType = get_post_meta($post_id[$i], 'videoType', true);
-
-								$image_src[0] = 'senzu/'.strtolower(get_bloginfo('name')).'/images/videos/'.$videoType.'/'.$videoCode.'-200x200.jpg';
-							}
-							elseif(has_post_thumbnail($post_id[$i])) {
-								$image_src=wp_get_attachment_image_src( get_post_thumbnail_id($post_id[$i]), 'thumbnail' );
-							}
+							$image = br_getPostThumbnail('thumbnail',false,$post_id[$i]);
 //							echo $image_src[0];
 							?>
 							<li>
 								<a class="link_item" href="<?php echo get_permalink($post_id[$i]); ?>" data-toggle="tooltip" title="<?php echo strip_tags(get_the_title($post_id[$i])); ?>">
-									<div class="nav_item <?php echo get_the_ID()==$post_id[$i] ? 'active' : false ?>" style="background-image:url(/<?php echo $image_src[0] ?>);">
+									<div class="nav_item <?php echo get_the_ID()==$post_id[$i] ? 'active' : false ?>" style="background-image:url(<?php echo $image['src'] ?>);">
 										<?php
-										if ( $image_src[0] == false ) {
-											vardump(br_getIcon($format));
+										if ( $image['src'] == false ) {
 											echo '<h3>'.br_getIcon('film').'</h3>';
 										} ?>
 									</div>

@@ -23,12 +23,12 @@ foreach ($IS as $I) {
 // GET POST THUMBNAIL ///////////////////////////////////////////// CONTENT
 // Récupère l'image de tous posts dans un format générique
 if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichier functions.php du thème child
-	function br_getPostThumbnail($size='thumbnail',$echoimg=true) {
+	function br_getPostThumbnail($size='thumbnail',$echoimg=true,$id=false) {
 		$array_sizes = array('thumbnail','medium','large'); // TOFIX : ajouter les tailles personnalisées
 		$size = in_array($size,$array_sizes) ? $size : 'thumbnail';
 		$classvideo = false;
 
-		if(!isset($id)) $id = get_the_ID();
+		if($id==false) $id = get_the_ID();
 		$format = get_post_format($id);
 
 		if ($format=='video') {

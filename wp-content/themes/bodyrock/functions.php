@@ -149,7 +149,6 @@ if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la 
 	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/editor-style.less', BR_CSS_PATH.'editor-style.css');
 	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/style.less', BR_CSS_PATH.'style.css');
 	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/debug.less', BR_CSS_PATH.'debug.css');
-	backend_filesWrite_less(ABSPATH.THEME_PATH.'assets/less/video-js.less', ASSETS_PATH.'js/libs/video-js/video-js.css');
 	// Compilation du fichier less si l'option est activée
 	if( is_child_theme() ) {
 		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/style.less', get_stylesheet_directory().'/css/style.css');

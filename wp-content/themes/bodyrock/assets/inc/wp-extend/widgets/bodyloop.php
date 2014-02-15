@@ -131,29 +131,29 @@ class br_widgetsBodyloop extends WP_Widget {
 	
 	function Get_artfooter($instance) {
 		if($instance['contenu_footer_masquer']==false) {
-			if($instance['contenu_footer_date']==false || $instance['contenu_footer_auteur']==false || $instance['contenu_footer_commentaires']==false || $instance['contenu_footer_vues']==false) {
+			if($instance['contenu_footer_date']=="on" || $instance['contenu_footer_auteur']=="on" || $instance['contenu_footer_commentaires']==false || $instance['contenu_footer_vues']=="on") {
 				echo a('footer.art-footer');
 					//echo a('div.well.well-sm');
 					
 					$sep = (isset($instance['contenu_footer_separateur']) ? $instance['contenu_footer_separateur'] : getDefaultLoop('contenu_footer_separateur'));
 					
 					$i=0;
-					if($instance['contenu_footer_vues']==false) {
+					if($instance['contenu_footer_vues']=="on") {
 						if($i==1) echo $sep;
 						echo br_getIcon('stats').'&nbsp;'.getPostViews(get_the_ID());
 						$i=1;
 					}
-					if($instance['contenu_footer_date']==false) {
+					if($instance['contenu_footer_date']=="on") {
 						if($i==1) echo $sep;
 						echo br_getIcon('calendar').'&nbsp;'.__('Posté le','bodyrock').' <time class="entry-date" datetime="'.esc_attr( get_the_date( 'c' ) ).'" pubdate>'.esc_html( get_the_date() ).'</time>';
 						$i=1;
 					}
-					if($instance['contenu_footer_auteur']==false) {
+					if($instance['contenu_footer_auteur']=="on") {
 						if($i==1) echo $sep;
 						echo br_getIcon('user').'&nbsp;'.__('Ajouté par','bodyrock').' <a href="'.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ).'" title="'.esc_attr( sprintf( __( 'Voir tous les articles de %s', 'bodyrock' ), get_the_author() ) ).'">'.get_the_author().'</a>';
 						$i=1;
 					}
-					if($instance['contenu_footer_commentaires']==false) {
+					if($instance['contenu_footer_commentaires']=="on") {
 						if(get_comments_number()>0) {
 							if($i==1) echo $sep;
 							echo $sep.br_getPageIcon('comment')."&nbsp;".get_comments_number()." ".__('commentaire(s)','bodyrock');

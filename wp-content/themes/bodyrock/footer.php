@@ -1,5 +1,4 @@
 <?php
-echo '<hr class="clearfix">';
 
 // Le <footer> et sa classe .footer
 echo '<footer class="footer">';

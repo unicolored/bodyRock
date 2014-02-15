@@ -76,7 +76,7 @@ jQuery(document).ready(function(){
 		} ?>
 		
 	})		
-	.done(function() { 					jQuery(".progress-bar").css("width","25%").animate({'width' : '100%'});  })
+	.done(function() { 					jQuery(".progress-bar").css("width","25%").animate({'width' : '100%'},200,function(){ jQuery(this).parent().fadeOut(1000) });  })
 	.fail(function() {  })
 	.always(function() {  });
 	/*
@@ -88,13 +88,10 @@ jQuery(document).ready(function(){
 	jQuery.getScript('http://senzu.fr/bodyrock/js/unid.js?v=1.0.1', function() { }, true);
 
 	// Chargement des scripts supplémentaires
-	var myVideoJsStyle = 'http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/video-js/video-js.css?ver=3.8';
-
-	jQuery('<link rel="stylesheet" type="text/css" href="'+myVideoJsStyle+'" >').appendTo("head");
 	
 	jQuery.getScript('http://unicolored.com/wp-content/themes/bodyrock/assets/js/libs/video-js/video.js?ver=4.3.0', function() { }, true);
 	
-	jQuery.getScript('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.0', function() { }, true);	
+	jQuery.getScript('//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', function() { }, true);	
 	
 	jQuery.getScript('https://s7.addthis.com/js/300/addthis_widget.js?ver=3.8#pubid=unicolored', function() { }, true);
 	

@@ -20,59 +20,6 @@ $args_section = array(
 	'after_title' => '</h1>'
 );
 
-if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
-	// QUERY
-	$exclude = explode(',',$posts_recommande);
-	
-	$instance_recommandations_categories = array(
-	'titre' => "Recommandations",
-	'titre_icone' => "star",
-	'name' => 'recommandations_cats',
-	'class' => 'recommandations',
-	'contenu_excerpt' => false,
-	'apparence_disposition' => 'wallpin',
-	'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
-	'affichage_modele' => 'affichage_modele_thumbnail',
-	'filtres_combien' => 6,
-	'vignette_background' => 'on',
-	'filtres_similaires_selon' => 'cats',
-	'filtres_ignoreposts' => array($_SESSION['lastpost_id']),
-	);
-	
-	$categories_recommandees = $_SESSION['lastpost_cats'];				
-
-	$c = explode(',',$categories_recommandees);
-	foreach ($c as $k => $id_cat) {
-		if ($id_cat>0) {
-			$instance_recommandations_categories['filtres_categories_'.$id_cat]=true;
-		}
-	}	
-}
-if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
-	// Uniquement si un post contenant des tags a été visité avant cette page		
-
-	$ignore_posts = explode(',',$_SESSION['wposts_recommandations_cats']);
-	$ignore_posts[] = $_SESSION['lastpost_id'];
-	
-	$instance_recommandations_tags = array(
-		'titre_masquer' => false,
-		'name' => 'recommandations_tags',
-		'class' => 'recommandations',
-		'edit_article_titre' => 'replace_br',		
-		'contenu_excerpt' => false,
-		'apparence_disposition' => 'wallpin',
-		'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
-		'affichage_modele' => 'affichage_modele_thumbnail',
-		'filtres_combien' => 6,
-		'vignette_background' => 'on',
-//		'contenu_header_masquer' => 'on',
-		'filtres_similaires_selon' => 'tags',
-		'filtres_article_reference' => $_SESSION['lastpost_id'],
-//		'filtres_tags' => $_SESSION['lastpost_tags']!=false ? $_SESSION['lastpost_tags'] : false,
-		'filtres_ignoreposts' => serialize($ignore_posts),
-//		'ajax'=>'on'
-	);
-}
 /************** HTML START **************/
 
 echo a('section.content');
@@ -82,13 +29,44 @@ echo a('section.content');
 			
 			//MODULE:: RECOMMANDATIONS basées sur les CATEGORIES 
 			if (isset($_SESSION['lastpost_cats']) && $_SESSION['lastpost_cats']!=false) {
-				the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
-			}
+				// QUERY
+				$CAT = explode(',',$_SESSION['lastpost_cats']);
 			
-			//MODULE:: RECOMMANDATIONS basées sur les TAGS 
-			if (isset($_SESSION['lastpost_tags']) && $_SESSION['lastpost_tags']!=false) {
-				// Uniquement si un post contenant des tags a été visité avant cette page
-				the_widget('br_widgetsBodyloop',$instance_recommandations_tags,$args_section);
+				$i=0;
+				foreach($CAT as $IDCAT) {
+					if($IDCAT!=false && $i<=1) {
+						$category = get_category($IDCAT);
+						
+						if($i>0) {
+							$ignore_posts = explode(',',$_SESSION['wposts_'.$category_name[$i-1]]);
+							$ignore_posts[] = $_SESSION['lastpost_id'];
+						}
+						
+						$category_name[$i] = 'recommandations_cats_'.$category->slug;
+						
+						$instance_recommandations_categories = array(
+						'titre' => ucfirst($category->name),
+						'titre_icone' => "star",
+						'name' => $category_name[$i],
+						'class' => 'recommandations',
+						'contenu_excerpt' => false,
+						'apparence_disposition' => 'wallpin',
+						'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
+						'affichage_modele' => 'affichage_modele_thumbnail',
+						'filtres_combien' => 6,
+						'contenu_footer_date' => "on",
+						'vignette_background' => 'on',
+						'filtres_similaires_selon' => 'cats',
+						'filtres_categories_'.$IDCAT => true
+						);
+						
+						$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
+						
+						the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+						
+						$i++;						
+					}
+				}	
 			}
 		
 		echo z('div');
@@ -100,14 +78,14 @@ echo a('section.content');
 		
 		$instance_articles_recents = array(
 			'titre'=>'Articles récents',
-			'class' => 'home-widget-first',
+			'class' => 'recommandations',
 			'name'=>'articlesrecents',
 			'titre_icone'=>'bookmark',
 			'apparence_disposition' => 'wallpin',
 			'apparence_wallpin_colonnes' => 'a/b/c/d/e/f',
 			'vignette_background' => 'on',
 			'affichage_modele' => 'affichage_modele_thumbnail',
-			'contenu_footer_masquer' => 'on',
+			'contenu_footer_date' => "on",
 			'filtres_off'=>'on',
 			'ajax'=>false
 		);
