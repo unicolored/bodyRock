@@ -1,6 +1,8 @@
 .htaccess
 wp-*.php
 xmlrpc.php
+_notes
+*.cache
 senzu/
 wp-admin/
 wp-includes/
