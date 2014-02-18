@@ -8,7 +8,7 @@ get_header();
 
 
 
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <a href="../" class="navbar-brand">Bootswatch</a>
@@ -84,7 +84,121 @@ get_header();
           </div>
         </div>
       </div>
-
+	  <div class="galaxie">
+		<section class="content">
+		<?php
+			$instance_recommandations_categories = array(
+			'titre' => 'Modèle article',
+			'titre_icone' => "star",
+			'name' => $category_name[$i],
+			'class' => 'test-articles',
+			'filtres_combien' => 6,
+			'contenu_footer_date' => "on",
+			'vignette_background' => 'on',
+			);
+			
+			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+		?>
+		</section>
+		<section class="content">
+		<?php
+			$instance_recommandations_categories = array(
+			'titre' => 'Modèle thumbnail',
+			'titre_icone' => "star",
+			'name' => $category_name[$i],
+			'class' => 'test-articles',
+			'affichage_modele' => 'affichage_modele_thumbnail',
+			'contenu_excerpt' => false,
+			'filtres_combien' => 6,
+			'contenu_footer_date' => "on",
+			'vignette_background' => 'on',
+			'filtres_similaires_selon' => 'cats',
+			'filtres_categories_'.$IDCAT => true
+			);
+			
+			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
+			
+			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+		?>
+		</section>
+		<section class="content">
+		<?php
+			$instance_recommandations_categories = array(
+			'titre' => 'Modèle Liste',
+			'titre_icone' => "star",
+			'name' => $category_name[$i],
+			'class' => 'test-articles',
+			'affichage_modele' => 'affichage_modele_liste',
+			'contenu_excerpt' => false,
+			'filtres_combien' => 6,
+			'contenu_footer_date' => "on",
+			'vignette_background' => 'on',
+			'filtres_similaires_selon' => 'cats',
+			'filtres_categories_'.$IDCAT => true
+			);
+			
+			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
+			
+			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+		?>
+		</section>
+		<section class="content">
+		<?php
+			$instance_recommandations_categories = array(
+			'titre' => 'Modèle Liste group',
+			'titre_icone' => "star",
+			'name' => $category_name[$i],
+			'class' => 'test-articles',
+			'affichage_modele' => 'affichage_modele_listegroup',
+			'contenu_excerpt' => false,
+			'filtres_combien' => 6,
+//			'affichage_listegroup_unlink' => 'on',
+			'contenu_footer_date' => "on",
+			'filtres_similaires_selon' => 'cats',
+			'filtres_categories_'.$IDCAT => true
+			);
+			
+			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
+			
+			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+		?>
+		</section>
+		<section class="content">
+		<?php
+			$instance_recommandations_categories = array(
+			'titre' => 'Modèle Liste médias',
+			'titre_icone' => "star",
+			'name' => $category_name[$i],
+			'class' => 'test-articles',
+			'contenu_excerpt' => false,
+			'affichage_modele' => 'affichage_modele_listemedias',
+			'filtres_combien' => 6,
+			'contenu_footer_date' => "on",
+			'vignette_background' => 'on',
+			'filtres_similaires_selon' => 'cats',
+			'filtres_categories_'.$IDCAT => true
+			);
+			
+			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
+			
+			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
+		?>
+		</section>
+		
+		<section class="content">
+			<h1>Icônes</h1>
+			<h1>
+		<?php			
+			foreach(br_getAvailableIcones() as $I) {
+				echo '<span title="'.$I.'">';
+				br_Icon($I);
+				echo '</span>';
+				echo '&nbsp;';
+			}
+		?>
+			</h1>
+		</section>
+	</div>
       <!-- Navbar
       ================================================== -->
       <div class="bs-docs-section clearfix">

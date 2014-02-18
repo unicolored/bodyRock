@@ -113,6 +113,8 @@ $modele_item_end['ol-li'] = z('li');
 $modele_item_end['ol-li'] = z('dt');		
 
 	$instance['name'] = (isset($instance['name']) ? $instance['name'] : getDefaultLoop('name'));
+	
+if($instance['apparence_disposition']=='carousel') {
 
     wp_enqueue_script( 'script-carousel-'.$instance['name'], get_template_directory_uri().'/js/carousel.php', array('script'), '1.0.1', false  );
 	// Add some parameters for the JS.
@@ -125,7 +127,7 @@ $modele_item_end['ol-li'] = z('dt');
 			'carouselname' => $carouselname
 		)
 	);
-	
+}
 
 
 ////////// 2. ENCADREMENT DU WIDGET

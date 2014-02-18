@@ -80,6 +80,11 @@ class br_widgetsBodyloop extends WP_Widget {
 			elseif(isset($attrs['width']) && isset($attrs['height'])) {
 				$wh = 'width="'.$attrs['width'].'" height="'.$attrs['height'].'"';
 			}
+	
+			$icon_item = false;
+			if(get_post_format()=="video") {
+				//$icon_item = '<p class="icon_item">'.br_getIcon('play').'</p>';
+			}
 			
 			//////////////
 			
@@ -88,7 +93,7 @@ class br_widgetsBodyloop extends WP_Widget {
 				$res .= '
 				<section class="art-vignette-bg" style="background-image:url('.$attrs['src'].');">
 				<img src="'.$attrs['src'].'" class="hidden" itemprop="thumbnailUrl">
-				<h1><a href="'.get_permalink().'"><span>'.get_the_title().'</span></a></h1>
+				<h1><a href="'.get_permalink().'">'.$icon_item.'<span>'.get_the_title().'</span></a></h1>
 				</section>';
 			
 			}
@@ -110,6 +115,14 @@ class br_widgetsBodyloop extends WP_Widget {
 				$res .= z('section');
 			}
 			
+			
+			return $res;
+		}
+		elseif (get_post_format()=='audio') {
+			$res .= '
+			<section class="art-vignette-bg">
+			<h1><a href="'.get_permalink().'"><p class="icon_item">'.br_getIcon('music').'</p><span>'.get_the_title().'</span></a></h1>
+			</section>';
 			
 			return $res;
 		}
@@ -181,9 +194,9 @@ class br_widgetsBodyloop extends WP_Widget {
 	
 	function getDefaultLoop($val=false) {
 		$default['filtres_off'] = "on";
-		$default['filtres_type'] = "post";
+		$default['filtres_type'] = "type_post";
 		$default['filtres_combien'] = 8;
-		$default['filtres_orderby'] = "date";
+		$default['filtres_orderby'] = "orderby_date";
 		$default['filtres_order'] = "DESC";
 		$default['filtres_offset'] = 0;
 		$default['filtres_catsinornot'] = "in";
@@ -243,23 +256,7 @@ class br_widgetsBodyloop extends WP_Widget {
 		$default['titre_format'] = "h1";
 		$default['titre_separator'] = "span.brsep";
 		$default['titre_masquer'] = false;
-		$random_icone = array(
-		"adjust",
-		"align-center","align-left","align-right","align-justify","bold",		
-		"arrow-down","arrow-left","arrow-right","arrow-up",
-		"chevron-down","chevron-up","chevron-left","chevron-right",		
-		"asterisk",
-		"calendar","camera","bell","book","briefcase","bullhorn",
-		"barcode","bookmark","certificate","check",		
-		"comment","edit",		
-		"cloud","cog","credit-card","dashboard","download","eject","envelope",
-		"fast-backward","fast-forward","file","film","filter","fire","flag","folder-open","font","forward",
-		"gbp","usd",
-		"gift","glass","globe","headphones","heart","home","inbox","italic","leaf","link","list","list-alt","lock","magnet","map-marker",
-		"minus","music","pause","pencil","phone","plane","play","play-circle","plus","print","qrcode","random","refresh","repeat","retweet","road",
-		"search","share","shopping-cart","signal","star","step-backward","step-forward","stop","tag","tags","tasks","text-height","text-width",
-		"th","th-large","th-list","thumbs-down","thumbs-up","tint","upload","user","volume-down","volume-off","volume-up","wrench"
-		);
+		$random_icone = br_getAvailableIcones();
 		$default['titre_icone'] = $random_icone[rand(0,(count($random_icone)-1))];	
 		$default['edit_article_titre'] = false; // Fonction qui édite le titre avant son affichage. Exemple : replace_br()
 		$random_name = array("verycool","pasmal","sympathique","jeanlouis","jaimebien","nomsympa","whynot");

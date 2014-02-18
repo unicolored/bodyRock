@@ -87,6 +87,31 @@ if(!function_exists('br_getIcon')) { // Permet l'override par le thème child
 	}
 }
 function br_Icon($id = false) { echo br_getIcon($id); }
+
+function br_getAvailableIcones() {
+	// Liste des icones dont les appellations sont similaires entres Glyphicons, Font-Awesome, Elusive.
+	return array(
+			"home",
+			"adjust","align-center","align-left","align-right","align-justify","bold","text-height","text-width","font","italic",
+			"th","th-large","th-list","tag","tags","tasks","list","list-alt",
+			"arrow-down","arrow-left","arrow-right","arrow-up",
+			"refresh","retweet",
+			"step-backward","step-forward","play","stop","pause","play-circle","random","repeat","fast-backward","fast-forward","forward",
+			"volume-down","volume-off","volume-up",
+			"chevron-down","chevron-up","chevron-left","chevron-right","asterisk","calendar","camera","bell","book","briefcase","bullhorn",
+			"barcode","bookmark","certificate","cloud","cog","credit-card","leaf",
+			"envelope","inbox",
+			"film","fire",
+			"file","flag","gbp","usd",
+			"gift","glass","globe","headphones","heart","link","lock","magnet","map-marker","plus","minus",
+			"music","pencil","phone","qrcode","road",
+			"shopping-cart","signal","star",
+			"thumbs-down","thumbs-up","tint",
+			"upload","user","dashboard","wrench","edit","filter",
+			"check","download","eject","comment","print","share","search","folder-open",
+			"plane"
+			);
+}
     
 function br_paging_nav() {
 	// Copie de la fonction twentyfourteen_paging_nav()

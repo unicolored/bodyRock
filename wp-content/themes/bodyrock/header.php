@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $_SESSION['ajax-widgets']="";
 
 $_SESSION['br_lastviews'] = br_modules_lastviewsSet();

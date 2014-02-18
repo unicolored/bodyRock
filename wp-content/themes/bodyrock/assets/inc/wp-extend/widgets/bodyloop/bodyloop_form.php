@@ -15,6 +15,7 @@
 				$instance[$k] = $val;
 			}
 		}*/
+//		the_widget('br_widgetsBodyloop',$instance);
 
 		$args = false;
 		$instance_show = $instance;		

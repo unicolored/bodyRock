@@ -13,7 +13,7 @@ if (get_post_format()=='video') {
 /************** HTML START **************/
 
 echo a('section.content');
-
+	echo '<hr class="margin">';
 	if ( have_posts() ) :
 	
 		while ( have_posts() ) :

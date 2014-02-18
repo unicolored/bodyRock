@@ -2,7 +2,7 @@
 
 // Le <footer> et sa classe .footer
 echo '<footer class="footer">';
-get_template_part('assets/tpl/bootstrap/navbars', 'footer');
+get_template_part('tpl/bootstrap/navbars', 'footer');
 echo '</footer>';
 		
 // Termine la section qui commence dans le header.php

@@ -1,5 +1,6 @@
 <?php
 echo a('aside.aside-right');
+echo 'qsdsd';
 echo a('div.galaxie');
 /*MODULE : Affichage de l'article en cours sur article single*/
 if (is_single()) {

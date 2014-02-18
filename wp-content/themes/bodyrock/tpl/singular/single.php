@@ -108,31 +108,33 @@ if( get_post_format()=='audio' ) {
 }
 
 echo a('header.art-header');
-echo '<h1>'.get_the_title().'</h1>';
-//echo '<p>'.br_content_textesGet_posted_on(' • ').'</p>';
-get_template_part(TPL_PATH.'parts/article-share', get_post_format());
+echo '<h1>'.strip_tags(get_the_title()).'</h1>';
 echo z('/header');
 
 ?>
 
 
 	
-	<div class="col-ff">	
-		<?php get_template_part('tpl/parts/article', 'share') ?>
-		<hr class="margin">
-		<a class="addthis_button_facebook_like" fb:like:layout="standard"></a> 
-		<br>
-		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-		<p>Lien court :
-		<?php
-			$ch = curl_init('http://api.bitly.com/v3/shorten?login=unicolored&apiKey=R_8de9dc884a5f6e6ba8831909df65d03c&longUrl='.get_permalink());
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			 
-			$result = curl_exec($ch);
-			$R = json_decode($result);
-		?>
-		<input type="text" value="<?php echo $R->data->url ?>" class="form-control">
-		</p>
+	<div class="col-ff">
+		<div class="col-f">
+			<a class="addthis_button_facebook_like" fb:like:layout="standard"></a> 
+			<br>
+			<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+			
+			<p>Lien court :
+			<?php
+				$ch = curl_init('http://api.bitly.com/v3/shorten?login=unicolored&apiKey=R_8de9dc884a5f6e6ba8831909df65d03c&longUrl='.get_permalink());
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				 
+				$result = curl_exec($ch);
+				$R = json_decode($result);
+			?>
+			<input type="text" value="<?php echo $R->data->url ?>" class="form-control">
+			</p>
+		</div>
+		<div class="col-f">
+			<?php get_template_part('tpl/parts/article', 'share') ?>
+		</div>
 	</div>
 	
 	<hr class="clearfix">
@@ -206,4 +208,7 @@ echo z('/header');
 	</div>
 </article>
 
+<section class="art-comments">
 <?php comments_template( '', true ); ?>
+</section>
+

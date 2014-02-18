@@ -5295,6 +5295,150 @@ footer {
     width: 100%;
   }
 }
+.col-a {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-a {
+    float: left;
+    width: 8.3333333333333%;
+  }
+}
+.col-b {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-b {
+    float: left;
+    width: 16.666666666667%;
+  }
+}
+.col-c {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-c {
+    float: left;
+    width: 25%;
+  }
+}
+.col-d {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-d {
+    float: left;
+    width: 33.333333333333%;
+  }
+}
+.col-e {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-e {
+    float: left;
+    width: 41.666666666667%;
+  }
+}
+.col-f {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-f {
+    float: left;
+    width: 50%;
+  }
+}
+.col-fa {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-fa {
+    float: left;
+    width: 58.333333333333%;
+  }
+}
+.col-fb {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-fb {
+    float: left;
+    width: 66.666666666667%;
+  }
+}
+.col-fc {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-fc {
+    float: left;
+    width: 75%;
+  }
+}
+.col-fd {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-fd {
+    float: left;
+    width: 83.333333333333%;
+  }
+}
+.col-fe {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-fe {
+    float: left;
+    width: 91.666666666667%;
+  }
+}
+.col-ff {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .col-ff {
+    float: left;
+    width: 100%;
+  }
+}
 hr.clearfix {
   clear: both;
   border: none;
