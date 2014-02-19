@@ -12,20 +12,6 @@ wp_reset_query();
 	else {
 		echo '<li>'.br_getIcon('home').' '.__('Home','gh').'</a></li>';
 	}
-
-	// HOME
-	if(is_home()) {
-		if(get_query_var('paged')==false || get_query_var('paged')==1) {
-			echo '<li class="active">'.br_getIcon('article').' Articles</li>';
-		}
-		else {
-			echo '<li><a href="/blog/">'.br_getIcon('article').' Articles</a></li>';
-		}
-	}
-	
-	if(is_home() && get_query_var('paged')>1) {
-		echo '<li class="active">Page '.get_query_var('paged').'</li>';
-	}
 	
 	// SINGLE
 	if(is_single()) {
@@ -57,7 +43,6 @@ wp_reset_query();
 	// CATEGORY
 	if(is_category()) {
 		$thiscat = get_category(get_query_var('cat'),false);
-			echo 'da'.$thiscat->parent;
 		if($thiscat->parent>1) {
 			$thiscatparent = get_category($thiscat->parent,false);
 			//echo $thiscatparent->slug;

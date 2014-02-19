@@ -223,7 +223,7 @@ if($instance['filtres_off']==false) {
 	if ($instance['filtres_offset']!=false) $query_args['offset'] = $instance['filtres_offset'];
 
 	// SELON LES CATEGORIES
-	if($instance['filtres_similaires_selon']=='cats') {
+	if($instance['filtres_similaires_selon']=='cats' || $instance['filtres_similaires_selon']=='both') {
 
 		// $FILTRES_CATSIN
 		$filtres_catsin = "";
@@ -240,7 +240,7 @@ if($instance['filtres_off']==false) {
 	}
 	
 	// SELON LES TAGS
-	if($instance['filtres_similaires_selon']=='tags') {
+	if($instance['filtres_similaires_selon']=='tags' || $instance['filtres_similaires_selon']=='both') {
 		// Articles similaires
 		// aux tags du single
 		$tags = wp_get_post_tags($instance['filtres_article_reference']);
