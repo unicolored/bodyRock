@@ -1,5 +1,5 @@
 <?php
-/*
+
 // Customizing Admin Columns
 add_filter("manage_evenements_posts_columns", "evenements_edit_columns");   
 
@@ -30,5 +30,5 @@ function evenement_custom_columns($column){
                 break;
         }
 }  
-*/
+
 ?>

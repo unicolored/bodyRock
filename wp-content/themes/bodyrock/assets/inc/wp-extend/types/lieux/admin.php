@@ -1,9 +1,9 @@
 <?php
 
 // Customizing Admin Columns
-add_filter("manage_edit-evenements_columns", "evenements_edit_columns");   
+add_filter("manage_edit-lieux_columns", "lieux_edit_columns");   
 
-function evenements_edit_columns($columns){
+function lieux_edit_columns($columns){
         $columns = array(
             "cb" => "<input type=\"checkbox\" />",
             "title" => "Evènement",
@@ -15,9 +15,9 @@ function evenements_edit_columns($columns){
         return $columns;
 }  
 
-add_action("manage_posts_custom_column",  "evenement_custom_columns"); 
+add_action("manage_posts_custom_column",  "lieux_custom_columns"); 
 
-function evenement_custom_columns($column){
+function lieux_custom_columns($column){
         global $post;
         switch ($column)
         {

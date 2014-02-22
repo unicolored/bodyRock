@@ -198,8 +198,7 @@ if($instance['filtres_off']==false) {
 	// CREATION D'UNE LOOP AUX PARAMETRES PERSONNALISES :: filtres_off = off :: les filtres sont activés
 	wp_reset_query();
 	// $FILTRES_TYPES
-	$types_options = array("type_post"=>"post","type_page"=>"page","type_attachment"=>"attachment");
-	$query_args['post_type'] = $types_options[$filtres_type];
+	$query_args['post_type'] = TypeQuery($instance['filtres_type']);
 	
 	// $FILTRES_COMBIEN
 //	$query_args['posts_per_page'] = ($instance['filtres_combien']!=false ? $instance['filtres_combien'] : getDefaultLoop('filtres_combien'));
@@ -277,7 +276,18 @@ else {
 	if($instance['ajax']==false) {	
 		global $wp_query; // Récupération de la boucle globale avant execution
 		
-		query_posts('paged='.get_query_var('paged').'&cat='.get_query_var( 'cat' ).'&s='.get_query_var('s')); // Modification de la loop en cours
+		$myargs = array(
+			'cat'		=>		get_query_var( 'cat' ),
+			'paged' 	=>		get_query_var('paged'),
+			'post_type' => 		TypeQuery($instance['filtres_type']),
+			'post_status'	=>	'publish,future',
+			's'			=>		get_query_var('s'),
+			'posts_per_page'=>	PostsPerPageQuery($instance['filtres_combien']),
+		);		
+		
+		$args_query = array_merge( $wp_query->query_vars, $myargs );
+//		vardump($args_query);
+		query_posts( $myargs ); // Modification de la loop en cours
 		
 		$QUERY = $wp_query;
 	}

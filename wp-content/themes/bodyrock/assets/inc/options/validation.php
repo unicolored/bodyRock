@@ -50,6 +50,12 @@ function themeoptions_validation($input) {
 	// AUDIO Height
 	$options['audio_height'] = isset($input['audio_height']) ? $input['audio_height'] : $defaults['audio_height'];
 	
+	// TYPES Evenements
+	$options['type_evenements'] = isset($input['type_evenements']) ? $input['type_evenements'] : $defaults['type_evenements'];
+	
+	// TYPES Lieux
+	$options['type_lieux'] = isset($input['type_lieux']) ? $input['type_lieux'] : $defaults['type_lieux'];
+	
 	// ALL BS JS
 	$options['allbsjs'] = isset($input['allbsjs']) && $input['allbsjs']==1 ? $input['allbsjs'] : false;
   

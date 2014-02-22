@@ -1,5 +1,5 @@
 <?php
-
+/*
 add_action('init', 'unid_add_default_boxes');
 function unid_add_default_boxes($custom_types_to_activate=false) {
 	if($custom_types_to_activate!=false) {
@@ -8,5 +8,5 @@ function unid_add_default_boxes($custom_types_to_activate=false) {
 	}
 	}
 }
-
+*/
 ?>

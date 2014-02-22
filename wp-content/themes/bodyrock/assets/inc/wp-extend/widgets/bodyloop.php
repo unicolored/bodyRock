@@ -194,8 +194,8 @@ class br_widgetsBodyloop extends WP_Widget {
 	
 	function getDefaultLoop($val=false) {
 		$default['filtres_off'] = "on";
-		$default['filtres_type'] = "type_post";
-		$default['filtres_combien'] = 8;
+		$default['filtres_type'] = false;
+		$default['filtres_combien'] = false;
 		$default['filtres_orderby'] = "orderby_date";
 		$default['filtres_order'] = "DESC";
 		$default['filtres_offset'] = 0;
@@ -274,5 +274,23 @@ class br_widgetsBodyloop extends WP_Widget {
 		$txt = str_replace("<br />","",$txt);
 		$txt = str_replace("<br/>","",$txt);
 		return str_replace("<br>","",$txt);
+	}
+	
+// FONCTIONS qui convertissent les variables pour l'affichage du widget 
+	function TypeQuery($filtres_type=false) {
+		if($filtres_type!=false) {
+			$types_options = array("type_post"=>"post","type_page"=>"page","type_attachment"=>"attachment");
+			$type = isset($types_options[$filtres_type]) ? $types_options[$filtres_type] : $filtres_type;
+			return $type;
+		}
+		else
+			return getDefaultLoop('filtres_type');
+	}
+	function PostsPerPageQuery($filtres_combien=false) {
+		if($filtres_combien!=false) {
+			return $filtres_combien;
+		}
+		else
+			return getDefaultLoop('filtres_combien');
 	}
 ?>
