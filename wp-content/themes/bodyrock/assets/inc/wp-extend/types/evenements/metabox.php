@@ -15,15 +15,18 @@ function evenement_meta_options(){
         $custom = get_post_custom($post->ID);
         $startdate = $custom["eventstartDate"][0];
         $enddate = $custom["eventendDate"][0];
-        $eventlieu = $custom["eventlieuId"][0];
+        $eventlieuId = $custom["eventlieuId"][0];
+//        $eventlieuIdName = $custom["eventlieuIdName"][0];
         $siteweb = $custom["sitewebEvent"][0];
         $telephone = $custom["telephoneEvent"][0];
         $gratuit = $custom["gratuitEvent"][0];
         $tarifs = $custom["tarifsEvent"][0];
         $horaires = $custom["horairesEvent"][0];
         $lienaffiche = $custom["lienafficheEvent"][0];
-		$e=explode(',',$eventlieu);
-		$eventlieuId=$e[0];
+		if(strpos($eventlieuId,',')>0) {
+			$e=explode(',',$eventlieuId);
+			$eventlieuId=$e[0];
+		}
 ?>
 <?php wp_nonce_field( 'ai1ec', AI1EC_POST_TYPE ); ?><!--
 <h4 class="ai1ec-section-title"><?php _e( 'Date et heure de l\'évènement', AI1EC_PLUGIN_NAME ); ?></h4>
@@ -134,7 +137,7 @@ function evenement_meta_options(){
         <?php
 			foreach ($PA as $P){
 ?>
-    <option <?php echo ($eventlieuId==$P->ID ? 'selected="selected"' : false); ?> value="<?php echo $P->ID.','.$P->post_title; ?>" /><?php echo $P->post_title; ?>
+    <option <?php echo ($eventlieuId==$P->ID ? 'selected="selected"' : false); ?> value="<?php echo $P->ID ?>" /><?php echo $P->post_title; ?>
 <?php
 			}
 		?>
