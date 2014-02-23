@@ -20,6 +20,22 @@ function br_DateWord($date) {
 	return ucfirst(strtolower($dateword));
 }
 
+function br_DateFull($date) {
+	$dateword = $date;
+	$datetime = strtotime($date);
+	$today = date("Y-m-d");
+	switch($date) {
+		default:
+			$dateword = date("l jS F", $datetime); 
+			$dateword = br_DateTranslate($dateword);
+			if ( date("Y", $datetime) < date("Y") ) {
+				$dateword .= ' '.date("Y", $datetime);
+			}
+		break;
+	}
+	return ucfirst(strtolower($dateword));
+}
+
 function br_DateTranslate($date) {
 	
 	// DAYS

@@ -39,12 +39,12 @@ extract( $args ); // Les paramètres du widget liés à la sidebar : $before_wid
 // 	
 // Liste Horizontale
 	$classe_horizontale = false;	
-	if($instance['affichage_liste_horizontale'] == true ) {
+	if(isset($instance['affichage_liste_horizontale']) && $instance['affichage_liste_horizontale'] == true ) {
 		$classe_horizontale = ($instance['affichage_liste_type'] == "dl-dt-dd" ? ".dl-horizontal" : ".list-inline");
 	}
 	
 // Liste sans puce
-	$classe_unstyled = ($instance['affichage_liste_unstyled'] == true ? ".list-unstyled" : false);
+	$classe_unstyled = (isset($instance['affichage_liste_unstyled']) && $instance['affichage_liste_unstyled'] == true ? ".list-unstyled" : false);
 
 // Group_start et Item_start en fonction de affichage_liste_type
 	$modele_liste_type_group_start['ul-li'] = a('ul'.$classe_horizontale.$classe_unstyled);
@@ -64,17 +64,19 @@ extract( $args ); // Les paramètres du widget liés à la sidebar : $before_wid
 // Group_start en fonction de affichage_modele
 // _thumbnail et _article n'utilisent pas de group_
 	// _liste
-	$disposition_group_start['affichage_modele_liste'] = $modele_liste_type_group_start[$instance['affichage_liste_type']];
-	$disposition_group_end['affichage_modele_liste'] = $modele_liste_type_group_end[$instance['affichage_liste_type']];	
+	if (isset($instance['affichage_liste_type'])) {
+		$disposition_group_start['affichage_modele_liste'] = $modele_liste_type_group_start[$instance['affichage_liste_type']];
+		$disposition_group_end['affichage_modele_liste'] = $modele_liste_type_group_end[$instance['affichage_liste_type']];	
+	}
 
 	// _listegroup
-	if($instance['affichage_listegroup_unlink']==false) {
+	if(isset($instance['affichage_listegroup_unlink']) && $instance['affichage_listegroup_unlink']==false) {
 		$disposition_group_start['affichage_modele_listegroup'] = a('div.list-group');
 	}
 	else {
 		$disposition_group_start['affichage_modele_listegroup'] = a('ul.list-group');
 	}
-	if($instance['affichage_listegroup_unlink']==false) {
+	if(isset($instance['affichage_listegroup_unlink']) && $instance['affichage_listegroup_unlink']==false) {
 		$disposition_group_end['affichage_modele_listegroup'] = z('div');
 	}
 	else {
@@ -87,25 +89,29 @@ extract( $args ); // Les paramètres du widget liés à la sidebar : $before_wid
 
 // Item_start en fonction de affichage_modele et de affichage_liste_type
 	// _liste
-	$modele_item_start['affichage_modele_liste'] = $modele_item_start[$instance['affichage_liste_type']];
-	$modele_item_end['affichage_modele_liste'] = $modele_item_start[$instance['affichage_liste_type']];	
+	if(isset($instance['affichage_liste_type'])) {
+		$modele_item_start['affichage_modele_liste'] = $modele_item_start[$instance['affichage_liste_type']];
+		$modele_item_end['affichage_modele_liste'] = $modele_item_start[$instance['affichage_liste_type']];	
+	}
 
 	// _listegroup
-	if($instance['affichage_listegroup_unlink']==false) {
+	if(isset($instance['affichage_listegroup_unlink']) && $instance['affichage_listegroup_unlink']==false) {
 		$modele_item_start['affichage_modele_listegroup'] = '<a href="getpermalink()" class="liste-group-item active">';
 	}
 	else {
 		$modele_item_start['affichage_modele_listegroup'] = a('li.list-group-item');
 	}
-	if($instance['affichage_listegroup_unlink']==false) {
+	if(isset($instance['affichage_listegroup_unlink']) && $instance['affichage_listegroup_unlink']==false) {
 		$modele_item_end['affichage_modele_listegroup'] = z('a');
 	}
 	else {
 		$modele_item_end['affichage_modele_listegroup'] = z('li');
 	}
 	// _liste
-	$modele_item_start['affichage_modele_listemedias'] = $modele_item_start[$instance['affichage_liste_type']];
-	$modele_item_end['affichage_modele_listemedias'] = $modele_item_start[$instance['affichage_liste_type']];	
+	if(isset($instance['affichage_liste_type'])) {
+		$modele_item_start['affichage_modele_listemedias'] = $modele_item_start[$instance['affichage_liste_type']];
+		$modele_item_end['affichage_modele_listemedias'] = $modele_item_start[$instance['affichage_liste_type']];	
+	}
 
 
 $modele_item_end['ul-li'] = z('li');
@@ -114,7 +120,7 @@ $modele_item_end['ol-li'] = z('dt');
 
 	$instance['name'] = (isset($instance['name']) ? $instance['name'] : getDefaultLoop('name'));
 	
-if($instance['apparence_disposition']=='carousel') {
+if(isset($instance['apparence_disposition']) && $instance['apparence_disposition']=='carousel') {
 
     wp_enqueue_script( 'script-carousel-'.$instance['name'], get_template_directory_uri().'/js/carousel.php', array('script'), '1.0.1', false  );
 	// Add some parameters for the JS.
@@ -141,7 +147,7 @@ if($instance['apparence_disposition']=='carousel') {
 	// Création de Widget_START
 	$icone_widget = (isset($instance['titre_icone']) ? br_getIcon($instance['titre_icone']).'&nbsp;' : false);
 	$titre_format = (isset($instance['titre_format']) ? $instance['titre_format'] : getDefaultLoop('titre_format'));
-	$titre_widget = ($instance['titre_masquer']==false && isset($instance['titre']) ? a($titre_format.'.widget-title').$icone_widget.$instance['titre'].z($titre_format) : false);
+	$titre_widget = (isset($instance['titre_masquer']) && $instance['titre_masquer']==false && isset($instance['titre']) ? a($titre_format.'.widget-title').$icone_widget.$instance['titre'].z($titre_format) : false);
 	$Widget_START = $before_widget.$titre_widget;
 
 	// Création de Widget_END
@@ -153,14 +159,14 @@ if($instance['apparence_disposition']=='carousel') {
 		
 
 // First_
-	$First_START['carousel'] = a('div.'.$carouselname.'.slide');
+	$First_START['carousel'] = a('div.'.(isset($carouselname) ? $carouselname : 'carouseldefaultname').'.slide');
 	$First_END['carousel'] = z('div');
 	$First_START['wallpin'] = a('div.galaxie');
 	$First_END['wallpin'] = z('div');
 
 // Wrapper_
 	$Wrapper_START['carousel'] = a('div.carousel-inner');
-	$Wrapper_END['carousel'] = z('div').$carousel_javascript;
+	$Wrapper_END['carousel'] = z('div');
 	$Wrapper_START['wallpin'] = a('div.wallpin');
 	$Wrapper_END['wallpin'] = z('div');
 
@@ -182,8 +188,10 @@ if($instance['apparence_disposition']=='carousel') {
 	$WIrapper_START['wallpin'] = '<div class="galaxie">'; // '<div class="item '.($c==1?'active':false).'">'
 	$WIrapper_END['wallpin'] = z('div');
 	
-	$Item_START = isset($modele_item_start[$instance['affichage_liste_type']]) ? $modele_item_start[$instance['affichage_liste_type']] : false;
-	$Item_END = isset($modele_item_end[$instance['affichage_liste_type']]) ? $modele_item_end[$instance['affichage_liste_type']] : false;
+	if(isset($instance['affichage_liste_type'])) {
+		$Item_START = isset($modele_item_start[$instance['affichage_liste_type']]) ? $modele_item_start[$instance['affichage_liste_type']] : false;
+		$Item_END = isset($modele_item_end[$instance['affichage_liste_type']]) ? $modele_item_end[$instance['affichage_liste_type']] : false;
+	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -194,35 +202,43 @@ if($instance['apparence_disposition']=='carousel') {
 ////////// 5. CONSTRUCTION DE LA REQUETE
 // $args[]
 
-if($instance['filtres_off']==false) {
+if(isset($instance['filtres_off']) && $instance['filtres_off']==false) {
 	// CREATION D'UNE LOOP AUX PARAMETRES PERSONNALISES :: filtres_off = off :: les filtres sont activés
 	wp_reset_query();
 	// $FILTRES_TYPES
-	$query_args['post_type'] = TypeQuery($instance['filtres_type']);
+	if(isset($instance['filtres_type'])) {
+		$query_args['post_type'] = TypeQuery($instance['filtres_type']);
+	}
 	
 	// $FILTRES_COMBIEN
 //	$query_args['posts_per_page'] = ($instance['filtres_combien']!=false ? $instance['filtres_combien'] : getDefaultLoop('filtres_combien'));
-	$query_args['posts_per_page'] = $instance['filtres_combien'];
+	if ( isset( $instance['filtres_combien'] ) ) {
+		$query_args['posts_per_page'] = $instance['filtres_combien'];
+	}
 	
 	// $FILTRES_ORDERBY // $FILTRES_ORDER
 	$query_meta_key = false;
-	$orderby_options = array("orderby_date"=>"date","orderby_dateedition"=>"modified","orderby_titre"=>"title","orderby_comment"=>"comment_count","orderby_nombredevue"=>"meta_value_num");
-	
-	$query_args['orderby'] = $orderby_options[$instance['filtres_orderby']];
-	
-	switch($instance['filtres_orderby']) {
-		case 'orderby_nombredevue':
-			$query_args['meta_key'] = "post_views_count";
-		break;
+	if(isset($instance['filtres_orderby'])) {
+		$orderby_options = array("orderby_date"=>"date","orderby_dateedition"=>"modified","orderby_titre"=>"title","orderby_comment"=>"comment_count","orderby_nombredevue"=>"meta_value_num");	
+		$query_args['orderby'] = $orderby_options[$instance['filtres_orderby']];
+		switch($instance['filtres_orderby']) {
+			case 'orderby_nombredevue':
+				$query_args['meta_key'] = "post_views_count";
+			break;
+		}
 	}
-	// meta_key=post_views_count
-	$query_args['order'] = $instance['filtres_order'];
+	if(isset($instance['filtres_order'])) {
+		// meta_key=post_views_count
+		$query_args['order'] = $instance['filtres_order'];
+	}
 	
 	// $FILTRES_OFFSET
-	if ($instance['filtres_offset']!=false) $query_args['offset'] = $instance['filtres_offset'];
+	if(isset($instance['filtres_offset'])) {
+		if ($instance['filtres_offset']!=false) $query_args['offset'] = $instance['filtres_offset'];
+	}
 
 	// SELON LES CATEGORIES
-	if($instance['filtres_similaires_selon']=='cats' || $instance['filtres_similaires_selon']=='both') {
+	if(isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon']=='cats' || isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon']=='both') {
 
 		// $FILTRES_CATSIN
 		$filtres_catsin = "";
@@ -239,25 +255,29 @@ if($instance['filtres_off']==false) {
 	}
 	
 	// SELON LES TAGS
-	if($instance['filtres_similaires_selon']=='tags' || $instance['filtres_similaires_selon']=='both') {
+	if(isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon']=='tags' || isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon']=='both') {
 		// Articles similaires
 		// aux tags du single
 		$tags = wp_get_post_tags($instance['filtres_article_reference']);
 		foreach($tags as $individual_tag) {
 			$tag_ids[] = $individual_tag->term_id;
 		}
-		$query_args['tag__in'] = $tag_ids;
+		if(isset($tag_ids)) {
+			$query_args['tag__in'] = $tag_ids;
+		}
 	}
 	
 	// post__not_in
-	if($instance['filtres_ignoreposts']==true) {
+	if(isset($instance['filtres_ignoreposts']) && $instance['filtres_ignoreposts']==true) {
 		// Ne pas inclure l\'article single
 
 		if(is_array($instance['filtres_ignoreposts'])) {
 			$query_args['post__not_in'] = $instance['filtres_ignoreposts'];
 		}
 		else
-			$query_args['post__not_in'] = unserialize($instance['filtres_ignoreposts']);
+			if(isset($instance['filtres_ignoreposts']) && $instance['filtres_ignoreposts']!=false) {
+				$query_args['post__not_in'] = $instance['filtres_ignoreposts'];
+			}
 	}
 //	vardump($query_args['post__not_in']);
 
@@ -267,7 +287,7 @@ if($instance['filtres_off']==false) {
 		$QUERY = new WP_Query($query_args);
 	}
 }
-elseif($instance['calldata']!=false) {
+elseif(isset($instance['calldata']) && $instance['calldata']!=false) {
 // Rarement utilisé
 	$QUERY = $instance['calldata'];
 }
@@ -298,7 +318,7 @@ $c=1;
 // Paramètres Wallpin
 $a='a';
 
-if($instance['apparence_disposition']!="wallpin") {  // Mode Blog et Carousel : une seule colonne
+if(isset($instance['apparence_disposition']) && $instance['apparence_disposition']!="wallpin") {  // Mode Blog et Carousel : une seule colonne
 	$instance['apparence_wallpin_colonnes']=false;
 	$COLS = array("a");
 	for($z=0;$z<=(count($COLS)-1);$z++) {
@@ -307,7 +327,7 @@ if($instance['apparence_disposition']!="wallpin") {  // Mode Blog et Carousel : 
 	$n = $counter['a'];
 }
 else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de résultats pour le moment. Il faudra le proposer pour Blog (ajouter un wrapper à l'item avec une classe colonne.)
-	$COLS = explode('/',($instance['apparence_wallpin_colonnes']!=false ? $instance['apparence_wallpin_colonnes'] : getDefaultLoop('apparence_wallpin_colonnes'))); // Uniquement dans le cas Wallpin
+	$COLS = explode('/',(isset($instance['apparence_wallpin_colonnes']) && $instance['apparence_wallpin_colonnes']!=false ? $instance['apparence_wallpin_colonnes'] : getDefaultLoop('apparence_wallpin_colonnes'))); // Uniquement dans le cas Wallpin
 
 	for($z=0;$z<=(count($COLS)-1);$z++) {
 		$counter[$COLS[$z]]=1;
@@ -337,8 +357,10 @@ else {
 	// WIDGET_START
 	echo $Widget_START;
 	
-	$separators = array('hr','br');
-	echo (in_array($instance['titre_separator'],$separators) ? a($instance['titre_separator']) : false);
+	if(isset($instance['titre_separator'])) {
+		$separators = array('hr','br');
+		echo (in_array($instance['titre_separator'],$separators) ? a($instance['titre_separator']) : false);
+	}
 	
 	$_SESSION['widget_posts'] = false;
 	
@@ -443,7 +465,7 @@ else {
 						}
 						
 						// Enfin, on affiche la description dans la balise dd si la liste est de type dl-dt-dd
-						if ( $instance['contenu_excerpt']=='on' && $instance['affichage_modele']=='liste' && $instance['affichage_liste_type'] == 'dl-dt-dd' ) {
+						if (isset($instance['contenu_excerpt']) && $instance['contenu_excerpt']=='on' && $instance['affichage_modele']=='liste' && $instance['affichage_liste_type'] == 'dl-dt-dd' ) {
 							echo a('dd');
 								echo Get_thumbnail($instance);
 								echo Get_excerpt($instance);
@@ -452,7 +474,9 @@ else {
 						}
 						
 						$separators = array('hr','br');
-						echo (in_array($instance['articles_separator'],$separators) ? a($instance['articles_separator']) : false);
+						if(isset($instance['articles_separator'])) {
+							echo (in_array($instance['articles_separator'],$separators) ? a($instance['articles_separator']) : false);
+						}
 					
 					if(isset($WIrapper_END[$instance['apparence_disposition']])) {
 						// WI WIRAPPER_START

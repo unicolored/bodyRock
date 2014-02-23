@@ -37,7 +37,7 @@ function custom_lieux() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'query_var'           => '',
+		'query_var'           => 'lieu',
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'lieux', $args );

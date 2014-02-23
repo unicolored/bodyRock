@@ -73,7 +73,7 @@ class br_widgetsBodyloop extends WP_Widget {
 
 			$image_url = $attrs['src'];
 			$wh = false;
-			if ( $instance['vignette_dimensions_force']!=0 ) {
+			if ( isset($instance['vignette_dimensions_force']) && $instance['vignette_dimensions_force']!=0 ) {
 				$S = explode( 'x' , $instance['vignette_dimensions_force'] );
 				$wh = 'width="'.$S[0].'" height="'.$S[1].'"';
 			}
@@ -87,7 +87,7 @@ class br_widgetsBodyloop extends WP_Widget {
 			}
 			
 			//////////////
-			
+			$res = '';
 			if($instance['vignette_background']=="on") {
 				
 				$res .= '
@@ -129,7 +129,7 @@ class br_widgetsBodyloop extends WP_Widget {
 	}
 	
 	function Get_excerpt($instance,$before=false,$after=false,$excerpt=false) {
-		if ( $instance['contenu_lirelasuite'] == true && $instance['affichage_listegroup_unlink'] == true ) {
+		if ( isset($instance['contenu_lirelasuite']) && $instance['contenu_lirelasuite'] == true && $instance['affichage_listegroup_unlink'] == true ) {
 			if( $instance['contenu_lirelasuite_btn'] == true ) {
 				$linkmore = '<br><a href="'.get_permalink().'" class="btn btn-'.$instance['contenu_lirelasuite_btncolor'].' more-link" role="button">'.$instance['contenu_lirelasuite_txt'].'</a>';
 			}
@@ -147,8 +147,8 @@ class br_widgetsBodyloop extends WP_Widget {
 	}
 	
 	function Get_artfooter($instance) {
-		if($instance['contenu_footer_masquer']==false) {
-			if($instance['contenu_footer_date']=="on" || $instance['contenu_footer_auteur']=="on" || $instance['contenu_footer_commentaires']==false || $instance['contenu_footer_vues']=="on") {
+		if(isset($instance['contenu_footer_masquer']) && $instance['contenu_footer_masquer']==false) {
+			if(isset($instance['contenu_footer_date']) && $instance['contenu_footer_date']=="on" || $instance['contenu_footer_auteur']=="on" || $instance['contenu_footer_commentaires']==false || $instance['contenu_footer_vues']=="on") {
 				echo a('footer.art-footer');
 					//echo a('div.well.well-sm');
 					
@@ -157,7 +157,7 @@ class br_widgetsBodyloop extends WP_Widget {
 					$i=0;
 					if($instance['contenu_footer_vues']=="on") {
 						if($i==1) echo $sep;
-						echo br_getIcon('stats').'&nbsp;'.getPostViews(get_the_ID());
+						echo br_getIcon('signal').'&nbsp;'.getPostViews(get_the_ID());
 						$i=1;
 					}
 					if($instance['contenu_footer_date']=="on") {

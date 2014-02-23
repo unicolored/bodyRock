@@ -1,4 +1,4 @@
-<h1 class="widget-title"><i class="fa fa-hand-o-right"></i> Partager</h1>
+
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 	<a class="addthis_button_facebook"></a>
 	<a class="addthis_button_twitter"></a>

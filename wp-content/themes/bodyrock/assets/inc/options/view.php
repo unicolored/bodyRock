@@ -9,7 +9,10 @@
 
 // RENDER PAGE /////////////////////////////////////////////
 function themeoptions_viewRender_page() {
-	   
+	
+	// Régénère le .htaccess afin de prendre en compte les éventuels changement de custom types.
+//	flush_rewrite_rules();
+	
 	$recommended_plugins = array(
 	'addthis',
 	'cdn-sync-tool',

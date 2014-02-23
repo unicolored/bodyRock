@@ -30,7 +30,7 @@ function portfolio_thumbnail_url($pid){
 }
 
 function portfolio_posts_per_page( $query ) {
-    if ( $query->query_vars['post_type'] == 'portfolio' ) $query->query_vars['posts_per_page'] = 1;
+    if ( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'portfolio' ) $query->query_vars['posts_per_page'] = 1;
     return $query;
 }
 if ( !is_admin() ) add_filter( 'pre_get_posts', 'portfolio_posts_per_page' );
