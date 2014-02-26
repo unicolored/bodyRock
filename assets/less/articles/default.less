@@ -1,0 +1,84 @@
+/* Articles par défaut */
+
+article.article {
+	cursor:default;
+
+	margin-top:@line-height-computed/2;
+	margin-bottom:@line-height-computed/2;
+	
+	.clearfix();
+	
+	img {
+		.center-block();
+	}
+	
+	section.art-vignette {
+		margin:@padding-base-vertical @padding-base-horizontal; margin-bottom:@padding-base-vertical/2; padding:@padding-base-vertical 0;
+		
+		img {
+			.center-block();
+		}
+	}
+	section.vignette-bg {
+		@vignette-bg-height: 100px;
+		
+		height:@vignette-bg-height;
+		position:relative;
+		overflow:hidden;
+		
+		h1 {
+			margin:0;
+
+			a {
+				display:block; height:@vignette-bg-height; width:100%;
+			}
+		}
+	}
+	
+
+	header.art-header {		
+	
+		h1, h2, h3, h4, h5, h6 {
+			font-size:@font-size-large;
+			line-height:@line-height-small/1.125;
+			margin:@padding-base-vertical @padding-base-horizontal; margin-bottom:@padding-base-vertical/2; padding:@padding-base-vertical 0;
+			overflow:hidden;
+			
+		}
+    }
+	
+		
+	
+	a.post-title {
+		display:block;
+		margin:@padding-base-vertical @padding-base-horizontal; margin-bottom:@padding-base-vertical/2; padding:@padding-base-vertical 0;
+	}
+	
+	section.art-content {
+		
+		blockquote:first-letter { 
+		   font-size: 2em;
+		   line-height: 0;  /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
+		}
+		
+		p:first { font-weight:700; }
+		
+		p + p {   
+		   text-indent: 1.5em  /* I like to keep the indentation length equal to the line height. */
+		}
+	}
+	
+	footer.art-footer {
+		.clearfix();
+		font-size:@font-size-small/1.5;
+		line-height:@line-height-small*1em;
+		
+		padding:@padding-base-vertical @padding-base-horizontal;
+		
+		a { }
+	}
+	
+	.vcard {
+		margin:@padding-base-vertical @padding-base-horizontal; margin-bottom:@padding-base-vertical/2; padding:@padding-base-vertical 0;
+	}
+}

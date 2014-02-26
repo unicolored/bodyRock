@@ -1,0 +1,44 @@
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
+
+body {
+	
+	cursor:default;
+		
+	font-style:normal;
+	font-weight:normal;
+	
+	font-variant:normal;
+	letter-spacing:normal;
+
+	padding-top:@line-height-computed;	
+	padding-bottom:@navbar-height*2em;
+
+	strong { font-weight:700; font-style:normal; }
+	em { font-style:italic; font-weight:normal; }
+	
+	/* Entêtes */
+	
+	header.header {
+		.make-xs-column(12);
+	}
+	
+	footer.footer {
+		margin:0;
+		padding:0;
+		width:auto;
+		.make-xs-column(12);
+	}
+	
+	/* Sections */
+	
+	aside.aside {	
+		.make-xs-column(12);
+	}
+	section.content {
+		.make-xs-column(12);
+	}
+	aside.aside-right {	
+		.make-xs-column(12);
+	}
+}
