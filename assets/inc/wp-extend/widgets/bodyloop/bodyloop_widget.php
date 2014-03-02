@@ -293,16 +293,16 @@ elseif(isset($instance['calldata']) && $instance['calldata']!=false) {
 }
 else {
 	// EDITION DE LA LOOP GLOBALE :: filtres_off = on :: les filtres sont éteints par défaut
-	if($instance['ajax']==false) {	
+	if(isset($instance['ajax']) && $instance['ajax']==false) {	
 		global $wp_query; // Récupération de la boucle globale avant execution
 		
 		$myargs = array(
 			'cat'		=>		get_query_var( 'cat' ),
 			'paged' 	=>		get_query_var('paged'),
-			'post_type' => 		TypeQuery($instance['filtres_type']),
+			'post_type' => 		isset($instance['filtres_type']) ? TypeQuery($instance['filtres_type']) : false,
 			'post_status'	=>	'publish,future',
 			's'			=>		get_query_var('s'),
-			'posts_per_page'=>	PostsPerPageQuery($instance['filtres_combien']),
+			'posts_per_page'=>	isset($instance['filtres_combien']) ? PostsPerPageQuery($instance['filtres_combien']) : false,
 		);		
 		
 		$args_query = array_merge( $wp_query->query_vars, $myargs );
@@ -340,7 +340,7 @@ else { // Apparence Wallpin : // Seul ce mode permet d'afficher des colonnes de 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-if($instance['ajax']==true) {
+if(isset($instance['ajax']) && $instance['ajax']==true) {
 
 	echo a('div.holder-ajax-widget-'.$instance['name']).z('div');
 	
@@ -365,7 +365,7 @@ else {
 	$_SESSION['widget_posts'] = false;
 	
 	
-	if ( $QUERY->have_posts() ) {
+	if ( isset($QUERY) && $QUERY->have_posts() ) {
 		
 		// Loop
 		// Les ID de posts chargés par ce widget vont être stockés en session

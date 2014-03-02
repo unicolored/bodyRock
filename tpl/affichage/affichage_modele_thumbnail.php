@@ -17,7 +17,7 @@ echo a('article.article.affichage.mod-thumbnail',"#post-".get_the_ID());
 			}
 			
 			$br_excerpt = Get_excerpt($instance,a('section.art-content'),z('section'),$excerpt[$i]);
-			if ( $instance['contenu_excerpt']=='on' && $br_excerpt!=false) {
+			if (isset($instance['contenu_excerpt']) && $instance['contenu_excerpt']=='on' && $br_excerpt!=false) {
 				echo "<div itemprop='description'>".$br_excerpt."</div>";
 			}
 			
