@@ -55,8 +55,6 @@ echo a('head');
 	echo "\t".'<link rel="apple-touch-icon-precomposed" sizes="57x57" href="'.get_stylesheet_directory_uri().'/img/ico/apple-touch-icon-57-precomposed.png">'."\n";
 	echo "\r";
 	
-	echo $meta_og_image;
-	
 	$ch = curl_init('http://api.bitly.com/v3/shorten?login=unicolored&apiKey=R_8de9dc884a5f6e6ba8831909df65d03c&longUrl='.get_permalink());
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	 
@@ -72,8 +70,9 @@ echo '<body data-spy="scroll" data-target=".subnav" data-offset="50" '; body_cla
 	echo '<div class="container"><div class="galaxie"><div class="col-xs-12"><noscript><div class="alert alert-warning">'.br_getIcon('warning').' Activer Javascript dans votre navigateur pour profiter de toutes les fonctionnalités du site.</div></noscript></div></div></div>'."\n";
 		
 	echo "\r";
+	$options=get_option('brthemeoptions', themeoptionsGet_default());
 	
-	echo a('div.'.($options['layout_width']==1 ? 'fixedwidth' : 'container'));
+	echo a('div.'.(isset($options['layout_width']) && $options['layout_width']==1 ? 'fixedwidth' : 'container'));
 	
 	echo a('header.header');
 		get_template_part(TPL_BOOTSTRAP_PATH.'navbars');

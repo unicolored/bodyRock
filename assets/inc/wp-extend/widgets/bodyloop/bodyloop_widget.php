@@ -349,7 +349,8 @@ if(isset($instance['ajax']) && $instance['ajax']==true) {
 	$_SESSION['ajax-widget-'.$instance['name']] = urlencode(json_encode($instance));
 	
 	$_SESSION['args-ajax-widget-'.$instance['name']] = urlencode(json_encode($args));
-	$_SESSION['ajax-widgets'] .= 'ajax-widget-'.$instance['name'].'//';
+	if(isset($_SESSION['ajax-widgets'])) $_SESSION['ajax-widgets'] .= isset($instance['name']) ? 'ajax-widget-'.$instance['name'].'//' : false;
+	else  $_SESSION['ajax-widgets'] = isset($instance['name']) ? 'ajax-widget-'.$instance['name'].'//' : false;
 	
 }
 else {
@@ -417,11 +418,11 @@ else {
 		}
 		add_action('template_redirect', 'pbd_alp_init');*/
 	
-		if(isset($First_START[$instance['apparence_disposition']])) {
+		if(isset($instance['apparence_disposition']) && isset($First_START[$instance['apparence_disposition']])) {
 			// F FIRST_START
 			echo $First_START[$instance['apparence_disposition']];
 		}	
-		if(isset($Wrapper_START[$instance['apparence_disposition']])) {
+		if(isset($instance['apparence_disposition']) && isset($Wrapper_START[$instance['apparence_disposition']])) {
 			// W WRAPPER_START
 			echo $Wrapper_START[$instance['apparence_disposition']];
 		}
@@ -435,7 +436,7 @@ else {
 	
 			foreach($COLS as $ID) {
 				
-				if(isset($Colonne_START[$instance['apparence_disposition']])) {
+				if(isset($instance['apparence_disposition']) && isset($Colonne_START[$instance['apparence_disposition']])) {
 					// C COLONNE_START
 					printf ( $Colonne_START[$instance['apparence_disposition']] , $largeur_colonne );
 				}
@@ -444,7 +445,7 @@ else {
 					$post=$articles[$ID][$i];
 					$excerpt[$i] = $articles[$ID][$i]->exxcerpt;
 					
-					if(isset($WIrapper_START[$instance['apparence_disposition']])) {
+					if(isset($instance['apparence_disposition']) && isset($WIrapper_START[$instance['apparence_disposition']])) {
 						// WI WIRAPPER_START
 						printf ( $WIrapper_START[$instance['apparence_disposition']] , ($i==1 ? 'active' : false) );
 					}
@@ -478,13 +479,13 @@ else {
 							echo (in_array($instance['articles_separator'],$separators) ? a($instance['articles_separator']) : false);
 						}
 					
-					if(isset($WIrapper_END[$instance['apparence_disposition']])) {
+					if(isset($instance['apparence_disposition']) && isset($WIrapper_END[$instance['apparence_disposition']])) {
 						// WI WIRAPPER_START
 						echo $WIrapper_END[$instance['apparence_disposition']];
 					}
 				}
 				
-				if(isset($Colonne_END[$instance['apparence_disposition']])) {
+				if(isset($instance['apparence_disposition']) && isset($Colonne_END[$instance['apparence_disposition']])) {
 					// C COLONNE_END
 					echo $Colonne_END[$instance['apparence_disposition']];
 				}
@@ -496,11 +497,11 @@ else {
 			// GROUP_END
 			echo $Group_END;
 		}	
-		if ( isset($Wrapper_END[$instance['apparence_disposition']]) ) {
+		if (isset($instance['apparence_disposition']) && isset($Wrapper_END[$instance['apparence_disposition']]) ) {
 			// WRAPPER_END
 			echo $Wrapper_END[$instance['apparence_disposition']];
 		}
-		if(isset($First_END[$instance['apparence_disposition']])) {
+		if(isset($instance['apparence_disposition']) && isset($First_END[$instance['apparence_disposition']])) {
 			// F FIRST_START
 			echo $First_END[$instance['apparence_disposition']];
 		}
