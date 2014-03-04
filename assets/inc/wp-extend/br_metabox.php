@@ -9,7 +9,13 @@
 
 add_action("admin_init",    "bodyrock_meta_box"    );
 add_action("save_post",     "save_brmetas"        );
-add_action("save_draft",    "save_brmetas"        ); 
+add_action("save_draft",    "save_brmetas"        );
+
+add_action("admin_init",    "bodyloop_meta_box"    );
+add_action("save_post",     "save_blmetas"        );
+add_action("save_draft",    "save_blmetas"        );
+
+require 'metabox/bodyloop.php';
 
 ////////////////////////////////////////////////////////////
 
@@ -235,4 +241,7 @@ function setPostViews($postID) {
         update_post_meta($postID, $count_key, $count);
     }
 }
+
+
+
 ?>
