@@ -45,13 +45,13 @@ $types_options = array("type_post" => "post", "type_page" => "page", "type_attac
 $args['post_type'] = $types_options[$instance['filtres_type']];
 
 // $FILTRES_COMBIEN
-$args['posts_per_page'] = $filtres_combien;
+$args['posts_per_page'] = $instance['filtres_combien'];
 
 // $FILTRES_ORDERBY // $FILTRES_ORDER
 $query_meta_key = false;
 $orderby_options = array("orderby_date" => "date", "orderby_dateedition" => "modified", "orderby_titre" => "title", "orderby_comment" => "comment_count", "orderby_nombredevue" => "meta_value");
-$args['orderby'] = $orderby_options[$filtres_orderby];
-switch($filtres_orderby) {
+$args['orderby'] = isset($orderby_options[$instance['filtres_orderby']]) ? $orderby_options[$instance['filtres_orderby']] : false;
+switch($instance['filtres_orderby']) {
     case 'orderby_nombredevue' :
         $args['meta_key'] = "post_views_count";
         break;
@@ -60,7 +60,7 @@ switch($filtres_orderby) {
 $args['order'] = $instance['filtres_order'];
 
 // $FILTRES_OFFSET
-$args['offset'] = $filtres_offset;
+$args['offset'] = $instance['filtres_offset'];
 
 // $FILTRES_CATSIN
 //if($instance['filtres_resultats_lies']=='resultats_select') {
@@ -135,41 +135,9 @@ if(is_singular()) {' . "\n" . '$posts_notin = get_the_ID();' . "\n" . '}
 
 echo a('div.ofthewidget');
 
-// AFFICHAGE DE LA REQUETE
-$theargs = "";
-$thepreargs = "";
-if ($args != false) {
-    $c = 1;
-    if (is_array($preargs)) {
-        foreach ($preargs as $A => $val) {
-            $thepreargs .= $val;
-        }
-    }
-    foreach ($args as $A => $val) {
-        $virgule = $c > 1 ? ",\n" : false;
-        if ($val != getDefaultLoop($A) && $val != false) {
-            //					echo $A.'::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.getDefaultLoop($A).' / '.$instance[$A].'<br>';
-            $theargs .= $virgule . "'" . $A . "' => " . ($val == "false" ? "false" : "'" . $val . "'");
-            $c++;
-        }
-    }
-    $theargs = $theargs == "" ? "// Tous les paramètres sont par défaut." : $theargs;
-    echo("
-<pre  class='prettyprint'>
-" . $thepreargs . "\n
-" . '$args' . " = array(\n" . $theargs . "\n);\n
-" . '$query_posts' . " = new Wp_Query(" . '$args' . ")</pre>
-			");
-} else {
-    echo("
-<pre  class='prettyprint linenums'>
-" . '$query_posts' . " = new Wp_Query()</pre>
-			");
-}
-getRefreshBtn('Rafraîchir $args');
 echo a('hr');
 
-apply_filters('widget_title', $title);
+apply_filters('widget_title', isset($instance['title']) ? $instance['title'] : 'Sans-titre');
 
 echo a('style');
 echo '

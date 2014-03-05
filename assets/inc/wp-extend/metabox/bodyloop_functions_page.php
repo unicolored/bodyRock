@@ -49,7 +49,7 @@
 				$resultats = getOptions($name);
 //				$form_item .= '<h4>'.$label.'</h4>';
 				foreach($resultats as $R) {
-					$form_item .= '<input type="checkbox" class="checkbox" name="'.$name.'_'.$R->term_id.'" '.checked( (bool) $instance[$name.'_'.$R->term_id], true,false ).' id="'.$name.'_'.$R->term_id.'" />';
+					$form_item .= '<input type="checkbox" class="checkbox" name="'.$name.'_'.$R->term_id.'" '.(isset($instance[$name.'_'.$R->term_id]) ? checked( (bool) $instance[$name.'_'.$R->term_id], true,false ) : false).' id="'.$name.'_'.$R->term_id.'" />';
 					$form_item .= '<label for="'.$name.'_'.$R->term_id.'">'.$R->name.'</label> ';
 				}
 			}
