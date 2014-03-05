@@ -3,7 +3,7 @@
 /* section.widget,header.wid-header,section.wid-vignette,section.wid-content,footer.wid-footer */
 
 section.widget {
-	.make-xs-column(12);
+	
 	
 	/* Entêtes */
 	
@@ -37,6 +37,10 @@ section.widget {
 
 	}
 	
+}
+
+article {
+	section.widget { display:inline; }
 }
 
 /* Modifications des ITEMS en fonction de leur modèle d'affichage dans assets/tpl/affichage/ */

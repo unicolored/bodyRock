@@ -206,7 +206,7 @@ echo a('fieldset.filtres');
 
 //echo '<legend><h4>' . doFormInput("Désactiver les filtres,filtres_off?", $instance, false, '') . '</h4></legend>';
 
-echo doFormInput("Position,position:r:", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
+echo doFormInput("Position,position:r:", $instance, "Désactiver,pos0;Dessus,pos1;Dessous,pos2;Remplacement,pos3", '<br>');
 echo doFormInput("post_type,filtres_type::", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
 echo doFormInput("orderby,filtres_orderby::", $instance, "date,orderby_date;title,orderby_titre;comment_count,orderby_comment;post_views_count,orderby_nombredevue", '');
 echo doFormInput("order,filtres_order::", $instance, "DESCendant,DESC;ASCendant,ASC", '<br>');

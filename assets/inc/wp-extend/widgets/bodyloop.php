@@ -193,6 +193,8 @@ class br_widgetsBodyloop extends WP_Widget {
 	}
 	
 	function getDefaultLoop($val=false) {
+	    $default['position'] = 'pos0';
+        
 		$default['filtres_off'] = "on";
 		$default['filtres_type'] = false;
 		$default['filtres_combien'] = false;

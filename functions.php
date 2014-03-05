@@ -74,7 +74,7 @@ require_once INC_PATH.'br_interface.php';			// Génération d'éléments Html ut
 
 require_once INC_PATH.'backend/_backend.php';		// Chargement des fonctions en arrière plan.
 require_once INC_PATH.'content/_content.php'; 		// Tout ce qui concerne l'inclusion de contenus.
-require_once INC_PATH.'modules/_modules.php'; 		// Tout ce qui concerne l'inclusion de contenus.
+require_once INC_PATH.'modules/_modules.php'; 		// Tout ce qui concerne l'inclusion de modules.
 require_once 'assets/inc/wp-extend/_wp-extend.php';	// Chargement des fonctions qui étendent la gamme d'éléments de Wordpress.
 
 
