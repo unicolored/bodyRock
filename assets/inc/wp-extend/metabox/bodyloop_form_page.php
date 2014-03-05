@@ -6,21 +6,12 @@
 //
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
-/*$default_instance = getDefaultLoop();
- foreach($default_instance as $k => $val) {
- //echo $k.'::'.$val.'<br>';
-
- if(!isset($instance[$k])) {
- $instance[$k] = $val;
- }
- }*/
-//		the_widget('br_widgetsBodyloop',$instance);
-
 $instance = getDefaultLoop();
 $instance = get_post_meta(get_the_ID());
 foreach($instance as $K => $V) {
     $instance[$K] = $V[0];
 }
+$instance['filtres_off'] = false;
 
 $args = false;
 $instance_show = $instance;
@@ -49,66 +40,56 @@ if ($instance['etendue_masquer'] == false) {
     }
 }
 
-if ($instance['filtres_off'] == true) {
-    $instance_show['filtres_type'] = false;
-    $instance_show['filtres_combien'] = false;
-    $instance_show['filtres_orderby'] = false;
-    $instance_show['filtres_order'] = false;
-    $instance_show['filtres_resultats_lies'] = false;
-    $instance_show['offset'] = false;
-    $instance_show['false'] = false;
-    $instance_show['filtres_catsinornot'] = false;
-} else {
-    // $FILTRES_TYPES
-    $types_options = array("type_post" => "post", "type_page" => "page", "type_attachment" => "attachment");
-    $args['post_type'] = $types_options[$instance['filtres_type']];
+// $FILTRES_TYPES
+$types_options = array("type_post" => "post", "type_page" => "page", "type_attachment" => "attachment");
+$args['post_type'] = $types_options[$instance['filtres_type']];
 
-    // $FILTRES_COMBIEN
-    $args['posts_per_page'] = $filtres_combien;
+// $FILTRES_COMBIEN
+$args['posts_per_page'] = $filtres_combien;
 
-    // $FILTRES_ORDERBY // $FILTRES_ORDER
-    $query_meta_key = false;
-    $orderby_options = array("orderby_date" => "date", "orderby_dateedition" => "modified", "orderby_titre" => "title", "orderby_comment" => "comment_count", "orderby_nombredevue" => "meta_value");
-    $args['orderby'] = $orderby_options[$filtres_orderby];
-    switch($filtres_orderby) {
-        case 'orderby_nombredevue' :
-            $args['meta_key'] = "post_views_count";
-            break;
+// $FILTRES_ORDERBY // $FILTRES_ORDER
+$query_meta_key = false;
+$orderby_options = array("orderby_date" => "date", "orderby_dateedition" => "modified", "orderby_titre" => "title", "orderby_comment" => "comment_count", "orderby_nombredevue" => "meta_value");
+$args['orderby'] = $orderby_options[$filtres_orderby];
+switch($filtres_orderby) {
+    case 'orderby_nombredevue' :
+        $args['meta_key'] = "post_views_count";
+        break;
+}
+// meta_key=post_views_count
+$args['order'] = $instance['filtres_order'];
+
+// $FILTRES_OFFSET
+$args['offset'] = $filtres_offset;
+
+// $FILTRES_CATSIN
+//if($instance['filtres_resultats_lies']=='resultats_select') {
+$filtres_catsin = "";
+$i = 1;
+foreach ($instance as $label => $value) {
+    //			echo preg_replace("/filtres_categories_/","",$label).'<br>';
+    if (preg_match("/filtres_categories_/", $label, $cat) == 1) {
+        $cat = preg_replace("/filtres_categories_/", "", $label);
+        $filtres_catsin .= ($i > 1 ? "," : false) . $cat;
+        $i++;
     }
-    // meta_key=post_views_count
-    $args['order'] = $instance['filtres_order'];
+}
+//		$args['category__in'] = "'".$filtres_catsin."'";
 
-    // $FILTRES_OFFSET
-    $args['offset'] = $filtres_offset;
-
-    // $FILTRES_CATSIN
-    //if($instance['filtres_resultats_lies']=='resultats_select') {
-    $filtres_catsin = "";
-    $i = 1;
-    foreach ($instance as $label => $value) {
-        //			echo preg_replace("/filtres_categories_/","",$label).'<br>';
-        if (preg_match("/filtres_categories_/", $label, $cat) == 1) {
-            $cat = preg_replace("/filtres_categories_/", "", $label);
-            $filtres_catsin .= ($i > 1 ? "," : false) . $cat;
-            $i++;
-        }
-    }
-    //		$args['category__in'] = "'".$filtres_catsin."'";
-
-    if ($filtres_catsin != false) {
-        $args['category__' . $instance['filtres_catsinornot']] = '$category_in';
-        $preargs[$args['category__in1']] = '
+if ($filtres_catsin != false) {
+    $args['category__' . $instance['filtres_catsinornot']] = '$category_in';
+    $preargs[$args['category__in1']] = '
 // Articles filtré par catégories
 $category_in = ' . ($filtres_catsin != false ? "'" . $filtres_catsin . "'" : "false") . ';
 ';
-    }
-    //}
-    // SINON ON FILTRE SELON L'ARTICLE EN COURS
-    if ($instance['filtres_resultats_lies'] == 'resultats_similaires') {
-        // SELON LES CATEGORIES
-        if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'cats') {
-            $args['category__in'] = '$category_in';
-            $preargs[$args['category__in']] = '
+}
+//}
+// SINON ON FILTRE SELON L'ARTICLE EN COURS
+if ($instance['filtres_resultats_lies'] == 'resultats_similaires') {
+    // SELON LES CATEGORIES
+    if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'cats') {
+        $args['category__in'] = '$category_in';
+        $preargs[$args['category__in']] = '
 // Articles similaires
 // aux catégories du single
 if(is_singular()) {
@@ -125,11 +106,11 @@ foreach($pc as $c) {
 }
 }
 ';
-        }
-        // SELON LES TAGS
-        if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'tags') {
-            $args['tag__in'] = '$tag_ids';
-            $preargs[$args['tag__in']] = '
+    }
+    // SELON LES TAGS
+    if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'tags') {
+        $args['tag__in'] = '$tag_ids';
+        $preargs[$args['tag__in']] = '
 // Articles similaires
 // aux tags du single
 if(is_singular()) {
@@ -139,61 +120,56 @@ foreach($tags as $individual_tag) {
 }
 }
 ';
-        }
     }
+}
 
-    // post__not_in
-    if ($instance['filtres_ignoreposts'] == true) {
-        $args['post__not_in'] = 'array($posts_notin)';
-        $preargs[$args['post__not_in']] = '
+// post__not_in
+if ($instance['filtres_ignoreposts'] == true) {
+    $args['post__not_in'] = 'array($posts_notin)';
+    $preargs[$args['post__not_in']] = '
 // Ne pas inclure l\'article single
 if(is_singular()) {' . "\n" . '$posts_notin = get_the_ID();' . "\n" . '}
 ';
-    }
 }
+
 
 echo a('div.ofthewidget');
 
-if ($instance['filtres_off'] == false) {
-    // AFFICHAGE DE LA REQUETE
-    $theargs = "";
-    $thepreargs = "";
-    if ($args != false) {
-        $c = 1;
-        if (is_array($preargs)) {
-            foreach ($preargs as $A => $val) {
-                $thepreargs .= $val;
-            }
+// AFFICHAGE DE LA REQUETE
+$theargs = "";
+$thepreargs = "";
+if ($args != false) {
+    $c = 1;
+    if (is_array($preargs)) {
+        foreach ($preargs as $A => $val) {
+            $thepreargs .= $val;
         }
-        foreach ($args as $A => $val) {
-            $virgule = $c > 1 ? ",\n" : false;
-            if ($val != getDefaultLoop($A) && $val != false) {
-                //					echo $A.'::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.getDefaultLoop($A).' / '.$instance[$A].'<br>';
-                $theargs .= $virgule . "'" . $A . "' => " . ($val == "false" ? "false" : "'" . $val . "'");
-                $c++;
-            }
-        }
-        $theargs = $theargs == "" ? "// Tous les paramètres sont par défaut." : $theargs;
-        echo("
-	<pre  class='prettyprint'>
-	" . $thepreargs . "\n
-	" . '$args' . " = array(\n" . $theargs . "\n);\n
-	" . '$query_posts' . " = new Wp_Query(" . '$args' . ")</pre>
-				");
-    } else {
-        echo("
-	<pre  class='prettyprint linenums'>
-	" . '$query_posts' . " = new Wp_Query()</pre>
-				");
     }
-    getRefreshBtn('Rafraîchir $args');
-    echo a('hr');
+    foreach ($args as $A => $val) {
+        $virgule = $c > 1 ? ",\n" : false;
+        if ($val != getDefaultLoop($A) && $val != false) {
+            //					echo $A.'::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.getDefaultLoop($A).' / '.$instance[$A].'<br>';
+            $theargs .= $virgule . "'" . $A . "' => " . ($val == "false" ? "false" : "'" . $val . "'");
+            $c++;
+        }
+    }
+    $theargs = $theargs == "" ? "// Tous les paramètres sont par défaut." : $theargs;
+    echo("
+<pre  class='prettyprint'>
+" . $thepreargs . "\n
+" . '$args' . " = array(\n" . $theargs . "\n);\n
+" . '$query_posts' . " = new Wp_Query(" . '$args' . ")</pre>
+			");
+} else {
+    echo("
+<pre  class='prettyprint linenums'>
+" . '$query_posts' . " = new Wp_Query()</pre>
+			");
 }
+getRefreshBtn('Rafraîchir $args');
+echo a('hr');
 
 apply_filters('widget_title', $title);
-
-$form = new br_widgetsBodyloop();
-echo $form -> widget(array(), $instance);
 
 echo a('style');
 echo '
@@ -219,67 +195,36 @@ echo z('script');
 echo "<link rel='stylesheet' id='style-prettify-css'  href='http://bodyrock.gilleshoarau.com/wp-content/themes/bodyrock/assets/js/libs/prettify/prettify.css?ver=mar13' type='text/css' media='' />";
 echo "<script type='text/javascript' src='http://bodyrock.gilleshoarau.com/wp-content/themes/bodyrock/assets/js/libs/prettify/run_prettify.js?ver=3.8'></script>";
 
+// EXEMPLE ///////////////////
+// Affichage test de la loop
+$form = new br_widgetsBodyloop();
+echo $form -> widget(array(), $instance);
+
 // FILTRES ///////////////////
 //			echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo a('fieldset.filtres');
 
-echo '<legend><h4>' . doFormInput("Désactiver les filtres,filtres_off?", $instance, false, '') . '</h4></legend>';
-if ($instance['filtres_off'] == false) {
-    echo doFormInput("post_type,filtres_type::", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
-    echo doFormInput("orderby,filtres_orderby::", $instance, "date,orderby_date;title,orderby_titre;comment_count,orderby_comment;post_views_count,orderby_nombredevue", '');
-    echo doFormInput("order,filtres_order::", $instance, "DESCendant,DESC;ASCendant,ASC", '<br>');
-    echo doFormInput("posts_per_page,filtres_combien09", $instance, false, '<br><small>Si vide, se base sur la valeur définie dans <a href="/wp-admin/options-reading.php">Réglages/Lecture</a></small><br>');
-    echo doFormInput("<span title='Ignorer les x premiers articles'>offset</span>,filtres_offset09", $instance, false, '<br>');
-    echo doFormInput("Il faut,filtres_catsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
-    echo doFormInput("category__" . $instance['filtres_catsinornot'] . ",filtres_categories()?", $instance, false, '<hr>');
-    echo doFormInput("Il faut,filtres_tagsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
-    echo doFormInput("tags__" . $instance['filtres_tagsinornot'] . ",filtres_tags", $instance, false, '<hr>');
-    echo doFormInput("Sur page single,filtres_resultats_lies::", $instance, "ne rien changer,resultats_select;résultats similaires,resultats_similaires", '<br>');
-    if ($instance['filtres_resultats_lies'] == "resultats_similaires") {
-        echo doFormInput("...selon,filtres_similaires_selon::", $instance, "---,---;Catégories,cats;Tags,tags;Les deux,both", '<br>');
-    }
-    echo doFormInput("Ne pas inclure l'article single,filtres_ignoreposts?", $instance, false, '<br>');
-} else {
-    echo '<p>Le widget se base sur la loop $wp_query globale lorsque tous les filtres sont activés.</p>';
-    echo '<p>Activer les filtres pour générer des requêtes de filtrages de votre contenu.</p>';
-    echo '<p>Le code ci-dessous intégré dans une template, chargera le contenu basée sur la requête globale.</p>';
+//echo '<legend><h4>' . doFormInput("Désactiver les filtres,filtres_off?", $instance, false, '') . '</h4></legend>';
+
+echo doFormInput("Position,position:r:", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
+echo doFormInput("post_type,filtres_type::", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
+echo doFormInput("orderby,filtres_orderby::", $instance, "date,orderby_date;title,orderby_titre;comment_count,orderby_comment;post_views_count,orderby_nombredevue", '');
+echo doFormInput("order,filtres_order::", $instance, "DESCendant,DESC;ASCendant,ASC", '<br>');
+echo doFormInput("posts_per_page,filtres_combien09", $instance, false, '<br><small>Si vide, se base sur la valeur définie dans <a href="/wp-admin/options-reading.php">Réglages/Lecture</a></small><br>');
+echo doFormInput("<span title='Ignorer les x premiers articles'>offset</span>,filtres_offset09", $instance, false, '<br>');
+echo doFormInput("Il faut,filtres_catsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
+echo doFormInput("category__" . $instance['filtres_catsinornot'] . ",filtres_categories()?", $instance, false, '<hr>');
+echo doFormInput("Il faut,filtres_tagsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
+echo doFormInput("tags__" . $instance['filtres_tagsinornot'] . ",filtres_tags", $instance, false, '<hr>');
+echo doFormInput("Sur page single,filtres_resultats_lies::", $instance, "ne rien changer,resultats_select;résultats similaires,resultats_similaires", '<br>');
+if ($instance['filtres_resultats_lies'] == "resultats_similaires") {
+    echo doFormInput("...selon,filtres_similaires_selon::", $instance, "---,---;Catégories,cats;Tags,tags;Les deux,both", '<br>');
 }
+echo doFormInput("Ne pas inclure l'article single,filtres_ignoreposts?", $instance, false, '<br>');
+
 echo z('fieldset');
 echo a('hr');
 
-/*
-// AFFICHAGE DE L'INSTANCE
-$theinstance = "";
-$c = 1;
-foreach ($instance_show as $A => $val) {
-    $virgule = $c > 1 ? ",\n" : false;
-    if ($A != false) {
-        //				echo $A.'::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.getDefaultLoop($A).' / '.$instance[$A].'<br>';
-        if ($val != getDefaultLoop($A) && $val != false) {
-            //					echo $A.'::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.getDefaultLoop($A).' / '.$instance[$A].'<br>';
-
-            $theinstance .= $virgule . "'" . $A . "' => " . ($val == "false" ? "false" : "'" . $val . "'");
-            $c++;
-        }
-    }
-}
-if ($theinstance == "") {
-    echo("
-<pre  class='prettyprint'>
-the_widget('br_widgetsBodyloop');
-</pre>
-		");
-} else {
-    echo("
-<pre  class='prettyprint'>
-" . '$instance' . " = array(\n" . $theinstance . "\n);\n
-the_widget('br_widgetsBodyloop'," . '$instance' . ");
-</pre>
-		");
-}
-getRefreshBtn('Rafraîchir $instance');
-echo a('hr');
-*/
 // TITRE ///////////////////
 echo a('fieldset.titre');
 echo '<legend><h4>' . doFormInput("Titre,titre", $instance, false, '') . ' ' . doFormInput("h,titre_format::", $instance, "1,h1;2,h2;3,h3;4,h4;5,h5;6,h6", '<br>') . ' ' . doFormInput("Sép.,titre_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '') . ' ' . doFormInput("Masquer le titre,titre_masquer?", $instance, false, '<br>') . '</h4></legend>';

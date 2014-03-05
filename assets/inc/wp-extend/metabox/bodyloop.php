@@ -1,12 +1,13 @@
 <?php
 // BODYLOOP
-function bodyloop_meta_box() {
-    $values = array();
+// Metabox permettant de créer une loop personnalisée qui sera placée avant, après ou en remplacement de la loop page.
 
+// Création de la metabox
+function bodyloop_meta_box() {
     add_meta_box("bodyloop-meta", "Bodyloop", "bodyloop_meta_options", "page", "normal", "high");
 }
 
-// FORMULAIRE
+// Affichage de la metabox
 function bodyloop_meta_options() {
     global $post;
     global $wpdb;
@@ -28,7 +29,7 @@ function bodyloop_meta_options() {
     include 'bodyloop_form_page.php';
 }
 
-// ENREGISTREMENT
+// Sauvegarde des données
 function save_blmetas($post) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return $post_id;
