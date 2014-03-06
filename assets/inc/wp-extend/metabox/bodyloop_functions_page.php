@@ -50,7 +50,7 @@
 //				$form_item .= '<h4>'.$label.'</h4>';
 				foreach($resultats as $R) {
 					$form_item .= '<input type="checkbox" class="checkbox" name="'.$name.'_'.$R->term_id.'" '.(isset($instance[$name.'_'.$R->term_id]) ? checked( (bool) $instance[$name.'_'.$R->term_id], true,false ) : false).' id="'.$name.'_'.$R->term_id.'" />';
-					$form_item .= '<label for="'.$name.'_'.$R->term_id.'">'.$R->name.'</label> ';
+					$form_item .= '<label for="'.$name.'_'.$R->term_id.'">'.$R->name.'</label><br>';
 				}
 			}
 			else {
@@ -72,8 +72,8 @@
             //$form_item .= '<select name="'.$name.'" id="'.$name.'">';
                 foreach($O as $res) {
                     $X = explode(",",$res);
-                    $form_item .= '<input type="radio" class="radio" id="'.$name.'" name="'.$name.'" '.(isset($instance[$name]) ? checked( $instance[$name], $X[1],false ) : checked( getDefaultLoop($name), $X[1],false )).' value="'.$X[1].'" />';
-                    $form_item .= '<label for="'.$name.'">'.$X[0].'</label> ';
+                    $form_item .= '<input type="radio" class="radio" id="'.$X[1].'" name="'.$name.'" '.(isset($instance[$name]) ? checked( $instance[$name], $X[1],false ) : checked( getDefaultLoop($name), $X[1],false )).' value="'.$X[1].'" />';
+                    $form_item .= '<label for="'.$X[1].'">'.$X[0].'</label> ';
                     
                     //$form_item .= '<option value="'.$X[1].'" '.(isset($instance[$name]) ? selected( $instance[$name], $X[1],false ) : selected( getDefaultLoop($name), $X[1],false )).'>'.$X[0].'</option>';
                 }

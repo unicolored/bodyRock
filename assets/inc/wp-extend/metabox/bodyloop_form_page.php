@@ -152,6 +152,11 @@ echo '
             .ofthewidget fieldset p.tabulate {
                 padding:0; padding-left:2em; margin:0;
             }
+            .ofthewidget article {
+                border:1px solid #aaa; padding:5px; margin:2px;
+            }
+            table.table td { width:25%; }
+            table.table tr, table.table td, table.table { vertical-align:top; }
 		';
 echo z('style');
 
@@ -163,11 +168,83 @@ echo z('script');
 echo "<link rel='stylesheet' id='style-prettify-css'  href='http://bodyrock.gilleshoarau.com/wp-content/themes/bodyrock/assets/js/libs/prettify/prettify.css?ver=mar13' type='text/css' media='' />";
 echo "<script type='text/javascript' src='http://bodyrock.gilleshoarau.com/wp-content/themes/bodyrock/assets/js/libs/prettify/run_prettify.js?ver=3.8'></script>";
 
+echo '<table class="table">';
+echo '<tbody>';
+echo '<tr>';
+echo '<td>';
 // EXEMPLE ///////////////////
 // Affichage test de la loop
 $form = new br_widgetsBodyloop();
-echo $form -> widget(array(), $instance);
+$instance_preview = $instance;
+$instance_preview['ajax'] = false;
+$instance_preview['apparence_disposition'] = 'blog';
+$instance_preview['affichage_modele'] = 'affichage_modele_liste';
+$instance_preview['affichage_liste_type'] = 'ul/li';
+$instance_preview['vignette_masquer'] = 'on';
+$instance_preview['contenu_header_masquer'] = false;
+$instance_preview['contenu_footer_date'] = 'on';
+$instance_preview['filtres_combien'] = 6;
 
+echo $form -> widget(array(), $instance_preview);
+
+echo '</td>';
+
+echo '<td valign="top">';
+
+// TITRE ///////////////////
+echo a('fieldset.titre');
+echo '<legend><h4>' . doFormInput("Titre,titre", $instance, false, '') . ' ' . doFormInput("h,titre_format::", $instance, "1,h1;2,h2;3,h3;4,h4;5,h5;6,h6", '<br>') . ' ' . doFormInput("Sép.,titre_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '') . ' ' . doFormInput("Masquer le titre,titre_masquer?", $instance, false, '<br>') . '</h4></legend>';
+if ($instance['titre_masquer'] == false) {
+    echo doFormInput("Icône,titre_icone", $instance, false, '<br>');
+}
+echo doFormInput("Nom identifiant,name", $instance, false, '');
+echo doFormInput("Classe du widget,class", $instance, false, '');
+// TOFIX : Ajouter un footer au widget : lien, bouton
+
+echo z('fieldset');
+
+// APPARENCE ///////////////////
+//          echo $form->doFormInput("ONE",$instance,false,'<br>');
+echo a('fieldset.apparence');
+echo '<legend><h4>' . doFormInput("Apparence,apparence_disposition::", $instance, "Blog,blog;Carousel,carousel;Wallpin,wallpin", '<br>') . '</h4></legend>';
+if ($instance['apparence_disposition'] == "blog") {
+    echo '<p>Les résultats apparaissent les uns après les autres.</p>';
+    echo '<p>Pas d\'options pour cette apparence.</p>';
+} elseif ($instance['apparence_disposition'] == "carousel") {
+    echo '<h4>Options du Carousel</h4>';
+    echo doFormInput("Afficher indicators,apparence_carousel_indicators?", $instance, false, '<br>');
+    echo doFormInput("Afficher controls,apparence_carousel_controls?", $instance, false, '<br>');
+    echo doFormInput("Positionner les controls sous le carousel,apparence_carousel_controlsbas?", $instance, false, '<br>');
+    echo doFormInput("Hauteur du carousel,apparence_carousel_hauteur09", $instance, false, '<br>');
+} elseif ($instance['apparence_disposition'] == "wallpin") {
+    echo '<h4>Options du Wallpin</h4>';
+    echo doFormInput("Nombre de colonnes,apparence_wallpin_colonnes::", $instance, "2 colonnes,a/b;3 colonnes,a/b/c;4 colonnes,a/b/c/d;6 colonnes,a/b/c/d/e/f", '<br>');
+    echo doFormInput("Utiliser les classes Bootstrap,apparence_wallpin_bootstrap?", $instance, false, '<br>');
+}
+echo z('fieldset');
+
+// AFFICHAGE ///////////////////
+//          echo $form->doFormInput("ONE",$instance,false,'<br>');
+echo a('fieldset.affichage');
+echo '<legend><h3>Affichage</h3></legend>';
+echo doFormInput("Modèle,affichage_modele::", $instance, "Liste,affichage_modele_liste;Liste group,affichage_modele_listegroup;Médias,affichage_modele_listemedias;Thumbnails,affichage_modele_thumbnail;Articles,affichage_modele_article", '<br>');
+if ($instance['affichage_modele'] == "affichage_modele_liste") {
+    echo '<h4>Options de Liste</h4>';
+    echo doFormInput("Type,affichage_liste_type::", $instance, "ul/li,ul-li;ol/li,ol-li;dl/dt/dd,dl-dt-dd", '<br>');
+    echo doFormInput("Masquer les puces,affichage_liste_unstyled?", $instance, false, '<br>');
+    echo doFormInput("Horizontale,affichage_liste_horizontale?", $instance, false, '<br>');
+}
+if ($instance['affichage_modele'] == "affichage_modele_listemedias") {
+    echo '<h4>Options de <a href="http://getbootstrap.com/components/#media" target="_blank">#media</a></h4>';
+    echo doFormInput("Supprimer le lien de l'image,affichage_listemedias_unlink_img?", $instance, "", '<br>');
+}
+if ($instance['affichage_modele'] == "affichage_modele_listegroup") {
+    echo '<h4>Options de <a href="http://getbootstrap.com/components/#list-group" target="_blank">#list-group</a></h4>';
+    echo doFormInput("Supprimer le lien par défaut,affichage_listegroup_unlink?", $instance, "", '<br>');
+}
+echo z('fieldset');
+echo '</td>';
+echo '<td>';
 // FILTRES ///////////////////
 //			echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo a('fieldset.filtres');
@@ -191,63 +268,11 @@ if ($instance['filtres_resultats_lies'] == "resultats_similaires") {
 echo doFormInput("Ne pas inclure l'article single,filtres_ignoreposts?", $instance, false, '<br>');
 
 echo z('fieldset');
-echo a('hr');
-
-// TITRE ///////////////////
-echo a('fieldset.titre');
-echo '<legend><h4>' . doFormInput("Titre,titre", $instance, false, '') . ' ' . doFormInput("h,titre_format::", $instance, "1,h1;2,h2;3,h3;4,h4;5,h5;6,h6", '<br>') . ' ' . doFormInput("Sép.,titre_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '') . ' ' . doFormInput("Masquer le titre,titre_masquer?", $instance, false, '<br>') . '</h4></legend>';
-if ($instance['titre_masquer'] == false) {
-    echo doFormInput("Icône,titre_icone", $instance, false, '<br>');
-}
-echo doFormInput("Nom identifiant,name", $instance, false, '');
-echo doFormInput("Classe du widget,class", $instance, false, '');
-// TOFIX : Ajouter un footer au widget : lien, bouton
-
-echo z('fieldset');
-
-// APPARENCE ///////////////////
-//			echo $form->doFormInput("ONE",$instance,false,'<br>');
-echo a('fieldset.apparence');
-echo '<legend><h4>' . doFormInput("Apparence,apparence_disposition::", $instance, "Blog,blog;Carousel,carousel;Wallpin,wallpin", '<br>') . '</h4></legend>';
-if ($instance['apparence_disposition'] == "blog") {
-    echo '<p>Les résultats apparaissent les uns après les autres.</p>';
-    echo '<p>Pas d\'options pour cette apparence.</p>';
-} elseif ($instance['apparence_disposition'] == "carousel") {
-    echo '<h4>Options du Carousel</h4>';
-    echo doFormInput("Afficher indicators,apparence_carousel_indicators?", $instance, false, '<br>');
-    echo doFormInput("Afficher controls,apparence_carousel_controls?", $instance, false, '<br>');
-    echo doFormInput("Positionner les controls sous le carousel,apparence_carousel_controlsbas?", $instance, false, '<br>');
-    echo doFormInput("Hauteur du carousel,apparence_carousel_hauteur09", $instance, false, '<br>');
-} elseif ($instance['apparence_disposition'] == "wallpin") {
-    echo '<h4>Options du Wallpin</h4>';
-    echo doFormInput("Nombre de colonnes,apparence_wallpin_colonnes::", $instance, "2 colonnes,a/b;3 colonnes,a/b/c;4 colonnes,a/b/c/d;6 colonnes,a/b/c/d/e/f", '<br>');
-    echo doFormInput("Utiliser les classes Bootstrap,apparence_wallpin_bootstrap?", $instance, false, '<br>');
-}
-echo z('fieldset');
-
-// AFFICHAGE ///////////////////
-//			echo $form->doFormInput("ONE",$instance,false,'<br>');
-echo a('fieldset.affichage');
-echo '<legend><h3>Affichage</h3></legend>';
-echo doFormInput("Modèle,affichage_modele::", $instance, "Liste,affichage_modele_liste;Liste group,affichage_modele_listegroup;Médias,affichage_modele_listemedias;Thumbnails,affichage_modele_thumbnail;Articles,affichage_modele_article", '<br>');
-if ($instance['affichage_modele'] == "affichage_modele_liste") {
-    echo '<h4>Options de Liste</h4>';
-    echo doFormInput("Type,affichage_liste_type::", $instance, "ul/li,ul-li;ol/li,ol-li;dl/dt/dd,dl-dt-dd", '<br>');
-    echo doFormInput("Masquer les puces,affichage_liste_unstyled?", $instance, false, '<br>');
-    echo doFormInput("Horizontale,affichage_liste_horizontale?", $instance, false, '<br>');
-}
-if ($instance['affichage_modele'] == "affichage_modele_listemedias") {
-    echo '<h4>Options de <a href="http://getbootstrap.com/components/#media" target="_blank">#media</a></h4>';
-    echo doFormInput("Supprimer le lien de l'image,affichage_listemedias_unlink_img?", $instance, "", '<br>');
-}
-if ($instance['affichage_modele'] == "affichage_modele_listegroup") {
-    echo '<h4>Options de <a href="http://getbootstrap.com/components/#list-group" target="_blank">#list-group</a></h4>';
-    echo doFormInput("Supprimer le lien par défaut,affichage_listegroup_unlink?", $instance, "", '<br>');
-}
-echo z('fieldset');
-
+echo '</td>';
+echo '</td>';
+echo '<td>';
 // CONTENU ///////////////////
-//			echo $form->doFormInput("ONE",$instance,false,'<br>');
+//          echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo a('fieldset.contenu');
 echo '<legend><h4>' . doFormInput("Masquer le header,contenu_header_masquer?", $instance, false, '<br>') . '</h4></legend>';
 echo doFormInput("Inclure un extrait,contenu_excerpt?", $instance, false, '<br>');
@@ -270,10 +295,9 @@ if ($instance['contenu_footer_masquer'] == false) {
     echo doFormInput("Afficher le footer,contenu_footer_separateur", $instance, false, '<br>');
 }
 echo doFormInput("Séparateur entre les articles,articles_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '<br>');
-echo a('hr');
 
 // VIGNETTE ///////////////////
-//			echo $form->doFormInput("ONE",$instance,false,'<br>');
+//          echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo '<legend><h4>' . doFormInput("Masquer la vignette,vignette_masquer?", $instance, false, '<br>') . '</h4></legend>';
 if ($instance['vignette_masquer'] == false) {
     echo '<h4>Options de Vignette</h4>';
@@ -301,5 +325,9 @@ if ($instance['etendue_masquer'] == true) {
     echo doFormInput("Page attachment,etendue_site_attachment?", $instance, false, '<br>');
 }
 echo z('fieldset');
+echo '</td>';
 
+echo '</tr>';
+echo '</tbody>';
+echo '</table>';
 echo z('div');

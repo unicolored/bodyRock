@@ -276,7 +276,7 @@ if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
     if (isset($instance['ajax']) && $instance['ajax'] == false) {
         $QUERY = new WP_Query($query_args);
     }
-    echo $query_args;
+    
 } elseif (isset($instance['calldata']) && $instance['calldata'] != false) {
     // Rarement utilisé
     $QUERY = $instance['calldata'];

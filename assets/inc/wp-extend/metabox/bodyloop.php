@@ -34,8 +34,6 @@ function save_blmetas($post) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return $post_id;
     } else {
-        echo sanitize_post_field('post_views_count', $_POST["post_views_count"], $post -> ID, 'edit');
-        update_post_meta(get_the_ID(), "post_views_count", $_POST["post_views_count"]);
 
         foreach (getDefaultLoop() as $K => $V) {
             update_post_meta(get_the_ID(), $K, $_POST[$K]);

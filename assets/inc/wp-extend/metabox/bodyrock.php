@@ -179,15 +179,15 @@ if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
 return $post_id;
 }
 else {
-echo sanitize_post_field( 'post_views_count', $_POST["post_views_count"], $post->ID, 'edit' );
-update_post_meta(get_the_ID(), "post_views_count", $_POST["post_views_count"]);
+//echo sanitize_post_field( 'post_views_count', $_POST["post_views_count"], $post->ID, 'edit' );
+update_post_meta($post->ID, "post_views_count", $_POST["post_views_count"]);
 
-update_post_meta(get_the_ID(), "audioCode", $_POST["audioCode"]);
-update_post_meta(get_the_ID(), "audioType", $_POST["audioType"]);
+update_post_meta($post->ID, "audioCode", $_POST["audioCode"]);
+update_post_meta($post->ID, "audioType", $_POST["audioType"]);
 
-update_post_meta(get_the_ID(), "videoCode", $_POST["videoCode"]);
-update_post_meta(get_the_ID(), "videoType", $_POST["videoType"]);
-update_post_meta(get_the_ID(), "videoHeight", $_POST["videoHeight"]);
+update_post_meta($post->ID, "videoCode", $_POST["videoCode"]);
+update_post_meta($post->ID, "videoType", $_POST["videoType"]);
+update_post_meta($post->ID, "videoHeight", $_POST["videoHeight"]);
 
 update_post_meta($post->ID, "mb_citation", $_POST["mb_citation"]);
 update_post_meta($post->ID, "ligne1", $_POST["ligne1"]);
