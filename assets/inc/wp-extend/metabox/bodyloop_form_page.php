@@ -8,7 +8,7 @@
 
 $instance = getDefaultLoop();
 $instance = get_post_meta(get_the_ID());
-foreach($instance as $K => $V) {
+foreach ($instance as $K => $V) {
     $instance[$K] = $V[0];
 }
 $instance['filtres_off'] = false;
@@ -63,63 +63,29 @@ $args['order'] = $instance['filtres_order'];
 $args['offset'] = $instance['filtres_offset'];
 
 // $FILTRES_CATSIN
-//if($instance['filtres_resultats_lies']=='resultats_select') {
 $filtres_catsin = "";
 $i = 1;
 foreach ($instance as $label => $value) {
-    //			echo preg_replace("/filtres_categories_/","",$label).'<br>';
     if (preg_match("/filtres_categories_/", $label, $cat) == 1) {
         $cat = preg_replace("/filtres_categories_/", "", $label);
         $filtres_catsin .= ($i > 1 ? "," : false) . $cat;
         $i++;
     }
 }
-//		$args['category__in'] = "'".$filtres_catsin."'";
 
 if ($filtres_catsin != false) {
     $args['category__' . $instance['filtres_catsinornot']] = '$category_in';
-    $preargs[$args['category__in1']] = '
-// Articles filtré par catégories
-$category_in = ' . ($filtres_catsin != false ? "'" . $filtres_catsin . "'" : "false") . ';
-';
 }
-//}
+
 // SINON ON FILTRE SELON L'ARTICLE EN COURS
 if ($instance['filtres_resultats_lies'] == 'resultats_similaires') {
     // SELON LES CATEGORIES
     if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'cats') {
         $args['category__in'] = '$category_in';
-        $preargs[$args['category__in']] = '
-// Articles similaires
-// aux catégories du single
-if(is_singular()) {
-$pc = wp_get_post_categories( get_the_ID() );
-$cats = array();
-$param_cat = "";
-foreach($pc as $c) {
-	$cat = get_category( $c );
-	$cats[] = array(
-		"name" => $cat->name,
-		"slug" => $cat->slug
-	);
-	$category_in .= $cat->cat_ID.",";
-}
-}
-';
     }
     // SELON LES TAGS
     if ($instance['filtres_similaires_selon'] == 'both' || $instance['filtres_similaires_selon'] == 'tags') {
         $args['tag__in'] = '$tag_ids';
-        $preargs[$args['tag__in']] = '
-// Articles similaires
-// aux tags du single
-if(is_singular()) {
-$tags = wp_get_post_tags($post->ID);
-foreach($tags as $individual_tag) {
-	$tag_ids[] = $individual_tag->term_id;
-}
-}
-';
     }
 }
 
@@ -131,7 +97,6 @@ if ($instance['filtres_ignoreposts'] == true) {
 if(is_singular()) {' . "\n" . '$posts_notin = get_the_ID();' . "\n" . '}
 ';
 }
-
 
 echo a('div.ofthewidget');
 
@@ -172,44 +137,51 @@ echo '<table class="table">';
 echo '<tbody>';
 echo '<tr>';
 echo '<td>';
+echo '<fieldset>';
+echo '<legend>' . __('Aperçu', 'bodyrock') . '</legend>';
 // EXEMPLE ///////////////////
 // Affichage test de la loop
+wp_reset_query();
 $form = new br_widgetsBodyloop();
 $instance_preview = $instance;
 $instance_preview['ajax'] = false;
 $instance_preview['apparence_disposition'] = 'blog';
-$instance_preview['affichage_modele'] = 'affichage_modele_liste';
-$instance_preview['affichage_liste_type'] = 'ul/li';
+$instance_preview['affichage_modele'] = 'affichage_modele_admin';
 $instance_preview['vignette_masquer'] = 'on';
 $instance_preview['contenu_header_masquer'] = false;
 $instance_preview['contenu_footer_date'] = 'on';
 $instance_preview['filtres_combien'] = 6;
 
-echo $form -> widget(array(), $instance_preview);
-
+$widget_preview = $form -> widget(array(), $instance_preview);
+echo $widget_preview;
+wp_reset_query();
+echo '</fieldset>';
 echo '</td>';
 
 echo '<td valign="top">';
 
 // TITRE ///////////////////
+echo a('fieldset');
+echo '<legend>Configuration</legend>';
+echo '<h1>Widget</h1>';
+echo doFormInput("Position,position:r:", $instance, "Désactiver,pos0;Dessus,pos1;Dessous,pos2;Remplacement,pos3", '<br><br>');
+echo doFormInput("Nom identifiant,name", $instance, false, '<br>');
+echo doFormInput("Classe du widget,class", $instance, false, '');
 echo a('fieldset.titre');
-echo '<legend><h4>' . doFormInput("Titre,titre", $instance, false, '') . ' ' . doFormInput("h,titre_format::", $instance, "1,h1;2,h2;3,h3;4,h4;5,h5;6,h6", '<br>') . ' ' . doFormInput("Sép.,titre_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '') . ' ' . doFormInput("Masquer le titre,titre_masquer?", $instance, false, '<br>') . '</h4></legend>';
+echo '<legend><h4>' . doFormInput("Masquer le titre,titre_masquer?", $instance, false, '') . '</h4></legend>';
+echo '<h4>' . doFormInput("Titre,titre", $instance, false, '') . ' ' . doFormInput("h,titre_format::", $instance, "1,h1;2,h2;3,h3;4,h4;5,h5;6,h6", '<br>') . ' ' . doFormInput("Sép.,titre_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '') . '</h4>';
 if ($instance['titre_masquer'] == false) {
     echo doFormInput("Icône,titre_icone", $instance, false, '<br>');
 }
-echo doFormInput("Nom identifiant,name", $instance, false, '');
-echo doFormInput("Classe du widget,class", $instance, false, '');
-// TOFIX : Ajouter un footer au widget : lien, bouton
-
 echo z('fieldset');
+// TOFIX : Ajouter un footer au widget : lien, bouton
 
 // APPARENCE ///////////////////
 //          echo $form->doFormInput("ONE",$instance,false,'<br>');
-echo a('fieldset.apparence');
-echo '<legend><h4>' . doFormInput("Apparence,apparence_disposition::", $instance, "Blog,blog;Carousel,carousel;Wallpin,wallpin", '<br>') . '</h4></legend>';
+echo '<h1>Apparence</h1>';
+echo doFormInput("Disposition,apparence_disposition::", $instance, "Blog,blog;Carousel,carousel;Wallpin,wallpin", '<br>');
 if ($instance['apparence_disposition'] == "blog") {
     echo '<p>Les résultats apparaissent les uns après les autres.</p>';
-    echo '<p>Pas d\'options pour cette apparence.</p>';
 } elseif ($instance['apparence_disposition'] == "carousel") {
     echo '<h4>Options du Carousel</h4>';
     echo doFormInput("Afficher indicators,apparence_carousel_indicators?", $instance, false, '<br>');
@@ -221,12 +193,10 @@ if ($instance['apparence_disposition'] == "blog") {
     echo doFormInput("Nombre de colonnes,apparence_wallpin_colonnes::", $instance, "2 colonnes,a/b;3 colonnes,a/b/c;4 colonnes,a/b/c/d;6 colonnes,a/b/c/d/e/f", '<br>');
     echo doFormInput("Utiliser les classes Bootstrap,apparence_wallpin_bootstrap?", $instance, false, '<br>');
 }
-echo z('fieldset');
 
 // AFFICHAGE ///////////////////
 //          echo $form->doFormInput("ONE",$instance,false,'<br>');
-echo a('fieldset.affichage');
-echo '<legend><h3>Affichage</h3></legend>';
+echo '<h1>Affichage</h1>';
 echo doFormInput("Modèle,affichage_modele::", $instance, "Liste,affichage_modele_liste;Liste group,affichage_modele_listegroup;Médias,affichage_modele_listemedias;Thumbnails,affichage_modele_thumbnail;Articles,affichage_modele_article", '<br>');
 if ($instance['affichage_modele'] == "affichage_modele_liste") {
     echo '<h4>Options de Liste</h4>';
@@ -242,23 +212,24 @@ if ($instance['affichage_modele'] == "affichage_modele_listegroup") {
     echo '<h4>Options de <a href="http://getbootstrap.com/components/#list-group" target="_blank">#list-group</a></h4>';
     echo doFormInput("Supprimer le lien par défaut,affichage_listegroup_unlink?", $instance, "", '<br>');
 }
+
 echo z('fieldset');
 echo '</td>';
 echo '<td>';
 // FILTRES ///////////////////
 //			echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo a('fieldset.filtres');
-
+echo '<legend>Boucle</legend>';
 //echo '<legend><h4>' . doFormInput("Désactiver les filtres,filtres_off?", $instance, false, '') . '</h4></legend>';
-
-echo doFormInput("Position,position:r:", $instance, "Désactiver,pos0;Dessus,pos1;Dessous,pos2;Remplacement,pos3", '<br>');
-echo doFormInput("post_type,filtres_type::", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
-echo doFormInput("orderby,filtres_orderby::", $instance, "date,orderby_date;title,orderby_titre;comment_count,orderby_comment;post_views_count,orderby_nombredevue", '');
-echo doFormInput("order,filtres_order::", $instance, "DESCendant,DESC;ASCendant,ASC", '<br>');
-echo doFormInput("posts_per_page,filtres_combien09", $instance, false, '<br><small>Si vide, se base sur la valeur définie dans <a href="/wp-admin/options-reading.php">Réglages/Lecture</a></small><br>');
+echo doFormInput("posts_per_page,filtres_combien09", $instance, false, '');
 echo doFormInput("<span title='Ignorer les x premiers articles'>offset</span>,filtres_offset09", $instance, false, '<br>');
+echo doFormInput("post_type,filtres_type::", $instance, "Articles,type_post;Pages,type_page;Médias,type_attachment", '<br>');
+echo doFormInput("orderby,filtres_orderby::", $instance, "date,orderby_date;title,orderby_titre;comment_count,orderby_comment;post_views_count,orderby_nombredevue", '<br>');
+echo doFormInput("&nbsp;,filtres_order::", $instance, "DESCendant,DESC;ASCendant,ASC", '<br>');
+echo '<h1>Catégories</h1>';
 echo doFormInput("Il faut,filtres_catsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
 echo doFormInput("category__" . $instance['filtres_catsinornot'] . ",filtres_categories()?", $instance, false, '<hr>');
+echo '<h1>Tags</h1>';
 echo doFormInput("Il faut,filtres_tagsinornot::", $instance, "uniquement inclure,in;uniquement exclure,not_in", '<br>');
 echo doFormInput("tags__" . $instance['filtres_tagsinornot'] . ",filtres_tags", $instance, false, '<hr>');
 echo doFormInput("Sur page single,filtres_resultats_lies::", $instance, "ne rien changer,resultats_select;résultats similaires,resultats_similaires", '<br>');
@@ -271,11 +242,15 @@ echo z('fieldset');
 echo '</td>';
 echo '</td>';
 echo '<td>';
+echo a('fieldset');
+echo '<legend>article</legend>';
 // CONTENU ///////////////////
 //          echo $form->doFormInput("ONE",$instance,false,'<br>');
 echo a('fieldset.contenu');
-echo '<legend><h4>' . doFormInput("Masquer le header,contenu_header_masquer?", $instance, false, '<br>') . '</h4></legend>';
-echo doFormInput("Inclure un extrait,contenu_excerpt?", $instance, false, '<br>');
+echo '<legend><h4>' . doFormInput("Masquer le .art-header,contenu_header_masquer?", $instance, false, '<br>') . '</h4></legend>';
+echo z('fieldset');
+echo a('fieldset');
+echo '<legend>'.doFormInput("Inclure un extrait .art-content,contenu_excerpt?", $instance, false, '<br>').'</legend>';
 if ($instance['contenu_excerpt'] == true) {
     echo doFormInput("Nombre de mots,contenu_excerpt_nbmots09", $instance, false, '<br>');
 }
@@ -285,9 +260,10 @@ if ($instance['contenu_lirelasuite'] == "on") {
     echo doFormInput("Couleur du bouton,contenu_lirelasuite_btncolor::", $instance, "Défaut,default;Primaire,primary;Infos,info;Succès,success;Avertissement,warning;Danger,danger", '<br>');
     echo doFormInput("Label -Lire la suite-,contenu_lirelasuite_txt", $instance, false, '<br>');
 }
-echo doFormInput("Masquer le footer,contenu_footer_masquer?", $instance, false, '<br>');
+echo z('fieldset');
+echo a('fieldset');
+echo '<legend><h4>' . doFormInput("Masquer le .art-footer,contenu_footer_masquer?", $instance, false, '<br>') . '</h4></legend>';
 if ($instance['contenu_footer_masquer'] == false) {
-    echo '<h4>Options de Footer</h4>';
     echo doFormInput("Afficher la date,contenu_footer_date?", $instance, false, '<br>');
     echo doFormInput("Afficher l'auteur,contenu_footer_auteur?", $instance, false, '<br>');
     echo doFormInput("Afficher le nombre de commentaires,contenu_footer_commentaires?", $instance, false, '<br>');
@@ -295,14 +271,13 @@ if ($instance['contenu_footer_masquer'] == false) {
     echo doFormInput("Afficher le footer,contenu_footer_separateur", $instance, false, '<br>');
 }
 echo doFormInput("Séparateur entre les articles,articles_separator::", $instance, "Aucun,span.brsep;hr,hr;br,br", '<br>');
-
+echo z('fieldset');
 // VIGNETTE ///////////////////
-//          echo $form->doFormInput("ONE",$instance,false,'<br>');
-echo '<legend><h4>' . doFormInput("Masquer la vignette,vignette_masquer?", $instance, false, '<br>') . '</h4></legend>';
+echo a('fieldset');
+echo '<legend><h4>' . doFormInput("Masquer la .art-vignette,vignette_masquer?", $instance, false, '<br>') . '</h4></legend>';
 if ($instance['vignette_masquer'] == false) {
-    echo '<h4>Options de Vignette</h4>';
     echo doFormInput("Dimensions,vignette_dimensions::", $instance, "Thumbnail,thumbnail;Medium,medium;Large,large;Custom,custom_*", '<br>');
-    echo doFormInput("Image en background,vignette_background?", $instance, false, '<br>');
+    echo doFormInput("Image en background + .art-vignette-bg,vignette_background?", $instance, false, '<br>');
     echo doFormInput("Forcer ces dimensions,vignette_dimensions_force", $instance, false, '<br>');
     echo doFormInput("Alignement de l'image,vignette_alignement::", $instance, "Gauche,gauche;Droite,droite;Centre,centre;Aucun,aucun", '<br>');
     echo doFormInput("Style de l'image,vignette_style::", $instance, "Aucun,---;Cercle,style_cercle;Arrondi,style_arrondi;Thumbnail,style_thumbnail", '<br>');
@@ -310,20 +285,6 @@ if ($instance['vignette_masquer'] == false) {
 }
 echo z('fieldset');
 
-// ETENDUE ///////////////////
-echo a('fieldset.etendue');
-echo '<legend><h4>' . doFormInput("Masquer le widget sauf sur certaines pages,etendue_masquer?", $instance, false, '') . '</h4></legend>';
-if ($instance['etendue_masquer'] == true) {
-    echo doFormInput("Page home,etendue_site_home?", $instance, false, '<br>');
-    echo doFormInput("Page frontpage,etendue_site_front_page?", $instance, false, '<br>');
-    echo doFormInput("Page category,etendue_site_category?", $instance, false, '<br>');
-    echo doFormInput("Page 404,etendue_site_404?", $instance, false, '<br>');
-    echo doFormInput("Page search,etendue_site_search?", $instance, false, '<br>');
-    echo doFormInput("Page tag,etendue_site_tag?", $instance, false, '<br>');
-    echo doFormInput("Page single,etendue_site_single?", $instance, false, '<br>');
-    echo doFormInput("Page page,etendue_site_page?", $instance, false, '<br>');
-    echo doFormInput("Page attachment,etendue_site_attachment?", $instance, false, '<br>');
-}
 echo z('fieldset');
 echo '</td>';
 
