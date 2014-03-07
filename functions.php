@@ -100,7 +100,7 @@ define('CDN_PATH','http://senzu.fr/'.strtolower(get_bloginfo('name')).'/'); // C
 // Register style sheet.
 
 add_action( 'wp_enqueue_scripts', 'head_scripts' );
-add_action( 'wp_footer', 'footer_scripts' );
+//add_action( 'wp_footer', 'footer_scripts' );
 
 function head_scripts() {
 	switch ( BR_ICON_SET ) {
@@ -119,9 +119,6 @@ function head_scripts() {
 		// CHILD /////////////////////////////////////////////
 		wp_enqueue_style( 'style-child',    	get_stylesheet_directory_uri().'/css/style.css', false, '1.0.0', false );
 	}
-}
-
-function footer_scripts() {
 
 //    wp_enqueue_script( 'libs', 				get_template_directory_uri().'/js/libs.php', array('jquery'), '1.0.1', false  );
     wp_enqueue_script( 'bootstrap', 				'//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), '1.0.1', 1  );

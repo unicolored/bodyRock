@@ -24,7 +24,7 @@ function add_post_content($post) {
         echo $form -> widget(false, $instance);
     }
 }
-if(!is_admin()) {
+if(!is_admin() && is_page()) {
     add_filter('loop_start', 'add_post_content');
 }
 

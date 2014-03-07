@@ -55,27 +55,30 @@ jQuery(document).ready(function(){
 		jQuery('<div id="loader" class="hidden">').html(loader).appendTo(".loader");
 
 		<?php
-		$S = explode('//',$_SESSION['ajax-widgets']);
-		
-		foreach($S as $A) {
-			if($A!=false) {
-			?>
-			// The link of the next page of posts.
-			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>&args=<?php echo $_SESSION['args-'.$A] ?>';
-			
-		<?php // echo '.holder-'.$A; ?>
-//			jQuery('.holder-<?php echo $A; ?>').hide();
-			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " #<?php echo str_replace('ajax-widget-','',$A); ?>",
-				function(response, status, xhr) {
-			
-					
-					jQuery('#<?php echo str_replace('ajax-widget-','',$A); ?>').hide().fadeIn(500);
-				}
-			);
-			
-			<?php
-			}
-		} ?>
+		if(isset($_SESSION['ajax-widgets'])) {
+    		$S = explode('//',$_SESSION['ajax-widgets']);
+    		
+    		foreach($S as $A) {
+    			if($A!=false) {
+    			?>
+    			// The link of the next page of posts.
+    			var nextLink = 'http://unicolored.com/?instance=<?php echo $_SESSION[$A] ?>&args=<?php echo $_SESSION['args-'.$A] ?>';
+    			
+    		<?php // echo '.holder-'.$A; ?>
+    //			jQuery('.holder-<?php echo $A; ?>').hide();
+    			jQuery('.holder-<?php echo $A; ?>').html(loader).load(nextLink + " #<?php echo str_replace('ajax-widget-','',$A); ?>",
+    				function(response, status, xhr) {
+    			
+    					
+    					jQuery('#<?php echo str_replace('ajax-widget-','',$A); ?>').hide().fadeIn(500);
+    				}
+    			);
+    			
+    			<?php
+    			}
+    		}
+		}
+		?>
 		
 	})		
 	.done(function() { 					jQuery(".progress-bar").css("width","25%").animate({'width' : '100%'},200,function(){ jQuery(this).parent().fadeOut(1000) });  })
