@@ -4,7 +4,7 @@ echo a('article.article.affichage.mod-thumbnail',"#post-".get_the_ID());
 
 	echo a('div.thumbnail');
 
-		if(isset($instance['vignette_masquer']) && $instance['vignette_masquer'] == false) {
+		if($instance['vignette_masquer'] == false) {
 			echo Get_thumbnail($instance);
 		}
 		

@@ -192,7 +192,7 @@ if (isset($instance['affichage_liste_type'])) {
 ////////// 5. CONSTRUCTION DE LA REQUETE
 // $args[]
 
-if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
+if ($instance['filtres_off'] == false) {
     // CREATION D'UNE LOOP AUX PARAMETRES PERSONNALISES :: filtres_off = off :: les filtres sont activés
     wp_reset_query();
     // $FILTRES_TYPES
@@ -229,14 +229,14 @@ if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
     }
 
     // SELON LES CATEGORIES
-    if (isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'cats' || isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'both') {
+    //if (isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'cats' || isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'both') {
 
         // $FILTRES_CATSIN
         $filtres_catsin = "";
         $i = 1;
         foreach ($instance as $label => $value) {
             if (preg_match("/filtres_categories_/", $label, $cat) == 1) {
-
+            
                 $cat = preg_replace("/filtres_categories_/", "", $label);
                 $filtres_catsin .= ($i > 1 ? "," : false) . $cat;
                 $i++;
@@ -244,7 +244,7 @@ if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
         }
         if ($filtres_catsin != false)
             $query_args['category__' . (isset($instance['filtres_catsinornot']) ? $instance['filtres_catsinornot'] : getDefaultLoop('filtres_catsinornot'))] = "" . $filtres_catsin . "";
-    }
+    //}
 
     // SELON LES TAGS
     if (isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'tags' || isset($instance['filtres_similaires_selon']) && $instance['filtres_similaires_selon'] == 'both') {
@@ -273,7 +273,7 @@ if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
 
     // posts_per_page
     // WP_QUERY
-    if (isset($instance['ajax']) && $instance['ajax'] == false) {
+    if ($instance['ajax'] == false) {
         $QUERY = new WP_Query($query_args);
     }
     
@@ -296,7 +296,7 @@ if (isset($instance['filtres_off']) && $instance['filtres_off'] == false) {
         $QUERY = $wp_query;
     }
 }
-
+//vardump($QUERY->request);
 ////////// 6. LA BOUCLE
 $c = 1;
 // Paramètres Wallpin
