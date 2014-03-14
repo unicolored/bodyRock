@@ -1,5 +1,5 @@
 <?php
-
+global $instance;
 echo a('article.article.affichage.mod-thumbnail',"#post-".get_the_ID());
 
 	echo a('div.thumbnail');
