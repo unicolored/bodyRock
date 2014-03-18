@@ -55,7 +55,8 @@ function themeoptionsGet_default()
 	'fonts_google'		=> 'Doppio+One::latin,Roboto+Slab::latin,Open+Sans::latin,Ubuntu::latin',
 	'color_bodybg'		=> '000',
 	'noresponsive'		=> true,
-	'audio_height'		=> 450
+	'audio_height'		=> 450,
+	'googleanalyticsid'     => false
   );
 
   return apply_filters('brthemeoptions', $default);

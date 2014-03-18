@@ -13,9 +13,9 @@ function themeoptions_validation($input) {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	
 	// REFERENCEMENT
-	if (isset($input['googleanalyticsid']) && $input['googleanalyticsid']!='') {
-		if (preg_match('/^ua-\d{4,9}-\d{1,4}$/i', $input['googleanalyticsid'])) {
-			$options['googleanalyticsid'] = $input['googleanalyticsid'];
+	if (isset($input['google_analytics_id']) && $input['google_analytics_id']!='') {
+		if (preg_match('/^ua-\d{4,9}-\d{1,4}$/i', $input['google_analytics_id'])) {
+			$options['google_analytics_id'] = $input['google_analytics_id'];
 		}
 		else add_settings_error ( 'bodyrock_options', 'googleanalyticsid', 'Votre ID Google Analytics doit être sous la forme UA-XXXXX-X', $type = 'error' );
 	}
