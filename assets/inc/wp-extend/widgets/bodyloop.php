@@ -75,6 +75,11 @@ class br_widgetsBodyloop extends WP_Widget {
 
 // Fonctions supplémentaires
 function Get_thumbnail($instance) {
+    if($instance['edit_article_titre']!=false)  {
+        $titre = $instance['edit_article_titre'](get_the_title());
+    }
+        else $titre = get_the_title();
+    
     if (has_post_thumbnail() || get_post_format() == "video") {
         $attrs = false;
         $vignette_dimensions = (isset($instance['vignette_dimensions']) ? $instance['vignette_dimensions'] : getDefaultLoop('vignette_dimensions'));
@@ -96,12 +101,12 @@ function Get_thumbnail($instance) {
 
         //////////////
         $res = '';
-        if ($instance['vignette_background'] == "on") {
-
+        if ($instance['vignette_background'] == "on") {            
+            
             $res .= '
 				<section class="art-vignette-bg" style="background-image:url(' . $attrs['src'] . ');">
 				<img src="' . $attrs['src'] . '" class="hidden" itemprop="thumbnailUrl">
-				<h1><a href="' . get_permalink() . '">' . $icon_item . '<span>' . get_the_title() . '</span></a></h1>
+				<h1><a href="' . get_permalink() . '">' . $icon_item . '<span>' . $titre . '</span></a></h1>
 				</section>';
 
         } else {
@@ -114,7 +119,7 @@ function Get_thumbnail($instance) {
                 $res .= '<a class="' . $align[$instance['vignette_alignement']] . '" href="' . get_permalink() . '">';
             }
 
-            $res .= '<img src="' . $attrs['src'] . '" ' . $wh . ' alt="' . get_the_title() . '" itemprop="thumbnailUrl" class="media-object ' . (isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false) . ' ' . ($instance['vignette_nonresponsive'] == false ? 'img-responsive' : false) . '">';
+            $res .= '<img src="' . $attrs['src'] . '" ' . $wh . ' alt="' . $titre . '" itemprop="thumbnailUrl" class="media-object ' . (isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false) . ' ' . ($instance['vignette_nonresponsive'] == false ? 'img-responsive' : false) . '">';
 
             if ($instance['affichage_listemedias_unlink_img'] == false) {
                 $res .= '<span class="hover"></span></a>';
@@ -126,7 +131,7 @@ function Get_thumbnail($instance) {
     } elseif (get_post_format() == 'audio') {
         $res .= '
 			<section class="art-vignette-bg">
-			<h1><a href="' . get_permalink() . '"><p class="icon_item">' . br_getIcon('music') . '</p><span>' . get_the_title() . '</span></a></h1>
+			<h1><a href="' . get_permalink() . '"><p class="icon_item">' . br_getIcon('music') . '</p><span>' . $titre . '</span></a></h1>
 			</section>';
 
         return $res;
