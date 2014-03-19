@@ -260,14 +260,13 @@ if ($instance['filtres_off'] == false) {
     }
 
     // post__not_in
-    if (isset($instance['filtres_ignoreposts']) && $instance['filtres_ignoreposts'] == true) {
+    if (isset($instance['filtres_ignoreposts'])) {
         // Ne pas inclure l\'article single
 
         if (is_array($instance['filtres_ignoreposts'])) {
             $query_args['post__not_in'] = $instance['filtres_ignoreposts'];
-        } else if (isset($instance['filtres_ignoreposts']) && $instance['filtres_ignoreposts'] != false) {
-            $query_args['post__not_in'] = $instance['filtres_ignoreposts'];
         }
+
     }
     //	vardump($query_args['post__not_in']);
 

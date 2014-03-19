@@ -221,7 +221,7 @@ function getDefaultLoop($val = false) {
     $default['filtres_tags'] = false;
     $default['filtres_resultats_lies'] = "resultats_select";
     $default['filtres_similaires_selon'] = "both";
-    $default['filtres_ignoreposts'] = "on";
+    $default['filtres_ignoreposts'] = false;
 
     $default['apparence_disposition'] = "blog";
     $default['apparence_carousel_indicators'] = false;
