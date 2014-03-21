@@ -34,6 +34,7 @@ wp_nav_menu( array(
 ////// Chargement des différents walkers personnalisés
 require_once('walkers/navbar_walker.php');
 require_once('walkers/listgroup_walker.php');
+require_once('walkers/tabs_walker.php');
 
 /*
 
