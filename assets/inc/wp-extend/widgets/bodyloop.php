@@ -139,7 +139,7 @@ function Get_thumbnail($instance) {
 }
 
 function Get_excerpt($instance, $before = false, $after = false, $excerpt = false) {
-    if (isset($instance['contenu_lirelasuite']) && $instance['contenu_lirelasuite'] == true && $instance['affichage_listegroup_unlink'] == true) {
+    if (isset($instance['contenu_lirelasuite']) && $instance['contenu_lirelasuite'] == 'on') {
         if ($instance['contenu_lirelasuite_btn'] == true) {
             $linkmore = '<br><a href="' . get_permalink() . '" class="btn btn-' . $instance['contenu_lirelasuite_btncolor'] . ' more-link" role="button">' . $instance['contenu_lirelasuite_txt'] . '</a>';
         } else {

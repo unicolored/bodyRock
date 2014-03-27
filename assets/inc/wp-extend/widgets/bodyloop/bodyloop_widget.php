@@ -12,7 +12,7 @@ $active_single_id = get_the_ID();
 $active_single_type = get_post_type();
 
 // Suppression de l'ajout du "suite" par défaut qui s'ajoute à l'excerpt lors de l'apperl à get_excerpt()
-$new_excerpt_more = create_function('$more', 'return " ";');
+//$new_excerpt_more = create_function('$more', 'return " ";');
 //add_filter('excerpt_more', $new_excerpt_more);
 
 // Variables du widget
@@ -191,6 +191,7 @@ if (isset($instance['affichage_liste_type'])) {
 
 ////////// 5. CONSTRUCTION DE LA REQUETE
 // $args[]
+$orderby_options = array("orderby_date" => "date", "orderby_dateedition" => "modified", "orderby_titre" => "title", "orderby_comment" => "comment_count", "orderby_nombredevue" => "meta_value_num");
 
 if ($instance['filtres_off'] == false) {
     // CREATION D'UNE LOOP AUX PARAMETRES PERSONNALISES :: filtres_off = off :: les filtres sont activés
@@ -209,7 +210,7 @@ if ($instance['filtres_off'] == false) {
     // $FILTRES_ORDERBY // $FILTRES_ORDER
     $query_meta_key = false;
     if (isset($instance['filtres_orderby'])) {
-        $orderby_options = array("orderby_date" => "date", "orderby_dateedition" => "modified", "orderby_titre" => "title", "orderby_comment" => "comment_count", "orderby_nombredevue" => "meta_value_num");
+        
         $query_args['orderby'] = $orderby_options[$instance['filtres_orderby']];
         switch($instance['filtres_orderby']) {
             case 'orderby_nombredevue' :
@@ -285,7 +286,7 @@ if ($instance['filtres_off'] == false) {
         global $wp_query;
         // Récupération de la boucle globale avant execution
 
-        $myargs = array('cat' => get_query_var('cat'), 'paged' => get_query_var('paged'), 'post_type' => isset($instance['filtres_type']) ? TypeQuery($instance['filtres_type']) : false, 'post_status' => 'publish,future', 's' => get_query_var('s'), 'posts_per_page' => isset($instance['filtres_combien']) ? PostsPerPageQuery($instance['filtres_combien']) : false, );
+        $myargs = array('cat' => get_query_var('cat'), 'paged' => get_query_var('paged'), 'orderby' => isset($instance['filtres_orderby']) ? $orderby_options[$instance['filtres_orderby']] : false, 'order' => isset($instance['filtres_order']) ? $instance['filtres_order'] : false, 'post_type' => isset($instance['filtres_type']) ? TypeQuery($instance['filtres_type']) : false, 'post_status' => 'publish', 's' => get_query_var('s'), 'posts_per_page' => isset($instance['filtres_combien']) ? PostsPerPageQuery($instance['filtres_combien']) : false, );
 
         $args_query = array_merge($wp_query -> query_vars, $myargs);
         //		vardump($args_query);
