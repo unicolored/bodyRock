@@ -156,6 +156,7 @@ if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la 
 	// Compilation du fichier less si l'option est activée
 	if( is_child_theme() ) {
 		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/style.less', get_stylesheet_directory().'/css/style.css');
+		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/editor-style.less', get_stylesheet_directory().'/css/editor-style.css');
 	}
 }
 ?>
