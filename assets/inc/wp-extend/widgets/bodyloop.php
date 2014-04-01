@@ -230,6 +230,7 @@ function getDefaultLoop($val = false) {
     $default['apparence_carousel_duration'] = 4000;
     $default['apparence_carousel_hauteur'] = 0;
     $default['apparence_wallpin_colonnes'] = "a/b/c/d";
+	$default['apparence_wallpin_class'] = "wallpinthumbnail";
     $default['apparence_wallpin_bootstrap'] = "on";
 
     $default['affichage_modele'] = "affichage_modele_article";

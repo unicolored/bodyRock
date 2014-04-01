@@ -165,7 +165,7 @@ $Group_END = isset($disposition_group_end[$instance['affichage_modele']]) ? $dis
 // Colonne_
 //	$Colonne_START['wallpin'] = a('div.col-lg-%s').a('div.galaxie'); // '<div class="item '.($c==1?'active':false).'">'
 //	$Colonne_END['wallpin'] = z('div').z('div');
-$Colonne_START['wallpin'] = a('div.col-xs-12.col-lg-%s');
+$Colonne_START['wallpin'] = a('div'.(isset($instance['apparence_wallpin_class']) && $instance['apparence_wallpin_class']!=false ? '.'.$instance['apparence_wallpin_class'] : '.'.getDefaultLoop('apparence_wallpin_class')));
 // '<div class="item '.($c==1?'active':false).'">'
 $Colonne_END['wallpin'] = z('div');
 
