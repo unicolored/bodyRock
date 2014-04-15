@@ -86,3 +86,10 @@ article footer,
 .color-articlesection {
   background: #bbb;
 }
+.thecolumns div {
+  background: red;
+}
+.thecolumns div span {
+  background: blue;
+  display: block;
+}
