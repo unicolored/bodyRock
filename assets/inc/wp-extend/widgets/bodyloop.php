@@ -105,8 +105,7 @@ function Get_thumbnail($instance) {
             
             $res .= '
 				<section class="art-vignette-bg" style="background-image:url(' . $attrs['src'] . ');">
-				<img src="' . $attrs['src'] . '" class="hidden" itemprop="thumbnailUrl">
-				<h1><a href="' . get_permalink() . '">' . $icon_item . '<span>' . $titre . '</span></a></h1>
+				<h1><a href="' . get_permalink() . '"><img src="' . $attrs['src'] . '" itemprop="thumbnailUrl"> ' . $icon_item . '<span>' . $titre . '</span></a></h1>
 				</section>';
 
         } else {
