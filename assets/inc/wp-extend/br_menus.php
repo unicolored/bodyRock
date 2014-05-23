@@ -8,6 +8,8 @@
 ////// POSITIONS /////////////////////////////////////////////
 ////// Ajout de deux positions au thème
 register_nav_menu( 'primary', __( 'Menu principal (primary)', 'bodyrock' ) );
+register_nav_menu( 'secondary', __( 'Menu secondaire (secondary)', 'bodyrock' ) );
+register_nav_menu( 'sidebar', __( 'Menu latéral (sidebar)', 'bodyrock' ) );
 register_nav_menu( 'footer', __( 'Menu de bas de page (footer)', 'bodyrock' ) );
 
 /*
