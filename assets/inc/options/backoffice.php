@@ -206,7 +206,7 @@ function brthemeoptions_backofficeCallback_bootstrapjs() {
 }
 function brthemeoptions_backofficeCallback_layout_width() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[layout_width]" id="brthemeoptions_layout_width" '.(isset($options['layout_width']) ? checked( $options['layout_width'], true, false ) : false).' /> '.__('Remplace .container par .fixedwith.<br><small>Entrer ensuite vos propres règles CSS pour .fixedwidth. Par exemple : .fixedwidth { width:940px; margin:0 auto; }</small>', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[layout_width]" id="brthemeoptions_layout_width" '.(isset($options['layout_width']) ? checked( $options['layout_width'], true, false ) : false).' /> '.__('Remplace .container par .fluidwith<br><small>Entrer ensuite vos propres règles CSS pour .fluidwith. Par exemple : .fluidwith { width:940px; margin:0 auto; }</small>', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_noresponsive() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
