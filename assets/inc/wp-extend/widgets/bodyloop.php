@@ -83,9 +83,10 @@ function Get_thumbnail($instance) {
     if (has_post_thumbnail() || get_post_format() == "video") {
         $attrs = false;
         $vignette_dimensions = (isset($instance['vignette_dimensions']) ? $instance['vignette_dimensions'] : getDefaultLoop('vignette_dimensions'));
+		
         $attrs = br_getPostThumbnail($vignette_dimensions, false);
 
-        $image_url = $attrs['src'];
+        //$image_url = $attrs['src'];
         $wh = false;
         if (isset($instance['vignette_dimensions_force']) && $instance['vignette_dimensions_force'] != 0) {
             $S = explode('x', $instance['vignette_dimensions_force']);
@@ -98,14 +99,14 @@ function Get_thumbnail($instance) {
         if (get_post_format() == "video") {
             //$icon_item = '<p class="icon_item">'.br_getIcon('play').'</p>';
         }
-
+		
         //////////////
         $res = '';
         if ($instance['vignette_background'] == "on") {            
-            
+            $addimg = ($instance['vignette_background_addimg'] == "on") ? '<img src="' . $attrs['src'] . '" itemprop="thumbnailUrl">' : false;
             $res .= '
 				<section class="art-vignette-bg" style="background-image:url(' . $attrs['src'] . ');">
-				<h1><a href="' . get_permalink() . '"><img src="' . $attrs['src'] . '" itemprop="thumbnailUrl"> ' . $icon_item . '<span>' . $titre . '</span></a></h1>
+				<h1><a href="' . get_permalink() . '">'.$addimg.' ' . $icon_item . '<span>' . $titre . '</span></a></h1>
 				</section>';
 
         } else {
@@ -258,6 +259,7 @@ function getDefaultLoop($val = false) {
     $default['vignette_masquer'] = false;
     $default['vignette_dimensions'] = "medium";
     $default['vignette_background'] = false;
+	$default['vignette_background_addimg'] = false;
     $default['vignette_dimensions_force'] = false;
     $default['vignette_alignement'] = "aucun";
     $default['vignette_style'] = "---";
