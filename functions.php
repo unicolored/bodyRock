@@ -40,7 +40,7 @@ br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-optio
 
 */
 
-add_image_size( 'article', 960, 320, 1 );
+//add_image_size( 'article', 960, 320, 1 ); Obsolète ! Inutile de faire une déclaration supplémentaire pour le thème Bodyrorck parent
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 add_action('wp_footer', 'getImgVideo', 100);
 
