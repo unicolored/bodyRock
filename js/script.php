@@ -106,12 +106,13 @@ jQuery(document).ready(function(){
 	
 	// Chargement des lecteurs vidéos par défaut
 	// AFFICHAGE DES VIDEOS Si le conteneur identifié est trouvé
-	if(jQuery('#singlevideoyou').length>0) { // Youtube
-        jQuery('#singlevideoyou').html('<iframe width="100%" height="500" style="height:500px" class="img-responsive" src="//www.youtube.com/embed/'+(jQuery('#singlevideoyou').attr('class').replace('code_', ''))+'?rel=0&amp;autoplay=0&related=0" frameborder="0" allowfullscreen></iframe>');
-    }
-	if(jQuery('#singlevideovim').length>0) { // Vimeo
-        jQuery('#singlevideovim').html('<iframe src="//player.vimeo.com/video/'+(jQuery('#singlevideovim').attr('class').replace('code_', ''))+'?badge=0&amp;color=db0000&amp;autoplay=0" class="col-lg-12" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
-    }
+	//if(jQuery('#singlevideoyou').length>0) { // Youtube
+       // jQuery('#singlevideoyou').html('<iframe width="100%" height="500" style="height:500px" class="img-responsive" src="//www.youtube.com/embed/'+(jQuery('#singlevideoyou').attr('class').replace('code_', ''))+'?rel=0&amp;autoplay=0&related=0" frameborder="0" allowfullscreen></iframe>');
+    //}
+  
+	//if(jQuery('#singlevideovim').length>0) { // Vimeo
+      //  jQuery('#singlevideovim').html('<iframe src="//player.vimeo.com/video/'+(jQuery('#singlevideovim').attr('class').replace('code_', ''))+'?badge=0&amp;color=db0000&amp;autoplay=0" class="col-lg-12" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+  	//}
 	
 	// ICONS DE LA NAVBAR
 	if(jQuery('.link_item').length>0) {
