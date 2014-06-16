@@ -32,7 +32,7 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 		if($id==false) $id = get_the_ID();
 		$format = get_post_format($id);
 
-		if ($format=='video') {
+		if (!has_post_thumbnail($id) && $format=='video') {
 			$videoCode = get_post_meta($id, 'videoCode', true);
 			$videoType = get_post_meta($id, 'videoType', true);
 			$classvideo = ' img-video-'.$videoType;		
