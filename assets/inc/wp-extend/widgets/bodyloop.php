@@ -78,7 +78,7 @@ function Get_thumbnail($instance) {
     if($instance['edit_article_titre']!=false)  {
         $titre = $instance['edit_article_titre'](get_the_title());
     }
-        else $titre = get_the_title();
+    else $titre = get_the_title();
     
     if (has_post_thumbnail() || get_post_format() == "video") {
         $attrs = false;
@@ -178,7 +178,7 @@ function Get_artfooter($instance) {
             if ($instance['contenu_footer_auteur'] == "on") {
                 if ($i == 1)
                     echo $sep;
-                echo br_getIcon('user') . '&nbsp;' . __('Ajouté par', 'bodyrock') . ' <a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '" title="' . esc_attr(sprintf(__('Voir tous les articles de %s', 'bodyrock'), get_the_author())) . '">' . get_the_author() . '</a>';
+                echo br_getIcon('user') . '&nbsp;' . __('par', 'bodyrock') . ' <a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '" title="' . esc_attr(sprintf(__('Voir tous les articles de %s', 'bodyrock'), get_the_author())) . '">' . get_the_author() . '</a>';
                 $i = 1;
             }
             if ($instance['contenu_footer_commentaires'] == "on") {
@@ -189,7 +189,19 @@ function Get_artfooter($instance) {
                     $i = 1;
                 }
             }
-            if (current_user_can('list-users')) {
+			// TOFIX : Ajout de l'affichage des categories et des tags en option (à configurer)
+			if ($instance['contenu_footer_categories'] == "on") {
+                if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) ) :
+					echo $sep ."<span class='cat-links'>".get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'bodyrock' ) )."</span>";
+				endif;
+            }
+			if ($instance['contenu_footer_tags'] == "on") {
+				$tags = wp_get_post_tags(get_the_ID());
+				foreach($tags as $tag) {
+					echo $sep.'<a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a> ';
+				}
+            }
+            if ($instance['contenu_footer_edit'] == "on" && current_user_can('list-users')) {
                 if ($i == 1)
                     echo $sep;
                 echo '<a href="/wp-admin/post.php?post=' . get_the_ID() . '&action=edit" class="editpost">' . br_getIcon('edit') . '&nbsp;Editer</a>';
@@ -252,6 +264,9 @@ function getDefaultLoop($val = false) {
     $default['contenu_footer_auteur'] = false;
     $default['contenu_footer_commentaires'] = false;
     $default['contenu_footer_vues'] = false;
+    $default['contenu_footer_categories'] = false;
+	$default['contenu_footer_tags'] = false;
+	$default['contenu_footer_edit'] = false;
     $default['contenu_footer_separateur'] = " | ";
 
     $default['articles_separator'] = "span.brsep";
