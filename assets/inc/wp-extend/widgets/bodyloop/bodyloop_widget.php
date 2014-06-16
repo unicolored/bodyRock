@@ -213,6 +213,9 @@ if ($instance['filtres_off'] == false) {
         
         $query_args['orderby'] = $orderby_options[$instance['filtres_orderby']];
         switch($instance['filtres_orderby']) {
+			default:
+				$query_args['orderby'] = str_replace('orderby_','',$instance['filtres_orderby']);
+			break;	
             case 'orderby_nombredevue' :
                 $query_args['meta_key'] = "post_views_count";
                 break;
