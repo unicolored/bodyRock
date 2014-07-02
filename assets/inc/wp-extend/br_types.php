@@ -11,7 +11,7 @@
 // TOFIX : remplacer $available_custom_types par les constantes définies dans functions.php
 global $available_custom_types;
 $custom_types = false;
-$available_custom_types = array('lieux','evenements');
+$available_custom_types = array('lieux','evenements','clients');
 $bodyrock_options = get_option('brthemeoptions');
 foreach($available_custom_types as $k) {
 	if(isset($bodyrock_options['type_'.$k]) && $bodyrock_options['type_'.$k]==true) $custom_types[$k]=$k;
