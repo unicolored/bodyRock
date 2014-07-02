@@ -113,6 +113,7 @@ function themeoptions_backofficeRegister() {
 		
 	$section = 'customtypes';
 	add_settings_section($brto.'_'.$section, 'Vidéo', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_type_clients', 'Type Clients', $brto_Callback.'_type_clients', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_type_lieux', 'Type Lieux', $brto_Callback.'_type_lieux', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_type_evenements', 'Type Evènements', $brto_Callback.'_type_evenements', $brto, $brto.'_'.$section);
 		
@@ -236,13 +237,17 @@ function brthemeoptions_backofficeCallback_audio_height() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input name="brthemeoptions[audio_height]" value="'.esc_attr($options['audio_height']).'" size="5" type="text" id="brthemeoptions_audio_height" /> px';
 }
+function brthemeoptions_backofficeCallback_type_clients() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input type="checkbox" value="1" name="brthemeoptions[type_clients]" id="brthemeoptions_type_clients" '.(isset($options['type_clients']) ? checked( $options['type_clients'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
+}
 function brthemeoptions_backofficeCallback_type_lieux() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input type="checkbox" value="1" name="brthemeoptions[type_lieux]" id="brthemeoptions_type_lieux" '.(isset($options['type_lieux']) ? checked( $options['type_lieux'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_type_evenements() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_evenements]" id="brthemeoptions_type_evenements" '.(isset($options['type_lieux']) ? checked( $options['type_lieux'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
+	echo '<input type="checkbox" value="1" name="brthemeoptions[type_evenements]" id="brthemeoptions_type_evenements" '.(isset($options['type_evenements']) ? checked( $options['type_evenements'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
 }
 function brthemeoptions_backofficeCallback_googleanalyticsid() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());

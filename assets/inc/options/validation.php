@@ -45,6 +45,9 @@ function themeoptions_validation($input) {
 	// AUDIO Height
 	$options['audio_height'] = isset($input['audio_height']) ? $input['audio_height'] : $defaults['audio_height'];
 	
+	// TYPES Clients
+	$options['type_clients'] = isset($input['type_clients']) ? $input['type_clients'] : $defaults['type_clients'];
+	
 	// TYPES Evenements
 	$options['type_evenements'] = isset($input['type_evenements']) ? $input['type_evenements'] : $defaults['type_evenements'];
 	
