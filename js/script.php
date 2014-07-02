@@ -46,7 +46,7 @@ jQuery.getScript = function(url, callback, cache){
 };
 
 jQuery(document).ready(function(){
-
+/*
 	var myLoader = 'http://unicolored.com/wp-content/themes/bodyrock/tpl/parts/loader-progressbar.php';
 	
 	jQuery
@@ -102,7 +102,7 @@ jQuery(document).ready(function(){
 	var path_to_child_theme = sc_val.path_to_child_theme;
 	jQuery.getScript(path_to_child_theme+'js/script.js?ver=1.0.0', function() { }, true);
 
-
+*/
 	
 	// Chargement des lecteurs vidéos par défaut
 	// AFFICHAGE DES VIDEOS Si le conteneur identifié est trouvé
