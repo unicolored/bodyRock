@@ -4,20 +4,6 @@
 /* 23-02-2014
 //
 //
-session_start();
-
-$_SESSION['ajax-widgets']="";
-
-$_SESSION['br_lastviews'] = br_modules_lastviewsSet();
-$options = get_option('brthemeoptions', themeoptionsGet_default());
-$meta_og_image = false;
-if ( get_post_format() == 'video' ) {	
-	$image = br_getPostThumbnail('medium',false);
-	
-	$meta_og_image = '<meta property="og:image" content="'.$image['src'].'" />'."\n";
-}
-
-/* Html Start */
 
 echo '<!DOCTYPE html>'."\n";
 echo '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" '; language_attributes(); echo '> <![endif]--> ';
