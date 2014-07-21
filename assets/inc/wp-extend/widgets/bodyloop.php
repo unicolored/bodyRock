@@ -116,7 +116,7 @@ function Get_thumbnail($instance) {
 
             $res .= a('section.art-vignette');
             if ($instance['affichage_listemedias_unlink_img'] == false) {
-                $res .= '<a class="' . $align[$instance['vignette_alignement']] . '" href="' . get_permalink() . '">';
+                $res .= '<a class="link-vignette ' . $align[$instance['vignette_alignement']] . '" href="' . get_permalink() . '">';
             }
 
             $res .= '<img src="' . $attrs['src'] . '" ' . $wh . ' alt="' . $titre . '" itemprop="thumbnailUrl" class="media-object ' . (isset($styles[$instance['vignette_style']]) ? $styles[$instance['vignette_style']] : false) . ' ' . ($instance['vignette_nonresponsive'] == false ? 'img-responsive' : false) . '">';
