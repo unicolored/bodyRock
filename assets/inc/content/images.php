@@ -9,7 +9,8 @@
 
 // ADD THEME SUPPORT /////////////////////////////////////////////
 // Ajoute la gestion des images de couverture.
-add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' ); // Ajoute la fonctionnalité d'image de couverture
+add_filter('sanitize_file_name', 'remove_accents' ); // Retire les accents des noms de fichiers images uploadés.
 
 
 $options = get_option('brthemeoptions', themeoptionsGet_default());
