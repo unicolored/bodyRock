@@ -1,11 +1,8 @@
 <?php
-
 // functions.php /////////////////////////////////////////////
-
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Le fichier de fonctions de Wordpress.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
-
 /*
 
 Toutes les fonctions PHP de Bodyrock sont liées à ce fichier.
@@ -39,7 +36,6 @@ themeoptionsInit() se trouve dans le fichier (assets/inc/)themes-options.php
 br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-options.php, elle récupère les options par défaut.
 
 */
-
 //add_image_size( 'article', 960, 320, 1 ); Obsolète ! Inutile de faire une déclaration supplémentaire pour le thème Bodyrorck parent
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 add_action('wp_footer', 'getImgVideo', 100);
@@ -105,14 +101,11 @@ add_action( 'wp_enqueue_scripts', 'head_scripts' );
 function head_scripts() {
 	switch ( BR_ICON_SET ) {
 		case 'elusive': 	wp_enqueue_style( 'icon_set-elusive', get_template_directory_uri() . '/assets/icon_set/elusive-webfont.css', array(), '2.0.0', false  ); break;
-//		case 'font-awesome': wp_enqueue_style( 'icon_set-fontawesome', get_template_directory_uri().'/assets/icon_set/font-awesome.min.css', array(), '4.0.3', false  ); break;
 		case 'font-awesome': wp_enqueue_style( 'icon_set-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3', false  ); break;
 		case 'glyphicon': wp_enqueue_style( 'icon_set-glyphicon', get_template_directory_uri() . '/assets/icon_set/glyphicons.css', array(), '1.0.0', false  ); break;
 	}
 
     if(!is_child_theme()) {
-//		wp_enqueue_style( 'bs', 				"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css", false, 'fev14', false  );
-//        wp_enqueue_style( 'bs-slate', 			"//netdna.bootstrapcdn.com/bootswatch/3.1.0/slate/bootstrap.min.css", array('bs'), 'fev14', false  );
         wp_enqueue_style( 'style', 				get_template_directory_uri() . '/css/style.css', false, '1.0.0', false  );
     }
 	else {
@@ -157,6 +150,23 @@ if( BR_COMPILELESS_ON == 1 ) { // Via les options du thème, on vérifie que la 
 	if( is_child_theme() ) {
 		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/style.less', get_stylesheet_directory().'/css/style.css');
 		backend_filesWrite_less(get_stylesheet_directory().'/assets/less/editor-style.less', get_stylesheet_directory().'/css/editor-style.css');
+	}
+}
+
+function bitly_url($login="unicolored",$apiKey="R_8de9dc884a5f6e6ba8831909df65d03c",$longUrl=false) {
+	$longUrl = ($longUrl == false ? get_permalink() : false);
+	
+	if($longUrl!=false) {
+		// Meta Shortlink Bitly
+		$bitlyurl = false;
+		$ch = curl_init('http://api.bitly.com/v3/shorten?login='.$login.'&apiKey='.$apiKey.'&longUrl='.$longUrl);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		 
+		$result = curl_exec($ch);
+		$R = json_decode($result);
+		$bitlyurl = '<link rel="shortlink" href="'.$R->data->url.'" />';
+		echo $bitlyurl;
+		return true;
 	}
 }
 ?>
