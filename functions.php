@@ -114,8 +114,10 @@ function head_scripts() {
 	}
 
 //    wp_enqueue_script( 'libs', 				get_template_directory_uri().'/js/libs.php', array('jquery'), '1.0.1', false  );
-    wp_enqueue_script( 'bootstrap', 				'//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), '1.0.1', 1  );
-    wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('bootstrap'), '1.0.1', false  );
+	if($options['allbsjs'] != false) {
+    	wp_enqueue_script( 'bootstrap', 				'//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), '1.0.1', 1  );
+	}
+    //wp_enqueue_script( 'script', 				get_template_directory_uri().'/js/script.php', array('bootstrap'), '1.0.1', false  );
 	
 	global $options;
 
