@@ -9,7 +9,8 @@
 
 // ADD THEME SUPPORT /////////////////////////////////////////////
 // Ajoute la gestion des images de couverture.
-add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' ); // Ajoute la fonctionnalité d'image de couverture
+add_filter('sanitize_file_name', 'remove_accents' ); // Retire les accents des noms de fichiers images uploadés.
 
 
 $options = get_option('brthemeoptions', themeoptionsGet_default());
@@ -24,14 +25,15 @@ foreach ($IS as $I) {
 // Récupère l'image de tous posts dans un format générique
 if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichier functions.php du thème child
 	function br_getPostThumbnail($size='thumbnail',$echoimg=true,$id=false) {
-		$array_sizes = array('thumbnail','medium','large'); // TOFIX : ajouter les tailles personnalisées
-		$size = in_array($size,$array_sizes) ? $size : 'thumbnail';
+		// Je ne suis plus sûr de l'intérêt de vérifier systématiquement si la taille de l'image mais je laisse en commentaire en attendant.
+		//$array_sizes = array('thumbnail','medium','large'); // TOFIX : ajouter les tailles personnalisées
+		//$size = in_array($size,$array_sizes) ? $size : 'thumbnail';
 		$classvideo = false;
 
 		if($id==false) $id = get_the_ID();
 		$format = get_post_format($id);
 
-		if ($format=='video') {
+		if (!has_post_thumbnail($id) && $format=='video') {
 			$videoCode = get_post_meta($id, 'videoCode', true);
 			$videoType = get_post_meta($id, 'videoType', true);
 			$classvideo = ' img-video-'.$videoType;		
@@ -69,6 +71,7 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 // Tailles d'images de vidéos en correspondance avec les tailles d'images personnalisées
 if(!function_exists('br_getImgVideoSize')) { // Permet l'override par le fichier functions.php du thème child
 	function br_getImgVideoSize($size='default') {
+		// Définition des tailles d'images
 		$array['default'] = $array['thumbnail'] = '-200x200';
 		$array['medium'] = '-320xh';
 		$array['large'] = '-1024xh';
@@ -77,6 +80,9 @@ if(!function_exists('br_getImgVideoSize')) { // Permet l'override par le fichier
 }
 
 function getImgVideo() {
+	// Import et sauvegarde de l'image d'une vidéo de Youtube ou Viméo sur le FTP
+	// Se produit uniquement quand sur lors de l'affichage d'un post de type video 
+	
 	if ( is_single() && get_post_format() == 'video' ) {
 		$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
 		
@@ -128,6 +134,28 @@ function getImgVideo() {
 			}
 		}
 	}
+}
+
+function list_thumbnail_sizes() {
+	// Liste les tailles d'images personnalisées des thèmes parent et enfant
+	global $_wp_additional_image_sizes;
+ 	$sizes = array();
+	foreach( get_intermediate_image_sizes() as $s ) {
+		$sizes[ $s ] = array( 0, 0 );
+		if( in_array( $s, array( 'thumbnail', 'medium', 'large' ) ) ) {
+			$sizes[ $s ][0] = get_option( $s . '_size_w' );
+			$sizes[ $s ][1] = get_option( $s . '_size_h' );
+		}
+		else {
+			if( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) ) { 
+				$sizes[ $s ] = array( $_wp_additional_image_sizes[ $s ]['width'], $_wp_additional_image_sizes[ $s ]['height'], );
+			}
+		}
+	}
+ 
+ 	foreach( $sizes as $size => $atts ) {
+ 		echo $size . ' ' . implode( 'x', $atts ) . "<br>";
+ 	}
 }
 
 

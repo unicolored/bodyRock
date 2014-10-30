@@ -6067,13 +6067,8 @@ article.article section.art-vignette img {
 article.article section.art-vignette-bg {
   min-height: 100px;
 }
-section.widget {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+article section.widget {
+  display: inline;
 }
 body {
   cursor: default;
@@ -6081,8 +6076,6 @@ body {
   font-weight: normal;
   font-variant: normal;
   letter-spacing: normal;
-  padding-top: 20px;
-  padding-bottom: 100px;
 }
 body strong {
   font-weight: 700;

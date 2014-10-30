@@ -7,8 +7,22 @@
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
 
-add_filter('excerpt_length', 'content_textesSet_excerpt_length');
-add_filter('excerpt_more', 'content_textesSet_excerpt_more');
+// EXCERPT
+add_filter('excerpt_length', 'content_textesSet_excerpt_length',500);
+add_filter('excerpt_more', 'content_textesSet_excerpt_more',500);
+
+// excerpt cleanup
+if (!function_exists('content_textesSet_excerpt_length')) {
+function content_textesSet_excerpt_length($length) {
+  return 40;
+}
+}
+
+if (!function_exists('content_textesSet_excerpt_more')) {
+function content_textesSet_excerpt_more($more) {
+  return ' &hellip; <a href="' . get_permalink() . '">' . __( 'suite...', 'bodyrock' ) . '</a>';
+}
+}
 
 
 function br_content_textesGet_posted_on($sep=false) {
@@ -32,14 +46,6 @@ function br_content_textesGet_posted_on($sep=false) {
 	(get_comments_number()==0 ? false : $sep.br_getPageIcon('comment')." ".get_comments_number()." ".__('commentaire(s)','bodyrock'));
 }
 
-// excerpt cleanup
-function content_textesSet_excerpt_length($length) {
-  return 40;
-}
-
-function content_textesSet_excerpt_more($more) {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __( 'suite...', 'bodyrock' ) . '</a>';
-}
 
 // Retourne la date sous la forme "il&nbsp;y&nbsp;a&nbsp;... ans, ... mois, ... jours, ec..."
 function time_passed($timestamp){

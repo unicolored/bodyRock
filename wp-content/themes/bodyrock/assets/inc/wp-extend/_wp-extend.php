@@ -18,6 +18,7 @@ require_once 'br_menus.php'; // widgets
 require_once 'br_metabox.php'; // metaboxs
 require_once 'br_types.php'; // custom posts types
 require_once 'br_shortcodes.php'; // widgets
+require_once 'plugins/nextpost_plus.php'; // widgets
 
 // BODY CLASS /////////////////////////////////////////////
 // Génère les classes du body qui sont fonctions de la page

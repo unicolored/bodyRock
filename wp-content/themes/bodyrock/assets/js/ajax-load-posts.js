@@ -1,5 +1,8 @@
-// Thanks to http://www.problogdesign.com/wordpress/load-next-wordpress-posts-with-ajax/
-// By Michael Martin
+// Merci à Michael Martin
+// http://www.problogdesign.com/wordpress/load-next-wordpress-posts-with-ajax/
+
+// Gestion du chargement et de l'affichage en AJAX de "plus d'articles" en bas de page
+// TODO Traduire les commentaires
 
 jQuery(document).ready(function($) {
 
@@ -48,7 +51,7 @@ jQuery(document).ready(function($) {
 					
 					// Add a new placeholder, for when user clicks again.
 					$('#pbd-alp-load-posts')
-						.before('<div class="pbd-alp-placeholder-'+ pageNum +'"></div>')
+						.before('<div class="pbd-alp-placeholder-'+ pageNum +'"></div>');
 					
 					// Update the button message.
 					if(pageNum <= max) {

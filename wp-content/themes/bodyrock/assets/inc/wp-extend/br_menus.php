@@ -8,6 +8,8 @@
 ////// POSITIONS /////////////////////////////////////////////
 ////// Ajout de deux positions au thème
 register_nav_menu( 'primary', __( 'Menu principal (primary)', 'bodyrock' ) );
+register_nav_menu( 'secondary', __( 'Menu secondaire (secondary)', 'bodyrock' ) );
+register_nav_menu( 'sidebar', __( 'Menu latéral (sidebar)', 'bodyrock' ) );
 register_nav_menu( 'footer', __( 'Menu de bas de page (footer)', 'bodyrock' ) );
 
 /*
@@ -34,6 +36,8 @@ wp_nav_menu( array(
 ////// Chargement des différents walkers personnalisés
 require_once('walkers/navbar_walker.php');
 require_once('walkers/listgroup_walker.php');
+require_once('walkers/navpills_walker.php');
+require_once('walkers/tabs_walker.php');
 
 /*
 

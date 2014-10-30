@@ -1,18 +1,9 @@
 <?php
-session_start();
-
-$_SESSION['ajax-widgets']="";
-
-$_SESSION['br_lastviews'] = br_modules_lastviewsSet();
-$options = get_option('brthemeoptions', themeoptionsGet_default());
-$meta_og_image = false;
-if ( get_post_format() == 'video' ) {	
-	$image = br_getPostThumbnail('medium',false);
-	
-	$meta_og_image = '<meta property="og:image" content="'.$image['src'].'" />'."\n";
-}
-
-/* Html Start */
+///
+/* HEADER Bodyrock */
+/* 23-02-2014
+//
+//
 
 echo '<!DOCTYPE html>'."\n";
 echo '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" '; language_attributes(); echo '> <![endif]--> ';
@@ -50,8 +41,6 @@ echo a('head');
 	echo "\t".'<link rel="apple-touch-icon-precomposed" sizes="57x57" href="'.get_stylesheet_directory_uri().'/img/ico/apple-touch-icon-57-precomposed.png">'."\n";
 	echo "\r";
 	
-	echo $meta_og_image;
-	
 	$ch = curl_init('http://api.bitly.com/v3/shorten?login=unicolored&apiKey=R_8de9dc884a5f6e6ba8831909df65d03c&longUrl='.get_permalink());
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	 
@@ -61,14 +50,16 @@ echo a('head');
 echo a('/head');
 echo "\r";
 echo '<body data-spy="scroll" data-target=".subnav" data-offset="50" '; body_class(); echo '>'."\n";
+    
 	echo a('div.loader').z('div');
 	echo a('div.scripts_body').z('div');
 	echo '<a href="#content" class="sr-only">Skip to content</a>'."\n";
 	echo '<div class="container"><div class="galaxie"><div class="col-xs-12"><noscript><div class="alert alert-warning">'.br_getIcon('warning').' Activer Javascript dans votre navigateur pour profiter de toutes les fonctionnalités du site.</div></noscript></div></div></div>'."\n";
 		
 	echo "\r";
+	$options=get_option('brthemeoptions', themeoptionsGet_default());
 	
-	echo a('div.'.($options['layout_width']==1 ? 'fixedwidth' : 'container'));
+	echo a('div.'.(isset($options['layout_width']) && $options['layout_width']==1 ? 'fixedwidth' : 'container'));
 	
 	echo a('header.header');
 		get_template_part(TPL_BOOTSTRAP_PATH.'navbars');

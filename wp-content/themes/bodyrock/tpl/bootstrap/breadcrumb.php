@@ -7,10 +7,10 @@ wp_reset_query();
 	<?php
 	// FRONT PAGE
 	if(is_front_page()) { 
-		echo '<li class="active">'.br_getIcon('home').' '.__('Home','gh').'</li>';
+		echo '<li class="active">'.br_getIcon('home').' '.__('Accueil','gh').'</li>';
 	}
 	else {
-		echo '<li>'.br_getIcon('home').' '.__('Home','gh').'</a></li>';
+		echo '<li>'.br_getIcon('home').' '.__('Accueil','gh').'</a></li>';
 	}
 	
 	// SINGLE

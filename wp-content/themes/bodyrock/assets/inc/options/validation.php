@@ -11,14 +11,9 @@
 function themeoptions_validation($input) {
 	
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	
-	// REFERENCEMENT
-	if (isset($input['google_analytics_id']) && $input['google_analytics_id']!='') {
-		if (preg_match('/^ua-\d{4,9}-\d{1,4}$/i', $input['google_analytics_id'])) {
-			$output['google_analytics_id'] = $input['google_analytics_id'];
-		}
-		else add_settings_error ( 'bodyrock_options', 'google_analytics_id', 'Votre ID Google Analytics doit être sous la forme UA-XXXXX-X', $type = 'error' );
-	}
+	  
+    // GOOGLE ANALYTICS ID
+    $options['google_analytics_id'] = isset($input['google_analytics_id']) ? $input['google_analytics_id'] : $defaults['google_analytics_id'];
   
 	// COMPILATION LESS
 	$options['compileless_on'] = isset($input['compileless_on']) && $input['compileless_on']==1 ? true : false;
@@ -49,6 +44,9 @@ function themeoptions_validation($input) {
 	
 	// AUDIO Height
 	$options['audio_height'] = isset($input['audio_height']) ? $input['audio_height'] : $defaults['audio_height'];
+	
+	// TYPES Clients
+	$options['type_clients'] = isset($input['type_clients']) ? $input['type_clients'] : $defaults['type_clients'];
 	
 	// TYPES Evenements
 	$options['type_evenements'] = isset($input['type_evenements']) ? $input['type_evenements'] : $defaults['type_evenements'];
