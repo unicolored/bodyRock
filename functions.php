@@ -80,11 +80,14 @@ require_once 'assets/inc/wp-extend/_wp-extend.php';	// Chargement des fonctions 
 $options = get_option('brthemeoptions', themeoptionsGet_default());
 
 define('BR_ICON_SET',$options['iconset']); // Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
+define('BR_FONTS',$options['fonts_google']); // Fonts chargées par Google
 define('BR_COMPILELESS_ON',$options['compileless_on']); // Active la compilation .less en .css (utile si les .less ont été modifiés)
 define('BR_VIDEO_AUTOPLAY',$options['video_autoplay']); // Active l'autoplay des vidéos sur les pages single
 define('BR_VIDEO_HEIGHT',$options['video_height']); // La hauteur de l'iframe contenant le lecteur vidéo
 define('BR_NORESPONSIVE',$options['noresponsive']); // Desactiver le "responsive"
 define('BR_AUDIO_HEIGHT',$options['audio_height']); // La hauteur de l'iframe contenant le lecteur audio
+define('BR_ALL_BS_JS',$options['all_bs_js']); // Charge tous les scripts .js de bootstrap
+define('BR_IMAGE_SIZES',$options['image_sizes']); // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
 
 // AUTRES VARIABLES (A mettre en option) ///////////////////////////////////////////// BODYROCK
 // Récupération des options du thème BODYROCK
