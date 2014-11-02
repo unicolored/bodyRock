@@ -88,7 +88,8 @@ define('BR_AUDIO_HEIGHT',$options['audio_height']); // La hauteur de l'iframe co
 
 // AUTRES VARIABLES (A mettre en option) ///////////////////////////////////////////// BODYROCK
 // Récupération des options du thème BODYROCK
-define('CDN_PATH','http://senzu.fr/'.strtolower(get_bloginfo('name')).'/'); // Chemin d'accès au CDN.
+// TO FIX : Senzu is Dead - Je ne renouvelle pas le domaine 
+// define('CDN_PATH','http://senzu.fr/'.strtolower(get_bloginfo('name')).'/'); // Chemin d'accès au CDN.
 
 
 // BODYROCK /////////////////////////////////////////////
