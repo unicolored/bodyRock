@@ -4,7 +4,7 @@
 /*TOFIX : Translate this page*/
 
 get_header();
-echo 'index';
+
 $args = array(
 	'before_widget' => '<aside class="widget">',
 	'after_widget' => "<hr class='clearfix'></aside>",
@@ -53,7 +53,6 @@ echo a('section.content');
 			'class'=>'recommandations',
 			'name'=>'home-widget-first',
 			'titre_icone'=>$active_categorie->slug,
-			'vignette_background' => 'on',
 			'contenu_footer_date' => "on",
 			'filtres_off'=>'on',
 			'ajax'=>false
