@@ -88,6 +88,7 @@ define('BR_NORESPONSIVE',$options['noresponsive']); // Desactiver le "responsive
 define('BR_AUDIO_HEIGHT',$options['audio_height']); // La hauteur de l'iframe contenant le lecteur audio
 define('BR_ALL_BS_JS',$options['all_bs_js']); // Charge tous les scripts .js de bootstrap
 define('BR_IMAGE_SIZES',$options['image_sizes']); // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
+define('BR_GOOGLE_ANALYTICS',$options['google_analytics_id']); // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
 
 // AUTRES VARIABLES (A mettre en option) ///////////////////////////////////////////// BODYROCK
 // Récupération des options du thème BODYROCK
