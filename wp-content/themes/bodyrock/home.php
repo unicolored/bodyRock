@@ -6,7 +6,7 @@
 br_ajaxWidgetInstance(isset($_GET['instance']) ? $_GET['instance'] : false);
 
 get_header();
-
+echo 'dsfsdf';
 $args_section = array(
 	'before_widget' => '<section class="widget">',
 	'after_widget' => "</section>",
