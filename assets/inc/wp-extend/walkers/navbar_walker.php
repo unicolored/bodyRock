@@ -39,7 +39,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
         
-        $output .= $indent . '<li' . $id . $value . $class_names .'>';
+        //$output .= $indent . '<li' . $id . $value . $class_names .'>';
+        $output .= $indent . '<li' . $id . $value .'>';
         
         
         // CREATION DES ATTRIBUTS
@@ -48,7 +49,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
         $atts['title'] = ! empty( $item->title ) ? $item->title : '';
         $atts['target'] = ! empty( $item->target ) ? $item->target : '';
         $atts['rel'] = ! empty( $item->xfn ) ? $item->xfn : '';
-        $atts['class'] = 'list-group-item '.$active;
+        //$atts['class'] = 'list-group-item '.$active;
+        $atts['class'] = $active;
         $atts['href'] = ! empty( $item->url ) ? $item->url : '';
         
         // APPLICATION DES ATTRIBUTS
