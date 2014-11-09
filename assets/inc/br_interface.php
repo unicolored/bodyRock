@@ -19,6 +19,15 @@ if(!function_exists('br_menu_default')) { // Permet l'override par le thème chi
 	}
 }
 
+// DUMMYs ////////////////////////////////////////////////////
+// Charge du contenu test dans les templates. Les fichiers sont situés dans tpl/dummy.
+// Il s'agit d'un raccourci vers la fonction de Wordpress
+if(!function_exists('br_dummy')) { // Permet l'override par le thème child
+      function br_dummy($tpl) {
+            get_template_part('tpl/dummy/'.$tpl);
+      }
+}
+
 // GET PAGE ICON /////////////////////////////////////////////
 // Récupérer l'icône d'une page d'après un identifiant texte
 if(!function_exists('br_getPageIcon')) { // Permet l'override par le thème child
@@ -151,7 +160,7 @@ function br_paging_nav() {
 	if ( $links ) :
 	?>
 	<ul class="pagination pagination-lg" role="navigation">
-		<h1 class="sr-only"><?php _e( 'Posts navigation', 'twentyfourteen' ); ?></h1>
+		<h1 class="sr-only"><?php _e( 'Posts navigation', 'bodyrock' ); ?></h1>
 		<?php
 		$links = str_replace("<ul class='page-numbers'>","",$links);
 		$links = str_replace('</ul>',"",$links);
