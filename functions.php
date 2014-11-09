@@ -82,7 +82,7 @@ require_once 'assets/inc/wp-extend/_wp-extend.php';
 // DEFINE /////////////////////////////////////////////
 // Assignation des options du thème à des constantes.
 // Les options sont converties en constantes pour être accessible dans tout le code.
-$options = get_option('brthemeoptions', themeoptionsGet_default());
+$options = br_themeoptionsGet();
 // Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
 define('BR_ICON_SET', $options['iconset']);
 // Fonts chargées par Google
@@ -102,7 +102,7 @@ define('BR_ALLBSJS', $options['allbsjs']);
 // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
 define('BR_IMAGE_SIZES', $options['image_sizes']);
 // L'identifiant du compte Anakytics
-define('BR_GOOGLE_ANALYTICS', BR_GOOGLE_ANALYTICS);
+define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
 
 
 // BODYROCK /////////////////////////////////////////////
