@@ -128,6 +128,7 @@ function head_scripts() {
             wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, $theme -> Version, false);
       } else {
             // CHILD /////////////////////////////////////////////
+            wp_enqueue_style('style-bs', get_stylesheet_directory_uri() . '/style.css', false, $theme -> Version, false);
             wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/css/style.css', false, $theme -> Version, false);
       }
 
@@ -154,13 +155,13 @@ function head_scripts() {
 //////// LESS - Permet l'ajout de la génération d'une feuille .css à partir d'une feuille .less
 // COMPILATION LESS Si l'option est activée
 if (BR_COMPILELESS_ON == 1) {// Via les options du thème, on vérifie que la compilation du fichier less est activée.
-      backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/editor-style.less', BR_CSS_PATH . 'editor-style.css');
-      backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/style.less', BR_CSS_PATH . 'style.css');
+      //backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/editor-style.less', BR_CSS_PATH . 'editor-style.css');
+      //backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/style.less', BR_CSS_PATH . 'style.css');
       //TOFIX : mettre en option ? backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/_debug.less', BR_CSS_PATH . 'debug.css');
       // Compilation du fichier less si l'option est activée
       if (is_child_theme()) {
-            backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/style.less', get_stylesheet_directory() . '/css/style.css');
-            backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/editor-style.less', get_stylesheet_directory() . '/css/editor-style.css');
+            //backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/style.less', get_stylesheet_directory() . '/css/style.css');
+            //backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/editor-style.less', get_stylesheet_directory() . '/css/editor-style.css');
       }
 }
 
