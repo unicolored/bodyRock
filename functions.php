@@ -123,7 +123,7 @@ function head_scripts() {
                   break;
       }
 
-      $theme = wp_get_theme();
+      $theme = wp_get_theme(); 
       if (!is_child_theme()) {
             wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, $theme -> Version, false);
       } else {
