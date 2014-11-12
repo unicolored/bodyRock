@@ -1,73 +1,68 @@
 <?php
-// Si le visiteur a vu un post avant d'arriver sur cette page,
-// je récupère par SESSIONS via single.php, les tags et les catégories de ce post pour faire des recommandations ici-même.
-/*TOFIX : Translate this page*/
+// Ajouter des scripts supplémentaires ci-dessous
+// ...
 
-get_header();
+// HEADER
+get_header(); ?>
+<section class="br_bonjour index">
+<?php // Placer le code Html ci-dessous ?>
 
-$args = array(
-	'before_widget' => '<aside class="widget">',
-	'after_widget' => "<hr class='clearfix'></aside>",
-	'before_title' => '<h1>',
-	'after_title' => '</h1>'
-);
-$args_section = array(
-	'before_widget' => '<section class="widget">',
-	'after_widget' => "<hr class='clearfix'></section>",
-	'before_title' => '<h1>',
-	'after_title' => '</h1>'
-);
 
-$titre_content = __("Articles récents", "bodyrock");
-
-if(is_category()) {
-	$cat = get_query_var('cat');
-	$active_categorie = get_category ($cat);
-	$titre_content = ucfirst(str_replace('<br>','',$active_categorie->name));
-}
-
-/************** HTML START **************/
-
-echo a('section.content');
+      <section class="intro">
+            <div class="jumbotron">
+		    <h1>Index.</h1>
+		</div>
+	</section>
 	
-	// TITRE DE LA PAGE
-	if ( is_search() || is_tag() ) {
-		echo '<div class="column">';
-		if ( is_search() ) {
-			echo '	<h1>Trouver <span class="red"><em>'.get_query_var('s').'</em></span></h1>';
-		}
-		elseif ( is_tag() ) {
-			echo '	<h1>Trouver <span class="red"><em>'.get_query_var('tag').'</em></span></h1>';
-		}
-		get_search_form();
-		echo '</div>';
-		echo '<hr class="clearfix">';
-		
-		$titre_content = "<h1>Résultats</h1>";
-	}
+      <section class="intro">
+            <div class="well">
+                <h1>Articles de la catégorie "featured"</h1>
+            </div>
+      </section>
+    
+    
+    <section>
+        <div class="container">
+            <?php
+            if ( get_category_by_slug('featured') != false ) {
+                  $args='posts_per_page=12&post_status=publish&cat='.get_category_by_slug('featured')->term_id;
+                  
+                  // The Query
+                  $the_query = new WP_Query( $args );
+                  
+                  // The Loop
+                  if ( $the_query->have_posts() ) {
+                      while ( $the_query->have_posts() ) {
+                          $the_query->the_post();
+                          get_template_part('tpl/article','thumbnail');
+                      }
+                  } else { ?>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </div>
+                        <?php    
+                  }
+                  /* Restore original Post Data */
+                  wp_reset_postdata();
+            } else { ?>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong><?php br_Icon('warning'); ?> Aucun article trouvé</strong> Placez des articles dans la catégorie "featured" pour qu'ils apparaissent ici.
+                  </div>
+                  <?php    
+            }
+            ?>
+        </div>
+    </section>
+    
+    <section class="cadre">
+        <div class="container">
+            <?php // get_template_part('tpl/article','lorem'); ?>
+        </div>
+    </section>
 
-	if ( have_posts() ) :
-		
-		the_widget('br_widgetsBodyloop',array(
-			'titre'=>$titre_content,
-			'class'=>'recommandations',
-			'name'=>'home-widget-first',
-			'titre_icone'=>$active_categorie->slug,
-			'contenu_footer_date' => "on",
-			'filtres_off'=>'on',
-			'ajax'=>false
-			),$args_section);
-		// Previous/next post navigation.
-		echo '<div class="visible-lg">';
-		br_paging_nav();
-		echo '</div>';
-	endif;
-	
-echo z('section');
 
-get_template_part(TPL_SIDEBAR_PATH.'sidebar','left');
-
-get_footer();
-
-
-?>
+<?php // Placer le code Html ci-dessus ?>
+</section>
+<?php get_footer();?>

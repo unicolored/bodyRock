@@ -34,14 +34,27 @@ wp_nav_menu( array(
 
 ////// WALKERS /////////////////////////////////////////////
 ////// Chargement des différents walkers personnalisés
+/*
+
+Un 'walker' parcoure les éléments du menu et permet de personnaliser la sortie Html.
+Les différents walkers ci-dessous servent à reproduire les composants Bootstrap.
+
+*/
 require_once('walkers/navbar_walker.php');
 require_once('walkers/listgroup_walker.php');
 require_once('walkers/navpills_walker.php');
 require_once('walkers/tabs_walker.php');
 
-/*
 
-Un 'walker' parcoure les éléments du menu et permet de personnaliser la sortie Html.
-Les différents walkers ci-dessus servent à reproduire les composants Bootstrap.
-
-*/
+////// WP_NAV_MENU /////////////////////////////////////////////
+////// Fonction fallback_cb pour un menu si il est vide.
+// Fonction appellée en paramètre de wp_nav_menu(array('fallback_cb'=>'default_menu'))
+// Ci-desso
+function default_menu($args) {
+      echo '
+      <ul class="nav navbar-nav">
+        <li'.(is_home() ? ' class="active"' : false).'><a href="/">Home</a></li>
+      </ul>
+      ';
+      return true;
+}

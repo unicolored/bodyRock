@@ -1,0 +1,81 @@
+/*************************************************************************/
+/* STYLES PERSOS *********************************************************/
+/*************************************************************************/
+
+// STYLES DE CADRES / BLOCS ///////////////////////////////////////////////
+section.br_header,
+section.br_bonjour,
+section.br_footer,
+section.intro,
+section.introduction,
+section.citation,
+section.cadre,
+section.cadre-inverse {
+	.clearfix();
+	position:relative;
+}
+// STYLES DE LA SECTION .br_bonjour
+// situées par défaut entre .br_header et .br_footer
+section.br_bonjour, div.conteneur {
+	.clearfix();
+}
+// CADRES
+section.intro {
+  .br_flexcentercenter;
+}
+section.introduction {
+}
+section.citation {
+	
+}
+
+// STYLES DE TEXTES / BOUTONS /////////////////////////////////////////////
+//...
+
+/*************************************************************************/
+/* MIXINS ****************************************************************/
+/*************************************************************************/
+
+// CLASSES / FONCTIONS ////////////////////////////////////////////////
+/*.btn-shadow(@color) {
+  #gradient > .vertical-three-colors(lighten(@color, 6%), @color, 60%, darken(@color, 4%));
+  filter: none;
+}*/
+
+/*************************************************************************/
+/* HELPERS ***************************************************************/
+/*************************************************************************/
+
+// STRUCTURE //////////////////////////////////////////////////////////////
+/* Personnalisation de la classe .row de bootstrap */
+.galaxie { .make-row(); }
+
+// Centrer l'élément enfant
+.br_flexcentercenter {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row; /* works with row or column */
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+// MARGIN & PADDING ///////////////////////////////////////////////////////
+@espacement: @navbar-height; // Définissez une valeur globale d'espacement
+/* Ajoute un margin de taille @espacement */
+.margeit {
+  margin-top: @espacement;
+  margin-bottom: @espacement;
+}
+.margeit-top { margin-top: @espacement; }
+.margeit-bottom { margin-bottom: @espacement; }
+
+/* Ajoute un padding de taille @espacement */
+.paddit {
+  padding-top: @espacement;
+  padding-bottom: @espacement;
+}
+.paddit-top { padding-top: @espacement; }
+.paddit-bottom { padding-bottom: @espacement; }
