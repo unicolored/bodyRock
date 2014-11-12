@@ -1,0 +1,32 @@
+@import "../../../bodyrock/assets/less/structure.less";
+
+/* STRUCTURE */
+/* header.header,aside.aside,aside.aside-right,section.content,footer.footer */
+
+body {
+	
+	
+	
+	/* Entêtes */
+	
+	header.header {
+		@import "structures/header.less";
+	}
+	
+	footer.footer {
+		@import "structures/footer.less";
+	}
+	
+	/* Sections */
+	
+	aside {
+		@import "structures/aside.less";
+	}
+	aside.aside {
+	}
+	section.content {
+		@import "structures/content.less"; // except items & wrappers
+	}
+	aside.aside-right {
+	}
+}

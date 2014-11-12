@@ -1,0 +1,3402 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Unicolored\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-22 23:20+0100\n"
+"PO-Revision-Date: 2014-01-22 23:21+0100\n"
+"Last-Translator: Gilles Hoarau\n"
+"Language-Team: Gilles Hoarau <unicolored@gmail.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: D:\\Dropbox\\_web\\wordpress-multi\\wp-content\\themes"
+"\\rock-unicolored\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: D:\\Dropbox\\_web\\wordpress-multi\\wp-content\\themes"
+"\\rock-unicolored\n"
+
+# @ mk_framework
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/functions.php:44
+msgid "Single Right"
+msgstr "Single Droite"
+
+# @ mk_framework
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/functions.php:53
+msgid "Footer Left"
+msgstr "Footer Gauche"
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/functions.php:62
+msgid "Footer Middle"
+msgstr "Footer Milieu"
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/functions.php:71
+msgid "Footer Right"
+msgstr "Footer Droit"
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/index.php:47
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/page.php:23
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/single.php:32
+msgid "Sorry, no posts matched your criteria."
+msgstr "Désolé, aucun résultat ne correspond à vos critères."
+
+# @ woocommerce
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/bootstrap/breadcrumb-navbar.php:12
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/content/recommandations-categories.php:9
+#, php-format
+msgid "View all posts in %s"
+msgstr "Afficher tous les articles dans %s"
+
+# @ mk_framework
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/bootstrap/breadcrumb-sidebar.php:9
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/bootstrap/breadcrumb-sidebar.php:12
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/bootstrap/breadcrumb.php:9
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/bootstrap/breadcrumb.php:12
+msgid "Home"
+msgstr "Accueil"
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/sidebars/sidebar-left.php:5
+msgid "Vous êtes ici"
+msgstr ""
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/sidebars/sidebar-left.php:11
+msgid ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-left\">&laquo; "
+"Précédent</button>"
+msgstr ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-left\">&laquo; "
+"Previous</button>"
+
+#: D:\Dropbox\_web\wordpress-multi\wp-content\themes\rock-unicolored/tpl/sidebars/sidebar-left.php:12
+msgid ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-right\">Suivant "
+"&raquo;</button>"
+msgstr ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-right\">Next "
+"&raquo;</button>"
+
+# @ mk_framework
+#~ msgid "Page not found"
+#~ msgstr "Page introuvable"
+
+# @ mk_framework
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Live"
+#~ msgstr "Live"
+
+#~ msgid "Services"
+#~ msgstr "Services"
+
+# @ mk_framework
+#~ msgid "Contact me"
+#~ msgstr "Me contacter"
+
+#~ msgid "About"
+#~ msgstr "A propos"
+
+# @ mk_framework
+#~ msgid "Client area"
+#~ msgstr "Espace client"
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Login"
+#~ msgstr "Identification"
+
+# @ mk_framework
+#~ msgid "The author"
+#~ msgstr "L'auteur"
+
+# @ mk_framework
+#~ msgid "The website"
+#~ msgstr "Le site Web"
+
+#~ msgid "Last update"
+#~ msgstr "Dernière mise à jour"
+
+#~ msgid "Theme"
+#~ msgstr "Theme"
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+# @ mk_framework
+#~ msgid "Search"
+#~ msgstr "Recherche"
+
+#~ msgid "Ongoing projects"
+#~ msgstr "Projets en cours"
+
+#~ msgid "History"
+#~ msgstr "Histoire"
+
+#~ msgid "Ad"
+#~ msgstr "Publicité"
+
+#~ msgid "Plus récents"
+#~ msgstr "Newer"
+
+#~ msgid "Plus anciens"
+#~ msgstr "Older"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Proudly powered by %s."
+#~ msgstr "Fièrement propulsé par %s"
+
+# @ mk_framework
+#~ msgid "Primary Navigation"
+#~ msgstr "Navigation principale"
+
+#~ msgid "Berries"
+#~ msgstr "Framboises"
+
+#~ msgid "Cherry Blossoms"
+#~ msgstr "Fleurs de cerisier"
+
+#~ msgid "Concave"
+#~ msgstr "Mirroir"
+
+#~ msgid "Fern"
+#~ msgstr "Fougère"
+
+#~ msgid "Forest Floor"
+#~ msgstr "Paysage forestier"
+
+#~ msgid "Inkwell"
+#~ msgstr "Encrier"
+
+#~ msgid "Path"
+#~ msgstr "Chemin"
+
+#~ msgid "Sunset"
+#~ msgstr "Coucher du soleil"
+
+# @ woocommerce
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+# @ woocommerce
+#~ msgid "%s <span class=\"says\">says:</span>"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+# @ mk_framework
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s à %2$s"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Modifier)"
+
+#~ msgid "Pingback:"
+#~ msgstr "Ping&nbsp;:"
+
+# @ mk_framework
+#~ msgid "Primary Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#~ msgid "The primary widget area"
+#~ msgstr "La zone principale de widgets"
+
+# @ mk_framework
+#~ msgid "Secondary Widget Area"
+#~ msgstr "Zone secondaire de widgets"
+
+# @ mk_framework
+#~ msgid "The secondary widget area"
+#~ msgstr "La zone secondaire de widgets"
+
+# @ mk_framework
+#~ msgid "First Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The first footer widget area"
+#~ msgstr "La première zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Second Footer Widget Area"
+#~ msgstr "2ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The second footer widget area"
+#~ msgstr "La deuxième zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Third Footer Widget Area"
+#~ msgstr "3ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The third footer widget area"
+#~ msgstr "La troisième zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Fourth Footer Widget Area"
+#~ msgstr "4ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The fourth footer widget area"
+#~ msgstr "La quatrième zone de widgets pour le pied de page"
+
+#~ msgid ""
+#~ "<span class=\"%1$s\">Posted on</span> %2$s <span class=\"meta-sep\">by</"
+#~ "span> %3$s"
+#~ msgstr ""
+#~ "<span class=\"%1$s\">Publié le</span> %2$s <span class=\"meta-sep\">par</"
+#~ "span> %3$s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Afficher tous les articles par %s"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s"
+#~ "\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Cette entrée a été publiée dans %1$s, avec comme mot(s)-clef(s) %2$s. "
+#~ "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien "
+#~ "pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+#~ "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Cette entrée a été publiée dans %1$s. Vous pouvez la mettre en favoris "
+#~ "avec <a href=\"%3$s\" title=\"Permalien pour %4$s\" rel=\"bookmark\">ce "
+#~ "permalien</a>."
+
+#~ msgid ""
+#~ "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+#~ "\">permalink</a>."
+#~ msgstr ""
+#~ "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien "
+#~ "pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#~ msgid "Page %s"
+#~ msgstr "Page %s"
+
+#~ msgid "Skip to content"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#~ msgid "Not Found"
+#~ msgstr "Rien de trouvé"
+
+#~ msgid ""
+#~ "Apologies, but no results were found for the requested archive. Perhaps "
+#~ "searching will help find a related post."
+#~ msgstr ""
+#~ "Toutes nos excuses, mais aucun résultat n&rsquo;a été trouvé dans l&rsquo;"
+#~ "archive demandée. Peut-être qu&rsquo;une recherche vous permettra de "
+#~ "trouver un article similaire."
+
+#~ msgctxt "gallery category slug"
+#~ msgid "gallery"
+#~ msgstr "galerie"
+
+#~ msgid "This gallery contains <a %1$s>%2$s photo</a>."
+#~ msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+#~ msgstr[0] "Cette galerie contient <a %1$s>%2$s photo</a>."
+#~ msgstr[1] "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#~ msgid "More Galleries"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#~ msgid "Leave a comment"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#~ msgid "1 Comment"
+#~ msgstr "Un commentaire"
+
+# @ mk_framework
+#~ msgid "% Comments"
+#~ msgstr "% commentaires"
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgctxt "asides category slug"
+#~ msgid "asides"
+#~ msgstr "apartes"
+
+# @ mk_framework
+#~ msgid "Pages:"
+#~ msgstr "Pages&nbsp;:"
+
+#~ msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#~ msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+#~ msgid "Pas de résultats"
+#~ msgstr "Aucun résultat"
+
+#~ msgid "Lire l'article %s"
+#~ msgstr "Read more %s"
+
+# @ woocommerce
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %s"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> %s"
+
+# @ woocommerce
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Précédent"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Commentaires plus anciens"
+
+# @ woocommerce
+#~ msgid "Suivant <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search site"
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view any comments."
+#~ msgstr ""
+#~ "Cet article est protégé par un mot de passe. Saisissez le mot de passe "
+#~ "pour lire les commentaires."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment"
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%s\">connecté</a> pour ajouter un commentaire."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Name (Required)"
+#~ msgstr "Le champ Nom est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email (Required)"
+#~ msgstr "Le champ Téléphone est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "POST COMMENT"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to Top"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "%1$s's message from %2$s"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Site: "
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Name: "
+#~ msgstr "Nom"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email: "
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Email"
+#~ msgstr "Votre Email"
+
+#, fuzzy
+#~ msgid "By"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+#, fuzzy
+#~ msgid "In"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tags:"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "submit"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "bbPress Default"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Author Information"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Your information:"
+#~ msgstr "Vote nom*"
+
+#, fuzzy
+#~ msgid "Name (required):"
+#~ msgstr "Le champ Nom est requis."
+
+#, fuzzy
+#~ msgid "Website:"
+#~ msgstr "Site Web"
+
+#, fuzzy
+#~ msgid "Create New Forum"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Forum Type:"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "(No Parent)"
+#~ msgstr "Aucune réponses"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Submit"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Reply To: %s"
+#~ msgstr "Lien permanent vers %s"
+
+#, fuzzy
+#~ msgid "Reply:"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Keep a log of this edit:"
+#~ msgstr "Déconnexion de ce compte"
+
+#, fuzzy
+#~ msgid "Merge topic tags"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Manage Tag: \"%s\""
+#~ msgstr "Archives par mot-clef&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~ msgid "Existing tag:"
+#~ msgstr "Archives par mot-clef&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Create New Topic"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Topic Type:"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~ msgid "First Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Contact Info"
+#~ msgstr "Formulaire de contact"
+
+#, fuzzy
+#~ msgid "Account"
+#~ msgstr "Créer un compte"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username"
+#~ msgstr "Nom d'utilisateur"
+
+#, fuzzy
+#~ msgid "New Password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Super Admin"
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Save Changes"
+#~ msgstr "Sauvegarder les modifications"
+
+#, fuzzy
+#~ msgid "Update Profile"
+#~ msgstr "Editer le profil"
+
+#, fuzzy
+#~ msgid "Log In"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#, fuzzy
+#~ msgid "Lost Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#, fuzzy
+#~ msgid "Username or Email"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Reset My Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#, fuzzy
+#~ msgid " by %1$s"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+#, fuzzy
+#~ msgid "in <a href=\"%1$s\">%2$s</a>"
+#~ msgstr "Connecté en tant que <a href=\"%1$s\">%2$s</a>."
+
+#, fuzzy
+#~ msgid "Profile: %s"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Read More"
+#~ msgstr "Lire la suite"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Read more"
+#~ msgstr "Lire la suite"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "More Help"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog & <br /> News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Header"
+#~ msgstr "Entête"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Sidebars"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Footer"
+#~ msgstr "Pied de page"
+
+#, fuzzy
+#~ msgid "Page Title in Homepage"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Header Main Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Network"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Header Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Create a new sidebar"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "General / Footer"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Footer Column layout"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sub Footer"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Copyright Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact"
+#~ msgstr "Formulaire de contact"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Contact Us"
+#~ msgstr "Formulaire de contact"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact Email"
+#~ msgstr "Le champ Téléphone est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Content Links Color"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Styling & Coloring / Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "text Shadow for Title?"
+#~ msgstr "Titre pour les articles aléatoires"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "For Light Background"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "For Dark Background"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Links"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Styling & Coloring / Footer"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Footer Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Footer Text Color"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Footer Links Color"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "special_fonts_type_1"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Body Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Pragraph (p) Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 1 (h1) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 2 (h2) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 3 (h3) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 4 (h4) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 5 (h5) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 6 (h6) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title Size"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title Weight"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Page Title Text Transform"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Subtitle Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Sidebar Title Size"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Title Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Footer"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Footer Title Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Footer Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Portfolio Single Post"
+#~ msgstr "&larr; Article précédent"
+
+#, fuzzy
+#~ msgid "Portfolio / Single Post"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Portfolio Single Layout"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Featured Image Height"
+#~ msgstr "Utiliser l'image de couverture en tant que vignette"
+
+#, fuzzy
+#~ msgid "Single Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Similar Posts Section"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Portfolio Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Featured Image Height"
+#~ msgstr "Utiliser l'image de couverture en tant que vignette"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pagination Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Load on Scroll Page"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Single Post"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Single Post"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Exclude Categories"
+#~ msgstr "Surligner les catégories actives"
+
+#, fuzzy
+#~ msgid "Featured Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Image Cropping"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Meta Tags"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Similar Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Posts Comments"
+#~ msgstr "Les commentaires sont fermés."
+
+#, fuzzy
+#~ msgid "Blog & News / Archive"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archives"
+#~ msgstr "Archives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Page Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Loop Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Blog & News / Search"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Layout"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Page subtitle"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Page"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose page.."
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Post Layout"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Under Construction Page"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Export Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Import Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Shop Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Single Product Page Title"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+#, fuzzy
+#~ msgid "Shop Archive Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Move to Trash"
+#~ msgstr "Une réponse à %2$s"
+
+# @ default
+#, fuzzy
+#~ msgid "Use Icon"
+#~ msgstr "Utiliser des vignettes automatiques"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Option..."
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Page"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Portfolio"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Post"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Page"
+#~ msgstr "Page %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Background Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Saving changes..."
+#~ msgstr "Sauvegarder les modifications"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Save Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Blog / News"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+# @ FAQ
+# @ News
+# @ portfolio
+#, fuzzy
+#~ msgid "Add New"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Create"
+#~ msgstr "Créer un compte"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Current sidebars"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Posts Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Portfolios Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single News Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "404 Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Woocommerce Shop Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Woocommerce Single Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Fifth Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sixth Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "include http://"
+#~ msgstr "http://wordpress.org/"
+
+#, fuzzy
+#~ msgid "Link to a URL"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email Address"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post Type"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "General Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Page Title Align"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Post Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full With Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full Without Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Half With Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Half Without Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Fourth With Image"
+#~ msgstr "Les champs marqués * sont obligatoires"
+
+#, fuzzy
+#~ msgid "Slideshow Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Your Slideshow"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Slideshow"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose your Slides"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Number of Slides"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No order"
+#~ msgstr "Aucune réponses"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Menu Order"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Order by title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Order by date"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Random order"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pause on Hover"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Direction Navigation"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Next & Previous navigation."
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Slideshow Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pagination Type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Top & Bottom Padding"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Animation Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Footer Twitter section"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Heading Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map Height"
+#~ msgstr "Hauteur des vignettes"
+
+#, fuzzy
+#~ msgid "Map Type Control"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Cookie Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Message"
+#~ msgstr "Message*"
+
+#, fuzzy
+#~ msgid "Message Color"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Twitter Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Post Options"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Video Site"
+#~ msgstr "Administration du site"
+
+#, fuzzy
+#~ msgid "Similiar Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Tags"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Related Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Featured Plan?"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Plan Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Description"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Link To (optional)"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Testimonial Author Name"
+#~ msgstr "Le champ Nom est incomplet."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Slider Item Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Banner Builder Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Banner"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Thumbnail"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Client"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Client"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Client"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Client"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Clients"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Employee Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Team Member"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Memeber"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Team Member"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Team Member"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Team Members"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New FAQ"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit FAQ"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New FAQ"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View FAQs"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search FAQs"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "FAQ Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "FAQ Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Popular Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "All Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit FAQ Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update FAQ Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "FAQ Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "iCarousel Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Slider"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Slider Items"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+# @ post type general name
+# @ post type singular name
+#, fuzzy
+#~ msgid "News"
+#~ msgstr "Actualité"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit News"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No news found"
+#~ msgstr "Retour aux actualités"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "News Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "news Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit News Category"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update News Category"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "news Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Portfolio"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Portfolio"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Portfolio"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Portfolio"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Portfolios"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "Portfolio Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "Portfolio Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "Portfolio Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Flexslider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Testimonial Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Testimonial"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Testimonial"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Testimonial"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Testimonials"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Testimonials"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "You are here: "
+#~ msgstr "Les commentaires sont fermés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Weekly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Daily Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Monthly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Yearly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+# @ default
+#, fuzzy
+#~ msgid "Author Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Results for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search.."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Category Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tag Archives for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archives for: \"%s\""
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Recommended Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Recent Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#~ msgid "Your Name"
+#~ msgstr "Votre Nom"
+
+# @ mk_framework
+#~ msgid "Your Email"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#~ msgid "Type your message..."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Edit Profile"
+#~ msgstr "Editer le profil"
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+# @ mk_framework
+#~ msgid " Remember Me"
+#~ msgstr "Se souvenir de moi"
+
+# @ mk_framework
+#~ msgid "LOG IN"
+#~ msgstr "CONNEXION"
+
+# @ mk_framework
+#~ msgid "Forget?"
+#~ msgstr "Mot de passe oublié ?"
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Register"
+#~ msgstr "S'enregistrer"
+
+# @ mk_framework
+#~ msgid "Create Account"
+#~ msgstr "Créer un compte"
+
+# @ mk_framework
+#~ msgid "Your email"
+#~ msgstr "Votre email"
+
+# @ mk_framework
+#~ msgid "Your password"
+#~ msgstr "Votre mot de passe"
+
+# @ mk_framework
+#~ msgid "Verify password"
+#~ msgstr "Confirmer le mot de passe"
+
+# @ mk_framework
+#~ msgid "Already have an account?"
+#~ msgstr "Déjà inscrit ?"
+
+# @ mk_framework
+#~ msgid "Forget your password?"
+#~ msgstr "Oubli de mot de passe ?"
+
+# @ mk_framework
+#~ msgid "Username or E-mail"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#~ msgid "Get New Password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Remember Password?"
+#~ msgstr "Votre mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Subscribe to newsletter"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "email address"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Menu Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Navigation Label"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Attribute"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Link Relationship (XFN)"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid " Menu Option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Item Icon"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+#, fuzzy
+#~ msgid "Masterkey Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "page"
+#~ msgstr "Page %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Install Required Plugins"
+#~ msgstr "Le champ Nom est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Dismiss this notice"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "External Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "WordPress Repository"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Required"
+#~ msgstr "(requis)"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Not Installed"
+#~ msgstr "Rien de trouvé"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Source"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Send message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title:"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Height:"
+#~ msgstr "Hauteur des vignettes"
+
+#, fuzzy
+#~ msgid "Dowload new version"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Page Composer"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Select element type"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Element settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Set Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Loop settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Show all"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+#, fuzzy
+#~ msgid "Select Content Element"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Save"
+#~ msgstr "Sauvegarder les modifications"
+
+#, fuzzy
+#~ msgid "Add Page Section"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Edit %s"
+#~ msgstr "(Modifier)"
+
+#, fuzzy
+#~ msgid "Select option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Saved data"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Post Count"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Order By"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post types"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Individual Posts/Pages"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Random"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Comment count"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Menu order"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Manage options"
+#~ msgstr "Options du thème"
+
+#, fuzzy
+#~ msgid "Title + Thumbnail + Text"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Thumbnail + Title + Text"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Thumbnail + Text"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Thumbnail + Title"
+#~ msgstr "Largeur des vignettes"
+
+#, fuzzy
+#~ msgid "Thumbnail only"
+#~ msgstr "Largeur des vignettes"
+
+#, fuzzy
+#~ msgid "Title + Text"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Select URL"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Edit this column"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Extra class name"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+#, fuzzy
+#~ msgid "Prepend to this %s"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Edit this %s"
+#~ msgstr "Editer le profil"
+
+#, fuzzy
+#~ msgid "Clone this %s"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Delete this %s"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Delete this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Edit this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Clone this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Append to this %s"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Design Options"
+#~ msgstr "Options du thème"
+
+#, fuzzy
+#~ msgid "Element Class Names"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+#, fuzzy
+#~ msgid "Separator border color"
+#~ msgstr "Afficher en tant que Séparateur dans le Menu"
+
+#, fuzzy
+#~ msgid "Page Composer Settings"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content types"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Elements bottom margin"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Envato Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Item Purchase code"
+#~ msgstr "<strong>ShortTag :</strong><code>%s</code>"
+
+#, fuzzy
+#~ msgid "Show only Page Composer"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Page Composer access"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select All"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select none"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Your Envato username."
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Remove all"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Restore to defaults"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Left Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Center Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Right Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Left Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Center Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Right Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "No Repeat"
+#~ msgstr "Aucune réponses"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Aucune réponses"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Drop Top Shadow"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Margin Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content Box"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Heading"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Heading Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Uplaod Your image"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Frame Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Link"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Description"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Location"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Circle Image Frame"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Diameter"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Moving Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Title & Alt"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Gallery"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Heights"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Collection Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Color"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Margin Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Enter your content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Message Box"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Font Size"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Font Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Icon"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Minimal"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Ultimate"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Icon Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Divider Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 1 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 2 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 3 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 4 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 5 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 6 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 7 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default Text Color"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Line Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Bar Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 1 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 1 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 2 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 2 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 3 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 3 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 4 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 4 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 5 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 5 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Tab"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Widget Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tab Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Size (Px)"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Number Start at"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Stop at"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Prefix"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Suffix"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Text Below Number"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Uplaod Your Thumbnail"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sound Author"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Gravity Form"
+#~ msgstr "Formulaire de connexion"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "Formulaire de connexion"
+
+#, fuzzy
+#~ msgid "Display Form Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Contact Form 7"
+#~ msgstr "Formulaire de contact"
+
+#, fuzzy
+#~ msgid "Form title"
+#~ msgstr "Formulaire de connexion"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Featured Products?"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "How many Posts?"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Table Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Logos Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Target for the links."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Images Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select specific Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select specific Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Carousel"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View All Page"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Enable Excerpt"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Showcase"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Excerpt?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Permalink"
+#~ msgstr "Lien permanent vers %s"
+
+#, fuzzy
+#~ msgid "Select Specific Categories."
+#~ msgstr "Surligner les catégories actives"
+
+#, fuzzy
+#~ msgid "Title and Category?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New window"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "post id"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Comment Count"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Slideshow"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Smooth Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Half"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Third"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Fourth"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Background Color"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Text Color"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Opacity"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Centered"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Show as?"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "RSS URL"
+#~ msgstr "%s Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Wordpress URL"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skype Number"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Twitter Feeds"
+#~ msgstr "Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Twitter name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select button type."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Vertical"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select annotation type."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Video link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Google map link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Frame Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Flickr Feeds"
+#~ msgstr "Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Number of photos"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Thumbnail Size"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Group"
+#~ msgstr "Groupe AGS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Photo stream type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Phone"
+#~ msgstr "Téléphone"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Company"
+#~ msgstr "Société"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skype Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text block"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Title Pattern?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Align"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Fancy Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tag Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Font Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Box"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blockquote Message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quote Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Line Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Size"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Highlight Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tooltip Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No Align"
+#~ msgstr "Aucune réponses"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Vertical Padding"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Toggle Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Toggle Content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose Icon For title"
+#~ msgstr "Titre pour les articles aléatoires"
+
+#, fuzzy
+#~ msgid "Tab title."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Action Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Accordion section title."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Load More"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "VIEW ALL"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Your message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to top"
+#~ msgstr "Retour aux actualités"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "READ MORE"
+#~ msgstr "Lire la suite"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "OUT OF STOCK"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Select options"
+#~ msgstr "Options du thème"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "ADD TO CART"
+#~ msgstr "Une réponse à %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Rated %s out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Category:"
+#~ msgid_plural "Categories:"
+#~ msgstr[0] "Archives de catégorie&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Tag:"
+#~ msgid_plural "Tags:"
+#~ msgstr[0] "Archives par mot-clef&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "%s review for %s"
+#~ msgid_plural "%s reviews for %s"
+#~ msgstr[0] "Résultats de la recherche&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Submit Review"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Your Rating"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Not that bad"
+#~ msgstr "E-mail (ne sera pas publié)"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your Review"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Remove this item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Available on backorder"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "APPLY COUPON"
+#~ msgstr "Appliquer le filtre sur l'extrait"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "PROCEED TO CHECKOUT"
+#~ msgstr "Une réponse à %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "View Cart &rarr;"
+#~ msgstr "Article suivant &rarr;"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Checkout &rarr;"
+#~ msgstr "Article suivant &rarr;"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid " (taxes estimated for %s)"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing Address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Create an account?"
+#~ msgstr "Créer un compte"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "You must be logged in to checkout."
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%s\">connecté</a> pour ajouter un commentaire."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your order"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Coupon code"
+#~ msgstr "Code Publicité #%s :"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Apply Coupon"
+#~ msgstr "Appliquer le filtre sur l'extrait"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Pay for order"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Shipping Address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "I have read and accept the"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "My Account"
+#~ msgstr "Créer un compte"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "Votre Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username: %s"
+#~ msgstr "Nom d'utilisateur"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Shipping address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Order number: %s"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "jS F Y"
+#~ msgstr "F jS, Y"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your details"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "ALL PRODUCTS"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Default sorting"
+#~ msgstr "Navigation principale"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Sort by popularity"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Sort by newness"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Showing the single result"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Showing all %d results"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgctxt "%1$d = first, %2$d = last, %3$d = total"
+#~ msgid "Showing %1$d–%2$d of %3$d results"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "New password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "SAVE"
+#~ msgstr "Sauvegarder les modifications"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Save Address"
+#~ msgstr "Sauvegarder les modifications"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username or email"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "LOGIN"
+#~ msgstr "Connexion"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Lost Password?"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Re-enter password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Reset Password"
+#~ msgstr "Votre mot de passe"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "My Address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "%s for %s item"
+#~ msgid_plural "%s for %s items"
+#~ msgstr[0] "<span class=\"%1$s\">Publié dans</span> %2$s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing Email"
+#~ msgstr "Votre Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Order Again"
+#~ msgstr "Recommencer"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "and was completed"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Products tagged &ldquo;"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Posts tagged &ldquo;"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Author:"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Rated %d out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Add to cart"
+#~ msgstr "Une réponse à %2$s"
