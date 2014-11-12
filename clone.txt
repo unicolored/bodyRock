@@ -1,0 +1,14 @@
+Moving the subdirectory to a separate Git repo
+
+First we clone the dotfiles repo to a new dotvim repo.
+
+$ git clone https://unicolored@bitbucket.org/unicolored/wpmulti.git
+Next we discard everything other than the subdirectory we want, vim, promoting it to the root level.
+
+$ cd bodyRock
+$ git filter-branch --subdirectory-filter htdocs/wp-content/themes/bodyrock HEAD -- --all
+$ git reset --hard
+Now we get rid of the objects we are no longer interested in.
+
+$ git gc --aggressive
+$ git prune
