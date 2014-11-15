@@ -107,35 +107,34 @@ define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
 
 // BODYROCK /////////////////////////////////////////////
 //////// CHARGEMENT DES FEUILLES .CSS ET .JS
+/* /!\ Ne pas inclure de numéro de version en paramètre car cela empêche la mise en cache du fichier */
 add_action('wp_enqueue_scripts', 'head_scripts');
 
 function head_scripts() {
       // CSS
       switch ( BR_ICON_SET ) {
             case 'elusive' :
-                  wp_enqueue_style('icon_set-elusive', get_template_directory_uri() . '/assets/icon_set/elusive-webfont.css', array(), '2.0.0', false);
+                  wp_enqueue_style('icon_set-elusive', get_template_directory_uri() . '/assets/icon_set/elusive-webfont.css', array(), null, false);
                   break;
             case 'font-awesome' :
-                  wp_enqueue_style('icon_set-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3', false);
+                  wp_enqueue_style('icon_set-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), null, false);
                   break;
             case 'glyphicon' :
-                  wp_enqueue_style('icon_set-glyphicon', get_template_directory_uri() . '/assets/icon_set/glyphicons.css', array(), '1.0.0', false);
+                  wp_enqueue_style('icon_set-glyphicon', get_template_directory_uri() . '/assets/icon_set/glyphicons.css', array(), null, false);
                   break;
       }
 
-      $theme = wp_get_theme(); 
       if (!is_child_theme()) {
-            wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, $theme -> Version, false);
+            wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, null, false);
       } else {
             // CHILD /////////////////////////////////////////////
-            wp_enqueue_style('style-bs', get_stylesheet_directory_uri() . '/style.css', false, $theme -> Version, false);
-            wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/css/style.css', false, $theme -> Version, false);
+            wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/style.css', false, null, false);
       }
 
       // JAVASCRIPT
       // Bootstrap Javascript
       if (BR_ALLBSJS != NULL) {
-            wp_enqueue_script('bootstrap-min-default', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), '1.0.1', 1);
+            wp_enqueue_script('bootstrap-min-default', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), null, 1);
       }
 
       global $options;
