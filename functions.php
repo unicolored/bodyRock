@@ -125,10 +125,10 @@ function head_scripts() {
       }
 
       if (!is_child_theme()) {
-            wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, null, false);
+            wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
       } else {
             // CHILD /////////////////////////////////////////////
-            wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/style.css', false, null, false);
+            //wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/style.css', false, null, 'all');
       }
 
       // JAVASCRIPT

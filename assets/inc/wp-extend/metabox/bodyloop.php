@@ -36,7 +36,9 @@ function save_blmetas($post) {
     } else {
 
         foreach (getDefaultLoop() as $K => $V) {
-            update_post_meta(get_the_ID(), $K, $_POST[$K]);
+            if(isset($_POST[$K])) {
+              update_post_meta(get_the_ID(), $K, $_POST[$K]);
+            }
         }
 
     }
