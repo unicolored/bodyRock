@@ -1,0 +1,33 @@
+{
+  "name": "BodyRock",
+  "version": "0.0.0",
+  "authors": [
+    "Gilles Hoarau <unicolored@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_compenents",
+    "test",
+    "tests",
+    "tmp"
+  ],
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "appPath": "dist",
+  "resolutions": {
+    
+  }
+}
