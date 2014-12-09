@@ -1,4 +1,4 @@
-# [GillesHoarau](http://gilleshoarau.com)
+# [Bodyrock](https://www.gilleshoarau.com/bodyrock)
 
 BodyRock : Wordpress theme developpement using Less / Grunt / Bootstrap
 
