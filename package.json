@@ -1,0 +1,21 @@
+{
+  "name": "Bodyrock",
+  "version": "0.0.0",
+  "description": "Mon thème Wordpress pro.",
+  "homepage": "https://www.gilleshoarau.com/bodyrock",
+  "keywords": "wordpress, less, bower, grunt, power",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "E:\\xampp\\htdocs\\bodyrock"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+  },
+  "dependencies": {}
+}
