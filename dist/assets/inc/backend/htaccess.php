@@ -10,7 +10,7 @@
 // Using a server other than Apache? See:
 // https://github.com/retlehs/roots/wiki/Nginx
 // https://github.com/retlehs/roots/wiki/Lighttpd
-
+/*
 if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
   function roots_htaccess_writable() {
     if (!is_writable(get_home_path() . '.htaccess')) {
@@ -21,13 +21,13 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
   }
 
   add_action('admin_init', 'roots_htaccess_writable');
-
+*/
   // Rewrites DO NOT happen for child themes
   // rewrite /wp-content/themes/bodyrock/css/ to /css/
   // rewrite /wp-content/themes/bodyrock/js/  to /js/
   // rewrite /wp-content/themes/bodyrock/img/ to /js/
   // rewrite /wp-content/plugins/ to /plugins/
-
+  /*
   function roots_flush_rewrites() {
     global $wp_rewrite;
     $wp_rewrite->flush_rules();
@@ -45,7 +45,7 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
     $wp_rewrite->non_wp_rules += $roots_new_non_wp_rules;
   }
 
-  add_action('admin_init', 'roots_flush_rewrites');
+  add_action('admin_init', 'roots_flush_rewrites');*/
 
   function roots_clean_assets($content) {
       $theme_name = next(explode('/themes/', $content));
@@ -61,7 +61,7 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
       $content = str_replace($current_path, $new_path, $content);
       return $content;
   }
-
+/*
   // only use clean urls if the theme isn't a child or an MU (Network) install
   if (!is_multisite() && !is_child_theme()) {
     add_action('generate_rewrite_rules', 'roots_add_rewrites');
@@ -74,7 +74,8 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
       add_filter('style_loader_src', 'roots_clean_plugins');
     }
   }
-
+*/
+  /*
   function roots_add_h5bp_htaccess($rules) {
     global $wp_filesystem;
 
@@ -86,7 +87,7 @@ if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
     return $rules . $wp_filesystem->get_contents($filename);
   }
 
-  add_filter('mod_rewrite_rules', 'roots_add_h5bp_htaccess');
-}
+  add_filter('mod_rewrite_rules', 'roots_add_h5bp_htaccess');*/
+//}
 
 ?>

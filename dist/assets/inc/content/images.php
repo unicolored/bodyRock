@@ -15,12 +15,13 @@ add_filter('sanitize_file_name', 'remove_accents' ); // Retire les accents des n
 
 $options = get_option('brthemeoptions', themeoptionsGet_default());
 
-$IS = explode(';',$options['image_sizes']);
-foreach ($IS as $I) {
-	$S = explode(',',$I);
-	add_image_size( $S[0], $S[1], $S[2], $S[3] == 1 ? true : false );
+if ( $options['image_sizes'] != false ) {
+	$IS = explode(';',$options['image_sizes']);
+	foreach ($IS as $I) {
+		$S = explode(',',$I);
+		add_image_size( $S[0], $S[1], $S[2], $S[3] == 1 ? true : false );
+	}
 }
-
 // GET POST THUMBNAIL ///////////////////////////////////////////// CONTENT
 // Récupère l'image de tous posts dans un format générique
 if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichier functions.php du thème child
@@ -36,7 +37,7 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 		if (!has_post_thumbnail($id) && $format=='video') {
 			$videoCode = get_post_meta($id, 'videoCode', true);
 			$videoType = get_post_meta($id, 'videoType', true);
-			$classvideo = ' img-video-'.$videoType;		
+			$classvideo = ' img-video-'.$videoType;
 			$attr['src'] = CDN_PATH.'images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
 
 			if(!file_exists($attr['src'])) {
@@ -53,10 +54,10 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 			}
 			else return false; //'<span class="label label-default">'.__('No image').'</span>';
 		}
-		
+
 		$attr['alt'] = strip_tags(get_the_title());
 		$attr['class'] = 'image img-responsive img'.$format.''.$classvideo;
-		
+
 		if ($echoimg == true) {
 			$thumbnail = '<img src="'.$attr['src'].'" class="'.$attr['class'].'" alt="'.$attr['alt'].'" width="'.$attr['width'].'" height="'.$attr['height'].'" />';
 			return $thumbnail;
@@ -81,11 +82,11 @@ if(!function_exists('br_getImgVideoSize')) { // Permet l'override par le fichier
 
 function getImgVideo() {
 	// Import et sauvegarde de l'image d'une vidéo de Youtube ou Viméo sur le FTP
-	// Se produit uniquement quand sur lors de l'affichage d'un post de type video 
-	
+	// Se produit uniquement quand sur lors de l'affichage d'un post de type video
+
 	if ( is_single() && get_post_format() == 'video' ) {
 		$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
-		
+
 		$videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
 		$videoType = get_post_meta(get_the_ID(), 'videoType', true);
 
@@ -112,12 +113,12 @@ function getImgVideo() {
 			if ( ! is_wp_error( $img ) ) {
 				$img->set_quality( 100 );
 				$size = $img->get_size();
-		
+
 				$sizes_array = 	array(
 					array ('width' => 200, 'height' => 200, 'crop' => true)
-				);                
+				);
 				$resize = $img->multi_resize( $sizes_array );
-				
+
 				$img->crop( 0, 0, $size['width'], $size['height'], 1024, ($size['height']*(1024/$size['width'])));
 				$filename = $img->generate_filename( '1024xh', ABSPATH.'senzu/'.$path_name.'/images/videos/'.$videoType.'/', 'jpg' );
 				$img->save($filename);
@@ -147,12 +148,12 @@ function list_thumbnail_sizes() {
 			$sizes[ $s ][1] = get_option( $s . '_size_h' );
 		}
 		else {
-			if( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) ) { 
+			if( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) ) {
 				$sizes[ $s ] = array( $_wp_additional_image_sizes[ $s ]['width'], $_wp_additional_image_sizes[ $s ]['height'], );
 			}
 		}
 	}
- 
+
  	foreach( $sizes as $size => $atts ) {
  		echo $size . ' ' . implode( 'x', $atts ) . "<br>";
  	}

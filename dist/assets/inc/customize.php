@@ -46,11 +46,11 @@ function change_wp_login_title() { return 'BodyRock par Gilles Hoarau'; }
 // Admin Bar Customisation
 function admin_bar_render() {
 	global $wp_admin_bar;
-	 
+
 	// Remove an existing link using its $id
 	// Here we remove the 'Updates' drop-down link
 	$wp_admin_bar->remove_menu('updates');
-	
+
 	// Add a new top level menu link
 	// Here we add a customer support URL link
 	$customerSupportURL = '/wp-admin/themes.php?page=theme_options';
@@ -60,7 +60,7 @@ function admin_bar_render() {
 	'title' => __('BodyRock'),
 	'href' => $customerSupportURL
 	));
-    
+
 	// Add a new sub-menu to the link above
 	// Here we add a link to our contact us web page
 	$contactUsURL = 'http://bodyrock.gilleshoarau.com/';
@@ -70,8 +70,8 @@ function admin_bar_render() {
 	'title' => __('Site Officiel'),
 	'href' => $contactUsURL
 	));
-	
-	$contactUsURL = 'http://www.gilleshoarau.com/a-propos/';
+
+	$contactUsURL = 'http://gilleshoarau.com/a-propos/';
 	$wp_admin_bar->add_menu(array(
 	'parent' => 'bodyrock',
 	'id' => 'a-propos',
@@ -82,7 +82,7 @@ function admin_bar_render() {
 
 // ADMIN FOOTER MODIFICATION /////////////////////////////////////////////
 // Admin footer modification
-function replace_footer_admin () 
+function replace_footer_admin ()
 {
 	echo '<span id="footer-thankyou">Developpé par <a href="http://gilleshoarau.com" target="_blank">Gilles Hoarau</a></span>';
 }

@@ -11,10 +11,13 @@ the_post();
 <?php // Placer le code Html ci-dessous ?>
 
 
-    <section>
+    <section class="paddit-top">
         <div class="container">
+            <blockquote>
               <h1><?php the_title() ?></h1>
+            </blockquote>
               <?php echo the_content(); ?>
+
         </div>
     </section>
 

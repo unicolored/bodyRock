@@ -1,14 +1,14 @@
 <nav id="navbarbot" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-	
-      
-          
+
+
+
     <ul class="nav navbar-nav navbar-right">
         <li><a title="Retour en haut de la page" href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
-    </ul>   
-    
+    </ul>
+
       <p class="navbar-text navbar-right"><span id="date_heure"></span></p>
-      
-      
+
+
 <script type="text/javascript">
 function date_heure(id)
 {
@@ -41,5 +41,5 @@ return true;
 }
 
 window.onload = date_heure('date_heure');</script>
-        
+
 </nav>

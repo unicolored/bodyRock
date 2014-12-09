@@ -29,15 +29,15 @@ function bodyrock_meta_box() {
 function bodyrock_meta_options() {
     global $post;
     global $wpdb;
-    
+
     if(defined('AI1EC_POST_TYPE')) wp_nonce_field( 'ai1ec', AI1EC_POST_TYPE );
-    
+
     $custom = get_post_custom($post->ID);
     $post_attachment_infoshow = isset($custom["post_attachment_infoshow"][0]) ? $custom["post_attachment_infoshow"][0] : false;
     $post_source_name = isset($custom["post_source_name"][0]) ? $custom["post_source_name"][0] : false;
 	$post_source_url = isset($custom["post_source_url"][0]) ? $custom["post_source_url"][0] : false;
 	$post_views_count = isset($custom["post_views_count"][0]) ? $custom["post_views_count"][0] : false;
-    
+
 	echo '<h2>Options globales</h2>';
 		echo a('table.form-table');
 	echo a('tr');
@@ -46,12 +46,12 @@ function bodyrock_meta_options() {
 		echo 'Afficher les informations des fichiers joints <small>(à défaut, les informations sont masquées)</small>';
 		echo z('td');
 	echo z('tr');
-	
+
 	echo z('table');
 	echo '<hr>';
-	
-	
-	echo '<h2>Source de l\'article <small>(optionnel)</small></h2>';	
+
+
+	echo '<h2>Source de l\'article <small>(optionnel)</small></h2>';
 	echo a('table.form-table');
 	echo a('tr');
 		echo a('th');
@@ -61,7 +61,7 @@ function bodyrock_meta_options() {
 		echo '<input name="post_source_name" class="form-input" value="'.$post_source_name.'" size="32" type="text" />';
 		echo z('td');
 	echo z('tr');
-	
+
 	echo a('tr');
 		echo a('th');
 		echo 'URL de la source';
@@ -70,31 +70,31 @@ function bodyrock_meta_options() {
 		echo '<input name="post_source_url" class="form-input" value="'.$post_source_url.'" size="32" type="text" />';
 		echo z('td');
 	echo z('tr');
-	
+
 	echo z('table');
 	echo '<hr>';
-	
+
     echo '<p>Vous êtes sur un article <em>'.(get_post_format() != false ? get_post_format() : 'basique').'</em> vu ';
     echo '<input name="post_views_count" class="form-input" value="'.$post_views_count.'" size="4" type="text" /> fois</p>';
-    
-    if(get_post_format($post->ID)=='audio') {       
+
+    if(get_post_format($post->ID)=='audio') {
         $audioType = 'sou'; // Par défaut
-    
+
         $custom = get_post_custom($post->ID);
-        
+
         $audioCode = isset($custom["audioCode"][0]) ? $custom["audioCode"][0] : false;
         $audioType = isset($custom["audioType"][0]) ? $custom["audioType"][0] : false;
         $audioHeight = isset($custom["audioHeight"][0]) ? $custom["audioHeight"][0] : false;
-    
+
         $option_selected['sou'] = false;
         $option_selected[$audioType] = 'selected';
 
 		?>
-		
+
 		<h2>Paramètres de l'audio</h2>
-		
+
 		<div class="mb_<?php echo $prefix ?>" id="mb_id_<?php echo $prefix ?>">
-		
+
 			<p>
 				Indiquer le code et la source de la audio :
 			</p>
@@ -115,11 +115,11 @@ function bodyrock_meta_options() {
 	if (get_post_format()=='quote') {
 		$mb_citation = 'RussoOne'; // Par défaut
 		$auteur = 'false';
-		
+
 		$option_selected['Balthazar'] = false;
 		$option_selected['DoppioOne'] = false;
 		$option_selected['RussoOne'] = false;
-		
+
 		$custom = get_post_custom($post->ID);
 		$mb_citation = isset($custom["mb_citation"][0]) ? $custom["mb_citation"][0] : false;
 		$ligne1 = isset($custom["ligne1"][0]) ? $custom["ligne1"][0] : false;
@@ -127,12 +127,12 @@ function bodyrock_meta_options() {
 		$ligne3 = isset($custom["ligne3"][0]) ? $custom["ligne3"][0] : false;
 		$ligne4 = isset($custom["ligne4"][0]) ? $custom["ligne4"][0] : false;
 		$auteur = isset($custom["auteur"][0]) ? $custom["auteur"][0] : false;
-		
+
 		$option_selected[$mb_citation] = 'selected';
 		?>
-		
+
 		<h2>Paramètres de la citation</h2>
-		
+
 		<a href="" target="_blank"><img src="/wp-content/themes/bodyrock/inc/metabox/citations/image.php?auteur=<?php echo $auteur; ?>&content=<?php echo $ligne1 . '<br />' . $ligne2 . '<br />' . $ligne3; ?>&font=<?php echo $mb_citation ?>" alt="Image manquante.<?php echo $mb_citation ?>" /></a>
 		<br>
 		<label>
@@ -145,7 +145,7 @@ function bodyrock_meta_options() {
 		<label><small>Ligne 1</small>
 			<input name="ligne1" value="<?php echo $ligne1; ?>" />
 		</label>
-		
+
 		<br>
 		<label><small>Ligne 2</small>
 			<input name="ligne2" value="<?php echo $ligne2; ?>" />
@@ -170,21 +170,21 @@ function bodyrock_meta_options() {
 		$videoType = 'you'; // Par défaut
 		if(defined('AI1EC_POST_TYPE')) wp_nonce_field( 'ai1ec', AI1EC_POST_TYPE );
 		$custom = get_post_custom($post->ID);
-		
+
 		$videoCode = isset($custom["videoCode"][0]) ? $custom["videoCode"][0] : false;
 		$videoType = isset($custom["videoType"][0]) ? $custom["videoType"][0] : false;
 		$videoHeight = isset($custom["videoHeight"][0]) ? $custom["videoHeight"][0] : false;
 		$videoEmbed = isset($custom["videoEmbed"][0]) ? $custom["videoEmbed"][0] : false;
-		
+
 		$option_selected['vim'] = false;
 		$option_selected['you'] = false;
 		$option_selected[$videoType] = 'selected';
 		?>
-		
+
 		<h2>Paramètres de la vidéo</h2>
-		
+
 		<div class="mb_<?php echo $prefix ?>" id="mb_id_<?php echo $prefix ?>">
-		
+
 			<p>
 				Indiquer le code et la source de la vidéo :
 			</p>
@@ -218,7 +218,7 @@ function bodyrock_meta_options() {
 				Insérer le code complet embed de la vidéo.
 			</p>
 		</div>
-	
+
 	<?php
 	}
 }
@@ -228,25 +228,25 @@ function save_brmetas($post) {
 	/*if ( ! isset( $_POST['myplugin_meta_box_nonce'] ) ) {
         return;
     }*/
-	
+
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
 		return;
 	}
-	else {
+	elseif (isset($_POST['post_attachment_infoshow'])) {
 		//echo sanitize_post_field( 'post_views_count', $_POST["post_views_count"], $post, 'edit' );
 		update_post_meta($post, "post_attachment_infoshow", $_POST["post_attachment_infoshow"]);
 		update_post_meta($post, "post_source_name", $_POST["post_source_name"]);
 		update_post_meta($post, "post_source_url", $_POST["post_source_url"]);
 		update_post_meta($post, "post_views_count", $_POST["post_views_count"]);
-		
+
 		update_post_meta($post, "audioCode", $_POST["audioCode"]);
 		update_post_meta($post, "audioType", $_POST["audioType"]);
-		
+
 		update_post_meta($post, "videoCode", $_POST["videoCode"]);
 		update_post_meta($post, "videoType", $_POST["videoType"]);
 		update_post_meta($post, "videoHeight", $_POST["videoHeight"]);
 		//update_post_meta($post, "videoEmbed", $_POST["videoEmbed"]);
-		// Save the textarea 
+		// Save the textarea
     if ( isset( $_POST['videoEmbed'] ) ) {
 
         // WP's default allowed tags
@@ -272,11 +272,11 @@ function save_brmetas($post) {
 
         // Update the meta field in the database.
         update_post_meta( $post, 'videoEmbed', $my_data );
-		
+
     }
 
 		//echo $_POST["videoEmbed"]; die;
-		
+
 		update_post_meta($post, "mb_citation", $_POST["mb_citation"]);
 		update_post_meta($post, "ligne1", $_POST["ligne1"]);
 		update_post_meta($post, "ligne2", $_POST["ligne2"]);
