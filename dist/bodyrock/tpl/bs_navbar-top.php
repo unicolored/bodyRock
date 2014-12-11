@@ -6,12 +6,12 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="<?php bloginfo('url'); ?>">
                   <span><?php bloginfo('name') ?> <small><?php echo wp_get_theme()->Version ?></small></span>
             </a>
             <p class="navbar-text"><?php bloginfo('description') ?></p>
       </div>
-    
+
       <div class="collapse navbar-collapse" id="navbar-collapse">
             <?php
             wp_nav_menu( array(
@@ -22,8 +22,7 @@
             'fallback_cb'=>'default_menu',
             'walker'=>new wp_bootstrap_navwalker()
             ));
-            
+
              ?>
       </div>
 </nav>
-

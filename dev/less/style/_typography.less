@@ -1,0 +1,81 @@
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* ==== Typography ==== */
+
+::selection {
+  background: @red;
+  color:@white;
+}
+
+::-moz-selection {
+  background: @red;
+  color:@white;
+}
+
+cursor:default;
+  
+font-style:normal;
+font-weight:400;
+
+font-variant:normal;
+letter-spacing:normal;
+
+strong { font-weight:700; font-style:normal; }
+em { font-style:italic; font-weight:normal; }
+
+hr {
+	.clearfix();
+	border:none;
+	border-top:5px dotted @red;
+	padding:5px;
+	.box-shadow(0px 1px 0px @white);
+}
+
+/* HEADINGS*/
+
+h1,h2,h3,h4,h5,h6 { cursor:default; }
+
+// H1 ////////////////////////////////////////
+h1 {
+  color:@white;
+  
+  text-shadow:0 -1px 1px @txtShadowcolor;
+  letter-spacing:-0.05em;
+  
+}
+
+
+// H2 ////////////////////////////////////////
+h2 {
+  text-shadow:0 2px 1px @txtShadowcolor;
+}
+
+// H3 ////////////////////////////////////////
+h3 {
+  text-shadow:0 2px 1px @txtShadowcolor;
+}
+
+/* LIENS */
+a {
+  color: @text-color;
+}
+.well a {
+	color:@red;
+}
+
+a:hover {
+  color: @link-hover-color;
+  text-decoration: none;
+}
+
+/* FORM */
+textarea:focus, input:focus, a:focus, *:focus {
+  outline: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0;
+}
+
+

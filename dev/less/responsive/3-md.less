@@ -1,0 +1,80 @@
+/* RESPONSIVE */
+
+///////////////////////////////////////////// MD // 992
+@media (max-width: @screen-md-max) {
+
+}
+
+@media (min-width: @screen-md) {
+
+
+
+	// FRONT-PAGE
+	div.br_bonjour.front-page {
+		.jumbotron {
+			blockquote h1 {
+				font-size:42px !important;
+			}
+		}
+	}
+	div.br_footer {
+		.clearfix();
+		.contenant {
+			.make-md-column(6);
+			.make-md-column-push(3);
+		}
+		.contactez-moi {
+			.well {
+				.make-md-column(6);
+				.make-md-column-push(3);
+			}
+		}
+	}
+
+
+
+
+
+	// SECTION PORTFOLIO
+	section.portfolio {
+  	.experiences {
+  		blockquote {
+  			margin-top:1em;
+  			padding:1em 2em;
+	  		h1 {
+	  			font-size:30px !important;
+	  		}
+  		}
+  	}
+  }
+
+  // Boutons de navigation sur les pages single
+  .singlenav {
+		display:none;
+	  position:absolute;
+	  list-style:none;
+	}
+	.singlenav a {
+	  position:fixed;
+	  display:block;
+	  top:40%;
+	  background:@yellow;
+	  .border-top-radius(2px);
+	  .border-bottom-radius(2px);
+	  font-size:2em;
+	  line-height:1em;
+	  z-index:2000;
+	}
+	.singlenavleft a {
+	  left:5px;
+	}
+	.singlenavright a {
+	  right:5px;
+	}
+
+	// BR FOOTER
+	.br_footer {
+		.clearfix();
+		margin-bottom:@cool-height;
+	}
+}

@@ -1,0 +1,117 @@
+/* RESPONSIVE */
+
+///////////////////////////////////////////// SM // 768
+@media (min-width: @screen-sm) {
+	div.navbar-collapse {
+
+		ul.backtohome {
+			.hidden();
+		}
+	}
+
+	.paddit {
+		padding:@line-height-large*2em 0;
+	}
+
+  	#navbarbot {
+	  	display:block !important;
+	  }
+
+	// APPARITION DES IMAGES DE FOND
+		// Mixin :
+		.mx_imagedefond {
+			background-attachment:fixed;
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-position:center;
+		}
+	// FRONT-PAGE
+	body {
+		background-image:url('@{themepath}img/wallpapers/ile.png');
+		.mx_imagedefond;
+	}
+	div.br_bonjour.front-page {
+		.jumbotron .slogan-conseil {
+			blockquote {
+				padding-right:0;
+				h1 {
+					font-size:1.4em !important;
+				}
+			}
+		}
+	}
+	// SERVICES & COMPETENCES
+	body.page-template-page-servicescompetences-php {
+		background-image:url('@{themepath}img/wallpapers/bureau.png');
+		.mx_imagedefond;
+	}
+	// PORTFOLIO
+	body.category-portfolio-graphic-web-design-professionnel {
+		background-image:url('@{themepath}img/wallpapers/produits.png') !important;
+		.mx_imagedefond;
+	}
+	// CONTACT
+	body.page-template-page-contact-php {
+		background-image:url('@{themepath}img/wallpapers/canal.png');
+		.mx_imagedefond;
+	}
+
+}
+
+@media (max-width: @screen-xs-max) {
+	nav#navbartop {
+  	&.navbar-default {
+
+  		div.navbar-collapse {
+  			background:@bg-darker !important;
+  			position:absolute; top:@cool-height;
+  			width:100%;
+
+	  		ul.navbar-nav {
+	  			display:block;
+	  			margin:0;
+	  			padding:0;
+					position:relative;
+					top:0;
+		  		width:100% !important;
+
+		  		li {
+		  			margin:0;
+	  				padding:0;
+
+		  			a {
+		  				border:1px solid @blue;
+		  				.box-shadow(0px 8px 4px @brand-primary-light);
+
+		  				display:block;
+		  				margin:0;
+	  					padding:30px 50px;
+		  			}
+		  		}
+	  		}
+	  	}
+  	}
+  }
+
+  nav#navbarbot {
+  	ul.navbar-right {
+			.pull-right();
+		}
+  }
+
+	div.br_bonjour.front-page {
+  	section.jumbo {
+  		.container {
+  			margin:0 5px 0 5px;
+				padding:0;
+				.jumbotron {
+
+					.freelance {
+						margin:0 5px 0 5px;
+						padding:0 !important;
+					}
+				}
+  		}
+  	}
+  }
+}

@@ -1,0 +1,209 @@
+/* PAGE A PROPOS / SERVICES & COMPETENCES */
+/************//************//************//************/
+
+/************//************//************//************/
+
+
+// SECTIONs génériques
+////////////////////////////////////////////////////////
+// La section d'intro
+section.intro {
+}
+////////////////////////////////////////////////////////
+// Une section de citation
+section.citation {
+
+}
+
+/************//************//************//************/
+// SECTIONs EXCLUSIVES A CETTE PAGE :
+////////////////////////////////////////////////////////
+// La section des services
+section.services {
+	.colonne {
+		.make-md-column(4);
+		padding:0;
+
+		.panel {
+			margin:5px 10px;
+			padding:0 @line-height-base*.5em;
+
+			background:rgba(red(@white),green(@white),blue(@white),.8);
+
+			color:@bg-black;
+			text-shadow:-1px 1px 1px @bg-white;
+		}
+	}
+}
+
+// La section qui présente les icones de mes compétences
+// TOFIX : Je pourrai ajouter illustrator et ...
+section.competences {
+	/*background-image:url('@{themepath}img/bg_services.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;*/
+	//.br_flexcentercenter;
+
+
+   // Groupe de compétences
+	.mescompetences {
+		.make-sm-column(6);
+		.make-sm-column-push(0);
+		.make-md-column(6);
+		.make-md-column-push(0);
+
+  	background:rgba(red(@brand-primary-black),green(@brand-primary-black),blue(@brand-primary-black),.1);
+  	.clearfix();
+
+  	.text-center();
+
+  	h3 {
+  		background:rgba(red(@bg-darker),green(@bg-darker),blue(@bg-darker),.5);
+
+  		font-family:@shareTech;
+  		letter-spacing:-0.05em;
+
+  		text-shadow:-1px 0px 0px @red;
+
+  		padding:1em;
+  	}
+  	h4 {
+  		display:none;
+  	}
+
+    // Icone de compétence
+    .competence {
+    	.make-xs-column(4);
+      .make-sm-column(4);
+      .make-md-column(2);
+      padding:0; margin:0;
+
+      span {
+				@iconsize: 90px;
+        display:inline-block;
+				width:@iconsize;
+				height:@iconsize;
+				background-repeat:none;
+				background-position:top left;
+				background-size:fit;
+				background-image:url('https://www.unicolored.com/wp-content/themes/rock-gilleshoarau/img/competences.jpg');
+				b {
+					display:none;
+				}
+				&.after-effects {
+					background-position:-@iconsize 0px;
+				}
+				&.indesign {
+					background-position:-2*@iconsize 0px;
+				}
+				&.lightroom {
+					background-position:-3*@iconsize 0px;
+				}
+				&.illustrator {
+					background-position:-4*@iconsize 0px;
+				}
+				&.blender {
+					background-position:-5*@iconsize 0px;
+				}
+				&.indesign {
+					background-position:-6*@iconsize 0px;
+				}
+				// CMS
+				&.wordpress {
+					background-position:0 -1*@iconsize;
+				}
+				&.tumblr {
+					background-position:-1*@iconsize -1*@iconsize;
+				}
+				&.woo-commerce {
+					background-position:-2*@iconsize -1*@iconsize;
+				}
+				&.joomla {
+					background-position:-3*@iconsize -1*@iconsize;
+				}
+				&.prestashop {
+					background-position:-4*@iconsize -1*@iconsize;
+				}
+				&.bootstrap {
+					background-position:-5*@iconsize -1*@iconsize;
+				}
+				// LANGAGES
+				&.php {
+					background-position:0 -2*@iconsize;
+				}
+				&.html5 {
+					background-position:-1*@iconsize -2*@iconsize;
+				}
+				&.css3 {
+					background-position:-2*@iconsize -2*@iconsize;
+				}
+				&.less {
+					background-position:-3*@iconsize -2*@iconsize;
+				}
+				&.angularjs {
+					background-position:-4*@iconsize -2*@iconsize;
+				}
+				&.jquery {
+					background-position:-5*@iconsize -2*@iconsize;
+				}
+				// SERVEURS
+				&.apache {
+					background-position:0 -3*@iconsize;
+				}
+				&.mysql {
+					background-position:-1*@iconsize -3*@iconsize;
+				}
+				&.cordova {
+					background-position:-2*@iconsize -3*@iconsize;
+				}
+				&.firebase {
+					background-position:-3*@iconsize -3*@iconsize;
+				}
+				&.xampp {
+					background-position:-4*@iconsize -3*@iconsize;
+				}
+				&.ubuntu {
+					background-position:-5*@iconsize -3*@iconsize;
+				}
+				// ENVIRONNEMENTS
+				&.bower {
+					background-position:0 -4*@iconsize;
+				}
+				&.git {
+					background-position:-1*@iconsize -4*@iconsize;
+				}
+				&.yeoman {
+					background-position:-2*@iconsize -4*@iconsize;
+				}
+				&.grunt {
+					background-position:-3*@iconsize -4*@iconsize;
+				}
+				&.nodejs {
+					background-position:-4*@iconsize -4*@iconsize;
+				}
+				&.phonegap {
+					background-position:-5*@iconsize -4*@iconsize;
+				}
+				// FORMATIONS
+				&.github {
+					background-position:0 -5*@iconsize;
+				}
+				&.codeschool {
+					background-position:-1*@iconsize -5*@iconsize;
+				}
+				&.nettuts {
+					background-position:-2*@iconsize -5*@iconsize;
+				}
+				&.smashingmagazine {
+					background-position:-3*@iconsize -5*@iconsize;
+				}
+				&.cgcookie {
+					background-position:-4*@iconsize -5*@iconsize;
+				}
+				&.stackoverflow {
+					background-position:-5*@iconsize -5*@iconsize;
+				}
+      }
+    }
+  }
+}

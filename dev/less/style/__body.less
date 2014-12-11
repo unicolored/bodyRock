@@ -1,0 +1,182 @@
+/*************************************************************************/
+/* STYLES PERSOS / Intérieur du <body> *********************************************************/
+/*************************************************************************/
+background:@bg-darker;
+
+// STYLES DE CADRES / BLOCS ///////////////////////////////////////////////
+div.br_header,
+div.br_bonjour,
+div.br_footer,
+section.intro,
+section.introduction,
+section.citation {
+	.clearfix();
+	position:relative;
+	section {
+		.clearfix();
+	}
+}
+// STYLES DE LA SECTION .br_bonjour
+// situées par défaut entre .br_header et .br_footer
+div.br_bonjour {
+	.clearfix();
+	padding-top:@navbar-height;
+}
+div.br_footer {
+	.clearfix();
+	//margin-bottom:@cool-height;
+	.br_flexcentercenter;
+}
+// CADRES
+section.intro,
+section.jumbo {
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+}
+.front-page {
+section.jumbo {
+	.br_flexcentercenter;
+}
+}
+section.introduction {
+	//margin-top:@navbar-bottom-height;
+}
+section.citation {
+	blockquote h1 em, blockquote h2 em, blockquote h3 em { color:@red !important; }
+}
+
+// STYLES DE TEXTES / BOUTONS /////////////////////////////////////////////
+// ICONES DE SERVICES : DA, GRAPHIC et WEB :
+.icon-competence {
+		span.image {
+				background-image:url("/wp-content/themes/rock-gilleshoarau/img/services.png");
+				background-repeat:no-repeat;
+				background-size:cover;
+				background-position:center left;
+				&.print {
+						background-position:center center !important;
+				}
+				&.web {
+						background-position:center right !important;
+				}
+				display:block;
+				height:156px;
+				width:156px;
+				margin:0 auto;
+		}
+	transform:rotateY(0deg);
+	.transition(2s);
+		&:hover {
+			//background:red;
+     	transform:rotateY(540deg);
+			.transition(2s);
+	}
+
+}
+
+/*TEL ET MAIL*/
+// TOFIX : Transformer ces styles en personnalisation de boutons .btn-default
+// dans le fichier bs_btns.less
+.mailto,
+.telto {
+	text-transform:lowercase !important;
+}
+
+.mailto a,
+.telto a {
+	.btn-block;
+  .text-center();
+
+}
+.telto a {
+}
+
+/*************************************************************************/
+/* MIXINS ****************************************************************/
+/*************************************************************************/
+#top {
+	position:absolute;
+	top:0;
+}
+// STRUCTURE //////////////////////////////////////////////////////////////
+/* Personnalisation de la classe .row de bootstrap */
+.galaxie { .make-row(); }
+
+// Centrer l'élément enfant
+.br_flexcentercenter {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row; /* works with row or column */
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+.br_flexbottomleft {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+	-webkit-justify-content: flex-end;
+	justify-content: flex-end;
+	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
+	-webkit-align-content: stretch;
+	align-content: stretch;
+}
+
+
+//////////////////////
+// Ici je complète les styles .visible-* de bootstrap pour mes deux nouvelles tailles : xl et xxl
+.visible-xl, .visible-xxl {
+	display:none;
+}
+@media (min-width: @screen-xxl) {
+	.visible-lg, .visible-xl {
+		display:none !important;
+	}
+	.visible-xxl {
+		display:block;
+	}
+}
+@media (min-width: @screen-xl) {
+	.visible-lg {
+		display:none !important;
+	}
+	.visible-xl {
+		display:block;
+	}
+}
+/////////////
+
+@media (min-width: @screen-md) {
+	// MARGIN & PADDING ///////////////////////////////////////////////////////
+	@espacement: @cool-height; // Définissez une valeur globale d'espacement
+	/* Ajoute un margin de taille @espacement */
+	.margeit {
+	  margin-top: @espacement;
+	  margin-bottom: @espacement;
+	}
+	.margeit-top { margin-top: @espacement; }
+	.margeit-bottom { margin-bottom: @espacement; }
+
+	/* Ajoute un padding de taille @espacement */
+	.paddit {
+	  padding-top: @espacement;
+	  padding-bottom: @espacement;
+	}
+	.paddit-top { padding-top: @espacement; }
+	.paddit-bottom { padding-bottom: @espacement; }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shadow-paragraph {
+	text-shadow:-1px -1px 0px @black;
+}

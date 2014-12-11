@@ -1,0 +1,108 @@
+//== Forms
+//
+//##
+
+//** `<input>` background color
+@input-bg:                       @white;
+//** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+//** Text color for `<input>`s
+@input-color:                    @gray-darker;
+//** `<input>` border color
+@input-border:                   @gray-lighter;
+//** `<input>` border radius
+@input-border-radius:            @border-radius-base;
+//** Border color for inputs on focus
+@input-border-focus:             @gray;
+
+//** Placeholder text color
+@input-color-placeholder:        @gray-light;
+
+//** Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-small-vertical * 2) + 2);
+//** Large `.form-control` height
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@legend-color:                   @text-color;
+@legend-border-color:            darken(@gray-darker, 5%);
+
+//** Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+//** Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-success-text:             #fff;
+@state-success-bg:               @brand-success;
+@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:                #fff;
+@state-info-bg:                  @brand-info;
+@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:             #fff;
+@state-warning-bg:               @brand-warning;
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 3%);
+
+@state-danger-text:              #fff;
+@state-danger-bg:                @brand-danger;
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 3%);
+
+// Forms ======================================================================
+input,
+textarea {
+  color: @input-color;
+}
+
+legend {
+  color: @white;
+}
+
+.has-warning {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-warning;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-warning;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-danger;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label,
+  .form-control-feedback {
+    color: @brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-success;
+  }
+}
+textarea {
+	.resizable(vertical);
+}
