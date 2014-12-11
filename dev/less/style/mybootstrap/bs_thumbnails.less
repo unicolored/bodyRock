@@ -1,0 +1,43 @@
+//== Thumbnails
+//
+//##
+
+.thumbnail {
+	margin-bottom:@line-height-base*1em;
+	
+	a.image {
+		background:url('@{themepath}img/thumb.png') top left;
+		display:block;
+		
+		&:hover {
+		}
+		
+		img { } 
+	}
+	
+	.caption {
+		
+		h5 {
+			height:@line-height-base*2em;
+			
+			a {
+				color:@bg-white !important;
+				small {
+					//font-size:@font-size-small;
+					font-weight:100;
+					display:block;
+					padding:5px 0;
+					color:@gray-darker;
+					white-space: nowrap;
+				  overflow: hidden;
+				  text-overflow: ellipsis;
+				}
+			}
+		}
+		p {
+			.hide(); // je masque la description des excerpts des articles
+		}
+	}
+	
+}
+

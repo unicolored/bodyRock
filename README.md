@@ -1,8 +1,8 @@
-# [GillesHoarau](http://gilleshoarau.com)
+# [bodyRock](https://www.gilleshoarau.com/bodyrock)
 
-BodyRock : Wordpress theme developpement using Less / Grunt / Bootstrap
+bodyRock : A theme that make your <body>Rock !
 
-See more on <https://gilleshoarau.com/bodyrock> !
+Soon more on <https://www.gilleshoarau.com/bodyrock-demo/> !
 
 
 ## Sommaire

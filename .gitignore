@@ -10,7 +10,9 @@ node_modules
 # Ignore config
 tmp/
 dev/screenshots/
+ssl/
 htdocs/wp-content/themes/bodyrock/dev/
+test/
 
 # Operating system files
 .Spotlight-V100
@@ -31,3 +33,5 @@ htdocs/wp-*.php
 htdocs/xmlrpc.php
 
 myhost.json
+
+config/

@@ -1,6 +1,6 @@
 {
   "name": "BodyRock",
-  "version": "0.0.1",
+  "version": "0.0.15",
   "authors": [
     "Gilles Hoarau <unicolored@gmail.com>"
   ],
@@ -21,13 +21,11 @@
     "tmp"
   ],
   "dependencies": {
-
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.3",
+    "es5-shim": "~4.0.5"
   },
-  "devDependencies": {
-
-  },
-  "appPath": "dist",
-  "resolutions": {
-
-  }
+  "devDependencies": {},
+  "appPath": "dist"
 }

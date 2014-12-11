@@ -1,0 +1,169 @@
+/* PAGE CONTACT */
+/************//************//************//************/
+
+/************//************//************//************/
+
+
+// SECTIONs génériques
+////////////////////////////////////////////////////////
+// La section d'intro
+section.introduction {
+
+	.media {
+		margin:4em 0;
+		img {
+			display:block;
+			margin:2em auto;
+		}
+		.well {
+			h1,h2 {
+				.text-center();
+
+				font-family:@shareTech;
+				letter-spacing:-0.05em;
+
+				small {
+					letter-spacing:0;
+				}
+			}
+		}
+		.well {
+			text-align:justify;
+		}
+	}
+	.colonnegauche {
+		.make-lg-column(6);
+		.make-xs-column(12);
+		.make-lg-column-push(0);
+	}
+	.colonnedroite {
+		.make-lg-column(6);
+		.make-xs-column(12);
+		.make-lg-column-push(0);
+	}
+}
+////////////////////////////////////////////////////////
+// Une section de citation
+section.citation {
+
+}
+
+/*
+Firefox has some awkward fieldset styling involving width that interferes with the responsive table. This cannot be overriden without a Firefox-specific hack that we don't provide in Bootstrap.
+For more information, read this Stack Overflow answer : http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685
+ */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+/************//************//************//************/
+// SECTIONs EXCLUSIVES A CETTE PAGE :
+////////////////////////////////////////////////////////
+// La section qui contient le formulaire pour être rappellé
+section.formulaire {
+	//.hidden-xs();
+
+	// LE FORMULAIRE DE CONTACT
+	// TOFIX : Ces styles doivent être mis par défaut dans bs_forms.less
+	form.contactform {
+	  //form-control ng-dirty ng-valid-required ng-invalid ng-invalid-email
+	  .ng-invalid.ng-dirty {
+	    border:2px solid @orange !important;
+	  }
+	  .ng-valid {
+	    border:2px solid @green !important;
+	  }
+
+	  .btn-success {
+	  	.btn-block();
+	  	margin:0;
+	  }
+
+	  .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px @green; } /* Default class applied to drop zones on over */
+    //.another-file-over-class { border: dotted 3px green; } // Utilisé avec l'atribut div : over-class="another-file-over-class"
+
+    table {
+    	td {
+    		width:50px !important;
+    		overflow:hidden !important;
+				white-space: nowrap;
+    	}
+    }
+	}
+
+	.container {
+		.lescoordonnees {
+
+		}
+		.lemessage {
+			.make-xs-column(12);
+			padding:0;
+		}
+	}
+}
+
+////////////////////////////////////////////////////////
+// La section qui contient la carte Google map
+section.map {
+	.gmap {
+		margin:2em;
+		height: 350px;
+		.border-top-radius(170px);
+		.border-bottom-radius(170px);
+	}
+	h3 {
+		line-height:1.5em;
+		margin:1em 5px 2em 5px;
+	}
+}
+////////////////////////////////////////////////////////
+// SOCIALICONS : icones de reseaux sociaux
+section.socialicons {
+	padding:0px 0;
+	//margin-bottom:@navbar-bottom-height;
+
+	.text-center();
+
+	h5 {
+		margin:1em 5px 2em 5px;
+	}
+	.icone {
+		.make-xs-column(4);
+		a {
+			font-size:3.5em;
+			color:@red;
+
+		}
+	}
+/*
+	a {
+		display:inline-block;
+		height:66px;
+		width:70px;
+		background-image:url("@{themepath}img/social_icons.png");
+		background-repeat:no-repeat;
+		margin:0 0px;
+		span {
+			.hidden();
+		}
+	}
+	a.twitter {
+		background-position:-70px 0;
+	}
+	a.google {
+		background-position:-140px 0;
+	}
+	a.blog {
+		background-position:-210px 0;
+	}
+	a.tumblr {
+		background-position:-280px 0;
+	}
+	a.viadeo {
+		background-position:-350px 0;
+	}
+	a.linkedin {
+		background-position:-420px 0;
+	}*/
+}

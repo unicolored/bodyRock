@@ -1,0 +1,32 @@
+/* RESPONSIVE */
+
+///////////////////////////////////////////// Jusqu'avant -md, on désactive la plupart des padding et margin par défaut des composants Bootstrap.
+///////////////////////////////////////////// On ne désactive pas les padding et margin des composants persos car ils seront définis ensuite par des appeles @media(min-width) au fur et à mesure de l'agrandissement de la largeur
+@media (max-width: @screen-xs-max) {
+	.container {
+		margin:0 5px 0 5px;
+		padding:0;
+	}
+	.jumbotron {
+		margin-left:5px;
+		margin-right:5px;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+	.paddit {
+		padding:@line-height-large*1em 0;
+	}
+	
+	
+	// Columns
+	.freelance, .satisfaits { // col-
+		padding:0 !important;
+	}
+	
+	.btn-block {
+		margin:0 5px;
+		width: auto;
+	}
+}
+
