@@ -10,6 +10,7 @@ node_modules
 # Ignore config
 tmp/
 dev/screenshots/
+ssl/
 htdocs/wp-content/themes/bodyrock/dev/
 
 # Operating system files
@@ -31,3 +32,5 @@ htdocs/wp-*.php
 htdocs/xmlrpc.php
 
 myhost.json
+
+config/
