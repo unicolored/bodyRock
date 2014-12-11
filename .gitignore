@@ -12,6 +12,7 @@ tmp/
 dev/screenshots/
 ssl/
 htdocs/wp-content/themes/bodyrock/dev/
+test/
 
 # Operating system files
 .Spotlight-V100
