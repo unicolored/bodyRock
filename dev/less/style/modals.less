@@ -1,0 +1,106 @@
+
+div.modals {
+
+    div.modal.fade.myAppModal { // #app
+        .modal-dialog {
+            width:100%;
+            .br_flexcentercenter();
+
+            .modal-content {
+                .make-xs-column(12);
+                .make-md-column(10);
+                .make-md-column-push(0);
+                .make-lg-column(8);
+                .make-lg-column-push(0);
+                #gradient > .vertical(@start-color: @white, @end-color: @bg-white);
+                padding:0;
+
+                .modal-header {
+                    .fermer, .reduce, .info {
+                        float: right;
+                        font-size: (@font-size-base * 1.5);
+                        font-weight: @close-font-weight;
+                        line-height: 1;
+                        color: @close-color;
+                        text-shadow: @close-text-shadow;
+                        .opacity(.2);
+
+                        &:hover,
+                        &:focus {
+                            color: @close-color;
+                            text-decoration: none;
+                            cursor: pointer;
+                            .opacity(.5);
+                        }
+
+                        // Additional properties for button version
+                        // iOS requires the button element instead of an anchor tag.
+                        // If you want the anchor version, it requires `href="#"`.
+                        button& {
+                            padding: 0;
+                            cursor: pointer;
+                            background: transparent;
+                            border: 0;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    h4.modal-title {
+                      text-transform:uppercase;
+                      color:@bg-black;
+                      text-shadow:0px 1px 0px @white;
+                    }
+                }
+                .modal-footer {
+
+                }
+                .modal-body {
+                    position: relative;
+                    padding:@modal-inner-padding 0;
+                    padding:0;
+                    margin:0;
+
+                    iframe {
+                        border:none;
+                        width:100%;
+                        //height:500px;
+                        margin:0 auto;
+                    }
+
+                    iframe.myApp-chat {
+                        border:none;
+                        width:100% !important;
+                        height:650px;
+                        margin:0 auto;
+                    }
+
+                    iframe.myApp-drawing {
+                        border:none;
+                        width:100% !important;
+                        height:600px;
+                        margin:0 auto;
+                    }
+
+                    section.myApp-terminal {
+                        background:url('/wp-content/themes/rock-gilleshoarau/img/console_bg.gif');
+                        overflow:auto;
+                    }
+                    iframe.myApp-mobile {
+                        height:480px !important;
+                        width:320px !important;
+                        overflow:auto;
+                        margin:0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    #mobile {
+      .modal-content {
+        width:320px;
+        iframe {
+          margin:0 auto;
+        }
+      }
+    }
+}

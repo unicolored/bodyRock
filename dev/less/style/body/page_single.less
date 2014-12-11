@@ -1,0 +1,99 @@
+/* PAGE SINGLE */
+/************//************//************//************/
+
+/************//************//************//************/
+// SECTIONs génériques
+////////////////////////////////////////////////////////
+// La section d'intro
+section.intro {
+  background-color:darken(@brand-primary,2%);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+
+/************//************//************//************/
+// SECTIONs EXCLUSIVES A CETTE PAGE :
+////////////////////////////////////////////////////////
+// La section qui présente les images
+section.attachment {
+	position:relative;
+	.box-shadow(0px 6px 12px @bg-black);
+	background-color:@bg-dark;
+	.br_flexcentercenter;
+
+	img {
+		display:block;
+		width:100%;
+	}
+}
+////////////////////////////////////////////////////////
+// Affichage des liens de navigation
+section.navigation {
+
+	.singlenav {
+		.make-xs-column(6);
+		display:block;
+			padding:0;
+			.text-center();
+	}
+	.singlenav a.post-thumbnail {
+		display:none;
+	}
+	.singlenav a {
+	  background:@brand-primary-dark;
+	  .border-top-radius(@border-radius-base);
+	  .border-bottom-radius(@border-radius-base);
+	  border:1px solid @brand-primary;
+	  border-top:1px solid @brand-primary-white;
+	  border-bottom:1px solid @brand-primary-darker;
+	  font-size:@font-size-large;
+    color:@bg-white !important;
+    text-shadow:0px -1px 0px @brand-primary-darker;
+    .box-shadow(0px 1px 2px @brand-primary-white);
+	  display:block;
+		margin: 10px;
+		padding:@line-height-base*0.5em;
+	  z-index:2000;
+
+	  img {
+	  	.border-top-radius(@border-radius-base);
+	  	.border-bottom-radius(@border-radius-base);
+	  	.img-responsive;
+	  	margin:0 auto;
+
+	  }
+	  &:hover {
+	  	background:@brand-primary;
+      color:@yellow;
+	  }
+	}
+	.singlenavleft a {
+	}
+	.singlenavright a {
+	}
+}
+@media (min-width: @screen-xxl) {
+	.singlenav {
+	}
+}
+////////////////////////////////////////////////////////
+// La section qui présente l'article
+section.article {
+	padding:0;
+
+		// Affichage des icones de compétences
+	.competences {
+    .text-center();
+  }
+}
+////////////////////////////////////////////////////////
+// La section qui présente le portfolio
+section.portfolio {
+	article.portfolio {
+    .make-sm-column(3);
+    .thumbnail {
+    height:130px !important;
+    .caption { .hidden(); }
+  }
+  }
+}

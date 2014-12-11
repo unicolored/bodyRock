@@ -1,0 +1,82 @@
+
+
+// Styles de boutons
+.btn-style(@color;@white;@lighter;@light;@dark;@darker;@black) {
+	#gradient > .vertical(@start-color: @color, @end-color: @black);
+	.box-shadow(0 3px 6px #000);
+	border:1px solid @lighter;
+	
+	&:hover {
+		#gradient > .vertical(@start-color: @light, @end-color: @black);
+		border-color:@white !important;
+	}
+	&:active {
+		#gradient > .vertical(@start-color: @light, @end-color: @dark);
+		border-color:@dark !important;
+		.box-shadow(0 0px 0px #000);
+		text-shadow: 0 0 0 @white;
+	}
+	&.disabled, &:disabled {
+		background:@gray !important;
+		#gradient > .vertical(@start-color: @gray-lighter, @end-color: @gray-dark) !important;
+		border-color:@gray-dark !important;
+		color:@gray-darker !important;
+		text-shadow: 0 1px 0 #fff;
+	}
+}
+
+// BTN ====================================================================
+.btn {
+  font-family:@shareTech;
+  font-size:@font-size-large;
+  
+  text-shadow:0px 1px 1px #000;
+  text-transform:uppercase;
+  
+  .btn-style(@mix,@mix-white,@mix-lighter,@mix-light,@mix-dark,@mix-darker,@mix-black); // mixin
+  
+  margin:10px;
+  
+  span.glyphicon {
+  	padding:0;
+  	padding-right:1.5em;
+  }
+} // end .btn-default
+
+// Autres couleurs de boutons :
+/*.btn-primary {
+	.btn-style(@red); // mixin
+	&:hover { .btn-style-hover(@red); }
+	&:disabled { .btn-style-disabled(); }
+	&:active { .btn-style-active(); }
+}*/
+.btn-success {
+	.btn-style(@green,@brand-success-white,@brand-success-lighter,@brand-success-light,@brand-success-dark,@brand-success-darker,@brand-success-black) !important; // mixin
+}
+/*
+.btn-info {
+	.btn-style(@blue) !important; // mixin
+	&:hover { .btn-style-hover(@blue); }
+	&:disabled { .btn-style-disabled(); }
+	&:active { .btn-style-active(); }
+}
+.btn-warning {
+	.btn-style(@orange); // mixin
+	&:hover { .btn-style-hover(@orange); }
+	&:disabled { .btn-style-disabled(); }
+	&:active { .btn-style-active(); }
+}
+.btn-danger {
+	.btn-style(@danger); // mixin
+	&:hover { .btn-style-hover(@danger); }
+	&:disabled { .btn-style-disabled(); }
+	&:active { .btn-style-active(); }
+}*/
+
+// BTN GROUP
+.btn-group {
+	.dropdown-toggle {
+		border-left-color:rgba(255,255,255,.2);
+		.box-shadow( 0px 0px 0px  @black );
+	}
+}
