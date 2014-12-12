@@ -12,6 +12,9 @@ tmp/
 dev/screenshots/
 ssl/
 htdocs/wp-content/themes/bodyrock/dev/
+htdocs/wp-content/themes/bodyrock/
+htdocs/wp-content/themes/bodyrock-child/
+htdocs/wp-content/themes/rock-unicomonde/
 test/
 
 # Operating system files
