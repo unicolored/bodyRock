@@ -88,15 +88,6 @@ define('BR_ICON_SET', $options['iconset']);
 // Fonts chargées par Google
 define('BR_FONTS', $options['fonts_google']);
 // Active la compilation .less en .css (utile si les .less ont été modifiés)
-define('BR_COMPILELESS_ON', $options['compileless_on']);
-// Active l'autoplay des vidéos sur les pages single
-define('BR_VIDEO_AUTOPLAY', $options['video_autoplay']);
-// La hauteur de l'iframe contenant le lecteur vidéo
-define('BR_VIDEO_HEIGHT', $options['video_height']);
-// Desactiver le "responsive"
-define('BR_NORESPONSIVE', $options['noresponsive']);
-// La hauteur de l'iframe contenant le lecteur audio
-define('BR_AUDIO_HEIGHT', $options['audio_height']);
 // Charge tous les scripts .js de bootstrap
 define('BR_ALLBSJS', $options['allbsjs']);
 // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
@@ -125,16 +116,18 @@ function head_scripts() {
       }
 
       if (!is_child_theme()) {
-            wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
+            wp_enqueue_style('style', get_template_directory_uri() . '/style.css', false, null, 'all');
       } else {
             // CHILD /////////////////////////////////////////////
             //wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/style.css', false, null, 'all');
+            //wp_enqueue_style('bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', false, null, 'all');
+
       }
 
       // JAVASCRIPT
       // Bootstrap Javascript
       if (BR_ALLBSJS != NULL) {
-            wp_enqueue_script('bootstrap-min-default', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js?ver=3.0.1', array('jquery'), null, 1);
+            wp_enqueue_script('bootstrap-min-default', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array('jquery'), null, 1);
       }
 
       global $options;
@@ -149,19 +142,6 @@ function head_scripts() {
 
       // Envoi de valeurs php dans le javascript
       wp_localize_script('script', 'sc_val', array('domaine' => stripslashes(str_replace('http://', '', get_bloginfo('url')))));
-}
-
-//////// LESS - Permet l'ajout de la génération d'une feuille .css à partir d'une feuille .less
-// COMPILATION LESS Si l'option est activée
-if (BR_COMPILELESS_ON == 1) {// Via les options du thème, on vérifie que la compilation du fichier less est activée.
-      //backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/editor-style.less', BR_CSS_PATH . 'editor-style.css');
-      //backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/style.less', BR_CSS_PATH . 'style.css');
-      //TOFIX : mettre en option ? backend_filesWrite_less(ABSPATH . THEME_PATH . 'assets/less/_debug.less', BR_CSS_PATH . 'debug.css');
-      // Compilation du fichier less si l'option est activée
-      if (is_child_theme()) {
-            //backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/style.less', get_stylesheet_directory() . '/css/style.css');
-            //backend_filesWrite_less(get_stylesheet_directory() . '/assets/less/editor-style.less', get_stylesheet_directory() . '/css/editor-style.css');
-      }
 }
 
 // FONCTIONS SUPPLEMENTAIRES /////////////////////////////////////////////
