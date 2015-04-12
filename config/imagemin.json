@@ -1,0 +1,48 @@
+{
+  "dynamic": {
+    "options": {
+      "optimizationLevel": 3,
+      "svgoPlugins": [
+        {
+          "removeViewBox": false
+        }
+      ],
+      "use": [
+        null
+      ]
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "<%= gh.devpath %>img/",
+        "src": [
+          "**/*.{png,jpg,gif,ico,svg}"
+        ],
+        "dest": "<%= gh.themepath %>img/"
+      }
+    ]
+  },
+  "uploads": {
+    "options": {
+      "optimizationLevel": 3,
+      "svgoPlugins": [
+        {
+          "removeViewBox": false
+        }
+      ],
+      "use": [
+        null
+      ]
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "<%= gh.contentpath %>uploads/",
+        "src": [
+          "**/*.{png,jpg,gif,ico,svg}"
+        ],
+        "dest": "<%= gh.temppath %>uploads/"
+      }
+    ]
+  }
+}

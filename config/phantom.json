@@ -1,0 +1,8 @@
+{
+  "options": {
+    "port": 4444
+  },
+  "your_target": {
+    "src": "https://www.gilleshoarau.com"
+  }
+}

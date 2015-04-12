@@ -3,10 +3,10 @@
 if (get_post_format()=='video') {
 	// Spécifique aux formats video
 	global $urlfinale, $videoType, $videoCode;
-	
+
 	$videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
 	$videoType = get_post_meta(get_the_ID(), 'videoType', true);
-	
+
 	$urlfinale = CDN_PATH.'images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize('thumbnail').'.jpg';
 }
 
@@ -25,31 +25,31 @@ the_post();
               <?php echo the_content(); ?>
         </div>
     </section>
-    
+
     <section class="article">
           <div class="container">
                 <?php
                   if (have_posts()) :
-            
+
                         while (have_posts()) :
-            
+
                               the_post();
                               setPostViews(get_the_ID());
                               get_template_part(TPL_SINGULAR_PATH . 'single', get_post_format());
-            
+
                         endwhile;
                   else :
-            
+
                         echo '
             		<p>
             			' . __('Sorry, no posts matched your criteria.') . '
             		</p>';
-            
+
                   endif;
                   ?>
             </div>
     </section>
-    
+
     <aside>
           <div class="container">
                   <?php

@@ -1,0 +1,8 @@
+{
+  "originmaster": {
+    "options": {
+      "verbose": true,
+      "remote": "origin"
+    }
+  }
+}

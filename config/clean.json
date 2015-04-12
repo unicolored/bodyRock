@@ -1,0 +1,52 @@
+{
+  "serve": {
+    "src": [
+      "<%= gh.temppath %>*",
+      "<%= gh.libspath %>**/*.md",
+      "<%= gh.libspath %>**/*LICENSE",
+      "<%= gh.libspath %>**/*.txt",
+      "<%= gh.libspath %>**/*.json",
+      "<%= gh.libspath %>**/*.hbs",
+      "<%= gh.libspath %>**/*.gzip",
+      "<%= gh.libspath %>**/*.map",
+      "<%= gh.libspath %>**/*.coffee",
+      "<%= gh.libspath %>**/CHANGES",
+      "<%= gh.libspath %>**/Makefile"
+    ]
+  },
+  "images": {
+    "src": [
+      "<%= gh.themepath %>img/**/*.jpg",
+      "<%= gh.themepath %>img/**/*.png",
+      "<%= gh.themepath %>img/**/*.gif",
+      "<%= gh.themepath %>img/**/*.ico",
+      "<%= gh.themepath %>img/**/*.webp"
+    ]
+  },
+  "changelog": {
+    "src": [
+      "./CHANGELOG.md"
+    ]
+  },
+  "screenshots": {
+    "src": [
+      "./dev/screenshots/**/*.png"
+    ]
+  },
+  "bodyRock": {
+    "src": [
+      "./bodyRock/**/*"
+    ]
+  },
+  "yesimlocal": {
+    "src": [
+      "./dev/yesimlocal.php"
+    ]
+  },
+  "webapp": {
+    "src": [
+      "./dist/manifest.webapp",
+      "./dist/offline.appcache"
+    ]
+  }
+}

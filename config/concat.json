@@ -1,0 +1,41 @@
+{
+  "options": {
+    "separator": " ",
+    "stripBanners": true,
+    "banner": "/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today(\"dd-mm-yyyy\") %> [FR] */",
+    "nonull": true
+  },
+  "dist": {
+    "files": {
+      "<%= gh.themepath %>js/scripts.js": [
+        "<%= gh.devpath %>js/jquery-ui-custom.js",
+        "<%= gh.devpath %>js/tmp/bower_concat.js",
+        "<%= gh.devpath %>js/tmp/totoro.js",
+        "<%= gh.devpath %>js/tmp/angular/*.js",
+        "<%= gh.jsScripts %>"
+      ]
+    }
+  },
+  "jqueryui": {
+    "options": {
+      "separator": " ",
+      "stripBanners": true,
+      "banner": "",
+      "nonull": true
+    },
+    "files": {
+      "<%= gh.devpath %>js/jquery-ui-custom.js": [
+        "<%= gh.libspath %>jquery-ui/ui/core.js",
+        "<%= gh.libspath %>jquery-ui/ui/widget.js",
+        "<%= gh.libspath %>jquery-ui/ui/mouse.js",
+        "<%= gh.libspath %>jquery-ui/ui/draggable.js",
+        "<%= gh.libspath %>jquery-ui/ui/droppable.js",
+        "<%= gh.libspath %>jquery-ui/ui/resizable.js",
+        "<%= gh.libspath %>jquery-ui/ui/selectable.js",
+        "<%= gh.libspath %>jquery-ui/ui/sortable.js",
+        "<%= gh.libspath %>jquery-ui/ui/datepicker.js",
+        "<%= gh.libspath %>jquery-ui/ui/i18n/datepicker-fr.js"
+      ]
+    }
+  }
+}

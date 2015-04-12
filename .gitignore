@@ -36,5 +36,3 @@ htdocs/wp-*.php
 htdocs/xmlrpc.php
 
 myhost.json
-
-config/

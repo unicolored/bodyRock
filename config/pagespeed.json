@@ -1,0 +1,14 @@
+{
+  "options": {
+    "nokey": true,
+    "url": "https://www.gilleshoarau.com"
+  },
+  "gh": {
+    "options": {
+      "url": "https://www.gilleshoarau.com/",
+      "locale": "fr_FR",
+      "strategy": "desktop",
+      "threshold": 80
+    }
+  }
+}

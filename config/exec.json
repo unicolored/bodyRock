@@ -1,0 +1,8 @@
+{
+  "front": "curl -k https://www.gilleshoarau.com/ > <%= gh.temppath %>html/front-page.html",
+  "services": "curl -k https://www.gilleshoarau.com/a-propos/ > <%= gh.temppath %>html/services.html",
+  "projets": "curl -k https://www.gilleshoarau.com/projets/ > <%= gh.temppath %>html/projets.html",
+  "contact": "curl -k https://www.gilleshoarau.com/contact/ > <%= gh.temppath %>html/contact.html",
+  "single": "curl -k https://www.gilleshoarau.com/creation-3d-champagne-clerambault/ > <%= gh.temppath %>html/single.html",
+  "application": "curl -k https://www.gilleshoarau.com/ > <%= gh.mainsitepath %>application.html"
+}

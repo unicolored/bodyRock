@@ -1,0 +1,73 @@
+{
+  "uploads": {
+    "options": {
+      "binpath": "C:/Program Files (x86)/Webp/bin/cwebp",
+      "preset": "photo",
+      "verbose": true,
+      "quality": 70,
+      "alphaQuality": 70,
+      "compressionMethod": 4,
+      "segments": 4,
+      "psnr": 42,
+      "sns": 50,
+      "filterStrength": 0,
+      "filterSharpness": 3,
+      "simpleFilter": true,
+      "partitionLimit": 50,
+      "analysisPass": 6,
+      "multiThreading": true,
+      "lowMemory": false,
+      "alphaMethod": 0,
+      "alphaFilter": "best",
+      "alphaCleanup": true,
+      "noAlpha": false,
+      "lossless": false,
+      "force": true
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "<%= gh.temppath %>uploads/2014",
+        "src": [
+          "**/*.jpg"
+        ],
+        "dest": "<%= gh.temppath %>uploads2/2014"
+      }
+    ]
+  },
+  "images": {
+    "options": {
+      "binpath": "C:/Program Files (x86)/Webp/bin/cwebp",
+      "preset": "default",
+      "verbose": true,
+      "quality": 80,
+      "alphaQuality": 70,
+      "compressionMethod": 3,
+      "segments": 4,
+      "psnr": 42,
+      "sns": 50,
+      "filterStrength": 0,
+      "filterSharpness": 3,
+      "partitionLimit": 50,
+      "analysisPass": 6,
+      "multiThreading": true,
+      "lowMemory": false,
+      "alphaMethod": 0,
+      "alphaFilter": "best",
+      "alphaCleanup": true,
+      "noAlpha": false,
+      "lossless": true,
+      "force": true
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "<%= gh.themepath %>img/",
+        "src": [
+          "**/*.{jpg,png,gif,ico}"
+        ],
+        "dest": "<%= gh.themepath %>img/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "options": {
+    "compress": false,
+    "yuicompress": false
+  },
+  "wordpress": {
+    "files": {
+      "<%= gh.assetspath %>css/styles-login.css": "<%= gh.devpath %>less/login-style.less"
+    }
+  },
+  "style": {
+    "files": {
+      "<%= gh.assetspath %>css/style.css": "<%= gh.devpath %>less/style.less"
+    }
+  },
+  "snake": {
+    "files": {
+      "<%= gh.mainsitepath %>apps/snake/snake.css": "<%= gh.devpath %>less/apps/snake.less"
+    }
+  }
+}

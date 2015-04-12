@@ -1,0 +1,33 @@
+{
+  "options": {
+    "singleQuotes": true
+  },
+  "app1": {
+    "files": {
+      "<%= gh.devpath %>js/tmp/totoro.js": [
+        "<%= gh.devpath %>js/totoro.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/carousel.js": [
+        "<%= gh.devpath %>js/angular/carousel.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/contact.js": [
+        "<%= gh.devpath %>js/angular/contact.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/console.js": [
+        "<%= gh.devpath %>js/angular/console.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/modal.js": [
+        "<%= gh.devpath %>js/angular/modal.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/navbot.js": [
+        "<%= gh.devpath %>js/angular/navbot.js"
+      ],
+      "<%= gh.devpath %>js/tmp/angular/portfolio.js": [
+        "<%= gh.devpath %>js/angular/portfolio.js"
+      ],
+      "<%= gh.themepath %>js/scripts.js": [
+        "<%= gh.themepath %>js/scripts.js"
+      ]
+    }
+  }
+}
