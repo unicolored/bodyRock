@@ -1,0 +1,38 @@
+{
+  "app": "dist",
+  "themename": "BodyRock",
+  "themeuri": "https://www.gilleshoarau.com/bodyrock-demo/",
+  "themeauthor": "Gilles Hoarau",
+  "themeauthoruri": "https://www.gilleshoarau.com",
+  "themetemplate": "",
+  "themetextdomain": "bodyrock",
+  "mainsitepath": "dist/",
+  "contentpath": "dist/wp-content/",
+  "themepath": "dist/wp-content/themes/rock-gilleshoarau/",
+  "relativethemepath": "wp-content/themes/rock-gilleshoarau/",
+  "libspath": "bower_components/",
+  "assetspath": "dist/devassets/",
+  "devpath": "dev/",
+  "temppath": "tmp/",
+  "htmlAssets": [
+    "<%= gh.temppath %>html/front-page.html",
+    "<%= gh.temppath %>html/services.html",
+    "<%= gh.temppath %>html/projets.html",
+    "<%= gh.temppath %>html/contact.html",
+    "<%= gh.temppath %>html/single.html"
+  ],
+  "cssFonts": [
+    "<%= gh.temppath %>fonts/font1.css",
+    "<%= gh.temppath %>fonts/font2.css",
+    "<%= gh.temppath %>fonts/font3.css"
+  ],
+  "jsAssets": [
+    "<%= gh.devpath %>js/totoro.js",
+    "<%= gh.devpath %>js/angular/*.js"
+  ],
+  "jsScripts": [
+    "<%= gh.devpath %>js/scripts/script_nicescroll.js",
+    "<%= gh.devpath %>js/scripts/analytics.js"
+  ],
+  "iconsSet": "<%= gh.libspath %>elusive-iconfont/css/elusive-webfont.css"
+}

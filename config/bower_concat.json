@@ -1,0 +1,37 @@
+{
+  "all": {
+    "dest": "<%= gh.devpath %>js/tmp/bower_concat.js",
+    "cssDest": "<%= gh.temppath %>bower_concat.css",
+    "exclude": [
+      "json3",
+      "es5-shim",
+      "jquery",
+      "jquery-ui",
+      "angular-scenario",
+      "angular-mocks",
+      "angular-bootstrap",
+      "gmaps",
+      "jquery-ui",
+      "elusive-iconfont"
+    ],
+    "dependencies": {
+      "jquery": "angular",
+      "jquery.easing": "jquery",
+      "bootstrap": "jquery"
+    },
+    "bowerOptions": {
+      "relative": false
+    },
+    "mainFiles": {
+      "angular": [
+        "angular.min.js"
+      ],
+      "angular-local-storage": [
+        "dist/angular-local-storage.min.js"
+      ],
+      "angular-file-upload": [
+        "angular-file-upload.min.js"
+      ]
+    }
+  }
+}

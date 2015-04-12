@@ -1,0 +1,14 @@
+{
+  "options": {
+    "reporter": "e:\\xampp\\htdocs\\BodyRock\\node_modules\\jshint-stylish\\stylish.js"
+  },
+  "all": [
+    "<%= gh.devpath %>js/{angular}/*.js"
+  ],
+  "grunt": [
+    "Gruntfile.js"
+  ],
+  "apps": [
+    "<%= gh.mainsitepath %>apps/{,*/}*.js"
+  ]
+}

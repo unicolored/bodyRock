@@ -18,26 +18,26 @@ add_action('wp_before_admin_bar_render', 'themeoptions_backofficeBar_render'); /
 add_filter('option_page_capability_bodyrock_options', 'themeoptions_backofficeCapability'); // Gestion des droits d'accès à la page.
 
 
-if ( is_admin() ) : // Load only if we are viewing an admin page	
+if ( is_admin() ) : // Load only if we are viewing an admin page
 	// Rendu de la page Options du thème dans l'administration de Wordpress.
-	require 'options/view.php';	
+	require 'options/view.php';
 	// Validation des données à l'enregistrement des données.
-	require 'options/validation.php';		
+	require 'options/validation.php';
 endif;  // EndIf is_admin()
 
 
 // GET /////////////////////////////////////////////
 // Retourne les options actives
 function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
-	
+
 	if($check_option!=false) {
 
 		$options=get_option('brthemeoptions', themeoptionsGet_default());
 		return (isset($options[$check_option]) ? $options[$check_option] : 'Option non existante.');
-		
+
 	}
 	else return get_option('brthemeoptions', themeoptionsGet_default());
-	
+
 }
 
 // GET DEFAULT /////////////////////////////////////////////
@@ -45,17 +45,10 @@ function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
 function themeoptionsGet_default()
 {
   $default = array(
-    'compileless_on'  	=> true,
-    'video_autoplay'  	=> true,
-    'video_height'  	=> 500,
     'iconset'  			=> 'glyphicon',
     'allbsjs'  			=> 1,
-    'layout_width'		=> 0,
-	'image_sizes' 		=> 'thumb,200,200,1;bigmedium,900,750,0',
+	'image_sizes' 		=> '',
 	'fonts_google'		=> 'Doppio+One::latin,Roboto+Slab::latin,Open+Sans::latin,Ubuntu::latin',
-	'color_bodybg'		=> '000',
-	'noresponsive'		=> true,
-	'audio_height'		=> 450,
 	'googleanalyticsid'     => false
   );
 
@@ -63,5 +56,3 @@ function themeoptionsGet_default()
 }
 
 ?>
-
-

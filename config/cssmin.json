@@ -1,0 +1,28 @@
+{
+  "style": {
+    "options": {
+      "banner": "/*\nTheme Name: <%= gh.themename %>\nTheme URI: <%= gh.themeuri %>\nDescription: <%= pkg.description %>\nAuthor: <%= gh.themeauthor %>\nAuthorURI: <%= gh.themeauthoruri %>\nTemplate: <%= gh.themetemplate %>\nVersion: <%= pkg.version %>\nText Domain: <%= gh.themetextdomain %>\n*/"
+    },
+    "files": {
+      "<%= gh.themepath %>style.css": [
+        "<%= gh.assetspath %>fonts/font1.css",
+        "<%= gh.assetspath %>fonts/font2.css",
+        "<%= gh.assetspath %>fonts/font3.css",
+        "<%= gh.assetspath %>css/icons.ap.css",
+        "<%= gh.assetspath %>css/bootstrap.ap.css",
+        "<%= gh.assetspath %>css/theme.ap.css"
+      ]
+    }
+  },
+  "devtheme": {
+    "options": {
+      "banner": "/*\nTheme Name: <%= gh.themename %>\nTheme URI: <%= gh.themeuri %>\nDescription: <%= pkg.description %>\nAuthor: <%= gh.themeauthor %>\nAuthorURI: <%= gh.themeauthoruri %>\nTemplate: <%= gh.themetemplate %>\nVersion: <%= pkg.version %>\nText Domain: <%= gh.themetextdomain %>\n*/"
+    },
+    "files": {
+      "<%= gh.assetspath %>css/theme.css": [
+        "<%= gh.devpath %>css/icomoon.css",
+        "<%= gh.assetspath %>css/style.css"
+      ]
+    }
+  }
+}

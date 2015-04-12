@@ -1,0 +1,65 @@
+{
+  "options": {
+    "nospawn": true,
+    "livereload": true
+  },
+  "mygruntfile": {
+    "options": {
+      "livereload": false
+    },
+    "files": [
+      "Gruntfile.js"
+    ],
+    "tasks": [
+      "jshint:grunt",
+      "jsbeautifier:grunt"
+    ]
+  },
+  "lessEdited": {
+    "files": [
+      "<%= gh.devpath %>less/{,*/,*/*/}*.less"
+    ],
+    "tasks": [
+      "less:style",
+      "cssmin:devtheme"
+    ]
+  },
+  "views": {
+    "files": [
+      "<%= gh.themepath %>js/{navbot/,contact/}*.html"
+    ],
+    "tasks": [
+      "prettify:views"
+    ]
+  },
+  "scriptsEdited": {
+    "options": {
+      "nospawn": true,
+      "livereload": true
+    },
+    "files": [
+      "<%= gh.devpath %>js/{,angular/}*.js",
+      "test/spec/{,*/}*.js"
+    ],
+    "tasks": [
+      "reloadJs"
+    ]
+  },
+  "livereload": {
+    "files": [
+      "<%= gh.themepath %>{,*/}*.php",
+      "dist/.htaccess"
+    ]
+  },
+  "apps": {
+    "files": [
+      "<%= gh.mainsitepath %>apps/{,*/}*.js",
+      "<%= gh.mainsitepath %>apps/{,*/}*.html"
+    ],
+    "tasks": [
+      "jsbeautifier:apps",
+      "jshint:apps",
+      "prettify:apps"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "options": {
+    "preserveComments": "some"
+  },
+  "my_target": {
+    "files": {
+      "<%= gh.themepath %>js/scripts.min.js": [
+        "<%= gh.themepath %>js/scripts.js"
+      ]
+    }
+  }
+}

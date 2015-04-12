@@ -1,0 +1,11 @@
+{
+  "options": {
+    "reset": false,
+    "stoponerror": true,
+    "doctype": "HTML5",
+    "charset": "utf-8"
+  },
+  "files": {
+    "src": "<%= gh.htmlAssets %>"
+  }
+}

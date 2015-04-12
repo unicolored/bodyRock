@@ -1,0 +1,106 @@
+{
+  "bodyRock": {
+    "files": [
+      {
+        "expand": true,
+        "cwd": "dist/wp-content/themes/bodyrock/",
+        "src": [
+          "**"
+        ],
+        "dest": "./bodyRock/"
+      }
+    ]
+  },
+  "libsFonts": {
+    "files": [
+      {
+        "src": "<%= gh.devpath %>fonts/icomoon.eot",
+        "dest": "<%= gh.themepath %>fonts/icomoon.<%= pkg.version %>.eot"
+      },
+      {
+        "src": "<%= gh.devpath %>fonts/icomoon.woff",
+        "dest": "<%= gh.themepath %>fonts/icomoon.<%= pkg.version %>.woff"
+      },
+      {
+        "src": "<%= gh.devpath %>fonts/icomoon.ttf",
+        "dest": "<%= gh.themepath %>fonts/icomoon.<%= pkg.version %>.ttf"
+      },
+      {
+        "src": "<%= gh.devpath %>fonts/icomoon.svg",
+        "dest": "<%= gh.themepath %>fonts/icomoon.<%= pkg.version %>.svg"
+      }
+    ]
+  },
+  "changelog": {
+    "files": [
+      {
+        "src": "CHANGELOG.md",
+        "dest": "changelogs/CHANGELOG-<%= pkg.version %>.md"
+      }
+    ]
+  },
+  "versioning": {
+    "files": [
+      {
+        "src": "<%= gh.themepath %>style.css",
+        "dest": "<%= gh.themepath %>style.<%= pkg.version %>.css"
+      },
+      {
+        "src": "<%= gh.themepath %>js/scripts.min.js",
+        "dest": "<%= gh.themepath %>js/scripts.<%= pkg.version %>.min.js"
+      }
+    ]
+  },
+  "versioningImg": {
+    "files": [
+      {
+        "src": "<%= gh.devpath %>img/ico/logo.svg",
+        "dest": "<%= gh.devpath %>img/ico/logo.<%= pkg.version %>.svg"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/gravatar.jpg",
+        "dest": "<%= gh.devpath %>img/ico/gravatar.<%= pkg.version %>.jpg"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/favicon.ico",
+        "dest": "<%= gh.devpath %>img/ico/favicon.<%= pkg.version %>.ico"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/144.png",
+        "dest": "<%= gh.devpath %>img/ico/144.<%= pkg.version %>.png"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/16.png",
+        "dest": "<%= gh.devpath %>img/ico/16.<%= pkg.version %>.png"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/48.png",
+        "dest": "<%= gh.devpath %>img/ico/48.<%= pkg.version %>.png"
+      },
+      {
+        "src": "<%= gh.devpath %>img/ico/128.png",
+        "dest": "<%= gh.devpath %>img/ico/128.<%= pkg.version %>.png"
+      }
+    ]
+  },
+  "yesimlocal": {
+    "files": [
+      {
+        "src": "yesimlocal.php",
+        "dest": "<%= gh.devpath %>yesimlocal.php"
+      }
+    ]
+  },
+  "webapp": {
+    "files": [
+      {
+        "src": "manifest.webapp",
+        "dest": "dist/manifest.webapp"
+      },
+      {
+        "src": "offline.appcache",
+        "dest": "dist/offline.appcache"
+      }
+    ]
+  }
+}

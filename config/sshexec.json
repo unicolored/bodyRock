@@ -1,0 +1,8 @@
+{
+  "deploy": {
+    "command": "deploy gilleshoarau.com.git",
+    "options": {
+      "config": "myhost"
+    }
+  }
+}

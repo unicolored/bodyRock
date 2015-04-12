@@ -1,0 +1,29 @@
+{
+  "external_file": {
+    "options": {
+      "intro": "Bonjour, ça va ?",
+      "commentStyle": "u",
+      "content": {
+        "team": [
+          {
+            "Web developer": "Gilles Hoarau",
+            "Site": "http://gilleshoarau.com",
+            "Twitter": "@gilleshoarau",
+            "Location": "Paris, France FR"
+          }
+        ],
+        "site": [
+          {
+            "Version": "<%= pkg.version %>",
+            "Site Url": "<%= pkg.homepage %>",
+            "Keywords": "<%= pkg.keywords %>",
+            "Language": "French",
+            "Last update": "<%= grunt.template.today('yyyy-mm-dd') %>"
+          }
+        ]
+      },
+      "includeUpdateIn": "string"
+    },
+    "dest": "dist/humans.txt"
+  }
+}

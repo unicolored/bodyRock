@@ -1,0 +1,22 @@
+{
+  "fonts1": {
+    "dest": "<%= gh.assetspath %>fonts/font1.css",
+    "src": "https://fonts.googleapis.com/css?family=Share+Tech"
+  },
+  "fonts2": {
+    "dest": "<%= gh.assetspath %>fonts/font2.css",
+    "src": "https://fonts.googleapis.com/css?family=Open+Sans:800italic,400,800,300"
+  },
+  "fonts3": {
+    "dest": "<%= gh.assetspath %>fonts/font3.css",
+    "src": "https://fonts.googleapis.com/css?family=Roboto:400italic,100,700italic,700,100italic,400"
+  },
+  "gravatar": {
+    "dest": "<%= gh.devpath %>img/ico/gravatar.jpg",
+    "src": "https://www.gravatar.com/avatar/9a424bfbb842ed0e00426d5470f09be3?s=120"
+  },
+  "ga": {
+    "dest": "<%= gh.devpath %>js/tmp/analytics.js",
+    "src": "https://www.google-analytics.com/analytics.js"
+  }
+}

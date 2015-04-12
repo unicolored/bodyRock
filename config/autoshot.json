@@ -1,0 +1,47 @@
+{
+  "default_options": {
+    "options": {
+      "path": "<%= gh.devpath %>screenshots/",
+      "remote": {
+        "files": [
+          {
+            "src": "https://www.gilleshoarau.com/",
+            "dest": "front-page.png"
+          },
+          {
+            "src": "https://www.gilleshoarau.com/a-propos",
+            "dest": "services.png"
+          },
+          {
+            "src": "https://www.gilleshoarau.com/projets",
+            "dest": "portfolio.png"
+          },
+          {
+            "src": "https://www.gilleshoarau.com/contact",
+            "dest": "contact.png"
+          },
+          {
+            "src": "https://www.gilleshoarau.com/creation-3d-champagne-clerambault/",
+            "dest": "single.png"
+          }
+        ]
+      },
+      "local": {
+        "path": "./tmp/html/",
+        "port": 8080,
+        "files": [
+          {
+            "src": "front-page.html",
+            "dest": "test.jpg",
+            "delay": 3000
+          }
+        ]
+      },
+      "viewport": [
+        "320x480",
+        "1366x768",
+        "1922x1200"
+      ]
+    }
+  }
+}

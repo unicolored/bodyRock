@@ -1,6 +1,6 @@
 # [bodyRock](https://www.gilleshoarau.com/bodyrock)
 
-bodyRock : A theme that make your <body>Rock !
+bodyRock : A theme that make your body Rock !
 
 Soon more on <https://www.gilleshoarau.com/bodyrock-demo/> !
 

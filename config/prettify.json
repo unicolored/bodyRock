@@ -1,0 +1,77 @@
+{
+  "options": {
+    "indent": 4,
+    "indent_char": " ",
+    "wrap_line_length": 78,
+    "brace_style": "expand",
+    "unformatted": [
+      "php"
+    ]
+  },
+  "p404": {
+    "src": "<%= gh.themepath %>404.php",
+    "dest": "<%= gh.themepath %>404.php"
+  },
+  "cprojets": {
+    "src": "<%= gh.themepath %>category-projets.php",
+    "dest": "<%= gh.themepath %>category-projets.php"
+  },
+  "category": {
+    "src": "<%= gh.themepath %>category.php",
+    "dest": "<%= gh.themepath %>category.php"
+  },
+  "footer": {
+    "src": "<%= gh.themepath %>footer.php",
+    "dest": "<%= gh.themepath %>footer.php"
+  },
+  "front": {
+    "src": "<%= gh.themepath %>front-page.php",
+    "dest": "<%= gh.themepath %>front-page.php"
+  },
+  "header": {
+    "src": "<%= gh.themepath %>header.php",
+    "dest": "<%= gh.themepath %>header.php"
+  },
+  "headercache": {
+    "src": "<%= gh.themepath %>header-cache.php",
+    "dest": "<%= gh.themepath %>header-cache.php"
+  },
+  "footercache": {
+    "src": "<%= gh.themepath %>footer-cache.php",
+    "dest": "<%= gh.themepath %>footer-cache.php"
+  },
+  "index": {
+    "src": "<%= gh.themepath %>index.php",
+    "dest": "<%= gh.themepath %>index.php"
+  },
+  "contact": {
+    "src": "<%= gh.themepath %>page-contact.php",
+    "dest": "<%= gh.themepath %>page-contact.php"
+  },
+  "servicescompetences": {
+    "src": "<%= gh.themepath %>page-servicescompetences.php",
+    "dest": "<%= gh.themepath %>page-servicescompetences.php"
+  },
+  "single": {
+    "src": "<%= gh.themepath %>single.php",
+    "dest": "<%= gh.themepath %>single.php"
+  },
+  "views": {
+    "expand": true,
+    "cwd": "<%= gh.themepath %>js/navbot/",
+    "ext": ".html",
+    "src": [
+      "*.html"
+    ],
+    "dest": "<%= gh.themepath %>js/navbot/"
+  },
+  "apps": {
+    "expand": true,
+    "cwd": "<%= gh.mainsitepath %>apps/*/",
+    "ext": ".html",
+    "src": [
+      "*.html"
+    ],
+    "dest": "<%= gh.mainsitepath %>apps/*/"
+  }
+}

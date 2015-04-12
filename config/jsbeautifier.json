@@ -1,0 +1,31 @@
+{
+  "options": {
+    "js": {
+      "spaceInParen": true,
+      "wrapLineLength": 0,
+      "preserveNewlines": false,
+      "keepArrayIndentation": true,
+      "keepFunctionIndentation": true
+    }
+  },
+  "default": {
+    "src": [
+      "<%= gh.devpath %>js/**/*.js"
+    ]
+  },
+  "test": {
+    "src": [
+      "test/spec/{,*/}*.js"
+    ]
+  },
+  "apps": {
+    "src": [
+      "<%= gh.mainsitepath %>apps/{,*/}*.js"
+    ]
+  },
+  "grunt": {
+    "src": [
+      "Gruntfile.js"
+    ]
+  }
+}
