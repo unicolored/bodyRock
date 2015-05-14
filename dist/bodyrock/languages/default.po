@@ -1,0 +1,4697 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GillesHoarau.com\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-25 09:47+0100\n"
+"PO-Revision-Date: 2015-04-25 09:47+0100\n"
+"Last-Translator: Gilles Hoarau <unicolored@gmail.com>\n"
+"Language-Team: GH <contact@gilleshoarau.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../assets/inc/_tmp/corbeille.php:123
+#, php-format
+msgid ""
+"Merci de mettre à jour <a href=\"%s\">le slogan du site</a> <a href=\"%s\" "
+"style=\"float: right;\">Masquer</a>"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:175
+msgid "Activities"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:176
+msgid "Activity"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:177
+msgid "Sport"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:179
+msgid "Businesses"
+msgstr ""
+
+# @ mk_framework
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:180
+#, fuzzy
+msgid "Company"
+msgstr "Société"
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:181
+msgid "Bar"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:182
+msgid "Cafe"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:183
+msgid "Hotel"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:184
+msgid "Restaurant"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:186
+msgid "Groups"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:187
+msgid "Cause"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:188
+msgid "Sports league"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:189
+msgid "Sports team"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:191
+msgid "Organizations"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:192
+msgid "Band"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:193
+msgid "Government"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:194
+msgid "Non-profit"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:195
+msgid "School"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:196
+msgid "University"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:198
+msgid "People"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:199
+msgid "Actor or actress"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:200
+msgid "Athlete"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:201
+msgid "Author"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:202
+msgid "Director"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:203
+msgid "Musician"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:204
+msgid "Politician"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:205
+msgid "Profile"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:206
+msgid "Public Figure"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:208
+msgid "Places"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:209
+msgid "City or locality"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:210
+msgid "Country"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:211
+msgid "Landmark"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:212
+msgid "State or province"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:214
+msgid "Products and Entertainment"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:215
+msgid "Music Album"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:216
+msgid "Book"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:217
+msgid "Drink"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:218
+msgid "Video episode"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:219
+msgid "Food"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:220
+msgid "Game"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:221
+msgid "Movie"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:222
+msgid "Music playlist"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:223
+msgid "Product"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:224
+msgid "Radio station"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:225
+msgid "Song"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:226
+msgid "Television show"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:227
+msgid "Video"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:229
+msgid "Websites"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:230
+msgid "Article"
+msgstr ""
+
+# @ mk_framework
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:231
+msgid "Blog"
+msgstr "Blog"
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:232
+msgid "Website"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:256
+msgid "Afrikaans"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:257
+msgid "Arabic"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:258
+msgid "Azeri"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:259
+msgid "Belarusian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:260
+msgid "Bulgarian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:261
+msgid "Bengali"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:262
+msgid "Bosnian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:263
+msgid "Catalan"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:264
+msgid "Czech"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:265
+msgid "Welsh"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:266
+msgid "Danish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:267
+msgid "German"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:268
+msgid "Greek"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:269
+msgid "English (UK)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:270
+msgid "English (US)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:271
+msgid "Esperanto"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:272
+msgid "Spanish (Spain)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:273
+msgid "Spanish (Latin America)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:274
+msgid "Estonian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:275
+msgid "Basque"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:276
+msgid "Persian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:277
+msgid "Finnish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:278
+msgid "Faroese"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:279
+msgid "French (Canada)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:280
+msgid "French (France)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:281
+msgid "Frisian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:282
+msgid "Irish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:283
+msgid "Galician"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:284
+msgid "Hebrew"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:285
+msgid "Hindi"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:286
+msgid "Croatian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:287
+msgid "Hungarian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:288
+msgid "Armenian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:289
+msgid "Indonesian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:290
+msgid "Icelandic"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:291
+msgid "Italian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:292
+msgid "Japanese"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:293
+msgid "Georgian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:294
+msgid "Korean"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:295
+msgid "Kurdish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:296
+msgid "Latin"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:297
+msgid "Lithuanian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:298
+msgid "Latvian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:299
+msgid "Macedonian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:300
+msgid "Malayalam"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:301
+msgid "Malay"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:302
+msgid "Norwegian (bokmal)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:303
+msgid "Nepali"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:304
+msgid "Dutch"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:305
+msgid "Norwegian (nynorsk)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:306
+msgid "Punjabi"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:307
+msgid "Polish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:308
+msgid "Pashto"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:309
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:310
+msgid "Romanian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:311
+msgid "Russian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:312
+msgid "Slovak"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:313
+msgid "Slovenian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:314
+msgid "Albanian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:315
+msgid "Serbian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:316
+msgid "Swedish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:317
+msgid "Swahili"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:318
+msgid "Tamil"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:319
+msgid "Telugu"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:320
+msgid "Thai"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:321
+msgid "Filipino"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:322
+msgid "Turkish"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:323
+msgid "Ukrainian"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:324
+msgid "Vietnamese"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:325
+msgid "Simplified Chinese (China)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:326
+msgid "Traditional Chinese (Hong Kong)"
+msgstr ""
+
+#: ../assets/inc/backend/open-graph-protocol-tools-master/open-graph-protocol.php:327
+msgid "Traditional Chinese (Taiwan)"
+msgstr ""
+
+#: ../assets/inc/br_interface.php:155
+msgid "&laquo;"
+msgstr ""
+
+#: ../assets/inc/br_interface.php:156
+msgid "&raquo;"
+msgstr ""
+
+#: ../assets/inc/br_interface.php:163
+msgid "Posts navigation"
+msgstr ""
+
+#: ../assets/inc/content/textes.php:23
+msgid "suite..."
+msgstr ""
+
+#: ../assets/inc/content/textes.php:42
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:175
+msgid "Posté le"
+msgstr ""
+
+#: ../assets/inc/content/textes.php:44
+msgid "Ajouté par"
+msgstr ""
+
+#: ../assets/inc/content/textes.php:44
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:181
+#, php-format
+msgid "Voir tous les articles de %s"
+msgstr ""
+
+#: ../assets/inc/content/textes.php:46
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:188
+msgid "commentaire(s)"
+msgstr ""
+
+#: ../assets/inc/customize.php:60
+msgid "BodyRock"
+msgstr ""
+
+#: ../assets/inc/customize.php:70
+msgid "Site Officiel"
+msgstr ""
+
+#: ../assets/inc/customize.php:78
+msgid "A propos de l'auteur"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:14
+msgid "Configurer BodyRock"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:14
+#: ../assets/inc/options/backoffice.php:28
+msgid "Options du thème"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:126
+msgid "Auteur"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:126
+msgid "Site Web"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:171
+msgid ""
+"Activer les <a href=\"http://getbootstrap.com/javascript/\" target=\"_blank"
+"\">composants JS de Bootstrap</a>"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:184
+#: ../assets/inc/options/backoffice.php:188
+#: ../assets/inc/options/backoffice.php:192
+msgid "Activer"
+msgstr ""
+
+#: ../assets/inc/options/backoffice.php:197
+msgid "Entrer votre identifiant UA-XXXXX-X"
+msgstr ""
+
+#: ../assets/inc/options/view.php:27
+msgid "Bodyrock .talc"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_menus.php:10
+msgid "Menu principal (primary)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_menus.php:11
+msgid "Menu secondaire (secondary)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_menus.php:12
+msgid "Menu latéral (sidebar)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_menus.php:13
+msgid "Menu de bas de page (footer)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:35
+msgid "écoute"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:37
+msgid "lecture"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:39
+msgid "vue"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:42
+msgid "écoutes"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:44
+msgid "lectures"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_metabox.php:46
+msgid "vues"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_sidebars.php:7
+msgid "Dummy"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_sidebars.php:16
+msgid "Sidebar Left"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_sidebars.php:25
+msgid "Sidebar Right"
+msgstr ""
+
+#: ../assets/inc/wp-extend/br_types.php:52
+msgid "Aujourd'hui"
+msgstr ""
+
+#: ../assets/inc/wp-extend/metabox/bodyloop_form_page.php:141
+msgid "Aperçu"
+msgstr ""
+
+#: ../assets/inc/wp-extend/metabox/bodyrock.php:7
+msgid "Code"
+msgstr ""
+
+# @ mk_framework
+#: ../assets/inc/wp-extend/metabox/bodyrock.php:14
+#: ../assets/inc/wp-extend/metabox/bodyrock.php:20
+#, fuzzy
+msgid "Type"
+msgstr "Tapez votre message..."
+
+#: ../assets/inc/wp-extend/plugins/nextpost_plus.php:311
+msgid "Previous Post"
+msgstr ""
+
+#: ../assets/inc/wp-extend/plugins/nextpost_plus.php:311
+msgid "Next Post"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:32
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:32
+msgid "Date et heure de l'évènement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:38
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:38
+msgid "Toute la journée"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:48
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:48
+msgid "Heure/Date de début"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:61
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:61
+msgid "Heure/Date de fin"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:74
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:74
+msgid "Répéter"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:84
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:84
+msgid "Fin"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:94
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:94
+msgid "Termine après"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/metabox.php:104
+#: ../assets/inc/wp-extend/types/evenements/metabox.php:104
+msgid "En date"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:6
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:6
+msgctxt "Taxonomy General Name"
+msgid "Genres"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:7
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:7
+msgctxt "Taxonomy Singular Name"
+msgid "Genre"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:8
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:8
+msgid "Genres"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:9
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:83
+#: ../assets/inc/wp-extend/types/clients/type.php:12
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:9
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:83
+#: ../assets/inc/wp-extend/types/evenements/type.php:12
+#: ../assets/inc/wp-extend/types/lieux/type.php:12
+msgid "Tous"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:10
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:11
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:10
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:11
+msgid "Genre parent"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:12
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:12
+msgid "Nouveau genre"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:13
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:13
+msgid "Ajouter un genre"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:14
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:51
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:88
+#: ../assets/inc/wp-extend/types/clients/type.php:16
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:14
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:51
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:88
+#: ../assets/inc/wp-extend/types/evenements/type.php:16
+#: ../assets/inc/wp-extend/types/lieux/type.php:16
+msgid "Editer"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:15
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:52
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:89
+#: ../assets/inc/wp-extend/types/clients/type.php:17
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:15
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:52
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:89
+#: ../assets/inc/wp-extend/types/evenements/type.php:17
+#: ../assets/inc/wp-extend/types/lieux/type.php:17
+msgid "Mettre à jour"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:16
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:53
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:90
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:16
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:53
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:90
+msgid "Séparer avec des virgules"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:17
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:54
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:91
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:17
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:54
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:91
+msgid "Rechercher"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:18
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:55
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:92
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:18
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:55
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:92
+msgid "Ajouter ou supprimer"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:19
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:93
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:19
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:93
+msgid "Choisir parmis les plus utilisés"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:20
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:57
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:94
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:20
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:57
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:94
+#: ../assets/inc/wp-extend/widgets/bodyloop/bodyloop_widget.php:524
+msgid "Aucun résultat."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:43
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:43
+msgctxt "Taxonomy General Name"
+msgid "Catégories"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:44
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:44
+msgctxt "Taxonomy Singular Name"
+msgid "Catégorie"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:45
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:45
+msgid "Catégories"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:46
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:46
+msgid "Toutes"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:47
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:48
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:47
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:48
+msgid "Catégorie parente"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:49
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:49
+msgid "Nouvelle catégorie"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:50
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:50
+msgid "Ajouter une catégorie"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:56
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:56
+msgid "Choisir parmis les plus utilisées"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:80
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:80
+msgctxt "Taxonomy General Name"
+msgid "Tags"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:81
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:81
+msgctxt "Taxonomy Singular Name"
+msgid "Tag"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:82
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:82
+#, fuzzy
+msgid "Tags"
+msgstr "Résultats de la recherche&nbsp;: %s"
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:84
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:85
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:84
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:85
+msgid "Tag parent"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:86
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:86
+msgid "Nouveau tag"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/taxonomy.php:87
+#: ../assets/inc/wp-extend/types/evenements/taxonomy.php:87
+msgid "Ajouter un tag"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:8
+msgctxt "Post Type General Name"
+msgid "Clients"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:9
+msgctxt "Post Type Singular Name"
+msgid "Client"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:10
+msgid "Clients"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:11
+msgid "Client parent :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:13
+msgid "Afficher l'client"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:14
+msgid "Ajouter un client"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:15
+#: ../assets/inc/wp-extend/types/evenements/type.php:15
+#: ../assets/inc/wp-extend/types/lieux/type.php:15
+msgid "Ajouter un nouveau"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:18
+msgid "Rechercher un client"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:19
+msgid "Aucun client trouvé."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:20
+msgid "Aucun client dans la corbeille."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:23
+msgid "clients"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/clients/type.php:24
+#: ../assets/inc/wp-extend/types/evenements/type.php:24
+msgid "Date, concert, spectacle, sortie, ..."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/custom/main.php:9
+msgid "TypesPersos"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/custom/main.php:10
+msgid "TypePerso"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:8
+msgctxt "Post Type General Name"
+msgid "Evènements"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:9
+msgctxt "Post Type Singular Name"
+msgid "Evènement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:10
+msgid "Evènements"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:11
+msgid "Evènement parent :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:13
+msgid "Afficher l'évènement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:14
+msgid "Ajouter un évènement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:18
+msgid "Rechercher un évènement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:19
+msgid "Aucun évènement trouvé."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:20
+msgid "Aucun évènement dans la corbeille."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/evenements/type.php:23
+msgid "evenements"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:8
+msgctxt "Post Type General Name"
+msgid "Lieux"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:9
+msgctxt "Post Type Singular Name"
+msgid "Lieu"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:10
+msgid "Lieux"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:11
+msgid "Lieu parent :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:13
+msgid "Afficher le lieu"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:14
+msgid "Ajouter un lieu"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:18
+msgid "Rechercher un lieu"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:19
+msgid "Aucun lieu trouvé."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:20
+msgid "Aucun lieu dans la corbeille."
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:23
+msgid "lieux"
+msgstr ""
+
+#: ../assets/inc/wp-extend/types/lieux/type.php:24
+msgid "Restaurants, Bars, Musées, Théâtres, ..."
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:13
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:8
+msgid ""
+"Création de loop pour afficher les articles de votre choix en composants "
+"prédéfinis et personnalisables."
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:14
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:10
+msgid "BR Bodyloop"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:181
+msgid "par"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop.php:195
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:18
+msgid "Articles récents"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:329
+#: ../assets/inc/wp-extend/widgets/recentposts.php:207
+msgid "Titre du widget"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:332
+#: ../assets/inc/wp-extend/widgets/recentposts.php:212
+msgid "Classe"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:347
+msgid "Nombre de colonnes du Wallpin"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:361
+msgid "Afficher uniquement le type d'élements suivant"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:370
+msgid "Nombre d'élément à afficher"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:373
+#: ../assets/inc/wp-extend/widgets/recentposts.php:228
+msgid "Trier par"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:382
+msgid "Inverser l'ordre"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:384
+msgid "Ignorer les x premiers articles ou x ="
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:412
+#: ../assets/inc/wp-extend/widgets/recentposts.php:250
+msgid "Modèle"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:421
+msgid "Concernant le modèle Liste"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:431
+msgid "Retirer les puces"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:435
+msgid "Liste horizontale"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:438
+msgid "Enveloppe CSS (optionnel)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:444
+#: ../assets/inc/wp-extend/widgets/recentposts.php:271
+msgid "Inclure un extrait"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:447
+msgid "Si oui, nombre de mots"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:452
+msgid "Inclure un lien -Lire la suite-"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:456
+msgid "Sous forme de bouton"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:459
+msgid "Couleur du bouton"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:470
+msgid "Si oui, label -Lire la suite-"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:475
+#: ../assets/inc/wp-extend/widgets/recentposts.php:321
+msgid "Afficher la date"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:479
+#: ../assets/inc/wp-extend/widgets/recentposts.php:334
+msgid "Afficher le nombre de commentaires"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:489
+#: ../assets/inc/wp-extend/widgets/recentposts.php:347
+msgid "Afficher la vignette"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:491
+#: ../assets/inc/wp-extend/widgets/recentposts.php:362
+msgid "Dimensions"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:499
+msgid "Forcer les dimensions"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:503
+msgid "Alignement de l'image"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:510
+msgid "Style de l'image"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:519
+msgid "Image responsive"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/bodyloop_tmp.php:519
+msgid "recommandé"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/br_facebook_streamnfaces.php:7
+msgid "BR: Facebook Stream&Faces"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/br_googleplus_addtocircles.php:7
+msgid "BR: Google+ Add Button"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/br_twitter_fluxprofile.php:7
+msgid "BR: Twitter Profil"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/carousel.php:8
+msgid "Bodyrock: Carousel"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/carousel.php:99
+#: ../assets/inc/wp-extend/widgets/categories.php:52
+msgid "Titre (optionnel):"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/carousel.php:102
+msgid "Nombre d'articles à charger"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/carousel.php:105
+msgid "Taille de l'image"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/categories.php:7
+msgid "Bodyrock: Categories"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/categories.php:57
+msgid "Catégories (ex: 1,12,20):"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/categories.php:59
+msgid "Parent (ex: 12):"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:33
+msgid "Bodyrock: Articles récents"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:220
+msgid "Nombre d'articles à afficher :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:241
+msgid "Inverser l'ordre (ascendant)"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:261
+msgid "Enveloppe"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:279
+msgid "Nombre de mots :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:296
+msgid "Inclure un lien \"Lire la suite\""
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:304
+msgid "Texte :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:352
+msgid "Flottement"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:383
+msgid "Jump"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:388
+msgid "Afficher le type d'article :"
+msgstr ""
+
+#: ../assets/inc/wp-extend/widgets/recentposts.php:401
+msgid "Catégories :"
+msgstr ""
+
+#: ../br_identification.php:19
+msgid "Username custom text"
+msgstr ""
+
+#: ../br_identification.php:20
+msgid "Password custom text"
+msgstr ""
+
+#: ../br_identification.php:21
+msgid "Remember Me custom text"
+msgstr ""
+
+#: ../br_identification.php:22
+msgid "Log In custom text"
+msgstr ""
+
+# @ mk_framework
+#: ../searchform.php:6 ../searchform.php:15
+msgid "Search"
+msgstr "Recherche"
+
+# @ woocommerce
+#: ../tpl/bootstrap/breadcrumb-navbar.php:12
+#, php-format
+msgid "View all posts in %s"
+msgstr "Afficher tous les articles dans %s"
+
+# @ mk_framework
+#: ../tpl/bootstrap/breadcrumb-sidebar.php:9
+#: ../tpl/bootstrap/breadcrumb-sidebar.php:12
+msgid "Home"
+msgstr "Accueil"
+
+#: ../tpl/bootstrap/breadcrumb.php:10 ../tpl/bootstrap/breadcrumb.php:13
+msgid "Accueil"
+msgstr ""
+
+#: ../tpl/bootstrap/pagination.php:21
+msgid ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-right"
+"\">Précédent &raquo;</button>"
+msgstr ""
+
+#: ../tpl/bootstrap/pagination.php:22
+msgid ""
+"<button type=\"button\" class=\"btn btn-primary btn-md pull-left\">&laquo; "
+"Suivant</button>"
+msgstr ""
+
+# @ woocommerce
+#: ../tpl/bootstrap/pagination.php:25
+msgid "<span class=\"meta-nav\">&larr;</span> Précédent"
+msgstr "<span class=\"meta-nav\">&larr;</span> Commentaires plus anciens"
+
+# @ woocommerce
+#: ../tpl/bootstrap/pagination.php:26
+msgid "Suivant <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../tpl/sidebars/sidebar-left.php:22
+msgid "Guide"
+msgstr ""
+
+#: ../tpl/sidebars/sidebar-right.php:8
+msgid "Vous êtes ici"
+msgstr ""
+
+#: ../tpl/sidebars/sidebar-right.php:14
+msgid ""
+"<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-default"
+"\">&laquo;</button></div>"
+msgstr ""
+
+#: ../tpl/sidebars/sidebar-right.php:15
+msgid ""
+"<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-default"
+"\">&raquo;</button></div>"
+msgstr ""
+
+# @ mk_framework
+#~ msgid "Pages:"
+#~ msgstr "Pages&nbsp;:"
+
+#~ msgid "Welcome"
+#~ msgstr "Bienvenue"
+
+#~ msgid ""
+#~ "&laquo;&nbsp;Je vous propose <strong>des compétences</strong><br/>en <em "
+#~ "class=\"red\">communication visuelle</em> et <em class=\"red"
+#~ "\">développement Web</em>&nbsp;&raquo;"
+#~ msgstr ""
+#~ "&laquo;&nbsp;I offer <strong>skills</strong><br /> in <em class=\"red"
+#~ "\">visual communication</em> and <em class=\"red\">Web development</"
+#~ "em>&nbsp;&raquo;"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "%s review for %s"
+#~ msgid_plural "%s reviews for %s"
+#~ msgstr[0] "Résultats de la recherche&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Email"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Submit"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Your Rating"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Not that bad"
+#~ msgstr "E-mail (ne sera pas publié)"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your Review"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Category:"
+#~ msgid_plural "Categories:"
+#~ msgstr[0] "Archives de catégorie&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Tag:"
+#~ msgid_plural "Tags:"
+#~ msgstr[0] "Archives par mot-clef&nbsp;: %s"
+#~ msgstr[1] ""
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Rated %s out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Rated %d out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "out of 5"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Shipping Address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Save Address"
+#~ msgstr "Sauvegarder les modifications"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Login"
+#~ msgstr "Identification"
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Register"
+#~ msgstr "S'enregistrer"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username"
+#~ msgstr "Nom d'utilisateur"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username or email"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "New password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Reset Password"
+#~ msgstr "Votre mot de passe"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Save"
+#~ msgstr "Sauvegarder les modifications"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "My Address"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+# @ woocommerce
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "%s for %s item"
+#~ msgid_plural "%s for %s items"
+#~ msgstr[0] "<span class=\"%1$s\">Publié dans</span> %2$s"
+#~ msgstr[1] ""
+
+# @ mk_framework
+#~ msgid "Page not found"
+#~ msgstr "Page introuvable"
+
+#~ msgid "Live"
+#~ msgstr "Live"
+
+#~ msgid "Services"
+#~ msgstr "Services"
+
+# @ mk_framework
+#~ msgid "Contact me"
+#~ msgstr "Me contacter"
+
+#~ msgid "About"
+#~ msgstr "A propos"
+
+# @ mk_framework
+#~ msgid "Client area"
+#~ msgstr "Espace client"
+
+# @ mk_framework
+#~ msgid "The author"
+#~ msgstr "L'auteur"
+
+# @ mk_framework
+#~ msgid "The website"
+#~ msgstr "Le site Web"
+
+#~ msgid "Last update"
+#~ msgstr "Dernière mise à jour"
+
+#~ msgid "Theme"
+#~ msgstr "Theme"
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+#~ msgid "Ongoing projects"
+#~ msgstr "Projets en cours"
+
+#~ msgid "History"
+#~ msgstr "Histoire"
+
+#~ msgid "Ad"
+#~ msgstr "Publicité"
+
+#~ msgid "Plus récents"
+#~ msgstr "Newer"
+
+#~ msgid "Plus anciens"
+#~ msgstr "Older"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Proudly powered by %s."
+#~ msgstr "Fièrement propulsé par %s"
+
+# @ mk_framework
+#~ msgid "Primary Navigation"
+#~ msgstr "Navigation principale"
+
+#~ msgid "Berries"
+#~ msgstr "Framboises"
+
+#~ msgid "Cherry Blossoms"
+#~ msgstr "Fleurs de cerisier"
+
+#~ msgid "Concave"
+#~ msgstr "Mirroir"
+
+#~ msgid "Fern"
+#~ msgstr "Fougère"
+
+#~ msgid "Forest Floor"
+#~ msgstr "Paysage forestier"
+
+#~ msgid "Inkwell"
+#~ msgstr "Encrier"
+
+#~ msgid "Path"
+#~ msgstr "Chemin"
+
+#~ msgid "Sunset"
+#~ msgstr "Coucher du soleil"
+
+# @ woocommerce
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+# @ woocommerce
+#~ msgid "%s <span class=\"says\">says:</span>"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+# @ mk_framework
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s à %2$s"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Modifier)"
+
+#~ msgid "Pingback:"
+#~ msgstr "Ping&nbsp;:"
+
+# @ mk_framework
+#~ msgid "Primary Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#~ msgid "The primary widget area"
+#~ msgstr "La zone principale de widgets"
+
+# @ mk_framework
+#~ msgid "Secondary Widget Area"
+#~ msgstr "Zone secondaire de widgets"
+
+# @ mk_framework
+#~ msgid "The secondary widget area"
+#~ msgstr "La zone secondaire de widgets"
+
+# @ mk_framework
+#~ msgid "First Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The first footer widget area"
+#~ msgstr "La première zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Second Footer Widget Area"
+#~ msgstr "2ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The second footer widget area"
+#~ msgstr "La deuxième zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Third Footer Widget Area"
+#~ msgstr "3ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The third footer widget area"
+#~ msgstr "La troisième zone de widgets pour le pied de page"
+
+# @ mk_framework
+#~ msgid "Fourth Footer Widget Area"
+#~ msgstr "4ème zone de pied de page"
+
+# @ mk_framework
+#~ msgid "The fourth footer widget area"
+#~ msgstr "La quatrième zone de widgets pour le pied de page"
+
+#~ msgid ""
+#~ "<span class=\"%1$s\">Posted on</span> %2$s <span class=\"meta-sep\">by</"
+#~ "span> %3$s"
+#~ msgstr ""
+#~ "<span class=\"%1$s\">Publié le</span> %2$s <span class=\"meta-sep\">par</"
+#~ "span> %3$s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Afficher tous les articles par %s"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s"
+#~ "\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Cette entrée a été publiée dans %1$s, avec comme mot(s)-clef(s) %2$s. "
+#~ "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien "
+#~ "pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+#~ "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Cette entrée a été publiée dans %1$s. Vous pouvez la mettre en favoris "
+#~ "avec <a href=\"%3$s\" title=\"Permalien pour %4$s\" rel=\"bookmark\">ce "
+#~ "permalien</a>."
+
+#~ msgid ""
+#~ "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+#~ "\">permalink</a>."
+#~ msgstr ""
+#~ "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien "
+#~ "pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#~ msgid "Page %s"
+#~ msgstr "Page %s"
+
+#~ msgid "Skip to content"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#~ msgid "Not Found"
+#~ msgstr "Rien de trouvé"
+
+#~ msgid ""
+#~ "Apologies, but no results were found for the requested archive. Perhaps "
+#~ "searching will help find a related post."
+#~ msgstr ""
+#~ "Toutes nos excuses, mais aucun résultat n&rsquo;a été trouvé dans l&rsquo;"
+#~ "archive demandée. Peut-être qu&rsquo;une recherche vous permettra de "
+#~ "trouver un article similaire."
+
+#~ msgctxt "gallery category slug"
+#~ msgid "gallery"
+#~ msgstr "galerie"
+
+#~ msgid "This gallery contains <a %1$s>%2$s photo</a>."
+#~ msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+#~ msgstr[0] "Cette galerie contient <a %1$s>%2$s photo</a>."
+#~ msgstr[1] "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#~ msgid "More Galleries"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#~ msgid "Leave a comment"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#~ msgid "1 Comment"
+#~ msgstr "Un commentaire"
+
+# @ mk_framework
+#~ msgid "% Comments"
+#~ msgstr "% commentaires"
+
+#~ msgctxt "asides category slug"
+#~ msgid "asides"
+#~ msgstr "apartes"
+
+#~ msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#~ msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+#~ msgid "Pas de résultats"
+#~ msgstr "Aucun résultat"
+
+#~ msgid "Lire l'article %s"
+#~ msgstr "Read more %s"
+
+# @ woocommerce
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %s"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search site"
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view any comments."
+#~ msgstr ""
+#~ "Cet article est protégé par un mot de passe. Saisissez le mot de passe "
+#~ "pour lire les commentaires."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment"
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%s\">connecté</a> pour ajouter un commentaire."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Name (Required)"
+#~ msgstr "Le champ Nom est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email (Required)"
+#~ msgstr "Le champ Téléphone est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "POST COMMENT"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to Top"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "%1$s's message from %2$s"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Site: "
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Name: "
+#~ msgstr "Nom"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email: "
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to News"
+#~ msgstr "Retour aux actualités"
+
+#, fuzzy
+#~ msgid "By"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+#, fuzzy
+#~ msgid "In"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tags:"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "submit"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "bbPress Default"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Author Information"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Your information:"
+#~ msgstr "Vote nom*"
+
+#, fuzzy
+#~ msgid "Name (required):"
+#~ msgstr "Le champ Nom est requis."
+
+#, fuzzy
+#~ msgid "Website:"
+#~ msgstr "Site Web"
+
+#, fuzzy
+#~ msgid "Create New Forum"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Forum Type:"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "(No Parent)"
+#~ msgstr "Aucune réponses"
+
+#, fuzzy
+#~ msgid "Reply To: %s"
+#~ msgstr "Lien permanent vers %s"
+
+#, fuzzy
+#~ msgid "Reply:"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Keep a log of this edit:"
+#~ msgstr "Déconnexion de ce compte"
+
+#, fuzzy
+#~ msgid "Merge topic tags"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Manage Tag: \"%s\""
+#~ msgstr "Archives par mot-clef&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~ msgid "Existing tag:"
+#~ msgstr "Archives par mot-clef&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Create New Topic"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Topic Type:"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "First Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Contact Info"
+#~ msgstr "Formulaire de contact"
+
+#, fuzzy
+#~ msgid "Account"
+#~ msgstr "Créer un compte"
+
+#, fuzzy
+#~ msgid "New Password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "Super Admin"
+#~ msgstr "Administration du site"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Save Changes"
+#~ msgstr "Sauvegarder les modifications"
+
+#, fuzzy
+#~ msgid "Update Profile"
+#~ msgstr "Editer le profil"
+
+#, fuzzy
+#~ msgid "Log In"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+#, fuzzy
+#~ msgid "Lost Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#, fuzzy
+#~ msgid "Username or Email"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Reset My Password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+#, fuzzy
+#~ msgid " by %1$s"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+#, fuzzy
+#~ msgid "in <a href=\"%1$s\">%2$s</a>"
+#~ msgstr "Connecté en tant que <a href=\"%1$s\">%2$s</a>."
+
+#, fuzzy
+#~ msgid "Profile: %s"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Read More"
+#~ msgstr "Lire la suite"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Read more"
+#~ msgstr "Lire la suite"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "More Help"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog & <br /> News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Global Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Header"
+#~ msgstr "Entête"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Sidebars"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Footer"
+#~ msgstr "Pied de page"
+
+#, fuzzy
+#~ msgid "Page Title in Homepage"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Header Main Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Network"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Header Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Create a new sidebar"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+#, fuzzy
+#~ msgid "General / Footer"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Footer Column layout"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sub Footer"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Footer Logo"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Copyright Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact"
+#~ msgstr "Formulaire de contact"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Contact Us"
+#~ msgstr "Formulaire de contact"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quick Contact Email"
+#~ msgstr "Le champ Téléphone est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Content Links Color"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Styling & Coloring / Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "text Shadow for Title?"
+#~ msgstr "Titre pour les articles aléatoires"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "For Light Background"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "For Dark Background"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Links"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Styling & Coloring / Footer"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Footer Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Footer Text Color"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Footer Links Color"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "special_fonts_type_1"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Body Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Pragraph (p) Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 1 (h1) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 2 (h2) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 3 (h3) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 4 (h4) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 5 (h5) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Heading 6 (h6) Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title Size"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Title Weight"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Page Title Text Transform"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Subtitle Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Sidebar Title Size"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Title Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Sidebar Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Typography / Footer"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Footer Title Size"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Footer Title Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Footer Text Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Footer Text Weight"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Portfolio Single Post"
+#~ msgstr "&larr; Article précédent"
+
+#, fuzzy
+#~ msgid "Portfolio / Single Post"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Portfolio Single Layout"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Featured Image Height"
+#~ msgstr "Utiliser l'image de couverture en tant que vignette"
+
+#, fuzzy
+#~ msgid "Single Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Similar Posts Section"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Portfolio Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Featured Image Height"
+#~ msgstr "Utiliser l'image de couverture en tant que vignette"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pagination Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Load on Scroll Page"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Single Post"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Single Post"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Exclude Categories"
+#~ msgstr "Surligner les catégories actives"
+
+#, fuzzy
+#~ msgid "Featured Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Image Cropping"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Meta Tags"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Similar Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Posts Comments"
+#~ msgstr "Les commentaires sont fermés."
+
+#, fuzzy
+#~ msgid "Blog & News / Archive"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archives"
+#~ msgstr "Archives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Page Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Loop Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Blog & News / Search"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Layout"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Page subtitle"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Page"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose page.."
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Post Layout"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Under Construction Page"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Export Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Import Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Shop Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Single Product Page Title"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+#, fuzzy
+#~ msgid "Shop Archive Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Move to Trash"
+#~ msgstr "Une réponse à %2$s"
+
+# @ default
+#, fuzzy
+#~ msgid "Use Icon"
+#~ msgstr "Utiliser des vignettes automatiques"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Option..."
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Page"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Portfolio"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Post"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+# @ woocommerce
+#, fuzzy
+#~ msgid "Page"
+#~ msgstr "Page %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Background Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Saving changes..."
+#~ msgstr "Sauvegarder les modifications"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Save Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Blog / News"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+# @ FAQ
+# @ News
+# @ portfolio
+#, fuzzy
+#~ msgid "Add New"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Create"
+#~ msgstr "Créer un compte"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Current sidebars"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Posts Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Portfolios Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single News Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archive Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "404 Widget Area"
+#~ msgstr "Zone principale de widgets"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Woocommerce Shop Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Woocommerce Single Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Fifth Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sixth Footer Widget Area"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "include http://"
+#~ msgstr "http://wordpress.org/"
+
+#, fuzzy
+#~ msgid "Link to a URL"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Email Address"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post Type"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "General Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Sidebar"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Page Title Align"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Page Title"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Post Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full With Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full Without Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Half With Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Half Without Image"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Fourth With Image"
+#~ msgstr "Les champs marqués * sont obligatoires"
+
+#, fuzzy
+#~ msgid "Slideshow Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Your Slideshow"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Slideshow"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose your Slides"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Number of Slides"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No order"
+#~ msgstr "Aucune réponses"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Menu Order"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Order by title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Order by date"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Random order"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pause on Hover"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Direction Navigation"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Next & Previous navigation."
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Slideshow Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pagination Type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Min Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Top & Bottom Padding"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Animation Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Footer Twitter section"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Page Heading Subtitle"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map Height"
+#~ msgstr "Hauteur des vignettes"
+
+#, fuzzy
+#~ msgid "Map Type Control"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Cookie Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Message"
+#~ msgstr "Message*"
+
+#, fuzzy
+#~ msgid "Message Color"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Twitter Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Single Post Options"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post Options"
+#~ msgstr "Options du thème"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Video Site"
+#~ msgstr "Administration du site"
+
+#, fuzzy
+#~ msgid "Similiar Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Related Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Featured Plan?"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Plan Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Description"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Link To (optional)"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Testimonial Author Name"
+#~ msgstr "Le champ Nom est incomplet."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Slider Item Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Banner Builder Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Banner"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Thumbnail"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Client"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Client"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Client"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Client"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Clients"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Employee Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Team Member"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Memeber"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Team Member"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Team Member"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Team Members"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New FAQ"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit FAQ"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New FAQ"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View FAQs"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search FAQs"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "FAQ Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "FAQ Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Popular Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "All Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit FAQ Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update FAQ Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "FAQ Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "iCarousel Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Slider"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Slider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Slider Items"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+# @ post type general name
+# @ post type singular name
+#, fuzzy
+#~ msgid "News"
+#~ msgstr "Actualité"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit News"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search News"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No news found"
+#~ msgstr "Retour aux actualités"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "News Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "news Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit News Category"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update News Category"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "news Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Portfolio"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Portfolio"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Portfolio"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Portfolio"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Portfolios"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ taxonomy general name
+#, fuzzy
+#~ msgid "Portfolio Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ taxonomy singular name
+#, fuzzy
+#~ msgid "Portfolio Category"
+#~ msgstr "Archives de catégorie&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Update Portfolio Category"
+#~ msgstr "Afficher les articles de la catégorie Galerie"
+
+# @ mk_framework
+#, fuzzy
+#~ msgctxt "column name"
+#~ msgid "Portfolio Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Pricing Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Flexslider Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Testimonial Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add New Testimonial"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Testimonial"
+#~ msgstr "Editer le profil"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New Testimonial"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View Testimonials"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Testimonials"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "You are here: "
+#~ msgstr "Les commentaires sont fermés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Weekly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Daily Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Monthly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Yearly Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+# @ default
+#, fuzzy
+#~ msgid "Author Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search Results for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Search.."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Category Archive for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tag Archives for: \"%s\""
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Archives for: \"%s\""
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Recommended Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Recent Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#~ msgid "Your Name"
+#~ msgstr "Votre Nom"
+
+# @ mk_framework
+#~ msgid "Your Email"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#~ msgid "Type your message..."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Edit Profile"
+#~ msgstr "Editer le profil"
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+# @ mk_framework
+#~ msgid " Remember Me"
+#~ msgstr "Se souvenir de moi"
+
+# @ mk_framework
+#~ msgid "LOG IN"
+#~ msgstr "CONNEXION"
+
+# @ mk_framework
+#~ msgid "Forget?"
+#~ msgstr "Mot de passe oublié ?"
+
+# @ mk_framework
+#~ msgid "Create Account"
+#~ msgstr "Créer un compte"
+
+# @ mk_framework
+#~ msgid "Your email"
+#~ msgstr "Votre email"
+
+# @ mk_framework
+#~ msgid "Your password"
+#~ msgstr "Votre mot de passe"
+
+# @ mk_framework
+#~ msgid "Verify password"
+#~ msgstr "Confirmer le mot de passe"
+
+# @ mk_framework
+#~ msgid "Already have an account?"
+#~ msgstr "Déjà inscrit ?"
+
+# @ mk_framework
+#~ msgid "Forget your password?"
+#~ msgstr "Oubli de mot de passe ?"
+
+# @ mk_framework
+#~ msgid "Username or E-mail"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#~ msgid "Get New Password"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Remember Password?"
+#~ msgstr "Votre mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Subscribe to newsletter"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "email address"
+#~ msgstr "Votre Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Edit Menu Item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Navigation Label"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Attribute"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Link Relationship (XFN)"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid " Menu Option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Item Icon"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+#, fuzzy
+#~ msgid "Masterkey Settings"
+#~ msgstr "Paramètres sauvegardés."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "page"
+#~ msgstr "Page %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Install Required Plugins"
+#~ msgstr "Le champ Nom est requis."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Dismiss this notice"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "External Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "WordPress Repository"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Required"
+#~ msgstr "(requis)"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Not Installed"
+#~ msgstr "Rien de trouvé"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Source"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Show Details"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Send message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title:"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Height:"
+#~ msgstr "Hauteur des vignettes"
+
+#, fuzzy
+#~ msgid "Dowload new version"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Page Composer"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Select element type"
+#~ msgstr "Tapez votre message..."
+
+#, fuzzy
+#~ msgid "Element settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Set Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Loop settings"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Show all"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+#, fuzzy
+#~ msgid "Select Content Element"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Add Page Section"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Edit %s"
+#~ msgstr "(Modifier)"
+
+#, fuzzy
+#~ msgid "Select option"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Add image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Saved data"
+#~ msgstr "Paramètres sauvegardés."
+
+#, fuzzy
+#~ msgid "Post Count"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Order By"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Post types"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Individual Posts/Pages"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Random"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Comment count"
+#~ msgstr "Laisser un commentaire"
+
+#, fuzzy
+#~ msgid "Menu order"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Manage options"
+#~ msgstr "Options du thème"
+
+#, fuzzy
+#~ msgid "Title + Thumbnail + Text"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Thumbnail + Title + Text"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Thumbnail + Text"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Thumbnail + Title"
+#~ msgstr "Largeur des vignettes"
+
+#, fuzzy
+#~ msgid "Thumbnail only"
+#~ msgstr "Largeur des vignettes"
+
+#, fuzzy
+#~ msgid "Title + Text"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Select URL"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Edit this column"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Extra class name"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+#, fuzzy
+#~ msgid "Prepend to this %s"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Edit this %s"
+#~ msgstr "Editer le profil"
+
+#, fuzzy
+#~ msgid "Clone this %s"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Delete this %s"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Delete this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Edit this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Clone this row"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+#, fuzzy
+#~ msgid "Append to this %s"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Design Options"
+#~ msgstr "Options du thème"
+
+#, fuzzy
+#~ msgid "Element Class Names"
+#~ msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+#, fuzzy
+#~ msgid "Separator border color"
+#~ msgstr "Afficher en tant que Séparateur dans le Menu"
+
+#, fuzzy
+#~ msgid "Page Composer Settings"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content types"
+#~ msgstr "Aller au contenu"
+
+#, fuzzy
+#~ msgid "Elements bottom margin"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "Envato Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Item Purchase code"
+#~ msgstr "<strong>ShortTag :</strong><code>%s</code>"
+
+#, fuzzy
+#~ msgid "Show only Page Composer"
+#~ msgstr "Afficher le titre des Pages"
+
+#, fuzzy
+#~ msgid "Page Composer access"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select All"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select none"
+#~ msgstr "Navigation principale"
+
+#, fuzzy
+#~ msgid "Your Envato username."
+#~ msgstr "Nom d'utilisateur ou Email"
+
+#, fuzzy
+#~ msgid "Remove all"
+#~ msgstr "Afficher tous les articles par %s"
+
+#, fuzzy
+#~ msgid "Restore to defaults"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Left Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Center Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Right Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Left Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Center Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Right Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+#, fuzzy
+#~ msgid "No Repeat"
+#~ msgstr "Aucune réponses"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Aucune réponses"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Drop Top Shadow"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Margin Bottom"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content Box"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Heading"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Heading Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Uplaod Your image"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Frame Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Link"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Description"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Caption Location"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Circle Image Frame"
+#~ msgstr "Lien vers l&rsquo;image originale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Diameter"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Moving Image"
+#~ msgstr "Image de couverture"
+
+#, fuzzy
+#~ msgid "Title & Alt"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Gallery"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Heights"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Collection Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Color"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Margin Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Enter your content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Message Box"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Font Size"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Font Weight"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select Icon"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Minimal"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Ultimate"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Icon Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Top"
+#~ msgstr "1ère zone de pied de page"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Color"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Divider Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 1 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 2 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 3 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 4 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 5 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 6 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skill 7 : Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Default Text Color"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Line Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Bar Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content"
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Custom Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 1 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 1 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 2 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 2 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 3 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 3 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 4 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 4 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 5 : Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Step 5 : Link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "News Tab"
+#~ msgstr "Retour aux actualités"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Widget Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tab Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Padding Size (Px)"
+#~ msgstr "La taille originale est de %s pixels"
+
+#, fuzzy
+#~ msgid "Number Start at"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Stop at"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Prefix"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Number Suffix"
+#~ msgstr "Coordonnées"
+
+#, fuzzy
+#~ msgid "Text Below Number"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Uplaod Your Thumbnail"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Sound Author"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Gravity Form"
+#~ msgstr "Formulaire de connexion"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "Formulaire de connexion"
+
+#, fuzzy
+#~ msgid "Display Form Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+#, fuzzy
+#~ msgid "Contact Form 7"
+#~ msgstr "Formulaire de contact"
+
+#, fuzzy
+#~ msgid "Form title"
+#~ msgstr "Formulaire de connexion"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Featured Products?"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "How many Posts?"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Table Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Logos Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Target for the links."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Images Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select specific Categories"
+#~ msgstr "Surligner les catégories actives"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select specific Posts"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Carousel"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "View All Page"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Enable Excerpt"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blog Showcase"
+#~ msgstr "Archives du blog"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Excerpt?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Permalink"
+#~ msgstr "Lien permanent vers %s"
+
+#, fuzzy
+#~ msgid "Select Specific Categories."
+#~ msgstr "Surligner les catégories actives"
+
+#, fuzzy
+#~ msgid "Title and Category?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "New window"
+#~ msgstr "Recevoir un nouveau mot de passe"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "post id"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Comment Count"
+#~ msgstr "Laisser un commentaire"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Image Slideshow"
+#~ msgstr "Image de couverture"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Smooth Height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Full Width"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Half"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Third"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "One Fourth"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Background Color"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Text Color"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Caption Opacity"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Simple Centered"
+#~ msgstr "Texte simple"
+
+#, fuzzy
+#~ msgid "Show as?"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "RSS URL"
+#~ msgstr "%s Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Wordpress URL"
+#~ msgstr "L&rsquo;équipe WordPress"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skype Number"
+#~ msgstr "Coordonnées"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Twitter Feeds"
+#~ msgstr "Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Twitter name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select button type."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Vertical"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Button size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Select annotation type."
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Video link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Google map link"
+#~ msgstr "&larr; Article précédent"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map height"
+#~ msgstr "Hauteur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Map type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Frame Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Flickr Feeds"
+#~ msgstr "Flux RSS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Number of photos"
+#~ msgstr "Cette galerie contient <a %1$s>%2$s photos</a>."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Thumbnail Size"
+#~ msgstr "Largeur des vignettes"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Group"
+#~ msgstr "Groupe AGS"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Photo stream type"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Phone"
+#~ msgstr "Téléphone"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Skype Username"
+#~ msgstr "Nom d'utilisateur ou Email"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text block"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Disable Title Pattern?"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Align"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Fancy Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tag Name"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Font Size"
+#~ msgstr "La taille originale est de %s pixels"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Title Box"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Blockquote Message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Quote Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Line Style"
+#~ msgstr "Une réponse à %2$s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Text Size"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Highlight Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Tooltip Text"
+#~ msgstr "Texte simple"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "No Align"
+#~ msgstr "Aucune réponses"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Vertical Padding"
+#~ msgstr "Navigation principale"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Toggle Title"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Toggle Content."
+#~ msgstr "Aller au contenu"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Choose Icon For title"
+#~ msgstr "Titre pour les articles aléatoires"
+
+#, fuzzy
+#~ msgid "Tab title."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Action Style"
+#~ msgstr "Une réponse à %2$s"
+
+#, fuzzy
+#~ msgid "Accordion section title."
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Load More"
+#~ msgstr "Toutes les galeries"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "VIEW ALL"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Your message"
+#~ msgstr "Tapez votre message..."
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "Back to top"
+#~ msgstr "Retour aux actualités"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "READ MORE"
+#~ msgstr "Lire la suite"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "OUT OF STOCK"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Select options"
+#~ msgstr "Options du thème"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "ADD TO CART"
+#~ msgstr "Une réponse à %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Submit Review"
+#~ msgstr "Laisser un commentaire"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Remove this item"
+#~ msgstr "<span class=\"%1$s\">Publié dans</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Available on backorder"
+#~ msgstr "Afficher le titre des Pages"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "APPLY COUPON"
+#~ msgstr "Appliquer le filtre sur l'extrait"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "PROCEED TO CHECKOUT"
+#~ msgstr "Une réponse à %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "View Cart &rarr;"
+#~ msgstr "Article suivant &rarr;"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Checkout &rarr;"
+#~ msgstr "Article suivant &rarr;"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid " (taxes estimated for %s)"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing Address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Create an account?"
+#~ msgstr "Créer un compte"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "You must be logged in to checkout."
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%s\">connecté</a> pour ajouter un commentaire."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your order"
+#~ msgstr "Vote nom*"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Coupon code"
+#~ msgstr "Code Publicité #%s :"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Apply Coupon"
+#~ msgstr "Appliquer le filtre sur l'extrait"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Pay for order"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "I have read and accept the"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "My Account"
+#~ msgstr "Créer un compte"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "Votre Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Username: %s"
+#~ msgstr "Nom d'utilisateur"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Shipping address"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Order number: %s"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "jS F Y"
+#~ msgstr "F jS, Y"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Your details"
+#~ msgstr "Vote nom*"
+
+# @ mk_framework
+#, fuzzy
+#~ msgid "ALL PRODUCTS"
+#~ msgstr "Afficher tous les articles par %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Default sorting"
+#~ msgstr "Navigation principale"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Sort by popularity"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Sort by newness"
+#~ msgstr "<span class=\"%1$s\">Par</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Showing the single result"
+#~ msgstr "Afficher le titre sur la page d'un article"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Showing all %d results"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgctxt "%1$d = first, %2$d = last, %3$d = total"
+#~ msgid "Showing %1$d–%2$d of %3$d results"
+#~ msgstr "Résultats de la recherche&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "SAVE"
+#~ msgstr "Sauvegarder les modifications"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "LOGIN"
+#~ msgstr "Connexion"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Lost Password?"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Re-enter password"
+#~ msgstr "Votre commentaire est en attente de validation."
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Billing Email"
+#~ msgstr "Votre Email"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Order Again"
+#~ msgstr "Recommencer"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "and was completed"
+#~ msgstr "Coordonnées"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Products tagged &ldquo;"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Posts tagged &ldquo;"
+#~ msgstr "<span class=\"%1$s\">Marqué avec</span> %2$s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Author:"
+#~ msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Add to cart"
+#~ msgstr "Une réponse à %2$s"
