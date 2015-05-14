@@ -11,21 +11,6 @@
     <!-- Placer le code Html ci-dessus -->
   </section>
 
-  <section class="br_widgets">
-    <div class="container">
-      <hr>
-      <div class="widget1 col-xs-4">
-        <?php dynamic_sidebar('sidebar-left'); ?>
-      </div>
-      <div class="widget2 col-xs-4">
-        <?php dynamic_sidebar('sidebar-middle'); ?>
-      </div>
-      <div class="widget3 col-xs-4">
-        <?php dynamic_sidebar('sidebar-right'); ?>
-      </div>
-    </div>
-  </section>
-
   <?php wp_footer(); ?>
 
   <?php

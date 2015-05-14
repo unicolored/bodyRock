@@ -10,9 +10,12 @@
     </div>
   </section>
 
+  <div class="container">
+    <aside class="br_sidebarLeft">
+      <?php dynamic_sidebar('sidebar-left'); ?>
+    </aside>
 
-  <section class="br_content">
-    <div class="container">
+    <section class="br_content">
       <?php /* The Loop */
       if ( have_posts() ) {
         while ( have_posts() ) {
@@ -26,9 +29,8 @@
         <strong><?php br_Icon('warning'); ?> Aucun article trouvé</strong> Placez des articles dans la catégorie "featured" pour qu'ils apparaissent ici.
       </div>
       <?php } ?>
-    </div>
-  </section>
-
+    </section>
+  </div>
 
   <?php // Placer le code Html ci-dessus ?>
 </section>

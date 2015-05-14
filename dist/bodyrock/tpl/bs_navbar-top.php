@@ -9,7 +9,10 @@
             <a class="navbar-brand" href="<?php bloginfo('url'); ?>">
                   <span><?php bloginfo('name') ?></span>
             </a>
+            <?php if(strlen(bloginfo('description'))>0) { ?>
+
             <p class="navbar-text"><?php bloginfo('description') ?></p>
+            <?php } ?>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -17,8 +20,8 @@
             wp_nav_menu( array(
             'theme_location' => 'primary',
             'container'  => false,
-            'nav_menu_css_class' => 'nav navbar-nav navbar-right',
-            'depth'=>2,
+            'menu_class' => 'nav navbar-nav',
+            'depth'=>0,
             'fallback_cb'=>'default_menu',
             'walker'=>new wp_bootstrap_navwalker()
             ));

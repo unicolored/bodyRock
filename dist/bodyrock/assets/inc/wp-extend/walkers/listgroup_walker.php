@@ -34,7 +34,7 @@ class wp_bootstrap_listgroupwalker extends Walker_Nav_Menu {
 	* @param int $current_page Menu item ID.
 	* @param object $args
 	*/
-	
+
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -123,7 +123,7 @@ $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		 */
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
-	
+
 	/**
 	 * Ends the element output, if needed.
 	 *
@@ -162,9 +162,9 @@ $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 	*/
 
 	function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( !$element ) {
+        /*if ( !$element ) {
             return;
-        }
+        }*/
 
         $id_field = $this->db_fields['id'];
 
