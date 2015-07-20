@@ -37,10 +37,10 @@ function my_custom_admin_logo()
 
 // CHANGE WP LOGIN URL /////////////////////////////////////////////
 // Remplace le lien sur le logo de la page login.
-function change_wp_login_url() { return 'http://bodyrock.gilleshoarau.com/'; }
+function change_wp_login_url() { return 'http://bodyrock.fromscratch.xyz/'; }
 
 // CHANGE WP LOGIN TITLE /////////////////////////////////////////////
-function change_wp_login_title() { return 'BodyRock par Gilles Hoarau'; }
+function change_wp_login_title() { return 'bodyRock | Solid WP'; }
 
 // ADMIN BAR RENDER /////////////////////////////////////////////
 // Admin Bar Customisation
@@ -57,13 +57,13 @@ function admin_bar_render() {
 	$wp_admin_bar->add_menu( array(
 	'parent' => false,
 	'id' => 'bodyrock',
-	'title' => __('BodyRock','bodyrock'),
+	'title' => __('bodyRock','bodyrock'),
 	'href' => $customerSupportURL
 	));
 
 	// Add a new sub-menu to the link above
 	// Here we add a link to our contact us web page
-	$contactUsURL = 'http://bodyrock.gilleshoarau.com/';
+	$contactUsURL = 'http://bodyrock.fromscratch.xyz/';
 	$wp_admin_bar->add_menu(array(
 	'parent' => 'bodyrock',
 	'id' => 'site',

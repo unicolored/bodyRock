@@ -91,13 +91,13 @@ function themeoptions_backofficeRegister() {
 	$section = 'image';
 	add_settings_section($brto.'_'.$section, '• Image', $brto_Callback.'_sectiontext_'.$section, $brto);
 		add_settings_field($brto.'_image_sizes', 'Tailles d\'image', $brto_Callback.'_image_sizes', $brto, $brto.'_'.$section);
-
+/*
 	$section = 'customtypes';
 	add_settings_section($brto.'_'.$section, '• Types personnalisés', $brto_Callback.'_sectiontext_'.$section, $brto);
 		add_settings_field($brto.'_type_clients', 'Type Clients', $brto_Callback.'_type_clients', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_type_lieux', 'Type Lieux', $brto_Callback.'_type_lieux', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_type_evenements', 'Type Evènements', $brto_Callback.'_type_evenements', $brto, $brto.'_'.$section);
-
+*/
 	$section = 'seo';
 	add_settings_section($brto.'_'.$section, '• Référencement', $brto_Callback.'_sectiontext_'.$section, $brto);
 		add_settings_field($brto.'_googleanalyticsid', 'Google Analytics ID', $brto_Callback.'_googleanalyticsid', $brto, $brto.'_'.$section);
