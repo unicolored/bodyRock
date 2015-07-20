@@ -1,4 +1,5 @@
 <?php
+/*
 if ( ! function_exists('custom_clients') ) {
 
 // Register Custom Post Type
@@ -47,5 +48,5 @@ function custom_clients() {
 // Hook into the 'init' action
 add_action( 'init', 'custom_clients', 0 );
 
-}
+}*/
 ?>

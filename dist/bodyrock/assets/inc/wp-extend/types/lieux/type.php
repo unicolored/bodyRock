@@ -1,4 +1,5 @@
 <?php
+/*
 if ( ! function_exists('custom_lieux') ) {
 
 // Register Custom Post Type
@@ -48,4 +49,5 @@ function custom_lieux() {
 add_action( 'init', 'custom_lieux', 0 );
 
 }
+*/
 ?>

@@ -23,7 +23,7 @@
   <![endif]-->
 
   <?php wp_head(); ?>
-  
+
   <!-- shortlink -->
   <?php bitly_url(); ?>
 </head>
@@ -37,3 +37,4 @@
       get_template_part('tpl/bs_navbar','top');      ?>
     </div>
   </section>
+<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?><?php wp_link_pages( $args ); ?>

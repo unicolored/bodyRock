@@ -8,8 +8,8 @@
  * @version 1.3
  * @copyright Public Domain
  */
-if ( !class_exists('OpenGraphProtocol') )
-	require_once dirname(__FILE__) . '/open-graph-protocol.php';
+//if ( !class_exists('OpenGraphProtocol') )
+	//require_once dirname(__FILE__) . '/open-graph-protocol.php';
 
 abstract class OpenGraphProtocolObject {
 	const PREFIX ='';
@@ -488,8 +488,8 @@ class OpenGraphProtocolBook extends OpenGraphProtocolObject {
 
 /**
  * Video movie, TV show, and other all share the same properies.
- * Video episode extends this class to associate with a TV show 
- * 
+ * Video episode extends this class to associate with a TV show
+ *
  * @link http://ogp.me/#type_video Open Graph protocol video object
  */
 class OpenGraphProtocolVideoObject extends OpenGraphProtocolObject {
@@ -612,7 +612,7 @@ class OpenGraphProtocolVideoObject extends OpenGraphProtocolObject {
 	public function addWriter( $url ) {
 		if ( static::is_valid_url($url) && !in_array($url, $this->writer) )
 			$this->writer[] = $url;
-			
+
 		return $this;
 	}
 
@@ -628,7 +628,7 @@ class OpenGraphProtocolVideoObject extends OpenGraphProtocolObject {
 	/**
 	 * Set the video duration in whole seconds
 	 *
-	 * @param int $duration video duration in whole seconds 
+	 * @param int $duration video duration in whole seconds
 	 */
 	public function setDuration( $duration ) {
 		if ( is_int($duration) && $duration > 0 )
@@ -670,7 +670,7 @@ class OpenGraphProtocolVideoObject extends OpenGraphProtocolObject {
 	/**
 	 * Add a tag word or topic related to this video
 	 *
-	 * @param string $tag tag word or topic 
+	 * @param string $tag tag word or topic
 	 */
 	public function addTag( $tag ) {
 		if ( is_string($tag) && !in_array($tag, $this->tag) )

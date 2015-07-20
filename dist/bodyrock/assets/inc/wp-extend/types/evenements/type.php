@@ -1,4 +1,5 @@
 <?php
+/*
 if ( ! function_exists('custom_evenements') ) {
 
 // Register Custom Post Type
@@ -48,4 +49,5 @@ function custom_evenements() {
 add_action( 'init', 'custom_evenements', 0 );
 
 }
+*/
 ?>

@@ -42,6 +42,9 @@ Les différents walkers ci-dessous servent à reproduire les composants Bootstra
 */
 require_once('walkers/navbar_walker.php');
 require_once('walkers/listgroup_walker.php');
+require_once('walkers/listgroupCat_walker.php');
+require_once('walkers/listgroupPage_walker.php');
+require_once('walkers/listgroupcustom_walker.php');
 require_once('walkers/navpills_walker.php');
 require_once('walkers/tabs_walker.php');
 

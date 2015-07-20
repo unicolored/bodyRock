@@ -36,13 +36,21 @@
  br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-options.php, elle récupère les options par défaut.
 
  */
+ // AJOUTS RELATIFS à THEME CHECK
+if ( ! isset( $content_width ) ) $content_width = 900;
+add_theme_support( "title-tag" );
+$args = false;
+add_theme_support( "custom-header", $args );
+add_theme_support( "custom-background", $args );
+ //////////
+
 //add_image_size( 'article', 960, 320, 1 ); Obsolète ! Inutile de faire une déclaration supplémentaire pour le thème Bodyrorck parent
 add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
-add_action('wp_footer', 'getImgVideo', 100);
-
+//add_action('wp_footer', 'getImgVideo', 100);
+add_theme_support( 'automatic-feed-links' );
 // Retire une partie des variables disqus non utiles à mon avis.
 // Evite notamment l'inclusion de code sur les pages qui ne comportent pas de commentaires.
-remove_action('wp_footer', 'dsq_output_footer_comment_js');
+//remove_action('wp_footer', 'dsq_output_footer_comment_js');
 
 define('THEME_PATH', 'wp-content/themes/bodyrock/');
 // Liens absolus.
@@ -93,7 +101,9 @@ define('BR_ALLBSJS', $options['allbsjs']);
 // Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
 define('BR_IMAGE_SIZES', $options['image_sizes']);
 // L'identifiant du compte Anakytics
-define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
+if(isset($options['google_analytics_id'])) {
+  define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
+}
 
 
 // BODYROCK /////////////////////////////////////////////
@@ -127,7 +137,7 @@ function head_scripts() {
       // JAVASCRIPT
       // Bootstrap Javascript
       if (BR_ALLBSJS != NULL) {
-            wp_enqueue_script('bootstrap-min-default', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array('jquery'), null, 1);
+            //wp_enqueue_script('bootstrap-min-default', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array('jquery'), null, 1);
       }
 
       global $options;
@@ -141,11 +151,12 @@ function head_scripts() {
       }
 
       // Envoi de valeurs php dans le javascript
-      wp_localize_script('script', 'sc_val', array('domaine' => stripslashes(str_replace('http://', '', get_bloginfo('url')))));
+      wp_localize_script('script', 'sc_val', array('domaine' => stripslashes(str_replace('http://', '', esc_url( get_home_url() )))));
 }
 
 // FONCTIONS SUPPLEMENTAIRES /////////////////////////////////////////////
 // CREATION de la meta <link rel=shortlink href=""> via bitly
+/*
 function bitly_url($login = "unicolored", $apiKey = "R_8de9dc884a5f6e6ba8831909df65d03c", $longUrl = false) {
       $longUrl = ($longUrl == false ? get_permalink() : false);
 
@@ -161,5 +172,46 @@ function bitly_url($login = "unicolored", $apiKey = "R_8de9dc884a5f6e6ba8831909d
             echo $bitlyurl;
             return true;
       }
+}
+*/
+
+function formatIcon($format=false) {
+  if($format != false) {
+    $Icons = array(
+      'audio' => 'feed',
+      'aside' => 'road',
+      'chat' => 'bubbles',
+      'gallery' => 'images',
+      'image' => 'images',
+      'link' => 'attachment',
+      'quote' => 'quotes-left',
+      'status' => 'user2',
+      'video' => 'film',
+    );
+    return $Icons[$format];
+  }
+  else {
+    return 'libreoffice';
+  }
+}
+
+function formatLabel($format=false) {
+  if($format != false) {
+    $Icons = array(
+      'audio' => 'Podcast',
+      'aside' => 'En bref',
+      'chat' => 'Question',
+      'gallery' => 'Album',
+      'image' => 'Image',
+      'link' => 'Lien',
+      'quote' => 'Citation',
+      'status' => 'Quoi de neuf ?',
+      'video' => 'Vidéo',
+    );
+    return $Icons[$format];
+  }
+  else {
+    return 'Article';
+  }
 }
 ?>

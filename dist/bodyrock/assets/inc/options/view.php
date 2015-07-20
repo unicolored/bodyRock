@@ -6,7 +6,7 @@
 // Rendu de la page des options du thème via Wordpress.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
-
+ 
 // RENDER PAGE /////////////////////////////////////////////
 function themeoptions_viewRender_page() {
 

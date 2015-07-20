@@ -41,7 +41,7 @@ if(!function_exists('br_getPostThumbnail')) { // Permet l'override par le fichie
 			$attr['src'] = CDN_PATH.'images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
 
 			if(!file_exists($attr['src'])) {
-				$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
+				$path_name = str_replace('http://','',strtolower(esc_url( get_home_url() )));
 				$attr['src']='/senzu/'.$path_name.'/images/videos/'.$videoType.'/'.$videoCode.br_getImgVideoSize($size).'.jpg';
 			}
 		}
@@ -79,13 +79,13 @@ if(!function_exists('br_getImgVideoSize')) { // Permet l'override par le fichier
 		return $array[$size];
 	}
 }
-
+/*
 function getImgVideo() {
 	// Import et sauvegarde de l'image d'une vidéo de Youtube ou Viméo sur le FTP
 	// Se produit uniquement quand sur lors de l'affichage d'un post de type video
 
 	if ( is_single() && get_post_format() == 'video' ) {
-		$path_name = str_replace('http://','',strtolower(get_bloginfo('url')));
+		$path_name = str_replace('http://','',strtolower(esc_url( get_home_url() )));
 
 		$videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
 		$videoType = get_post_meta(get_the_ID(), 'videoType', true);
@@ -136,6 +136,7 @@ function getImgVideo() {
 		}
 	}
 }
+*/
 
 function list_thumbnail_sizes() {
 	// Liste les tailles d'images personnalisées des thèmes parent et enfant

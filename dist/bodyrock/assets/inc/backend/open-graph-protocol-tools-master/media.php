@@ -9,9 +9,9 @@
  * @copyright Public Domain
  */
 
- if ( !class_exists('OpenGraphProtocol') )
- 	require_once(dirname(__FILE__) . '/open-graph-protocol.php');
- 
+ //if ( !class_exists('OpenGraphProtocol') )
+ 	//require_once(dirname(__FILE__) . '/open-graph-protocol.php');
+
 /**
  * Describe a media object
  *
@@ -187,7 +187,7 @@ class OpenGraphProtocolImage extends OpenGraphProtocolVisualMedia {
 	 *
 	 * @link http://www.iana.org/assignments/media-types/image/index.html IANA image types
 	 * @param string $extension file extension
-	 * @return string Internet media type in the format image/* 
+	 * @return string Internet media type in the format image/*
 	 */
 	public static function extension_to_media_type( $extension ) {
 		if ( empty($extension) || ! is_string($extension) )

@@ -9,6 +9,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {
+
 	/**
 	 * @see Walker::start_lvl()
 	 * @since 3.0.0
@@ -68,7 +69,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= '#';
-				$atts['data-toggle']	= 'dropdown';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : ''; // Ajout du lien pour pouvoir cliquer même si c'est un dropdown
+				//$atts['data-toggle']	= 'dropdown'; // Suppression du data-toggle afin de pouvoir cliquer sur le lien
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
 			} else {
@@ -90,9 +92,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
-				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			else
+			//if ( ! empty( $item->attr_title ) )
+				//$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
+			//else
 				$item_output .= '<a'. $attributes .'>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';

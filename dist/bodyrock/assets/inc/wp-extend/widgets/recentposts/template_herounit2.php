@@ -1,17 +1,18 @@
 <?php
+/*
 if ($instance["thumb"]) {
     if (get_post_format()=='video') {
         $size="&w=274&h=366&q=100&s=1";
         $videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
         $videoType = get_post_meta(get_the_ID(), 'videoType', true);
-                
+
         switch($videoType) {
             case 'vim':
                 $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoCode.php"));
                 $img= '<img src="/wp-content/themes/bodyrock/inc/libs/timthumb/timthumb.php?src='.$hash[0]['thumbnail_large'].''.$size.'">'; break;
             case 'you': $img= '<img src="/wp-content/themes/bodyrock/inc/libs/timthumb/timthumb.php?src=http://img.youtube.com/vi/'.$videoCode.'/0.jpg'.$size.'">'; break;
         }
-        
+
         $thethumb = '<a class="thumbnail" href="'.get_permalink().'">'.$img.'<hr class="clearfix margin"/>'.get_the_title().'</a>';
         $thethumb = '<span class="thethumb" style="display:block; width:'.$instance['thumb_w'].'px; height:'.$instance['thumb_h'].'px;">'.$img.'</span>';
     }
@@ -22,7 +23,9 @@ if ($instance["thumb"]) {
         $thethumb = '<span class="thethumb"><img src="'.$url.'" alt="'.get_the_title($post->ID).'" /></span>';
     }
 }
-else $thethumb=false;
+else
+*/
+$thethumb=false;
 
 if(isset($instance['wrapper'])) { ?>
     <div class="<?php echo $instance['wrapper']; ?>">
@@ -32,8 +35,8 @@ if(isset($instance['wrapper'])) { ?>
             <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="post-title"><?php the_title(); ?></a></h1>
             <?php if ( $instance['date'] ) : ?>
                 <p class="post-date"><strong><?php the_time("j M Y"); ?></strong></p>
-            <?php endif; ?>    
-            
+            <?php endif; ?>
+
             <?php if ( $instance['excerpt'] ) : ?>
                 <div class="media">
                     <a href="#">
@@ -46,11 +49,11 @@ if(isset($instance['wrapper'])) { ?>
                     </div>
                 </div>
             <?php endif; ?>
-        
+
             <?php if ( $instance['comment_num'] ) : ?>
                 <p class="comment-num">(<?php comments_number(); ?>)</p>
             <?php endif; ?>
-            
+
         </div>
 
 <?php

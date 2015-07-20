@@ -27,7 +27,7 @@ function activateCustomTypes($custom_types_to_activate=false) {
 	if($custom_types_to_activate!=false && is_array($custom_types_to_activate)) {
 		$i=0;
 		foreach($custom_types_to_activate as $key=>$val) {
-			require_once('types/'.$val.'/main.php'); 
+			require_once('types/'.$val.'/main.php');
 			$i++;
 		}
 		if($i>0) require_once('types/taxonomies.php');
@@ -42,7 +42,7 @@ function br_DateWord($date) {
     $today = date("Y-m-d");
     switch($date) {
         default:
-            $dateword = date("l jS F", $datetime); 
+            $dateword = date("l jS F", $datetime);
             $dateword = br_DateTranslate($dateword);
             if ( date("Y", $datetime) < date("Y") ) {
                 $dateword .= ' '.date("Y", $datetime);
@@ -61,7 +61,7 @@ function br_DateFull($date) {
     $today = date("Y-m-d");
     switch($date) {
         default:
-            $dateword = date("l jS F", $datetime); 
+            $dateword = date("l jS F", $datetime);
             $dateword = br_DateTranslate($dateword);
             if ( date("Y", $datetime) < date("Y") ) {
                 $dateword .= ' '.date("Y", $datetime);
@@ -72,9 +72,9 @@ function br_DateFull($date) {
 }
 
 function br_DateTranslate($date) {
-    
+
     // DAYS
-    
+
     $patterns = array();
     $patterns[0] = '/Sunday/';
     $patterns[1] = '/Monday/';
@@ -83,7 +83,7 @@ function br_DateTranslate($date) {
     $patterns[4] = '/Thursday/';
     $patterns[5] = '/Friday/';
     $patterns[6] = '/Saturday/';
-    
+
     $replacements = array();
     $replacements[0] = 'Dimanche';
     $replacements[1] = 'Lundi';
@@ -92,9 +92,9 @@ function br_DateTranslate($date) {
     $replacements[4] = 'Jeudi';
     $replacements[5] = 'Vendredi';
     $replacements[6] = 'Samedi';
-    
+
     // MONTHS
-    
+
     $patterns_month = array();
     $patterns_month[1] = '/January/';
     $patterns_month[2] = '/February/';
@@ -108,7 +108,7 @@ function br_DateTranslate($date) {
     $patterns_month[10] = '/October/';
     $patterns_month[11] = '/November/';
     $patterns_month[12] = '/December/';
-    
+
     $replacements_month = array();
     $replacements_month[1] = 'Janvier';
     $replacements_month[2] = 'Février';
@@ -122,19 +122,19 @@ function br_DateTranslate($date) {
     $replacements_month[10] = 'Octobre';
     $replacements_month[11] = 'Novembre';
     $replacements_month[12] = 'Décembre';
-    
+
     // st,th,rd
-    
+
     $patterns_suffix = array();
     $patterns_suffix[1] = '/th/';
     $patterns_suffix[2] = '/rd/';
     $patterns_suffix[3] = '/st/';
-    
+
     $replacements_suffix = array();
     $replacements_suffix[1] = '';
     $replacements_suffix[2] = '';
     $replacements_suffix[3] = '<sup>er</sup>';
-    
+
     $date = preg_replace($patterns, $replacements, $date);
     $date = preg_replace($patterns_month, $replacements_month, $date);
     $date = preg_replace($patterns_suffix, $replacements_suffix, $date);

@@ -41,7 +41,7 @@ function get_adjacent_post_plus($r, $previous = true ) {
 		$order_by = 'post_date';
 		$order_format = '%s';
 	}
-	
+
 //	Sanitize $order_2nd. Only columns containing unique values are allowed here. Default to 'post_date'.
 	if ( in_array($order_2nd, array('post_date', 'post_title', 'post_modified')) ) {
 		$order_format2 = '%s';
@@ -51,7 +51,7 @@ function get_adjacent_post_plus($r, $previous = true ) {
 		$order_2nd = 'post_date';
 		$order_format2 = '%s';
 	}
-	
+
 //	Sanitize num_results (non-integer or negative values trigger SQL errors)
 	$num_results = intval($num_results) < 2 ? 1 : intval($num_results);
 
@@ -73,7 +73,7 @@ function get_adjacent_post_plus($r, $previous = true ) {
 //	Get the current post value for the second sort column
 	$current_post2 = $post->$order_2nd;
 	$order_2nd = 'p.' . $order_2nd;
-	
+
 //	Get the list of post types. Default to current post type
 	if ( empty($post_type) )
 		$post_type = "'$post->post_type'";
@@ -144,7 +144,7 @@ function get_adjacent_post_plus($r, $previous = true ) {
 			}
 		}
 
-//		Optionally restrict next/previous links to same author		
+//		Optionally restrict next/previous links to same author
 		if ( $in_same_author )
 			$in_same_author_sql = $wpdb->prepare("AND p.post_author = %d", $post->post_author );
 
@@ -157,7 +157,7 @@ function get_adjacent_post_plus($r, $previous = true ) {
 			$excluded_posts = array_map( 'intval', explode(',', $excluded_posts) );
 			$ex_posts_sql = " AND p.ID NOT IN (" . implode(',', $excluded_posts) . ")";
 		}
-		
+
 //		Optionally include individual post IDs
 		if ( !empty($included_posts) ) {
 			$included_posts = array_map( 'intval', explode(',', $included_posts) );
@@ -177,12 +177,12 @@ function get_adjacent_post_plus($r, $previous = true ) {
 				$op = $previous ? '<=' : '>=';
 		}
 
-//		If there is no next/previous post, loop back around to the first/last post.		
+//		If there is no next/previous post, loop back around to the first/last post.
 		if ( $loop && isset($result) ) {
 			$op = $previous ? '>=' : '<=';
 			$loop = false; // prevent an infinite loop if no first/last post is found
 		}
-		
+
 		$join  = apply_filters( "get_{$adjacent}_post_plus_join", $join, $r );
 
 //		In case the value in the $order_by column is not unique, select posts based on the $order_2nd column as well.
@@ -260,7 +260,7 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 //	If Post Types Order plugin is installed, default to sorting on menu_order
 	if ( function_exists('CPTOrderPosts') )
 		$defaults['order_by'] = 'menu_order';
-	
+
 	$r = wp_parse_args( $args, $defaults );
 	if ( empty($r['format']) )
 		$r['format'] = $format;
@@ -282,8 +282,8 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 //	If sorting by date, display posts in reverse chronological order. Otherwise display in alpha/numeric order.
 	if ( ($previous && $r['order_by'] != 'post_date') || (!$previous && $r['order_by'] == 'post_date') )
 		$posts = array_reverse( $posts, true );
-		
-//	Option to return something other than the formatted link		
+
+//	Option to return something other than the formatted link
 	if ( $r['return'] ) {
 		if ( $r['num_results'] == 1 ) {
 			reset($posts);
@@ -308,12 +308,12 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 	foreach ( $posts as $post ) {
 		$title = $post->post_title;
 		if ( empty($post->post_title) )
-			$title = $previous ? __('Previous Post') : __('Next Post');
+			$title = $previous ? __('Previous Post','bodyrock') : __('Next Post','bodyrock');
 
 		$title = apply_filters('the_title', $title, $post->ID);
 		$date = mysql2date($r['date_format'], $post->post_date);
 		$author = get_the_author_meta('display_name', $post->post_author);
-	
+
 //		Set anchor title attribute to long post title or custom tooltip text. Supports variable replacement in custom tooltip.
 		if ( $r['tooltip'] ) {
 			$tooltip = str_replace('%title', $title, $r['tooltip']);
@@ -327,14 +327,14 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 		$max_length = intval($r['max_length']) < 1 ? 9999 : intval($r['max_length']);
 		if ( strlen($title) > $max_length )
 			$title = substr( $title, 0, strrpos(substr($title, 0, $max_length), ' ') ) . '...';
-	
+
 		$rel = $previous ? 'prev' : 'next';
 
 		$anchor = '<a href="'.get_permalink($post).'" rel="'.$rel.'"'.$tooltip.'>';
 		$link = str_replace('%title', $title, $r['link']);
 		$link = str_replace('%date', $date, $link);
 		$link = $anchor . $link . '</a>';
-	
+
 		$format = str_replace('%link', $link, $r['format']);
 		$format = str_replace('%title', $title, $format);
 		$format = str_replace('%date', $date, $format);
@@ -372,10 +372,10 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 			$format = $thumbnail . '<span class="post-link">' . $format . '</span>';
 		}
 
-//		If more than one link is returned, wrap them in <li> tags		
+//		If more than one link is returned, wrap them in <li> tags
 		if ( intval($r['num_results']) > 1 )
 			$format = '<li>' . $format . '</li>';
-		
+
 		$output .= $format;
 	}
 

@@ -11,11 +11,13 @@ add_action("save_post", "save_brmetas");
 add_action("save_draft", "save_brmetas");
 
 // metabox/
+/*
 add_action("admin_init", "bodyloop_meta_box");
 add_action("save_post", "save_blmetas");
 add_action("save_draft", "save_blmetas");
 
 require 'metabox/bodyloop.php';
+*/
 require 'metabox/bodyrock.php';
 
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/

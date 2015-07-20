@@ -96,7 +96,7 @@ get_header();
 			'contenu_footer_date' => "on",
 			'vignette_background' => 'on',
 			);
-			
+
 			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
 		?>
 		</section>
@@ -115,9 +115,9 @@ get_header();
 			'filtres_similaires_selon' => 'cats',
 			'filtres_categories_'.$IDCAT => true
 			);
-			
+
 			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
-			
+
 			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
 		?>
 		</section>
@@ -136,9 +136,9 @@ get_header();
 			'filtres_similaires_selon' => 'cats',
 			'filtres_categories_'.$IDCAT => true
 			);
-			
+
 			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
-			
+
 			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
 		?>
 		</section>
@@ -157,9 +157,9 @@ get_header();
 			'filtres_similaires_selon' => 'cats',
 			'filtres_categories_'.$IDCAT => true
 			);
-			
+
 			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
-			
+
 			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
 		?>
 		</section>
@@ -178,17 +178,17 @@ get_header();
 			'filtres_similaires_selon' => 'cats',
 			'filtres_categories_'.$IDCAT => true
 			);
-			
+
 			$instance_recommandations_categories['filtres_ignoreposts'] = serialize($ignore_posts);
-			
+
 			the_widget('br_widgetsBodyloop',$instance_recommandations_categories,$args_section);
 		?>
 		</section>
-		
+
 		<section class="content">
 			<h1>Icônes</h1>
 			<h1>
-		<?php			
+		<?php
 			foreach(br_getAvailableIcones() as $I) {
 				echo '<span title="'.$I.'">';
 				br_Icon($I);
@@ -413,7 +413,7 @@ get_header();
                 <button type="button" class="btn btn-primary btn-xs">Mini button</button>
               </p>
             </div>
-            
+
           </div>
           <div class="col-lg-6">
 
@@ -501,7 +501,7 @@ get_header();
             </div>
             <div class="bs-example">
               <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            </div>     
+            </div>
           </div>
           <div class="col-lg-4">
             <div class="bs-example">
@@ -525,7 +525,7 @@ get_header();
               <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
               <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            
+
           </div>
         </div>
 
@@ -698,8 +698,8 @@ get_header();
                   </div>
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button class="btn btn-default">Cancel</button> 
-                      <button type="submit" class="btn btn-primary">Submit</button> 
+                      <button class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                   </div>
                 </fieldset>
@@ -752,7 +752,7 @@ get_header();
                   </div>
                 </div>
               </form>
-              
+
           </div>
         </div>
       </div>
@@ -862,7 +862,7 @@ get_header();
                 <li class="active">Data</li>
               </ul>
             </div>
-            
+
           </div>
         </div>
 
@@ -914,7 +914,7 @@ get_header();
             </div>
           </div>
           <div class="col-lg-4">
-            
+
           </div>
         </div>
       </div>
@@ -931,7 +931,7 @@ get_header();
           </div>
         </div>
 
-        
+
         <div class="row">
           <div class="col-lg-12">
             <h2>Alerts</h2>
@@ -998,7 +998,7 @@ get_header();
             <div class="page-header">
               <h1 id="progress">Progress bars</h1>
             </div>
-            
+
 
             <h3 id="progress-basic">Basic</h3>
             <div class="bs-example">
@@ -1138,7 +1138,7 @@ get_header();
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4">        
+          <div class="col-lg-4">
             <div class="panel panel-default">
               <div class="panel-body">
                 Basic panel
@@ -1231,7 +1231,7 @@ get_header();
       <footer>
         <div class="row">
           <div class="col-lg-12">
-            
+
             <ul class="list-unstyled">
               <li class="pull-right"><a href="#top">Back to top</a></li>
               <li><a href="http://news.bootswatch.com" onClick="pageTracker._link(this.href); return false;">Blog</a></li>
@@ -1247,13 +1247,13 @@ get_header();
 
           </div>
         </div>
-        
+
       </footer>
-    
+
 
     </div>
 
-<?
+<?php
 
 get_footer();
 ?>

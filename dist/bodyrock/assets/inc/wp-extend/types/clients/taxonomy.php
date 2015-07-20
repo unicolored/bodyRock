@@ -1,5 +1,7 @@
 <?php
+/* ALERTE : register_taxonomy devraient être dans un plugin et non dans le thème Bodyrock */
 // Register Custom Taxonomy
+/*
 function client_type() {
 
 	$labels = array(
@@ -31,12 +33,14 @@ function client_type() {
 	register_taxonomy( 'client-type', 'clients', $args );
 
 }
+*/
 
 // Hook into the 'init' action
-add_action( 'init', 'client_type', 0 );
+//add_action( 'init', 'client_type', 0 );
 
 
 // Register Custom Taxonomy
+/*
 function client_cat() {
 
 	$labels = array(
@@ -67,13 +71,14 @@ function client_cat() {
 	);
 	register_taxonomy( 'client-cat', 'clients', $args );
 
-}
+}*/
 
 // Hook into the 'init' action
-add_action( 'init', 'client_cat', 0 );
+//add_action( 'init', 'client_cat', 0 );
 
 
 // Register Custom Taxonomy
+/*
 function client_tag() {
 
 	$labels = array(
@@ -107,5 +112,5 @@ function client_tag() {
 }
 
 // Hook into the 'init' action
-add_action( 'init', 'client_tag', 0 );
+add_action( 'init', 'client_tag', 0 );*/
 ?>

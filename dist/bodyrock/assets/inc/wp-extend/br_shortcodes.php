@@ -1,8 +1,10 @@
 <?php
 
+/* ALERTE : Les shortcodes devraient être dans un plugin et non dans le thème Bodyrock */
 
 // CHESS EMBEDDED //////////////////////////////////////////////////
 // Se charge uniquement si embed-chessboard est trouvé dans la liste des plugins activés
+/*
 $plugins = get_option('active_plugins');
 foreach($plugins as $k=>$v) {
 	$plugin = explode('/',$v);
@@ -22,4 +24,5 @@ require_once 'shortcodes/sounds_embedded.php';     // shortcodes
 
 // VIDEOS EMBEDDED //////////////////////////////////////////////////
 require_once 'shortcodes/videos_embedded.php';     // shortcodes
+*/
 ?>

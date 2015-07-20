@@ -1,5 +1,6 @@
 <?php
 // Register Custom Taxonomy
+/*
 function event_type() {
 
 	$labels = array(
@@ -33,9 +34,9 @@ function event_type() {
 }
 
 // Hook into the 'init' action
-add_action( 'init', 'event_type', 0 );
+add_action( 'init', 'event_type', 0 );*/
 
-
+/*
 // Register Custom Taxonomy
 function event_cat() {
 
@@ -70,9 +71,9 @@ function event_cat() {
 }
 
 // Hook into the 'init' action
-add_action( 'init', 'event_cat', 0 );
+add_action( 'init', 'event_cat', 0 );*/
 
-
+/*
 // Register Custom Taxonomy
 function event_tag() {
 
@@ -107,5 +108,5 @@ function event_tag() {
 }
 
 // Hook into the 'init' action
-add_action( 'init', 'event_tag', 0 );
+add_action( 'init', 'event_tag', 0 );*/
 ?>

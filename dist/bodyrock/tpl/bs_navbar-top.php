@@ -6,7 +6,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+            <a class="navbar-brand" href="<?php esc_url( home_url() ); ?>">
                   <span><?php bloginfo('name') ?></span>
             </a>
             <?php if(strlen(bloginfo('description'))>0) { ?>

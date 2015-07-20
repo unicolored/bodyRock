@@ -197,7 +197,7 @@ class OpenGraphProtocol {
 			),
 			_('People') => array(
 				'actor' => _('Actor or actress'),
-				'athlete' => _('Athlete'), 
+				'athlete' => _('Athlete'),
 				'author' => _('Author'),
 				'director' => _('Director'),
 				'musician' => _('Musician'),
@@ -359,7 +359,7 @@ class OpenGraphProtocol {
 			if ( !empty( $url_parts['fragment'] ) )
 				$url .= '#' . $url_parts['fragment'];
 		}
-
+/*
 		if ( !empty( $url ) ) {
 			// test if URL exists
 			$ch = curl_init( $url );
@@ -380,6 +380,7 @@ class OpenGraphProtocol {
 				return '';
 			}
 		}
+		*/
 		return $url;
 	}
 

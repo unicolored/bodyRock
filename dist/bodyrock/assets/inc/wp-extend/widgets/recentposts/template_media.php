@@ -1,17 +1,18 @@
 <?php
+/*
 if ($instance["thumb"]) {
     if (get_post_format()=='video') {
         $size="&w=450&h=313&q=100&s=1";
         $videoCode = get_post_meta(get_the_ID(), 'videoCode', true);
         $videoType = get_post_meta(get_the_ID(), 'videoType', true);
-                
+
         switch($videoType) {
             case 'vim':
                 $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$videoCode.php"));
                 $img= '<img src="/wp-content/themes/bodyrock/inc/libs/timthumb/timthumb.php?src='.$hash[0]['thumbnail_large'].''.$size.'">'; break;
             case 'you': $img= '<img src="/wp-content/themes/bodyrock/inc/libs/timthumb/timthumb.php?src=http://img.youtube.com/vi/'.$videoCode.'/0.jpg'.$size.'">'; break;
         }
-        
+
         $thethumb = '<a class="thumbnail" href="'.get_permalink().'">'.$img.'<hr class="clearfix margin"/>'.get_the_title().'</a>';
         $thethumb = '<span class="thethumb" style="display:block; width:'.$instance['thumb_w'].'px; height:'.$instance['thumb_h'].'px;">'.$img.'</span>';
     }
@@ -22,7 +23,9 @@ if ($instance["thumb"]) {
         $thethumb = '<span class="thethumb" style="display:block; width:'.$instance['thumb_w'].'px; height:'.$instance['thumb_h'].'px;"><img style="width:'.$thumbnail[1].'px; height='.$thumbnail[2].'px" width="'.$thumbnail[1].'" height="'.$thumbnail[2].'" alt="'.get_the_title().'" src="'.$url.'" alt="'.get_the_title($post->ID).'" /></span>';
     }
 }
-else $thethumb=false;
+else
+*/
+$thethumb=false;
 
 if(isset($instance['wrapper'])) { ?>
     <div class="<?php echo $instance['wrapper']; ?>">
@@ -46,8 +49,8 @@ if(isset($instance['wrapper'])) { ?>
                     <p class="comment-num">(<?php comments_number(); ?>)</p>
                 <?php endif; ?>
             </div>
-        </div>                 
-        
+        </div>
+
 <?php
 if(isset($instance['wrapper'])) { ?>
     </div>

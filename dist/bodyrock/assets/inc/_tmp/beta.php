@@ -1,6 +1,6 @@
 <?php
 
-// BETA :: Fonctions pas encore utilisées ///////////////////////////////////////////// 
+// BETA :: Fonctions pas encore utilisées /////////////////////////////////////////////
 
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Fonctions betas, en développement.
@@ -24,7 +24,7 @@ function bodyrock_google_analytics() {
   global $bodyrock_options;
   //settings_fields('bodyrock_options');
   $bodyrock_options = bodyrock_get_theme_options();
-  $name = str_replace('http://','',get_bloginfo('url'));
+  $name = str_replace('http://','',esc_url( get_home_url() ));
   if($bodyrock_options) :
 	  $bodyrock_google_analytics_id = $bodyrock_options['google_analytics_id'];
 	  $get_bodyrock_google_analytics_id = esc_attr($bodyrock_options['google_analytics_id']);
@@ -35,13 +35,13 @@ function bodyrock_google_analytics() {
 		  _gaq.push(['_setAccount', '".$bodyrock_google_analytics_id."']);
 		  _gaq.push(['_setDomainName', '".$name."']);
 		  _gaq.push(['_trackPageview']);
-		
+
 		  (function() {
 			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-		
+
 		</script>
 		";
 	  }
@@ -51,7 +51,7 @@ function bodyrock_google_analytics() {
 // REPORT ///////////////////////////////////////////// BACKEND
 // Activation des customs types sélectionnés dans les options du thème.
 function ghReport($msg,$titre='Notification',$type='mail') {
-	// TOFIX : utiliser la fonction wp_mail() 
+	// TOFIX : utiliser la fonction wp_mail()
 	// http://codex.wordpress.org/Function_Reference/wp_mail
 	switch($type) {
 		case 'mail':
@@ -93,7 +93,7 @@ function get_category_tags($args) {
 	}
 	return $tags;
 }
-	
+
 // UPDATE POST META ///////////////////////////////////////////// WP EXTEND
 // Mise à jour d'un post ajouter à partir du FrontOffice.
 function __update_post_meta( $post_id, $field_name, $value = '' )
@@ -117,43 +117,43 @@ function __update_post_meta( $post_id, $field_name, $value = '' )
 function getColorsImg($source_file) {
 	// TOFIX : Enregistrer la couleur si possible
 	$average = array('red'=>0,'green'=>0,'blue'=>0);
-	
+
 	if(file_exists($source_file)) {
-		$im = ImageCreateFromJpeg($source_file); 
-		
+		$im = ImageCreateFromJpeg($source_file);
+
 		$imgw = imagesx($im);
 		$imgh = imagesy($im);
-		
+
 		// n = total number or pixels
-		
+
 		$n = $imgw*$imgh;
-		
+
 		$histo = array();
-		
+
 		for ($i=0; $i<$imgw; $i++)
 		{
 			for ($j=0; $j<$imgh; $j++)
-			{        
-				// get the rgb value for current pixel            
-				$rgb = ImageColorAt($im, $i, $j);             
-				// extract each value for r, g, b            
+			{
+				// get the rgb value for current pixel
+				$rgb = ImageColorAt($im, $i, $j);
+				// extract each value for r, g, b
 				$r = ($rgb >> 16) & 0xFF;
 				$g = ($rgb >> 8) & 0xFF;
 				$b = $rgb & 0xFF;
-				
-				// get the Value from the RGB value            
-				$V = round(($r + $g + $b) / 3);            
+
+				// get the Value from the RGB value
+				$V = round(($r + $g + $b) / 3);
 				$rTotal += $r;
 				$gTotal += $g;
 				$bTotal += $b;
 				$total++;
-				
-				// add the point to the histogram            
-				$histo[$V] += $V / $n;        
+
+				// add the point to the histogram
+				$histo[$V] += $V / $n;
 			}
-		}    
-		$average['red'] = round($rTotal/$total);    
-		$average['green'] = round($gTotal/$total);    
+		}
+		$average['red'] = round($rTotal/$total);
+		$average['green'] = round($gTotal/$total);
 		$average['blue'] = round($bTotal/$total);
 	}
 	return $average;

@@ -57,7 +57,7 @@ function admin_bar_render() {
 	$wp_admin_bar->add_menu( array(
 	'parent' => false,
 	'id' => 'bodyrock',
-	'title' => __('BodyRock'),
+	'title' => __('BodyRock','bodyrock'),
 	'href' => $customerSupportURL
 	));
 
@@ -67,7 +67,7 @@ function admin_bar_render() {
 	$wp_admin_bar->add_menu(array(
 	'parent' => 'bodyrock',
 	'id' => 'site',
-	'title' => __('Site Officiel'),
+	'title' => __('Site Officiel','bodyrock'),
 	'href' => $contactUsURL
 	));
 

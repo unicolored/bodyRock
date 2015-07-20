@@ -22,8 +22,8 @@ echo '<h1>'.strip_tags(get_the_title()).'</h1>';
 			echo '<span class="label label-default label-'.$v->slug.'">'.$v->name.'</span> ';
 		}
 	}
-	
-	
+
+
 ?>
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -49,10 +49,10 @@ echo z('/header');
 
 
 
-	
+
 	<hr class="clearfix">
-<hr>	
-	
+<hr>
+
 <section class="art-partage">
 <section class="hidden">
 	<div class="col-f">
@@ -60,17 +60,19 @@ echo z('/header');
 	</div>
 
 	<div class="col-f">
-		<a class="addthis_button_facebook_like" fb:like:layout="standard"></a> 
+		<a class="addthis_button_facebook_like" fb:like:layout="standard"></a>
 		<br>
 		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-		
+
 		<p>Lien court :
 		<?php
+		/*
 			$ch = curl_init('http://api.bitly.com/v3/shorten?login=unicolored&apiKey=R_8de9dc884a5f6e6ba8831909df65d03c&longUrl='.get_permalink());
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			 
+
 			$result = curl_exec($ch);
 			$R = json_decode($result);
+			*/
 		?>
 		<input type="text" value="<?php echo $R->data->url ?>" class="form-control">
 		</p>
@@ -117,7 +119,7 @@ if ($custom["sitewebEvent"][0]!=false) {
 	<?php
 	echo Get_artfooter($instance_footer);
 	?>
-	
+
 <hr class="clearfix">
 
 
@@ -165,4 +167,3 @@ if ($custom["sitewebEvent"][0]!=false) {
 </div>
 
 </article>
-
