@@ -24,10 +24,12 @@ config/
 dev/screenshots/
 dev/yesimlocal.php
 node_modules/
+releases/
 ssl/
 test/
 tmp/
 .gitattributes
+.gitignore
 CHANGELOG.md
 LICENSE
 README.md

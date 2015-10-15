@@ -11,10 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title><?php wp_title('|', true, 'right'); ?></title>
-  <meta name="author" content="Gilles Hoarau">
 
-  <?php $SD = get_stylesheet_directory_uri() ?>
-  <link rel="shortcut icon" href="<?php echo $SD ?>/img/ico/favicon.ico">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. All other JS at the end of file. -->
   <!-- [if lt IE 9]>
@@ -22,19 +19,25 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <?php wp_head(); ?>
+  <?php
+  wp_head();
 
-  <!-- shortlink -->
-  <?php bitly_url(); ?>
+  // TOFIX: passer la meta auteur via functions.php dans le wp_head()
+  print '<meta name="author" content="Gilles Hoarau">';
+
+  // TOFIX: passer le favicon via functions.php dans le wp_head()
+  print '<link rel="shortcut icon" href="'.get_stylesheet_directory_uri().'/img/ico/favicon.ico">';
+  ?>
 </head>
 
 <body <?php body_class( array('rock') ); ?>>
 
-  <section class="br_header">
-    <div class="container">
-      <?php
-      // Charge la barre de navigation principale
-      get_template_part('tpl/bs_navbar','top');      ?>
+  <header id="Header">
+    <div class="br_header">
+      <?php get_template_part('templates/navbar'); ?>
+      <hr>
     </div>
-  </section>
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?><?php wp_link_pages( $args ); ?>
+  </header>
+
+  <section id="Section">
+    <div class="br_section">
