@@ -44,15 +44,15 @@ function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
 // Récupère les valeurs par défaut des options
 function themeoptionsGet_default()
 {
-  $default = array(
-    'iconset'  			=> 'glyphicon',
-    'allbsjs'  			=> 1,
-	'image_sizes' 		=> '',
-	'fonts_google'		=> 'Doppio+One::latin,Roboto+Slab::latin,Open+Sans::latin,Ubuntu::latin',
-	'googleanalyticsid'     => false
-  );
+	$default = array(
+		'iconset'  			=> '',
+		'allbsjs'  			=> 1,
+		'image_sizes' 		=> '',
+		'fonts_google'		=> '',
+		'googleanalyticsid'     => false
+	);
 
-  return apply_filters('brthemeoptions', $default);
+	return apply_filters('brthemeoptions', $default);
 }
 
 ?>

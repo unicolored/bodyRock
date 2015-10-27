@@ -1,19 +1,19 @@
-<section class="br_footer">
-  <!-- Placer le code Html ci-dessous -->
-  <?php get_template_part('tpl/bs_navbar','bottom'); ?>
-
-  <?php if( !is_page('contact') ) { ?>
-    <section class="citation paddit">
-      <?php get_template_part('tpl/footer_section','contact'); ?>
-    </section>
-    <?php } ?>
-
-    <!-- Placer le code Html ci-dessus -->
+    </div>
   </section>
 
-  <?php wp_footer(); ?>
+  <footer id="Footer">
+    <div class="br_footer">
+      <!-- Placer le code Html ci-dessous -->
+      <hr>
+      <p><small><strong><?php bloginfo('title') ?></strong> &nbsp; <?php bloginfo('description') ?></small></p>
+      <!-- Placer le code Html ci-dessus -->
+    </div>
+  </footer>
 
   <?php
+  wp_footer();
+
+  // TOFIX: Passer cela via functions.php dans le wp_footer()
   if ( BR_GOOGLE_ANALYTICS != false ) {
     ?>
     <script type="text/javascript">
@@ -27,5 +27,5 @@
     <?php
   }
   ?>
-</body>
+  </body>
 </html>

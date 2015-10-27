@@ -1,12 +1,3 @@
-<?php
-/*
-Template Name: Bootswatch2
-*/
-get_header();
-
-?>
-
-
 
     <div class="container">
 
@@ -1161,8 +1152,3 @@ get_header();
           </div>
         </div>
       </div>
-
-<?php
-
-get_footer();
-?>

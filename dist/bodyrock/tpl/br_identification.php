@@ -1,8 +1,5 @@
 <?php
-/*
-Template Name: Page d'identification
-*/
-get_header();
+
 
 echo a('article.article');
 
@@ -35,5 +32,4 @@ echo z('footer');
 
 echo z('article');
 
-get_footer();
 ?>

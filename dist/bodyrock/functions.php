@@ -78,6 +78,8 @@ require_once INC_PATH . 'customize.php';
 require_once INC_PATH . 'themeoptions.php';
 // Génération d'éléments Html utiles au thème.
 require_once INC_PATH . 'br_interface.php';
+// Génération d'éléments Html utiles au thème.
+require_once INC_PATH . 'br_icones.php';
 // Chargement des fonctions en arrière plan.
 require_once INC_PATH . 'backend/_backend.php';
 // Tout ce qui concerne l'inclusion de contenus.
@@ -86,6 +88,7 @@ require_once INC_PATH . 'content/_content.php';
 require_once INC_PATH . 'modules/_modules.php';
 // Chargement des fonctions qui étendent la gamme d'éléments de Wordpress.
 require_once 'assets/inc/wp-extend/_wp-extend.php';
+require_once INC_PATH . 'deprecated.php';
 
 // DEFINE /////////////////////////////////////////////
 // Assignation des options du thème à des constantes.

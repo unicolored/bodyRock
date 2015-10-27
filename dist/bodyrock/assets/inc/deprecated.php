@@ -1,6 +1,6 @@
 <?php
 
-// DEPRECATED :: Fonctions dépréciées ///////////////////////////////////////////// 
+// DEPRECATED :: Fonctions dépréciées /////////////////////////////////////////////
 
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Fonctions qui ont changé de nom
@@ -21,6 +21,12 @@ function br_nomdufichier_oldmethod() {
 Note : concerne principalement les fonctions br_ qui peuvent être utilisée par un thème enfant qui mettrait à jour le thème parent.
 
 */
+if(!function_exists('bitly_url')) {
+function bitly_url() {
+	deprecated(__FUNCTION__,'br_backend_filesWrite_videoimg');
+	//br_backend_filesWrite_videoimg();
+}
+}
 
 function br_generateVideoImg() {
 	deprecated(__FUNCTION__,'br_backend_filesWrite_videoimg');
