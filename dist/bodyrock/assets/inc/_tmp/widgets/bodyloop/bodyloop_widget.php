@@ -210,12 +210,12 @@ if ($instance['filtres_off'] == false) {
     // $FILTRES_ORDERBY // $FILTRES_ORDER
     $query_meta_key = false;
     if (isset($instance['filtres_orderby'])) {
-        
+
         $query_args['orderby'] = $orderby_options[$instance['filtres_orderby']];
         switch($instance['filtres_orderby']) {
 			default:
 				$query_args['orderby'] = str_replace('orderby_','',$instance['filtres_orderby']);
-			break;	
+			break;
             case 'orderby_nombredevue' :
                 $query_args['meta_key'] = "post_views_count";
                 break;
@@ -272,9 +272,9 @@ if ($instance['filtres_off'] == false) {
         }
 
     }
-	
+
 	//$query_args['paged'] = get_query_var('paged');
-	
+
     //	vardump($query_args['post__not_in']);
 
     // posts_per_page
@@ -300,7 +300,7 @@ if ($instance['filtres_off'] == false) {
 	    $i = 1;
 	    foreach ($instance as $label => $value) {
 	        if (preg_match("/filtres_categories_/", $label, $cat) == 1) {
-	
+
 	            $cat = preg_replace("/filtres_categories_/", "", $label);
 	            $filtres_catsin .= ($i > 1 ? "," : false) . $cat;
 	            $i++;
@@ -407,31 +407,7 @@ if (isset($instance['ajax']) && $instance['ajax'] == true) {
             }
             $nombrecolumns = (count($COLS) - 1);
         }
-        /*
-         // Ajax load more
-         // Add code to index pages.
-         if( !is_singular() ) {
-         wp_enqueue_script( 'script-ajax-load-posts', JS_PATH.'ajax-load-posts.js', array('jquery'), 'fev14' );
-
-         // What page are we on? And what is the pages limit?
-         $max = $QUERY->max_num_pages;
-         $paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;
-
-         // Add some parameters for the JS.
-         wp_localize_script(
-         'script-ajax-load-posts',
-         'pbd_alp',
-         array(
-         'startPage' => $paged,
-         'maxPages' => $max,
-         'nextLink' => next_posts($max, false),
-         'loadBtn' => __("Afficher plus de résultats","bodyrock"),
-         'loadText' => __("Chargement des articles...","bodyrock"),
-         'loadNomore' => __("Plus aucun résultat","bodyrock")
-         )
-         );
-         }
-         add_action('template_redirect', 'pbd_alp_init');*/
+      
 
         if (isset($instance['apparence_disposition']) && isset($First_START[$instance['apparence_disposition']])) {
             // F FIRST_START

@@ -8,7 +8,7 @@
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
 
-require_once('options/backoffice.php');
+require_once('themeoptions/backoffice.php');
 add_action('admin_init', 'themeoptions_backofficeRegister');
 add_action('admin_menu', 'themeoptions_backofficeAdd_page');
 
@@ -20,9 +20,9 @@ add_filter('option_page_capability_bodyrock_options', 'themeoptions_backofficeCa
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 	// Rendu de la page Options du thème dans l'administration de Wordpress.
-	require 'options/view.php';
+	require 'themeoptions/view.php';
 	// Validation des données à l'enregistrement des données.
-	require 'options/validation.php';
+	require 'themeoptions/validation.php';
 endif;  // EndIf is_admin()
 
 
@@ -55,4 +55,21 @@ function themeoptionsGet_default()
 	return apply_filters('brthemeoptions', $default);
 }
 
+// DEFINE /////////////////////////////////////////////
+// Assignation des options du thème à des constantes.
+// Les options sont converties en constantes pour être accessible dans tout le code.
+$options = br_themeoptionsGet();
+// Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
+define('BR_ICON_SET', $options['iconset']);
+// Fonts chargées par Google
+define('BR_FONTS', $options['fonts_google']);
+// Active la compilation .less en .css (utile si les .less ont été modifiés)
+// Charge tous les scripts .js de bootstrap
+define('BR_ALLBSJS', $options['allbsjs']);
+// Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
+define('BR_IMAGE_SIZES', $options['image_sizes']);
+// L'identifiant du compte Anakytics
+if(isset($options['google_analytics_id'])) {
+  define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
+}
 ?>

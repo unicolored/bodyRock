@@ -22,7 +22,7 @@
             'container'  => false,
             'menu_class' => 'nav navbar-nav',
             'depth'=>0,
-            'fallback_cb'=>'default_menu',
+            //'fallback_cb'=>'default_menu',
             'walker'=>new wp_bootstrap_navwalker()
             ));
 
