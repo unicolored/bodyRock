@@ -1,0 +1,27 @@
+.alert {
+  &.alert-info {
+    a {
+      background:@brand-info-darker !important;
+      color:@brand-info-lighter !important;
+      //font-weight:700;
+      //border-bottom:1px dotted @blue;
+      &:hover {
+        color:@brand-info-white !important;
+        //border-bottom:1px solid @brand-info-black;
+      }
+    }
+  }
+  &.alert-success {
+    a {
+      background:@brand-success-darker !important;
+      //color:@brand-success-darker !important;
+      color:@brand-success-lighter !important;
+      //font-weight:700;
+      //border-bottom:1px dotted @yellow;
+      &:hover {
+        color:@brand-success-white !important;
+        //border-bottom:1px solid @brand-warning-black;
+      }
+    }
+  }
+}

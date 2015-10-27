@@ -1,19 +1,15 @@
-//@import "bswatch/custom/variables.less";
+@import "_bootstrap/_bootstrap_replace.less";
+@import "_variables_globales.less";
 
 @editor-bg: #fff;
 
-body#tinymce.wp-editor { 
-	background:@editor-bg;
-	
-	
-	color:@text-color;
-	font-size:@font-size-base;
-}
+body#tinymce.wp-editor {
+  background: @bg-white;
 
-body#tinymce.wp-editor h1 {
-    
-}
+  color: @bg-black;
+  font-size: @font-size-base;
 
+}
 body#tinymce.wp-editor a {
-    color: @link-color;
+  color: @red;
 }

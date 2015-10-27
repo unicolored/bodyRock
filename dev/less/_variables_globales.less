@@ -1,0 +1,234 @@
+// Variables
+// --------------------------------------------------
+
+@espacement: 50px;
+@espacement-sm: 25px;
+
+// Google Fonts
+@merryweather: 'Merriweather', Georgia, "Times New Roman", Times, serif; // Italic : 400,700 (options : 300,900)
+//<link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+@openSans: "Open Sans", Arial, sans-serif; // Italic : 400,700 (options : 300,600,800)
+//<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+@shareTech: "Share Tech", Helvetica, Arial, sans-serif; // 400
+//<link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
+@ubuntuMono: "Ubuntu Mono"; // 400,700 (options: Italic)
+
+
+////////////////////////////////////////////////// COULEURS
+// NB
+@white: #fff;
+@black: #111;
+
+// BG-COLOURS : dégradé bleu
+@bg-black: #040607;
+@bg-darker: #081217;
+@bg-dark: #0c161b;
+@bg: #131d22;
+@bg-light: #192328;
+@bg-lighter: #202a2f;
+@bg-white: #d0d2d3;
+
+// BG-RED : dégradé bleu/rouge
+@mix-black: #090707;
+@mix-darker: #150f0f;
+@mix-dark: #1d1212;
+@mix: #261717;
+@mix-light: #463f3f;
+@mix-lighter: #6a6565;
+@mix-white: #efeaea;
+
+// BG-COLOURS : dégradé bleu/rouge
+@brand-black: #070809;
+@brand-darker: #201316;
+@brand-dark: #1a181c;
+@brand: #131d22;
+@brand-light: #4d282c;
+@brand-lighter: #863337;
+@brand-white: #bfabad;
+
+// BRAND-COLOURS : mes rouges
+@brand-primary-black: #570e0e;
+@brand-primary-darker: #871d1f;
+@brand-primary-dark: #b52729;
+@brand-primary-light: #e8373a;
+@brand-primary-lighter: #ee3d40;
+@brand-primary-white: #fdecec;
+
+// SUCCESS
+@brand-success-black: #143c18;
+@brand-success-darker: #278931;
+@brand-success-dark: #2fb03d;
+@brand-success-light: #5bdc69;
+@brand-success-lighter: #80e38b;
+@brand-success-white: #effcf1;
+
+// INFO
+@brand-info-black: #161f27;
+@brand-info-darker: #2a455d;
+@brand-info-dark: #345878;
+@brand-info-light: #6184a4;
+@brand-info-lighter: #829cb4;
+@brand-info-white: #f0f2f4;
+
+// WARNING
+@brand-warning-black: #603809;
+@brand-warning-darker: #946a16;
+@brand-warning-dark: #c79a1c;
+@brand-warning-light: #faa92c;
+@brand-warning-lighter: #fa8937;
+@brand-warning-white: #fffaea;
+
+// DANGER
+@brand-danger-black: #1e0001;
+@brand-danger-darker: #3e0607;
+@brand-danger-dark: #460305;
+@brand-danger-light: #7a1315;
+@brand-danger-lighter: #a42527;
+@brand-danger-white: #f3e7e7;
+
+// BRAND COLOURS
+@logo: #e23134;
+// COULEURS PRIMAIRES
+@rouge: #4f0103;
+@red: @rouge;
+@green: #38d749;
+@vert: @green;
+@blue: #3f6c94;
+@bleu: @blue;
+@yellow: #e7e449;
+@jaune: @yellow;
+@orange: #fbca22;
+
+@gray-base: #111111;
+@gray-darker: #353535;
+@gray-dark: #727272;
+@gray: #898989;
+@gray-light: #989898;
+@gray-lighter: #dbdbdb;
+
+
+
+////////////////////////////////////////////////// COLORISATION
+
+// STYLES
+@txtShadowcolor: @gray-lighter;
+
+////////////////////////////////////////////////// OBJETS
+// RESEAUX SOCIAUX
+@facebook: #3b5998;
+@github: #ac5c51;
+@googleplus: #dd4b38;
+@instagram: #3f729b;
+@linkedin: #0177b5;
+@pinterest: #cb2027;
+@twitter: #09c;
+
+////////////////////////////////////////////////// UI CONTEXTS
+// COULEURS
+@bgXXL: @bg-black;
+@bgXL: @bg-darker;
+@bgL: @bg-dark;
+@bg1: @bg;
+@bgS: @bg-light;
+@bgXS: @bg-lighter;
+@bgXXS: @bg-white;
+// Tailles Pixel
+@spXXL: 256px;
+@spXL: 128px;
+@spL: 64px;
+@sp1: 32px;
+@spS: 16px;
+@spXS: 8px;
+@spXXS: 2px;
+// Tailles Em
+@sXXL: 25.6em;
+@sXL: 12.8em;
+@sL: 6.4em;
+@s1: 3.2em;
+@sS: 1.6em;
+@sXS: .8em;
+@sXXS: .2em;
+// Shadows
+.sXXL(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 7px @color);
+}
+.sXL(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 6px @color);
+}
+.sL(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 5px @color);
+}
+.s1(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 4px @color);
+}
+.sS(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 3px @color);
+}
+.sXS(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 2px @color);
+}
+.sXXS(@color: @txtShadowcolor) {
+  .box-shadow(0px 0px 1px @color);
+}
+// zIndex
+.zXXL {
+  z-index: 40000;
+}
+.zXL {
+  z-index: 20000;
+}
+.zL {
+  z-index: 10000;
+}
+.z1 {
+  z-index: 5000;
+}
+.zS {
+  z-index: 2500;
+}
+.zXS {
+  z-index: 1250;
+}
+.zXXS {
+  z-index: 725;
+}
+
+//////////////////////
+// Ici je complète les styles .visible-* de bootstrap pour mes deux nouvelles tailles : xl et xxl
+// XL screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-xl: 1602px;
+@screen-xl-min: @screen-xl;
+@screen-xl-desktop: @screen-xl-min;
+
+// XL screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-xxl: 1922px;
+@screen-xxl-min: @screen-xxl;
+@screen-xxl-desktop: @screen-xxl-min;
+@screen-xl-max: (@screen-xxl-min - 1);
+
+.visible-xl,
+.visible-xxl {
+  display: none;
+}
+
+
+@media (min-width: @screen-xxl) {
+  .visible-lg,
+  .visible-xl {
+    display: none !important;
+  }
+  .visible-xxl {
+    display: block;
+  }
+
+}
+@media (min-width: @screen-xl) {
+    .visible-lg {
+      display: none !important;
+    }
+    .visible-xl {
+      display: block;
+    }
+}

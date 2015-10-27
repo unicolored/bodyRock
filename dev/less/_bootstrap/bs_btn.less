@@ -1,0 +1,62 @@
+.btn {
+  //.labelInterface;
+  color:@logo;
+  font-family:@openSans;
+  font-size:16px;
+  letter-spacing: .05em;
+  text-transform:uppercase;
+  &:hover {
+    color:@brand-primary-darker;
+  }
+}
+a.btn-default {
+  background:transparent !important;
+  border:1px solid @gray-dark !important;
+  color:@gray-dark !important;
+  display:inline !important;
+  font-size:16px;
+  text-transform:uppercase;
+  &:hover {
+    background:@gray-lighter !important;
+    border-color:@gray-darker !important;
+    color:@gray-darker !important;
+  }
+  &.btn-inverse {
+    border:1px solid @gray-light !important;
+    color:@gray-light !important;
+    &:hover {
+      background:@gray-darker !important;
+      border-color:@gray-lighter !important;
+      color:@gray-lighter !important;
+    }
+  }
+}
+a.btn-success {
+  background:transparent;
+  color:@brand-success-darker !important;
+  border:1px solid @brand-success-darker !important;
+  display:inline !important;
+  &:hover {
+    color:@gray-lighter !important;
+  }
+}
+.btn-info {
+  background:transparent;
+  color:@brand-info !important;
+  border:1px solid @brand-info !important;
+  display:inline !important;
+  &:hover {
+    color:@gray-lighter !important;
+  }
+}
+.btn-warning,
+a.button {
+  background:lighten(@brand-warning,10%) !important;
+  color:@brand-warning-black !important;
+  border:1px solid @brand-warning !important;
+  display:inline !important;
+  &:hover {
+    background:@brand-warning !important;
+    color:@brand-warning-black !important;
+  }
+}

@@ -23,5 +23,5 @@
     </div>
   </header>
 
-  <section id="Section">
-    <div class="br_section">
+  <main id="Main">
+    <div class="br_main">

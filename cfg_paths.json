@@ -1,0 +1,10 @@
+{
+  "mainsitepath":"dist/",
+  "contentpath":"dist/bodyrock/",
+  "themepath":"dist/bodyrock/",
+  "relativethemepath":"bodyrock/",
+  "libspath":"bower_components/",
+  "assetspath":"dist/devassets/",
+  "devpath":"dev/",
+  "temppath":"tmp/"
+}

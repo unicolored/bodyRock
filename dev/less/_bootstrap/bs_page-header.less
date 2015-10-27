@@ -1,0 +1,35 @@
+
+.page-header {
+  margin:@padding-base-vertical @padding-base-horizontal;
+  .text-center;
+  h1 {
+    font-family:@shareTech, Helvetica, Arial, sans-serif;
+  }
+
+  &.page-header-main {
+    border:none;
+    margin:0 !important;
+    padding:@padding-small-vertical @padding-large-horizontal;
+    h1 {
+      color:@bg;
+      color:@brand-primary-black;
+      font-family:@merryweather !important;
+      font-size:@font-size-large*3;
+      letter-spacing:-5px;
+      text-shadow:-2px 0 0 @gray-lighter;
+
+      small {
+        .hidden-xs;
+        font-size:20px;
+        @media (min-width:@screen-sm-min) and (max-width:@screen-sm-max) {
+          display:block;
+        }
+        font-size:@font-size-large*1;
+        color:@bg-white;
+        padding:0 20px;
+        letter-spacing:0px;
+        text-shadow:none;
+      }
+    }
+  }
+}

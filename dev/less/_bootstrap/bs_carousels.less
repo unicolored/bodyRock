@@ -1,0 +1,118 @@
+// CAROUSEL =====================================================================
+.carousel {
+  background:#eee;
+  border-bottom:10px solid @logo;
+}
+
+.carousel-inner {
+  border:none;
+  margin-bottom:10px;
+  .flex-display;
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+
+  .item {
+    padding-bottom:@espacement-sm;
+    width:100%;
+    .text-center;
+    img {
+      display:inline;
+      margin:0 auto;
+    }
+    a {
+      display:block;
+      margin:0 auto;
+      width:100%;
+    }
+    &.item-gray {
+      @itemBgColor:#292929;
+      background:@itemBgColor;
+      .carousel-caption {
+        background:rgba(red(@itemBgColor),green(@itemBgColor),blue(@itemBgColor),.5);
+        h1 {
+          text-shadow:1px -1px 1px @black;
+        }
+        h4 {
+          color:@brand-info-white;
+        }
+        a {
+          color:@white;
+        }
+      }
+    }
+  }
+
+  .carousel-caption {
+    bottom:0;
+    padding:@espacement-sm;
+    padding-top:0;
+    text-shadow:none;
+    h1, h4 {
+      cursor:default;
+      line-height:1.1em;
+    }
+    h4 {
+      font-family:@openSans;
+      font-weight: normal;
+    }
+    nav {
+      padding:@espacement-sm 0;
+      padding-top:0;
+      .text-center;
+    }
+  }
+}
+
+.carousel-indicators {
+  bottom:0px;
+  padding:0px @espacement-sm;
+  position:relative;
+  li {
+    //margin-top:-@espacement-sm;
+    margin:0 @espacement-sm !important;
+  }
+}
+
+.carousel-control {
+  cursor:pointer;
+  width:15%;
+  .flex-display;
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+
+  @carouselRadius: @border-radius-large;
+
+  &.left {
+    .border-left-radius(@carouselRadius);
+    #gradient > .horizontal(@start-color: @brand-info, @end-color: transparent);
+  }
+  .icon {
+    position:relative;
+  }
+  &.right {
+    .border-right-radius(@carouselRadius);
+    #gradient > .horizontal(@start-color: transparent, @end-color: @brand-info);
+    .icon {
+    }
+  }
+}
+
+/*
+##         ## ##      ######## ########   #######  ##    ## ######## ########     ###     ######   ########
+##         ## ##      ##       ##     ## ##     ## ###   ##    ##    ##     ##   ## ##   ##    ##  ##
+##       #########    ##       ##     ## ##     ## ####  ##    ##    ##     ##  ##   ##  ##        ##
+##         ## ##      ######   ########  ##     ## ## ## ##    ##    ########  ##     ## ##   #### ######
+##       #########    ##       ##   ##   ##     ## ##  ####    ##    ##        ######### ##    ##  ##
+##         ## ##      ##       ##    ##  ##     ## ##   ###    ##    ##        ##     ## ##    ##  ##
+########   ## ##      ##       ##     ##  #######  ##    ##    ##    ##        ##     ##  ######   ########
+*/
+#carousel-frontpage {
+
+  .hidden-xs;
+
+  .carousel-control {
+    .hidden;
+  }
+}

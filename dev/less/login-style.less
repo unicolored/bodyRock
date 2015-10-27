@@ -1,9 +1,15 @@
-@import "style/variables_default.less";
-@import "style/variables_couleurs.less";
+@import "_bootstrap/_bootstrap_replace.less";
+@import "_variables_globales.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
 body {
-  background: @bg !important;
+  background: @bg-black !important;
+  color: @bg !important;
   form#loginform {
-    background:@bg-darker !important;
-    color:@bg-white !important;
+    background: @bg !important;
+    color: @bg-white !important;
+    .border-top-radius(@border-radius-large) !important;
+    .border-bottom-radius(@border-radius-large) !important;
+    .sXXL;
+    .zXXL;
   }
 }

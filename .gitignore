@@ -22,6 +22,7 @@ bower_components/
 changelogs/
 config/
 dev/screenshots/
+dev/*_backup/
 dev/yesimlocal.php
 node_modules/
 releases/

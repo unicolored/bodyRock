@@ -1,5 +1,5 @@
     </div>
-  </section>
+  </main>
 
   <footer id="Footer">
     <div class="br_footer">
