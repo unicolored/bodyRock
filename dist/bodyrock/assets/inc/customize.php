@@ -1,89 +1,75 @@
 <?php
 
 // CUSTOMIZE /////////////////////////////////////////////
+require 'customize-backend.php';
+
+///////////// FRONTEND :
+
+// HEAD
+// On retire les liens xml vers les fichiers permettant l'édition par Live Writer
+remove_action('wp_head', 'wp_shortlink_wp_head');
+remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+remove_action( 'wp_head', 'index_rel_link' ); // index link
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
+remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+
+/* Remove EMOJI */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+
+function twentyten_remove_recent_comments_style() {
+	global $wp_widget_factory;
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+}
+add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+
+add_action('wp_head','html5_shim_respond');
+function html5_shim_respond() {
+	$output="\t".'
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. All other JS at the end of file. -->
+  <!-- [if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  '."\n";
+	echo $output;
+}
+add_action('wp_head','meta_author');
+function meta_author() {
+	$output="\t".'<meta name="author" content="Gilles Hoarau">'."\n";
+	echo $output;
+}
+add_action('wp_head','link_shortcut_icon');
+function link_shortcut_icon() {
+	$output="\t".'<link rel="shortcut icon" href="'.get_stylesheet_directory_uri().'/img/ico/favicon.ico">'."\n"."\n";
+	echo $output;
+}
+
 
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Personnalisation de Wordpress.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
-
-
-// On retire les liens xml vers les fichiers permettant l'édition par Live Writer
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_shortlink_wp_head');
-
-add_action( 'login_enqueue_scripts', 'my_custom_login_logo' );
-
-
-// ADD EDITOR STYLE /////////////////////////////////////////////
-// Permet d'associer les styles définis pour le FrontOffice à l'éditeur tinymce du BackOffice
-function add_editor_styles() {
-    add_editor_style('css/editor-style.css');
+// MODIFICATION DU MENU wp_page_menu pour une intégration dans la navbar
+add_filter ( 'wp_page_menu', 'br_page_menu', 100 );
+function br_page_menu($menu) {
+  /*
+  ORIGINAL : "<div class="menu"><ul><li class="page_item page-item-2"><a href="http://emailing.fromscratch.xyz/page-d-exemple/">Page d&rsquo;exemple</a></li></ul></div>"
+  */
+  $menu = str_replace('<div class="menu">','',$menu);
+  $menu = str_replace('</div>','',$menu);
+  $menu = str_replace('<ul>','<ul class="nav navbar-nav">',$menu);
+  return $menu;
 }
 
-// MY CUSTOM LOGIN LOGO /////////////////////////////////////////////
-// Remplace le logo de Wordpress sur la page login.
-function my_custom_login_logo()
-{
-	echo '<style  type="text/css">body.login div#login h1 a {  background-image:url('.get_template_directory_uri().'/assets/images/logo_login_bodyrock.png)  !important; } </style>';
-}
 
-// MY CUSTOM ADMIN LOGO /////////////////////////////////////////////
-// Remplace le logo de Wordpress sur la page admin.
-function my_custom_admin_logo()
-{
-	echo '<style type="text/css">#wp-admin-bar-wp-logo .ab-item span.ab-icon { background: url('.get_template_directory_uri().'/img/logo_admin_unid.png) !important; }</style>';
-}
 
-// CHANGE WP LOGIN URL /////////////////////////////////////////////
-// Remplace le lien sur le logo de la page login.
-function change_wp_login_url() { return 'http://bodyrock.fromscratch.xyz/'; }
 
-// CHANGE WP LOGIN TITLE /////////////////////////////////////////////
-function change_wp_login_title() { return 'bodyRock | Solid WP'; }
-
-// ADMIN BAR RENDER /////////////////////////////////////////////
-// Admin Bar Customisation
-function admin_bar_render() {
-	global $wp_admin_bar;
-
-	// Remove an existing link using its $id
-	// Here we remove the 'Updates' drop-down link
-	$wp_admin_bar->remove_menu('updates');
-
-	// Add a new top level menu link
-	// Here we add a customer support URL link
-	$customerSupportURL = '/wp-admin/themes.php?page=theme_options';
-	$wp_admin_bar->add_menu( array(
-	'parent' => false,
-	'id' => 'bodyrock',
-	'title' => __('bodyRock','bodyrock'),
-	'href' => $customerSupportURL
-	));
-
-	// Add a new sub-menu to the link above
-	// Here we add a link to our contact us web page
-	$contactUsURL = 'http://bodyrock.fromscratch.xyz/';
-	$wp_admin_bar->add_menu(array(
-	'parent' => 'bodyrock',
-	'id' => 'site',
-	'title' => __('Site Officiel','bodyrock'),
-	'href' => $contactUsURL
-	));
-
-	$contactUsURL = 'http://gilleshoarau.com/a-propos/';
-	$wp_admin_bar->add_menu(array(
-	'parent' => 'bodyrock',
-	'id' => 'a-propos',
-	'title' => __('A propos de l\'auteur'),
-	'href' => $contactUsURL
-	));
-}
-
-// ADMIN FOOTER MODIFICATION /////////////////////////////////////////////
-// Admin footer modification
-function replace_footer_admin ()
-{
-	echo '<span id="footer-thankyou">Developpé par <a href="http://gilleshoarau.com" target="_blank">Gilles Hoarau</a></span>';
-}
 ?>

@@ -5,8 +5,7 @@
     <div class="br_footer">
       <!-- Placer le code Html ci-dessous -->
       <hr>
-      <?php bloginfo('description') ?>
-
+      <p><small><strong><?php bloginfo('title') ?></strong> &nbsp; <?php bloginfo('description') ?></small></p>
       <!-- Placer le code Html ci-dessus -->
     </div>
   </footer>

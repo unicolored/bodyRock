@@ -1,9 +1,3 @@
-<?php
-/*
- Template Name: Typography
- */
-get_header();
-?>
 
 <div class="main_wrapper">
 	<div class="content_wrapper">
@@ -262,7 +256,3 @@ get_header();
 	</div>
 
 </div>
-
-<?php
-get_footer();
-?>
