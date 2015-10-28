@@ -1,0 +1,18 @@
+{
+  "team": [ {
+      "Web developer": "<%= developper.name %>",
+      "Site": "<%= developper.authoruri %>",
+      "Twitter": "<%= developper.twitter %>",
+      "Location": "<%= developper.location %>"
+
+    }
+  ],
+  "site": [ {
+    "Version": "<%= pkg.version %>",
+    "Site Url": "<%= pkg.homepage %>",
+    "Keywords": "<%= pkg.keywords %>",
+    "Language": "French",
+    "Last update": "<%= grunt.template.today('yyyy-mm-dd') %>"
+  }
+  ]
+}

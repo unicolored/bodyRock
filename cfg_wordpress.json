@@ -1,0 +1,7 @@
+{
+  "themename": "BodyRock",
+  "themeuri": "http://unicolored.github.io/bodyRock/",
+  "themetextdomain":"rock-unicolored",
+  "themeauthor":"<%= developper.name %>",
+  "themeauthoruri":"<%= developper.authoruri %>"
+}

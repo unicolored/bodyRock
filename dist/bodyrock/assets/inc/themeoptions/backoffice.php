@@ -76,31 +76,20 @@ function themeoptions_backofficeRegister() {
 	$brto = 'brthemeoptions';
 	$brto_Callback = $brto.'_backofficeCallback';
 
-	$section = 'intro';
-	add_settings_section($brto.'_'.$section, 'Options du thème', $brto_Callback.'_sectiontext_'.$section, $brto);
-
 	$section = 'cssjs';
-	add_settings_section($brto.'_'.$section, '• CSS &amp; JS', $brto_Callback.'_sectiontext_'.$section, $brto);
+	add_settings_section($brto.'_'.$section, '<hr><h2>CSS &amp; JS</h2>', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_bootswatch', 'Bootswatch', $brto_Callback.'_bootswatch', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_iconset', 'Set d\'icônes', $brto_Callback.'_iconset', $brto, $brto.'_'.$section);
-		add_settings_field($brto.'_bootstrapjs', 'Boostrap Javascript', $brto_Callback.'_bootstrapjs', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_container', 'Container', $brto_Callback.'_container', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_navbartopfixed', 'Navbar Top', $brto_Callback.'_navbartopfixed', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_jquery', 'jQuery', $brto_Callback.'_jquery', $brto, $brto.'_'.$section);
+		add_settings_field($brto.'_bootstrapjs', 'Boostrap JS', $brto_Callback.'_bootstrapjs', $brto, $brto.'_'.$section);
 
-	$section = 'fonts';
-	add_settings_section($brto.'_'.$section, '• Polices', $brto_Callback.'_sectiontext_'.$section, $brto);
-		add_settings_field($brto.'_fonts_google', 'Google Fonts chargée par Webfont', $brto_Callback.'_fonts_google', $brto, $brto.'_'.$section);
-
-	$section = 'image';
-	add_settings_section($brto.'_'.$section, '• Image', $brto_Callback.'_sectiontext_'.$section, $brto);
-		add_settings_field($brto.'_image_sizes', 'Tailles d\'image', $brto_Callback.'_image_sizes', $brto, $brto.'_'.$section);
-/*
-	$section = 'customtypes';
-	add_settings_section($brto.'_'.$section, '• Types personnalisés', $brto_Callback.'_sectiontext_'.$section, $brto);
-		add_settings_field($brto.'_type_clients', 'Type Clients', $brto_Callback.'_type_clients', $brto, $brto.'_'.$section);
-		add_settings_field($brto.'_type_lieux', 'Type Lieux', $brto_Callback.'_type_lieux', $brto, $brto.'_'.$section);
-		add_settings_field($brto.'_type_evenements', 'Type Evènements', $brto_Callback.'_type_evenements', $brto, $brto.'_'.$section);
-*/
 	$section = 'seo';
-	add_settings_section($brto.'_'.$section, '• Référencement', $brto_Callback.'_sectiontext_'.$section, $brto);
+	add_settings_section($brto.'_'.$section, '<hr><h2>Référencement</h2>', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_breadcrumb', 'Breadcrumb', $brto_Callback.'_breadcrumb', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_googleanalyticsid', 'Google Analytics ID', $brto_Callback.'_googleanalyticsid', $brto, $brto.'_'.$section);
+
 	/*
 	The first argument is simply a unique id for the field.
 	The second is a title for the field.
@@ -115,85 +104,91 @@ function themeoptions_backofficeRegister() {
 	*/
 
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 // DESCRIPTION DES SECTIONS
-function brthemeoptions_backofficeCallback_sectiontext_intro() {
-	echo '<table class="form-table">';
-		echo '<tr valign="top">';
-		echo '<td width="300"><img src="/wp-content/themes/bodyrock/screenshot.png" alt="BODYROCK .talc" width="300" height="225"></td>';
-		echo '<td>';
-		echo '<h4><small>Date de version : avril. 2015</small></h4>';
-		echo '<p><strong>'.__('Auteur', 'bodyrock').'</strong> : Gilles Hoarau (<a href="http://www.gilleshoarau.com/">'.__('Site Web', 'bodyrock').'</a>)</p>';
-		echo '<hr>';
-		echo '<p>Body<em>rock</em> est un thème <strong>orienté développeurs</strong>. Il utilise les <a href="http://getbootstrap.com/components/" target="_blank">composants Bootstrap</a>.</p>';
-		echo '</td>';
-		echo '</tr>';
-	echo '</table>';
-}
 function brthemeoptions_backofficeCallback_sectiontext_cssjs() {
 	echo '<p>Les options  concernant la CSS et le JS.</p>';
-}
-function brthemeoptions_backofficeCallback_sectiontext_fonts() {
-	echo '<p>Les options pour les polices à utiliser.</p>';
-}
-function brthemeoptions_backofficeCallback_sectiontext_colors() {
-	echo '<p>Les options pour les couleurs du thème.</p>';
-}
-function brthemeoptions_backofficeCallback_sectiontext_image() {
-	echo "<p>Tailles d'images supplémentaires à celles <a href='/wp-admin/options-media.php'>par défaut</a>.<br><small>(ex: bigmedium,900,750,0;verysmall,50,50,1)</small></p>";
-}
-function brthemeoptions_backofficeCallback_sectiontext_customtypes() {
-	echo '<p>Activation des custom types.</p>';
 }
 function brthemeoptions_backofficeCallback_sectiontext_seo() {
 	echo '<p>Les options concernant le référencement.</p>';
 }
 
-// HTML DES CHAMPS DE FORMULAIRES /////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+// HTML DES CHAMPS DE FORMULAIRES
 function brthemeoptions_backofficeCallback_iconset() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	$sets = array(
-		array('id'=>'disabled','label'=>'Désactivé'),
-		array('id'=>'myicon','label'=>'Manuel (.myicon)'),
-		array('id'=>'glyphicon','label'=>'Glyphicon','url'=>'<a href="http://getbootstrap.com/components/#glyphicons" target="_blank">afficher</a>'),
-		array('id'=>'font-awesome','label'=>'Font-Awesome','url'=>'<a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">afficher</a>'),
-		array('id'=>'elusive','label'=>'Elusive','url'=>'<a href="http://shoestrap.org/downloads/elusive-icons-webfont/" target="_blank">afficher</a>')
+		array('id'=>'glyphicon','label'=>'Glyphicon <em>(par défaut)</em>','url'=>'http://getbootstrap.com/components/#glyphicons'),
+		array('id'=>'fontawesome','label'=>'Font-Awesome','url'=>'http://fontawesome.io/icons/'),
+		array('id'=>'linearicons','label'=>'Linearicons','url'=>'https://linearicons.com/free'),
+		array('id'=>'octicons','label'=>'Octicons','url'=>'https://octicons.github.com/')
 		);
 
 	foreach ($sets as $S) {
 		echo '<input '.checked( $options['iconset'], $S['id'] , false).' name="brthemeoptions[iconset]" type="radio" value="'.$S['id'].'" id="brthemeoptions[iconset]" /> '.$S['label'];
-		echo (isset($S['url']) ? ' '.$S['url'] : false);
+		echo (isset($S['url']) ? ' <a href="'.$S['url'].'" target="_blank"><small>site web</small></a>' : false);
 		echo '<br>';
 	}
+}
+function brthemeoptions_backofficeCallback_bootswatch() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	$sets = array(
+		array('id'=>'aucun'),
+		array('id'=>'cerulean'),
+		array('id'=>'cosmo'),
+		array('id'=>'cyborg'),
+		array('id'=>'darkly'),
+		array('id'=>'flatly'),
+		array('id'=>'journal'),
+		array('id'=>'lumen'),
+		array('id'=>'paper'),
+		array('id'=>'readable'),
+		array('id'=>'sandstone'),
+		array('id'=>'simplex'),
+		array('id'=>'slate'),
+		array('id'=>'spacelab'),
+		array('id'=>'superhero'),
+		array('id'=>'united'),
+		array('id'=>'yeti')
+		);
+		print '<select name="brthemeoptions[bootswatch]">';
+	foreach ($sets as $S) {
+		echo '<option '.selected( $options['bootswatch'], $S['id'] , false).' value="'.$S['id'].'" id="brthemeoptions[bootswatch]">'.ucfirst($S['id']).'</option>';
+	}
+	print '</select>';
+}
+function brthemeoptions_backofficeCallback_container() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input '.checked( $options['container'], true, false ).' name="brthemeoptions[container]" type="checkbox" value="1" id="brthemeoptions_container" /> '.__('Préférer le .container-fluid', 'bodyrock').'';
+	echo '<br><small>Par défaut : .container fixe</small>';
+}
+function brthemeoptions_backofficeCallback_navbartopfixed() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input '.checked( $options['navbartopfixed'], true, false ).' name="brthemeoptions[navbartopfixed]" type="checkbox" value="1" id="brthemeoptions_navbartopfixed" /> '.__('Préférer la navbar top fixed .navbar-fixed-top', 'bodyrock').'';
+	echo '<br><small>Par défaut : navbar top scroll</small>';
+}
+function brthemeoptions_backofficeCallback_jquery() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input '.checked( $options['jquery'], true, false ).' name="brthemeoptions[jquery]" type="checkbox" value="1" id="brthemeoptions_jquery" /> '.__('Activer <a href="https://developers.google.com/speed/libraries/#jquery" target="_blank">jQuery</a>', 'bodyrock').'';
+	echo '<br><small>https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js</small>';
 }
 function brthemeoptions_backofficeCallback_bootstrapjs() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input '.checked( $options['allbsjs'], true, false ).' name="brthemeoptions[allbsjs]" type="checkbox" value="1" id="brthemeoptions_allbsjs" /> '.__('Activer les <a href="http://getbootstrap.com/javascript/" target="_blank">composants JS de Bootstrap</a>', 'bodyrock').'';
-	echo '<br><small>affix, alert, button, carousel, collapse, dropdown, modal, popover, scrollspy, tab, tooltip, transition, typeahead</small>';
-}
-function brthemeoptions_backofficeCallback_fonts_google() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input name="brthemeoptions[fonts_google]" value="'.esc_attr($options['fonts_google']).'" size="80" type="text" id="brthemeoptions_fonts_google" />';
-}
-function brthemeoptions_backofficeCallback_image_sizes() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input name="brthemeoptions[image_sizes]" value="'.esc_attr($options['image_sizes']).'" size="80" type="text" id="brthemeoptions_image_sizes" />';
-}
-function brthemeoptions_backofficeCallback_type_clients() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_clients]" id="brthemeoptions_type_clients" '.(isset($options['type_clients']) ? checked( $options['type_clients'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
-}
-function brthemeoptions_backofficeCallback_type_lieux() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_lieux]" id="brthemeoptions_type_lieux" '.(isset($options['type_lieux']) ? checked( $options['type_lieux'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
-}
-function brthemeoptions_backofficeCallback_type_evenements() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input type="checkbox" value="1" name="brthemeoptions[type_evenements]" id="brthemeoptions_type_evenements" '.(isset($options['type_evenements']) ? checked( $options['type_evenements'], true, false ) : false).' /> '.__('Activer', 'bodyrock').'';
+	echo '<br><small>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js</small>';
 }
 function brthemeoptions_backofficeCallback_googleanalyticsid() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input name="brthemeoptions[google_analytics_id]" value="'.esc_attr($options['google_analytics_id']).'" type="text" id="brthemeoptions_seo" />';
+	echo '<input name="brthemeoptions[googleanalyticsid]" value="'.esc_attr($options['googleanalyticsid']).'" type="text" id="brthemeoptions_seo" />';
 	echo '<br><small class="description">'.__('Entrer votre identifiant UA-XXXXX-X', 'bodyrock').'</small>';
+}
+function brthemeoptions_backofficeCallback_breadcrumb() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input '.checked( $options['breadcrumb'], true, false ).' name="brthemeoptions[breadcrumb]" type="checkbox" value="1" id="brthemeoptions_breadcrumb" /> '.__('Activer', 'bodyrock').'';
+	echo '<br><small>Désactivé par défaut</small>';
 }
 ?>

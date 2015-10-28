@@ -1,0 +1,49 @@
+.progress {
+  background:@bg-lighter;
+  //border:1px solid darken(@bg-white,65%);
+  height:4px;
+  .progress-bar {
+    -webkit-animation-direction: reverse;
+       -moz-animation-direction: reverse;
+        -ms-animation-direction: reverse;
+         -o-animation-direction: reverse;
+            animation-direction: reverse;
+  }
+  &.progress-loading {
+    background:none !important;
+    height:@sunHeight;
+    .border-top-radius(0);
+    .border-bottom-radius(0);
+  }
+}
+// CMJN
+.progress-bar-cyan {
+  background-color:darken(@cyan,25%);
+}
+.progress-bar-magenta {
+  background-color:darken(@magenta,25%);
+}
+.progress-bar-jaune {
+  background-color:darken(@jaune,25%);
+}
+.progress-bar-noir {
+  background-color:@noir;
+}
+
+// RGBW
+.progress-bar-red {
+  background-color:darken(@red,0%);
+}
+.progress-bar-green {
+  background-color:darken(@green,25%);
+}
+.progress-bar-blue {
+  background-color:darken(blue,25%);
+}
+.progress-bar-blanc {
+  background-color:darken(@white,35%);
+}
+
+.progress.active.reverse .progress-bar {
+
+}

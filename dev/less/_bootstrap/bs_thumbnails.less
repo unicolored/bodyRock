@@ -1,0 +1,60 @@
+
+div.thumbnail {
+  //background:rgba(red(@bg-white),green(@bg-white),blue(@bg-white),.05);
+  background:none;
+  border:none;
+  padding:0;
+  position:relative;
+  //.sXXL();
+
+
+  .limage {
+    background-color:@bg-darker;
+    background-repeat:none;
+    background-size: cover;
+    background-position:center center;
+    display:block;
+    .size(100%,224px);
+    margin:0 auto;
+    .text-center;
+    .border-top-radius(@border-radius-small);
+    .border-bottom-radius(@border-radius-small);
+    .flex-display;
+    .justify-content(center);
+    .align-content(center);
+    .align-items(center);
+    span {
+      font-size:60px
+    }
+  }
+
+
+  div.caption {
+    h5 {
+      .truncate;
+      font-size:@font-size-base;
+      text-shadow:1px 1px 0 @black;
+      font-weight:700;
+      a {
+        color:@brand-info-lighter;
+        .transition(2s);
+        &:hover {
+          color:@bg-white;
+          .transition(.5s);
+          text-decoration:none;
+        }
+      }
+    }
+    h6 {
+      color:@gray;
+    }
+    div {
+      color:@gray-light;
+      font-size:@font-size-small;
+      .clearfix();
+      clear:both;
+      //height:80px;
+      //overflow:hidden;
+    }
+  }
+}

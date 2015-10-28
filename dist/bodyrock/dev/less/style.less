@@ -1,126 +1,36 @@
-/*!
- */
 /*! Styles*/
-// CHARGEMENT DES ICONES
-// Override de la définition se trouvant dans /bower_components
-
-@themepath: 'https://gilleshoarau.com/wp-content/themes/rock-gilleshoarau/';
-//@import "iconsset.less";
-/*****************************************************/
-/*****************************************************/
-
-/*!Bootstrap*/
-/* VARIABLES GLOBALES */
-/* Les variables du skin - Contient les variables de couleurs, de path, de fonts, de composants
-/* Il faut permettre le choix de ce skin via les options du thème Bodyrock (assets/inc/themeoptions.php themeoptionsGet_default()), */
-/* et ensuite passer la variable dans .less au moment de la compilation : */
-/* http://leafo.net/lessphp/docs/#setting_variables_from_php */
-//@import "style/variables_mediaqueries.less";
-@import "style/variables_default.less";
-@import "style/variables_couleurs.less";
-/*****************************************************/
-/*****************************************************/
-
-// Core variables and mixins
-@import "../../bower_components/bootstrap/less/mixins.less";
-
-// Reset and dependencies
-@import "../../bower_components/bootstrap/less/normalize.less";
-@import "../../bower_components/bootstrap/less/print.less";
-
-@import "../../bower_components/bootstrap/less/scaffolding.less";
-@import "../../bower_components/bootstrap/less/type.less";
-@import "../../bower_components/bootstrap/less/grid.less";
-@import "../../bower_components/bootstrap/less/forms.less";
-@import "../../bower_components/bootstrap/less/buttons.less";
-
-@import "../../bower_components/bootstrap/less/component-animations.less";
-@import "../../bower_components/bootstrap/less/dropdowns.less";
-@import "../../bower_components/bootstrap/less/button-groups.less";
-@import "../../bower_components/bootstrap/less/input-groups.less";
-@import "../../bower_components/bootstrap/less/navs.less";
-@import "../../bower_components/bootstrap/less/navbar.less";
-@import "../../bower_components/bootstrap/less/panels.less";
-@import "../../bower_components/bootstrap/less/jumbotron.less";
-@import "../../bower_components/bootstrap/less/thumbnails.less";
-@import "../../bower_components/bootstrap/less/alerts.less";
-@import "../../bower_components/bootstrap/less/list-group.less";
-@import "../../bower_components/bootstrap/less/responsive-embed.less";
-@import "../../bower_components/bootstrap/less/wells.less";
-@import "../../bower_components/bootstrap/less/close.less";
-
-@import "../../bower_components/bootstrap/less/modals.less";
-@import "../../bower_components/bootstrap/less/carousel.less";
-
-@import "../../bower_components/bootstrap/less/utilities.less";
-@import "../../bower_components/bootstrap/less/responsive-utilities.less";
-
-.text-right {
-  text-align:right;
-}
-
-html {
-  height:100%;
-}
-
+@themepath: '/bodyrock/';
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "_bootstrap/_bootstrap_load.less"; // Chargement de Bootstrap original
+html {}
 body {
-  background-color:@bg-dark;
-	padding:0px;
 
-	@import "style/_preloader.less"; // Styles du spinner de chargement de pages. Indépendant du reste.
+  ::selection {
+  }
+  ::-moz-selection {
+  }
 
-	/* TYPOGRAPHIE, la base */
-	@import "style/_typography.less";
+}
 
-	///////////////////////////////////////////////////////////////////////
-	// STYLES D'ELEMENTS RECCURENTS DANS LES SECTIONS ET LES PAGES
-  @import "style/__body.less";
-  @import "style/modals.less";
+/* <Eléments uniques par page> */
+@import "body/__Header.less";
+@import "body/__Section.less";
+@import "body/__Footer.less";
+@import "body/_Article.less";
+@import "body/_Aside.less";
+/* </Elements uniques par page> */
+@import "body/generiques.less"; // Eléments génériques
 
-	// STYLES BOOTSTRAP / abc ASC */
-	@import "style/mybootstrap/bs_alerts.less";
-	@import "style/mybootstrap/bs_blockquotes.less";
-	@import "style/mybootstrap/bs_btns.less";
-	@import "style/mybootstrap/bs_carousels.less";
-	@import "style/mybootstrap/bs_forms.less";
-	@import "style/mybootstrap/bs_jumbotrons.less";
-	@import "style/mybootstrap/bs_medias.less";
-  @import "style/mybootstrap/bs_medias.less";
-	@import "style/mybootstrap/bs_navbars.less";
-	@import "style/mybootstrap/bs_panels.less";
-	@import "style/mybootstrap/bs_thumbnails.less";
-	@import "style/mybootstrap/bs_wells.less";
+/* Pages Wordpress globales */
+@import "wp/wp_404.less";
+@import "wp/wp_category.less";
+@import "wp/wp_front-page.less";
+@import "wp/wp_home.less";
+@import "wp/wp_page.less";
+@import "wp/wp_searchtag.less";
+@import "wp/wp_single.less";
 
-	///////////////////////////////////////////////////////////////////////
-  // STYLES DES PAGES / menuorder ASC
-  div.br_bonjour.front-page {		@import "style/body/page_front-page.less"; }
-  div.br_bonjour.about {				@import "style/body/page_competences.less"; }
-  div.br_bonjour.portfolio {		@import "style/body/page_portfolio.less"; }
-  div.br_bonjour.contact {			@import "style/body/page_contact.less"; }
-  div.br_bonjour.single {				@import "style/body/page_single.less"; }
-  div.br_bonjour.blog {				@import "style/body/page_blog.less"; }
+@import "wp/woocommerce.less";
 
-  // STYLES DES ARTICLES
-  @import "style/_articles.less";
-
-	// STYLES DU FOOTER
-	div.br_footer {								@import "style/body/br_footer.less"; }
-
-} // end - body
-/*****************************************************/
-///////////////////////////////////////////////////////////////////////
-// SCRIPTS "RESPONSIVE" GLOBAUX
-@import "style/jquery-ui.less";
-//@import "responsive/0-typography_responsive.less";
-
-// STYLES SERVANT AU DEBUG - Il suffit de comment/decommenter cette ligne pour les afficher
-//@import "_debug.less";
-// BOOTSTRAP ET MIXINS PERSOS
-@import "responsive/bs_disable.less";
-//@import "responsive/0-xxs.less";
-
-@import "responsive/2-sm.less";
-@import "responsive/3-md.less";
-@import "responsive/4-lg.less";
-@import "responsive/5-xl.less";
-@import "responsive/6-xxl.less";
+/* Personnalisations spécifiques */
+//@import "pages/gh_page_comingsoon.less";

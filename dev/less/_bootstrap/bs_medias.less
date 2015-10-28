@@ -1,0 +1,39 @@
+
+div.media {
+  .clearfix;
+  span.limage {
+    background-color:transparent;
+    background-repeat:none;
+    background-size: cover;
+    background-position:center center;
+    border:1px solid @bg;
+    display:block;
+    margin:0 auto;
+    .border-top-radius(@border-radius-small);
+    .border-bottom-radius(@border-radius-small);
+    .size(60px,60px);
+    .sXXL;
+
+    &:hover {
+      border:1px solid @bg-lighter;
+    }
+  }
+
+  span.limagelarge {
+    .size(100px,100px);
+  }
+
+  .media-body {
+    .clearfix;
+    a {
+      color:@brand-info-lighter;
+      .transition(2s);
+
+      &:hover {
+        color:@bg-white;
+        text-decoration:none;
+        .transition(.5s);
+      }
+    }
+  }
+}
