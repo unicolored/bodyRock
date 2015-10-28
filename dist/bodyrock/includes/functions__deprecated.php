@@ -92,9 +92,8 @@ function br_getEmbedAudio($array) {
 // Ci-desso
 function default_menu($args) {
       echo '
-      <ul class="nav navbar-nav">
+
         <li'.(is_home() ? ' class="active"' : false).'><a href="/">Home</a></li>
-      </ul>
       ';
       return true;
 }

@@ -5,37 +5,37 @@
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 /*
 
- Toutes les fonctions PHP de Bodyrock sont liées à ce fichier.
- La référence des noms commence au dossier assets/inc/.
+Toutes les fonctions PHP de Bodyrock sont liées à ce fichier.
+La référence des noms commence au dossier assets/inc/.
 
- Un nom de fonction peut comporter des lettres, des chiffres et les caractères _ et & (les espaces ne sont pas autorisés).
- Le nom de la fonction, comme celui des variables est sensible à la casse (différenciation entre les minuscules et majuscules).
+Un nom de fonction peut comporter des lettres, des chiffres et les caractères _ et & (les espaces ne sont pas autorisés).
+Le nom de la fonction, comme celui des variables est sensible à la casse (différenciation entre les minuscules et majuscules).
 
- Si une fonction doit changer de nom, on doit conserver l'ancienne fonction appellant la nouvelle.
+Si une fonction doit changer de nom, on doit conserver l'ancienne fonction appellant la nouvelle.
 
- Les fonctions sont rangées par ordre alphabétique par sections par fichiers, dès que possible avec une priorité sur les fonctions br_
+Les fonctions sont rangées par ordre alphabétique par sections par fichiers, dès que possible avec une priorité sur les fonctions br_
 
- Nomenclature des fonctions :
- ----------------------------
- prefix ::
- br_ : Optionnel :devant la fonction lorsqu'elle peut être appelé depuis vos templates ou des thèmes enfants.
- sousdossier_ :: nom du sous-dossier
- nomdufichier : nom du fichier php qui héberge la fonction (ne s'applique pas aux fonctions déclarées dans functions.php).
+Nomenclature des fonctions :
+----------------------------
+prefix ::
+br_ : Optionnel :devant la fonction lorsqu'elle peut être appelé depuis vos templates ou des thèmes enfants.
+sousdossier_ :: nom du sous-dossier
+nomdufichier : nom du fichier php qui héberge la fonction (ne s'applique pas aux fonctions déclarées dans functions.php).
 
- Method ::
- init : initialisation de composant
- get : récupération de valeur (et affichage)
- set : définit (et enregistrer une valeur) etc...
+Method ::
+init : initialisation de composant
+get : récupération de valeur (et affichage)
+set : définit (et enregistrer une valeur) etc...
 
- _suffix ::
- _* : spécificité dela fonction
- ----------------------------
- exemples :
- br_nomdufichierMethod() : destinée à être appellée depuis les templates, elle se trouve dans le fichier assets/inc/nomdufichier.php
- themeoptionsInit() se trouve dans le fichier (assets/inc/)themes-options.php
- br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-options.php, elle récupère les options par défaut.
+_suffix ::
+_* : spécificité dela fonction
+----------------------------
+exemples :
+br_nomdufichierMethod() : destinée à être appellée depuis les templates, elle se trouve dans le fichier assets/inc/nomdufichier.php
+themeoptionsInit() se trouve dans le fichier (assets/inc/)themes-options.php
+br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-options.php, elle récupère les options par défaut.
 
- */
+*/
 //////////////////////////////////////////////////////////////////////////////
 
 define('THEME_PATH', 'wp-content/themes/bodyrock/');
@@ -64,6 +64,10 @@ require_once INC_PATH . 'br_textes.php'; // Tout ce qui concerne les paramètres
 require 'includes/functions__hook.php';
 require 'includes/functions_customize.php';
 require 'includes/functions_extend.php';
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if(is_plugin_active('woocommerce/woocommerce.php')) {
+  require 'includes/functions_woocommerce.php';
+}
 
 ////// WALKERS /////////////////////////////////////////////
 ////// Chargement des différents walkers personnalisés

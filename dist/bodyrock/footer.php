@@ -3,29 +3,18 @@
 
   <footer id="Footer">
     <div class="br_footer">
-      <!-- Placer le code Html ci-dessous -->
       <hr>
-      <p><small><strong><?php bloginfo('title') ?></strong> &nbsp; <?php bloginfo('description') ?></small></p>
-      <!-- Placer le code Html ci-dessus -->
+      <ul class="list-inline">
+        <?php
+        wp_nav_menu(array('container'=>false,'items_wrap' => '%3$s','theme_location'=>'footer','fallback_cb'=>false));
+        ?>
+      </ul>
+      <p class="text-uppercase"><small><strong><?php bloginfo('title') ?></strong> &nbsp; <?php bloginfo('description') ?></small></p>
     </div>
   </footer>
-
+</div>
   <?php
   wp_footer();
-
-  // TOFIX: Passer cela via functions.php dans le wp_footer()
-  if ( BR_GOOGLE_ANALYTICS != false ) {
-    ?>
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', <?php echo BR_GOOGLE_ANALYTICS ?>, 'auto');
-    ga('send', 'pageview');
-    </script>
-    <?php
-  }
   ?>
   </body>
 </html>

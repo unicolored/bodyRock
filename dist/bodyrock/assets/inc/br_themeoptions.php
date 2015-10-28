@@ -45,10 +45,13 @@ function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
 function themeoptionsGet_default()
 {
 	$default = array(
-		'iconset'  			=> '',
+		'bootswatch'		=> 'aucun',
+		'iconset'  			=> 'glyphicon',
+		'container'  			=> 0,
+		'breadcrumb'  			=> 0,
+		'navbartopfixed'  			=> 0,
+		'jquery'  			=> 1,
 		'allbsjs'  			=> 1,
-		'image_sizes' 		=> '',
-		'fonts_google'		=> '',
 		'googleanalyticsid'     => false
 	);
 
@@ -60,16 +63,15 @@ function themeoptionsGet_default()
 // Les options sont converties en constantes pour être accessible dans tout le code.
 $options = br_themeoptionsGet();
 // Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
-define('BR_ICON_SET', $options['iconset']);
-// Fonts chargées par Google
-define('BR_FONTS', $options['fonts_google']);
-// Active la compilation .less en .css (utile si les .less ont été modifiés)
-// Charge tous les scripts .js de bootstrap
+define('BR_BOOTSWATCH', $options['bootswatch']);
+define('BR_ICONSET', $options['iconset']);
+define('BR_CONTAINER', ($options['container']=="" ? 'container' : 'container-fluid'));
+define('BR_BREADCRUMB', $options['breadcrumb']);
+define('BR_NAVBARTOPFIXED', ($options['navbartopfixed']=="" ? '' : 'navbar-fixed-top'));
+define('BR_JQUERY', $options['jquery']);
 define('BR_ALLBSJS', $options['allbsjs']);
-// Charge les ailles des images - sous la forme : nomdelataille,width,height; nomdelataille2,width2,height2; ...
-define('BR_IMAGE_SIZES', $options['image_sizes']);
 // L'identifiant du compte Anakytics
-if(isset($options['google_analytics_id'])) {
-  define('BR_GOOGLE_ANALYTICS', $options['google_analytics_id']);
+if(isset($options['googleanalyticsid'])) {
+	define('BR_GOOGLE_ANALYTICS', $options['googleanalyticsid']);
 }
 ?>

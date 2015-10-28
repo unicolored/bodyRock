@@ -54,7 +54,20 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 */
 
 add_theme_support( "custom-background", false );
-add_theme_support( "custom-header", false );
+add_theme_support( "custom-header", array(
+	'default-image'          => get_template_directory_uri().'/assets/images/background-header-defaut.jpg',
+	'width'                  => 1500,
+	'height'                 => 500,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'uploads'                => true,
+	'random-default'         => false,
+	'header-text'            => true,
+	'default-text-color'     => '',
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+) );
 add_theme_support( "html5", array( 'search-form' ) );
 add_theme_support( "post-formats", array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 add_theme_support( 'post-thumbnails' );

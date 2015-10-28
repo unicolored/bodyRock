@@ -55,23 +55,18 @@ if(!function_exists('br_getPageIcon')) { // Permet l'override par le thème chil
 // Affiche l'icône choisie en fonction de la police (Glyphicons, Font-Awesome, Elusive)
 if(!function_exists('br_getIcon')) { // Permet l'override par le thème child
 	function br_getIcon($id = false) {
-		switch(BR_ICON_SET) {
+		switch(BR_ICONSET) {
 			default :
-				return "<b class='myicon myicon-".$id."'></b>";
-			break;
-			case 'disabled' :
-				return true;
-			break;
-			case 'glyphicon' :
 				return "<span class='glyphicon glyphicon-".br_getPageIcon($id)."'></span>";
 			break;
-
-			case 'font-awesome' :
+			case 'fontawesome' :
 				return "<i class='fa fa-".br_getPageIcon($id)."'></i>";
 			break;
-
-			case 'elusive';
-				return "<span class='el-icon-".br_getPageIcon($id)."'></span>";
+			case 'linearicons';
+				return "<span class='lnr lnr-".br_getPageIcon($id)."'></span>";
+			break;
+			case 'octicons';
+				return "<span class='octicon octicon-".br_getPageIcon($id)."'></span>";
 			break;
 		}
 	}
@@ -79,7 +74,7 @@ if(!function_exists('br_getIcon')) { // Permet l'override par le thème child
 function br_Icon($id = false) { echo br_getIcon($id); }
 
 function br_getAvailableIcones() {
-	// Liste des icones dont les appellations sont similaires entres Glyphicons, Font-Awesome, Elusive.
+	// Liste des icones dont les appellations sont similaires entres Glyphicons, Font-Awesome, ...
 	return array(
 			"home",
 			"adjust","align-center","align-left","align-right","align-justify","bold","text-height","text-width","font","italic",

@@ -106,7 +106,7 @@ module.exports = function( grunt ) {
                 compress: {
                     'drop_console': true
                 },
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */ '
             },
             'my_target': {
                 files: {
@@ -246,7 +246,7 @@ module.exports = function( grunt ) {
                 },
                 // Au changement d'un fichier .less, on appelle la tâche de compilation
                 files: [ '<%= paths.devpath %>js/scripts.js' ], // which files to watch
-                tasks: [ 'reloadJs:dev' ],
+                tasks: [ 'reloadJs' ],
             },
             // LIVERELOAD : fichiers modifiés qui n'appellent pas d'autres tâches que le reload
             livereload: {
@@ -404,9 +404,9 @@ module.exports = function( grunt ) {
     } );
     grunt.registerTask( 'reloadJs', function( target ) {
         if ( target === 'prod' ) {
-            grunt.task.run( [ 'jsbeautifier', 'jshint', 'concat:dist', 'bower_concat', 'uglify' ] );
-        } else if ( target === 'dev' ) {
-            grunt.task.run( [ 'jsbeautifier', 'jshint' ] );
+            grunt.task.run( [ 'jsbeautifier', 'jshint', 'uglify' ] );
+        } else {
+            grunt.task.run( [ 'jsbeautifier', 'jshint', 'uglify' ] );
         }
     } );
     grunt.registerTask( 'reloadImg', function() {

@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+
   <?php
   wp_head();
   ?>
@@ -19,9 +20,15 @@
 
   <header id="Header">
     <div class="br_header">
-      <?php get_template_part('templates/navbar'); ?>
-    </div>
-  </header>
+      <?php if (get_header_image()) { print '<div  style="background-image:url('.get_header_image().'); background-size:cover; height:'.get_custom_header()->height.'px; margin-bottom:1em;">'; } ?>
+      <div class="<?php print BR_CONTAINER ?>">
+        <?php get_template_part('templates/navbar'); ?>
+      </div>
+      <?php if (get_header_image()) { print '</div>'; } ?>
+  </div>
+</header>
 
+<div class="<?php print BR_CONTAINER ?>">
+  <?php if(BR_BREADCRUMB===1) bootstrap_breadcrumbs() ?>
   <main id="Main">
     <div class="br_main">

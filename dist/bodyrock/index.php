@@ -5,7 +5,13 @@ if ( have_posts() ) {
   while ( have_posts() ) {
     the_post();
     if (is_singular()) {
-      get_template_part( 'templates/article','singular');
+      if (is_single('post')) {
+        get_template_part( 'templates/article','post');
+        comments_template();
+      }
+      else {
+        get_template_part( 'templates/article','page');
+      }
     }
     else {
       get_template_part( 'templates/article');

@@ -1,1 +1,0 @@
-            <div class="well">Well, it's a well! Could add well-sm or well-lg too</div>
