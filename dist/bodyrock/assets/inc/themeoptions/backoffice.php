@@ -1,11 +1,8 @@
 <?php
-
 // BACKOFFICE Theme options /////////////////////////////////////////////
-
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Rendu de la page des options du thème via Wordpress.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
-
 
 // ADD PAGE /////////////////////////////////////////////
 // Ajout du menu Options dans la rubrique Apparence
@@ -78,6 +75,7 @@ function themeoptions_backofficeRegister() {
 
 	$section = 'cssjs';
 	add_settings_section($brto.'_'.$section, '<hr><h2>CSS &amp; JS</h2>', $brto_Callback.'_sectiontext_'.$section, $brto);
+		add_settings_field($brto.'_bootstrapcss', 'Bootstrap CSS', $brto_Callback.'_bootstrapcss', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_bootswatch', 'Bootswatch', $brto_Callback.'_bootswatch', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_iconset', 'Set d\'icônes', $brto_Callback.'_iconset', $brto, $brto.'_'.$section);
 		add_settings_field($brto.'_container', 'Container', $brto_Callback.'_container', $brto, $brto.'_'.$section);
@@ -118,22 +116,16 @@ function brthemeoptions_backofficeCallback_sectiontext_seo() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
-// HTML DES CHAMPS DE FORMULAIRES
-function brthemeoptions_backofficeCallback_iconset() {
+////////////////////////////////////////////////////////////// HTML DES CHAMPS DE FORMULAIRES
+/////////////////////////////// CSS & JS
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////// Bootstrap CSS
+function brthemeoptions_backofficeCallback_bootstrapcss() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	$sets = array(
-		array('id'=>'glyphicon','label'=>'Glyphicon <em>(par défaut)</em>','url'=>'http://getbootstrap.com/components/#glyphicons'),
-		array('id'=>'fontawesome','label'=>'Font-Awesome','url'=>'http://fontawesome.io/icons/'),
-		array('id'=>'linearicons','label'=>'Linearicons','url'=>'https://linearicons.com/free'),
-		array('id'=>'octicons','label'=>'Octicons','url'=>'https://octicons.github.com/')
-		);
-
-	foreach ($sets as $S) {
-		echo '<input '.checked( $options['iconset'], $S['id'] , false).' name="brthemeoptions[iconset]" type="radio" value="'.$S['id'].'" id="brthemeoptions[iconset]" /> '.$S['label'];
-		echo (isset($S['url']) ? ' <a href="'.$S['url'].'" target="_blank"><small>site web</small></a>' : false);
-		echo '<br>';
-	}
+	echo '<input '.checked( $options['bootstrapcss'], true, false ).' name="brthemeoptions[bootstrapcss]" type="checkbox" value="1" id="brthemeoptions_bootstrapcss" /> '.__('Activer', 'bodyrock').'';
+	echo '<br><small>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css</small>';
 }
+//////// Bootswatch
 function brthemeoptions_backofficeCallback_bootswatch() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	$sets = array(
@@ -161,34 +153,59 @@ function brthemeoptions_backofficeCallback_bootswatch() {
 	}
 	print '</select>';
 }
+//////// Set d'icônes
+function brthemeoptions_backofficeCallback_iconset() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	$sets = array(
+		array('id'=>'glyphicon','label'=>'Glyphicon <em>(par défaut)</em>','url'=>'http://getbootstrap.com/components/#glyphicons'),
+		array('id'=>'fontawesome','label'=>'Font-Awesome','url'=>'http://fontawesome.io/icons/'),
+		array('id'=>'linearicons','label'=>'Linearicons','url'=>'https://linearicons.com/free'),
+		array('id'=>'octicons','label'=>'Octicons','url'=>'https://octicons.github.com/')
+		);
+
+	foreach ($sets as $S) {
+		echo '<input '.checked( $options['iconset'], $S['id'] , false).' name="brthemeoptions[iconset]" type="radio" value="'.$S['id'].'" id="brthemeoptions[iconset]" /> '.$S['label'];
+		echo (isset($S['url']) ? ' <a href="'.$S['url'].'" target="_blank"><small>site web</small></a>' : false);
+		echo '<br>';
+	}
+		echo '<br><small>Glyphicon est activé par défaut <strong>uniquement</strong> si Bootstrap CSS est chargé du CDN</small>';
+}
+//////// Container
 function brthemeoptions_backofficeCallback_container() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input '.checked( $options['container'], true, false ).' name="brthemeoptions[container]" type="checkbox" value="1" id="brthemeoptions_container" /> '.__('Préférer le .container-fluid', 'bodyrock').'';
 	echo '<br><small>Par défaut : .container fixe</small>';
 }
+//////// Navbar Top
 function brthemeoptions_backofficeCallback_navbartopfixed() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input '.checked( $options['navbartopfixed'], true, false ).' name="brthemeoptions[navbartopfixed]" type="checkbox" value="1" id="brthemeoptions_navbartopfixed" /> '.__('Préférer la navbar top fixed .navbar-fixed-top', 'bodyrock').'';
 	echo '<br><small>Par défaut : navbar top scroll</small>';
 }
+//////// jQuery
 function brthemeoptions_backofficeCallback_jquery() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input '.checked( $options['jquery'], true, false ).' name="brthemeoptions[jquery]" type="checkbox" value="1" id="brthemeoptions_jquery" /> '.__('Activer <a href="https://developers.google.com/speed/libraries/#jquery" target="_blank">jQuery</a>', 'bodyrock').'';
 	echo '<br><small>https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js</small>';
 }
+//////// Bootstrap Js
 function brthemeoptions_backofficeCallback_bootstrapjs() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input '.checked( $options['allbsjs'], true, false ).' name="brthemeoptions[allbsjs]" type="checkbox" value="1" id="brthemeoptions_allbsjs" /> '.__('Activer les <a href="http://getbootstrap.com/javascript/" target="_blank">composants JS de Bootstrap</a>', 'bodyrock').'';
+	echo '<input '.checked( $options['bootstrapjs'], true, false ).' name="brthemeoptions[bootstrapjs]" type="checkbox" value="1" id="brthemeoptions_bootstrapjs" /> '.__('Activer les <a href="http://getbootstrap.com/javascript/" target="_blank">composants JS de Bootstrap</a>', 'bodyrock').'';
 	echo '<br><small>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js</small>';
 }
-function brthemeoptions_backofficeCallback_googleanalyticsid() {
-	$options = get_option('brthemeoptions', themeoptionsGet_default());
-	echo '<input name="brthemeoptions[googleanalyticsid]" value="'.esc_attr($options['googleanalyticsid']).'" type="text" id="brthemeoptions_seo" />';
-	echo '<br><small class="description">'.__('Entrer votre identifiant UA-XXXXX-X', 'bodyrock').'</small>';
-}
+/////////////////////////////// REFERENCEMENT
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////// BreadCrumb
 function brthemeoptions_backofficeCallback_breadcrumb() {
 	$options = get_option('brthemeoptions', themeoptionsGet_default());
 	echo '<input '.checked( $options['breadcrumb'], true, false ).' name="brthemeoptions[breadcrumb]" type="checkbox" value="1" id="brthemeoptions_breadcrumb" /> '.__('Activer', 'bodyrock').'';
 	echo '<br><small>Désactivé par défaut</small>';
+}
+//////// Google Analytics ID
+function brthemeoptions_backofficeCallback_googleanalyticsid() {
+	$options = get_option('brthemeoptions', themeoptionsGet_default());
+	echo '<input name="brthemeoptions[googleanalyticsid]" value="'.esc_attr($options['googleanalyticsid']).'" type="text" id="brthemeoptions_seo" />';
+	echo '<br><small class="description">'.__('Entrer votre identifiant UA-XXXXX-X', 'bodyrock').'</small>';
 }
 ?>

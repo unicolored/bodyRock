@@ -20,8 +20,8 @@
 
   <header id="Header">
     <div class="br_header">
-      <?php if (get_header_image()) { print '<div  style="background-image:url('.get_header_image().'); background-size:cover; height:'.get_custom_header()->height.'px; margin-bottom:1em;">'; } ?>
-      <div class="<?php print BR_CONTAINER ?>">
+      <div id="wrap_navbar" class="<?php print BR_CONTAINER ?>">
+      <?php if (get_header_image()) { print '<div id="Banner"><a href="/"><img src="'.get_header_image().'" class="img-responsive"></a></div>'; } ?>
         <?php get_template_part('templates/navbar'); ?>
       </div>
       <?php if (get_header_image()) { print '</div>'; } ?>

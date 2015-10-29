@@ -7,7 +7,7 @@ add_filter('excerpt_length', 'my_excerpt_length',999); // Modifie la longueur de
 add_filter('excerpt_more', 'new_excerpt_more'); // Remplace le lien Read more
 add_filter('wp_handle_upload_prefilter', 'sanitize_file_uploads'); // Modifie le nom des images uploadées afin d'enlever les caractères interdits et les accents.
 add_filter( 'jetpack_implode_frontend_css', '__return_false' ); // Supprime la feuille de style jetpack_implode_frontend_css
-add_filter('the_generator',					'no_generator');
+add_filter('the_generator', 'no_generator');
 add_filter('dynamic_sidebar_params', 'first_last_classes'); // Ajoute une classe spécifique au premier et au dernier widget de la sidebar
 add_filter ( 'wp_page_menu', 'br_page_menu', 100 ); // MODIFICATION DU MENU wp_page_menu pour une intégration dans la navbar
 add_filter ( 'wp_nav_menu', 'br_nav_menu', 100 ); // MODIFICATION DU MENU wp_nav_menu pour une intégration dans la navbar
@@ -249,10 +249,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 add_action('wp_head','base_css'); // Ajoute les styles minimum dans le head
 add_action('wp_head','oldIEBrowserSupport'); // Ajoute les scripts pour les anciens IE // DESACTIVE car déjà présent ! Peut-être déjà chargé par BodyRock
-//add_action('wp_enqueue_scripts', YESWEARE=="dev" ? 'ScriptsLocaux' : 'ScriptsProd');
-if(is_child_theme()) {
-  add_action('wp_enqueue_scripts', 'stylesnscripts');
-}
+add_action('wp_enqueue_scripts', YESWEARE=="dev" ? 'ScriptsLocaux' : 'ScriptsProd');
 add_action('wp_enqueue_scripts', 'stylesnscripts_options');
 add_action('login_head', 'custom_login_css'); // Ajoute une feuille de style pour la page de connexion
 add_action('wp_footer', 'removeJetpackScripts',0); // Supprime les scripts Jetpack
@@ -298,28 +295,27 @@ if ( !function_exists( 'oldIEBrowserSupport' ) ) {
 }
 if ( !function_exists( 'ScriptsLocaux' ) ) {
   function ScriptsLocaux() {
-    // SCRIPTS ET CSS EN DEVELOPPEMENT LOCAL
-    // CSS
-    // TODO : rendre plus générales ces fonctions copiées de gilleshoarau.com
-    //wp_enqueue_style('style-style', get_stylesheet_directory_uri().'/style.css', false, null, 'all');
-    // JS
-    //wp_enqueue_script('bower_concat', get_stylesheet_directory_uri().'/js/tmp/bower_concat.js', false,null,true);
+    // Fonction à placer dans un thème enfant pour les styles et scripts en développement
+    return;
   }
 }
 if ( !function_exists( 'ScriptsProd' ) ) {
   function ScriptsProd() {
-    // SCRIPTS EN PRODUCTION
-    // CSS
-    // TODO : rendre plus générales ces fonctions copiées de gilleshoarau.com
-    //wp_enqueue_style('style-child', get_stylesheet_directory_uri() . '/style.'.wp_get_theme('rock-gilleshoarau')->Version.'.css', false, null, 'all');
-    // JS
-    //wp_enqueue_script('myjquery', "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", false, null, true);
-    //wp_enqueue_script('scriptsglobaux', get_stylesheet_directory_uri() . "/js/scripts.".wp_get_theme('rock-gilleshoarau')->Version.".min.js", false, null, true);
+    // Fonction à placer dans un thème enfant pour les styles et scripts en production
+    return;
   }
 }
 if ( !function_exists( 'stylesnscripts_options' ) ) {
   function stylesnscripts_options() {
-    // CSS
+    // Bootstrap CSS
+    if (BR_BOOTSTRAPCSS === 1) {
+      wp_enqueue_style('style-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', false, null, 'all');
+    }
+    // Bootswatch
+    if(BR_BOOTSWATCH != "aucun") {
+      wp_enqueue_style('style-bootswatch', 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/'.BR_BOOTSWATCH.'/bootstrap.min.css', false, null, 'all');
+    }
+    // Set d'icônes
     switch ( BR_ICONSET ) {
       case 'fontawesome' :
       wp_enqueue_style('iconset-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), null, false);
@@ -331,27 +327,14 @@ if ( !function_exists( 'stylesnscripts_options' ) ) {
       wp_enqueue_style('iconset-octicons', 'https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css', array(), null, false);
       break;
     }
-
-    wp_enqueue_style('style-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', false, null, 'all');
-    if(BR_BOOTSWATCH!="aucun") {
-      wp_enqueue_style('style-bootswatch', 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/'.BR_BOOTSWATCH.'/bootstrap.min.css', false, null, 'all');
-    }
-
-    // JAVASCRIPT
-    // Bootstrap Javascript
-    if (BR_JQUERY != NULL) {
+    // jQuery
+    if (BR_JQUERY === 1) {
       wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array('jquery'), null, 1);
     }
-
-    if (BR_ALLBSJS != NULL) {
+    // Bootstrap JS
+    if (BR_BOOTSTRAPJS === 1) {
       wp_enqueue_script('bootstrap-min-default', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', array('jquery'), null, 0);
     }
-  }
-}
-if ( !function_exists( 'stylesnscripts' ) ) {
-  function stylesnscripts() {
-    wp_enqueue_style('style-custom', get_stylesheet_directory_uri() . '/style.css', false, null, 'all');
-    wp_enqueue_script('scripts-custom', get_stylesheet_directory_uri().'/js/scripts.'.wp_get_theme()->Version.'.min.js', array('jquery'), null, 1);
   }
 }
 if ( !function_exists( 'custom_login_css' ) ) {

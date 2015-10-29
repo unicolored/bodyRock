@@ -9,6 +9,13 @@ add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
 add_action('wp_footer', 'custom_demo_store', 10);
 
+/*
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );
+function woo_custom_cart_button_text() {
+  return __( 'Add to cart', 'woocommerce' );
+}
+*/
+
 function my_theme_wrapper_start() {
   //echo '<section id="main">';
 }

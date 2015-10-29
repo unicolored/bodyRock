@@ -1,17 +1,11 @@
 <?php
-
 // VIEW Theme options /////////////////////////////////////////////
-
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 // Rendu de la page des options du thème via Wordpress.
 /*//**//**//**//*//**//**//**//*//**//**//**//*//**//**//**/
 
-
 // RENDER PAGE /////////////////////////////////////////////
 function themeoptions_viewRender_page() {
-
-  // Régénère le .htaccess afin de prendre en compte les éventuels changement de custom types.
-  //	flush_rewrite_rules();
 
   $recommended_plugins = array(
     'cloudflare',
@@ -25,6 +19,7 @@ function themeoptions_viewRender_page() {
   // HTML Start
   echo '<div class="wrap">';
   echo '<h1>'.__('bodyRock <small>.gypse</small>', 'bodyrock').'</h1>';
+  //echo '<h2 class="nav-tab-wrapper"><a href="http://champagne-demonstration.cave.grappe.xyz/wp-admin/nav-menus.php" class="nav-tab nav-tab-active">CSS &amp; JS</a></h2>';
 
   echo '<form method="post" action="options.php">';
 
@@ -34,26 +29,24 @@ function themeoptions_viewRender_page() {
   settings_fields( 'brthemeoptionsfields' );
   do_settings_sections( 'brthemeoptions' );
 
-
   echo '</form>';
+
   print '<hr>';
   print '<hr>';
   print '<hr>';
-  // Recommandations
-  echo '<h3>Recommandations</h3>';
+
+  echo '<h3>Extensions</h3>';
   echo '<table class="form-table">';
   echo '<tr width="300">';
   echo '<th>';
   echo '<h4>Activés</h4>';
   echo '</th>';
   echo '<th>';
-  echo '<h4>Extensions recommandées</h4>';
+  echo '<h4>Recommandées</h4>';
   echo '</th>';
   echo '</tr>';
   echo '<tr width="300">';
   echo '<td valign="top">';
-
-
   $p=array();
   if($plugins) {
     foreach($plugins as $k=>$v) {
@@ -70,7 +63,6 @@ function themeoptions_viewRender_page() {
   }
   echo '</td>';
   echo '<td valign="top">';
-
   foreach($recommended_plugins as $k=>$v) {
     if(!in_array($v,$p)) {
       echo ''.$v.'<br>';
@@ -78,9 +70,11 @@ function themeoptions_viewRender_page() {
   }
   echo '</td>';
   echo '</tr>';
-
   echo '</table>';
-  echo '<hr><h3>Infos</h3>';
+
+  print '<hr>';
+
+  echo '<h3>Infos</h3>';
   echo '<p><small>Date de version : octobre 2015 | '.__('Auteur', 'bodyrock').' : <a href="http://www.gilleshoarau.com/"><strong>Gilles Hoarau</strong></a></small>';
   echo '<br><small>Body<em>rock</em> est un thème orienté développeurs. Il utilise les <a href="http://getbootstrap.com/components/" target="_blank">composants Bootstrap</a>.</small></p>';
   echo '</div>';

@@ -62,6 +62,7 @@ require_once INC_PATH . 'br_images.php'; // Tout ce qui concerne les paramètres
 require_once INC_PATH . 'br_textes.php'; // Tout ce qui concerne les paramètres liés aux textes.
 
 require 'includes/functions__hook.php';
+require 'includes/functions__hook_custom.php';
 require 'includes/functions_customize.php';
 require 'includes/functions_extend.php';
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );

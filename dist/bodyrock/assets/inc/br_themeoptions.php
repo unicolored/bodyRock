@@ -29,15 +29,11 @@ endif;  // EndIf is_admin()
 // GET /////////////////////////////////////////////
 // Retourne les options actives
 function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
-
 	if($check_option!=false) {
-
 		$options=get_option('brthemeoptions', themeoptionsGet_default());
 		return (isset($options[$check_option]) ? $options[$check_option] : 'Option non existante.');
-
 	}
 	else return get_option('brthemeoptions', themeoptionsGet_default());
-
 }
 
 // GET DEFAULT /////////////////////////////////////////////
@@ -45,13 +41,14 @@ function br_themeoptionsGet($check_option=false) { // bodyrock_get_theme_options
 function themeoptionsGet_default()
 {
 	$default = array(
+		'bootstrapcss'  			=> 1,
 		'bootswatch'		=> 'aucun',
 		'iconset'  			=> 'glyphicon',
 		'container'  			=> 0,
 		'breadcrumb'  			=> 0,
 		'navbartopfixed'  			=> 0,
 		'jquery'  			=> 1,
-		'allbsjs'  			=> 1,
+		'bootstrapjs'  			=> 1,
 		'googleanalyticsid'     => false
 	);
 
@@ -63,13 +60,14 @@ function themeoptionsGet_default()
 // Les options sont converties en constantes pour être accessible dans tout le code.
 $options = br_themeoptionsGet();
 // Sélection du set d'icône parmis Glyphicon, Font-Awesome, Elusive, etc...
+define('BR_BOOTSTRAPCSS', $options['bootstrapcss']);
 define('BR_BOOTSWATCH', $options['bootswatch']);
 define('BR_ICONSET', $options['iconset']);
 define('BR_CONTAINER', ($options['container']=="" ? 'container' : 'container-fluid'));
 define('BR_BREADCRUMB', $options['breadcrumb']);
 define('BR_NAVBARTOPFIXED', ($options['navbartopfixed']=="" ? '' : 'navbar-fixed-top'));
 define('BR_JQUERY', $options['jquery']);
-define('BR_ALLBSJS', $options['allbsjs']);
+define('BR_BOOTSTRAPJS', $options['bootstrapjs']);
 // L'identifiant du compte Anakytics
 if(isset($options['googleanalyticsid'])) {
 	define('BR_GOOGLE_ANALYTICS', $options['googleanalyticsid']);
