@@ -171,7 +171,7 @@ function bootstrap_breadcrumbs() {
 		$homeLink = get_bloginfo('url');
 
 		echo '<ol class="breadcrumb">';
-		echo '<li><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . '</li> ';
+		//echo '<li><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . '</li> ';
 
 		if (is_category()) {
 			$cat_obj   = $wp_query -> get_queried_object();
@@ -203,7 +203,7 @@ function bootstrap_breadcrumbs() {
 				echo $before . get_the_title() . $after;
 			} else {
 				$cat = get_the_category(); $cat = $cat[0];
-				echo '<li>' . get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') . '</li>';
+				echo '<li>' . get_category_parents($cat, TRUE, '</li>' . $delimiter . '<li>') . '</li>';
 				echo $before . get_the_title() . $after;
 			}
 		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {

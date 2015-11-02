@@ -3,6 +3,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////
 add_filter('body_class', 'extend_body_classes'); // Ajoute des classes au body
+add_filter('body_class', 'extend_body_classes_layouts'); // Ajoute des classes de Layouts au body
 add_filter('excerpt_length', 'my_excerpt_length',999); // Modifie la longueur de l'excerpt par défaut.
 add_filter('excerpt_more', 'new_excerpt_more'); // Remplace le lien Read more
 add_filter('wp_handle_upload_prefilter', 'sanitize_file_uploads'); // Modifie le nom des images uploadées afin d'enlever les caractères interdits et les accents.
@@ -37,6 +38,14 @@ if ( !function_exists( 'extend_body_classes' ) ) {
     $classes[] = $bodyClass['child'];
     $classes[] = 'bg-'.$bodyClass['parent'];
     $classes[] = 'cat-'.br_mainCategory();
+    ////////////////
+    return $classes;
+  }
+}
+if ( !function_exists( 'extend_body_classes_layouts' ) ) {
+  function extend_body_classes_layouts($classes) {
+    // Aucune action ici - à utiliser par un thème child pour ajouter des layouts de mise en forme selon les pages
+    // Exemple $classes[] = 'layout-sidebarright';
     ////////////////
     return $classes;
   }
@@ -247,17 +256,20 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-add_action('wp_head','base_css'); // Ajoute les styles minimum dans le head
-add_action('wp_head','oldIEBrowserSupport'); // Ajoute les scripts pour les anciens IE // DESACTIVE car déjà présent ! Peut-être déjà chargé par BodyRock
 add_action('wp_enqueue_scripts', YESWEARE=="dev" ? 'ScriptsLocaux' : 'ScriptsProd');
 add_action('wp_enqueue_scripts', 'stylesnscripts_options');
 add_action('login_head', 'custom_login_css'); // Ajoute une feuille de style pour la page de connexion
-add_action('wp_footer', 'removeJetpackScripts',0); // Supprime les scripts Jetpack
 add_action('wp_print_styles', 'removeJetpackStyle',999); // Supprime la feuille de style Jetpack
 add_action( 'wp_print_scripts', 'wpdocs_dequeue_script', 100 );
 add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+add_action('init', 'modify_jquery');
+add_action('wp_head','base_css'); // Ajoute les styles minimum dans le head
+add_action('wp_head','oldIEBrowserSupport'); // Ajoute les scripts pour les anciens IE // DESACTIVE car déjà présent ! Peut-être déjà chargé par BodyRock
 add_action('wp_head','meta_author');
 add_action('wp_head','link_shortcut_icon');
+add_action('wp_head','opengraph');
+add_action('wp_footer', 'add_schemaorg',0); // Supprime les scripts Jetpack
+add_action('wp_footer', 'removeJetpackScripts',0); // Supprime les scripts Jetpack
 add_action('wp_footer', 'add_googleanalytics'); //ADDS GOOGLE ANALYTICS CODE TO FOOTER
 
 // ADMIN BACKEND
@@ -277,6 +289,101 @@ add_action( 'widgets_init', 'br_register_sidebars' ); // Ajout de sidebars pour 
 ##         ## ##      ##     ## ##    ##    ##     ##  ##     ## ##   ### ##    ##
 ########   ## ##      ##     ##  ######     ##    ####  #######  ##    ##  ######
 */
+if ( !function_exists( 'opengraph' ) ) {
+  function opengraph() {
+    // 1. Title
+    $title = get_bloginfo('description');
+    // 2. Description
+    $description = get_post_meta(get_the_ID(),'SeoDescription',true);
+    // 3. Url
+    $url = get_bloginfo('url');
+    // 4. Blog name
+    $blogname = get_bloginfo('name');
+    // 5. Blog description
+    $blogdescription = $title;
+    // 5. Content creator
+    $administrator = get_users( 'who=administrator&role=administrator' );
+    $user_login = get_the_author_meta('user_login',$administrator[0]->ID);
+
+    $type = 'website';
+    ////////////// ////////////// ////////////// ////////////// //////////////
+    print "<!-- Structured Data -->\n";
+    $META['twitter']['card'] = '<meta name="twitter:card" content="summary"/>';
+    //$META['twitter']['creator'] = '<meta name="twitter:creator" content="@unicolored"/>';
+
+    // CONDITIONNAL
+    if (function_exists ('is_product') && is_product()) {
+
+    }
+    elseif (is_front_page()) {
+      //$title = $blogname;
+        $creator = '@'.$user_login;
+    }
+    elseif (is_home()) {
+      $title = get_the_title( get_option('page_for_posts', true) );
+    }
+    elseif (is_single() || is_page()) {
+      $description = get_post(get_the_ID())->post_content;
+      if(is_single()) {
+        $user_login = get_the_author_meta('user_login',get_post_field( 'post_author', get_the_ID() ));
+        $creator = '@'.$user_login;
+      }
+      if (has_post_thumbnail()) {
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'twitter' )[0];
+        $META['twitter']['card'] = '<meta name="twitter:card" content="summary_large_image"/>';
+      }
+      $url = get_the_permalink();
+      $type = 'article';
+    }
+    elseif (is_author()) {
+      $title = get_the_title( get_option('page_for_posts', true) );
+
+
+      $first_name = get_the_author_meta('first_name',$administrator[0]->ID);
+      $last_name = get_the_author_meta('last_name',$administrator[0]->ID);
+
+      $type = 'profile';
+      $META['OG']['first_name'] = '<meta property="og:profile:first_name" content="'.$first_name.'" />';
+      $META['OG']['last_name'] = '<meta property="og:profile:last_name" content="'.$last_name.'" />';
+      $META['OG']['username'] = '<meta property="og:profile:username" content="'.$user_login.'" />';
+      $META['OG']['gender'] = '<meta property="og:profile:gender" content="male" />';
+    }
+    ////////////// ////////////// ////////////// ////////////// //////////////
+    if ($title!="") {
+      //$title = substr(htmlentities(strip_tags(preg_replace('/\s\s+/', '', $title),ENT_QUOTES),0,60))." ...";
+      //$META['twitter']['title'] = '<meta name="twitter:title" content="'.$title.'" />';
+      $META['OG']['title'] = '<meta property="og:title" content="'.$title.'" />';
+    }
+    if ($description!="") {
+      $description = substr(htmlentities(strip_tags(preg_replace('/\s\s+/', '', $description)),ENT_QUOTES),0,190)." ...";
+      // $META['twitter']['description'] = '<meta name="twitter:description" content="'.$description.'" />';
+      $META['OG']['description'] = '<meta property="og:description" content="'.$description.'" />';
+    }
+    if ($image!="") {
+      //$META['twitter']['image'] = '<meta name="twitter:image" content="'.$image.'" />';
+      $META['OG']['image'] = '<meta property="og:image" content="'.$image.'" />';
+    }
+    if ($creator!="") {
+      $META['twitter']['creator'] = '<meta name="twitter:creator" content="'.$creator.'" />';
+    }
+    $META['twitter']['site'] = '<meta name="twitter:site" content="@'.$user_login.'"/>';
+    $META['OG']['type'] = '<meta property="og:type" content="'.$type.'" />';
+    $META['OG']['site_name'] = '<meta property="og:site_name" content="'.$blogname.'" />';
+    $META['OG']['url'] = '<meta property="og:url" content="'.$url.'" />';
+    $META['OG']['locale'] = '<meta property="og:locale" content="fr_FR" />';
+    $META['OG']['alternate'] = '<meta property="og:locale:alternate" content="en_US" />';
+
+    // RESULTATS
+    foreach ($META as $type => $k) {
+      print "\n<!--".$type."-->\n";
+      foreach ($k as $label) {
+        print $label."\n";
+      }
+    }
+
+    print "<!-- /Structured Data -->\n\n";
+  }
+}
 if ( !function_exists( 'base_css' ) ) {
   function base_css() {
     $output="";
@@ -438,50 +545,69 @@ register_widget('bodyrock_recentposts');
 }
 }
 */
+if ( !function_exists( 'modify_jquery' ) ) {
+  function modify_jquery() {
+    if (!is_admin()) {
+      // comment out the next two lines to load the local copy of jQuery
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', false, null, true);
+      //wp_enqueue_script('jquery'); // Inutile de charger jquery directement s'il est appellé comme dépendance d'un autre script ou plugin
+    }
+  }
+}
 if ( !function_exists( 'br_register_sidebars' ) ) {
   function br_register_sidebars() {
-    register_sidebar( array(
-      'name' => __( 'Dummy', 'bodyrock' ),
-      'id' => 'Dummy',
-      'before_widget' => '<aside class="hidden">',
-      'after_widget' => "</aside>",
-      'before_title' => '',
-      'after_title' => '',
-      )
-    );
-
     register_sidebar( array(
       'name' => __( 'Sidebar Left', 'bodyrock' ),
       'id' => 'sidebar-left',
       'before_widget' => '<section class="widget %2$s" id="%1$s">',
       'after_widget' => "</section>",
-      'before_title' => '<h1>',
+      'before_title' => '<h1 class="widget-title">',
       'after_title' => '</h1>',
       )
     );
-
     register_sidebar( array(
       'name' => __( 'Sidebar Right', 'bodyrock' ),
       'id' => 'sidebar-right',
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget' => "</section>",
-      'before_title' => '<h1>',
+      'before_title' => '<h1 class="widget-title">',
+      'after_title' => '</h1>',
+      )
+    );
+    register_sidebar( array(
+      'name' => __( 'Sidebar Rubrique', 'bodyrock' ),
+      'id' => 'sidebar-rubrique',
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget' => "</section>",
+      'before_title' => '<h1 class="widget-title">',
       'after_title' => '</h1>',
       )
     );
   }
 }
-function add_googleanalytics() {
-  if ( BR_GOOGLE_ANALYTICS != false ) {
-    ?>
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', <?php echo BR_GOOGLE_ANALYTICS ?>, 'auto');
-    ga('send', 'pageview');
-    </script>
-    <?php
+if ( !function_exists( 'add_googleanalytics' ) ) {
+  function add_googleanalytics() {
+    if ( BR_GOOGLE_ANALYTICS != false ) {
+      print '
+      <!-- Google Analytics -->
+      ';
+      ?>
+      <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date(); a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1; a.src=g;m.parentNode.insertBefore(a,m)}) (window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', '<?php echo BR_GOOGLE_ANALYTICS ?>', 'auto'); ga('send', 'pageview');</script>
+      <?php
+    }
+  }
+}
+if ( !function_exists( 'add_schemaorg' ) ) {
+  function add_schemaorg() {
+    /*print '
+    <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "WebSite", "url": "http://www.gilleshoarau.com/",
+    "potentialAction": { "@type": "SearchAction", "target": "http://www.gilleshoarau.com/?s={search_term}",
+    "query-input": "required name=search_term" } }</script>
+    ';*/
+    print '
+    <!-- Schema.org -->
+    <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "WebSite", "url": "'.get_bloginfo('url').'/", "potentialAction": { "@type": "SearchAction", "target": "'.get_bloginfo('url').'/?s={search_term}", "query-input": "required name=search_term" } }</script>
+    ';
   }
 }

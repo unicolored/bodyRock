@@ -70,14 +70,14 @@ class wp_bootstrap_listgroupCatwalker extends Walker {
 			*/
 			$link .= 'title="' . esc_attr( strip_tags( apply_filters( 'category_description', $category->description, $category ) ) ) . '"';
 		}
+		if ( ! empty( $args['show_count'] ) ) {
+			$count = ' <span class="badge">' . number_format_i18n( $category->count ) . '</span>';
+		}
 
 		$link .= '>';
-		$link .= $cat_name . '</a>';
+		$link .= $cat_name. $count . '</a>';
 
 
-		if ( ! empty( $args['show_count'] ) ) {
-			$link .= ' (' . number_format_i18n( $category->count ) . ')';
-		}
 		if ( 'list' == $args['style'] ) {
 			$output .= "\t<li";
 			$css_classes = array(
