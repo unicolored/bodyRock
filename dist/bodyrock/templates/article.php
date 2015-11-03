@@ -2,6 +2,7 @@
 // TOFIX: Ici il faut créer un include spécifique à cette template article
 // qui est utilisée pour afficher plusieurs articles sur une même page
 //require( ABSPATH.'/wp-content/themes/rock-gilleshoarau/includes/wp_single.php');
+the_post();
 ?>
 <article itemscope="" itemtype="https://schema.org/CreativeWork">
   <header class="artHeader">
