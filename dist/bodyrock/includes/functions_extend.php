@@ -36,7 +36,7 @@ if ( !function_exists( 'getBodyClass' ) ) {
     return $bodyClass;
   }
 }
-
+/*
 // Retourne la classe Parente d'un article (qui n'appartient pas forcément à cette catégorie mais qui appartient à un enfant)
 // Cette classe doit aussi être confronté à une liste de Catégories Principales et non pas à une catégorie qui sert de filtre
 function br_getParentCatFromChild() {
@@ -71,6 +71,7 @@ if ( !function_exists( 'getCategoriesParentesPrincipales' ) ) {
     return array();
   }
 }
+*/
 
 // Retourne la catégorie "Principale" utilisée par la page ou le Post
 function br_mainCategory() {
@@ -100,7 +101,36 @@ function br_mainCategory() {
   }
   return $mainCategory;
 }
-
+// Retourne la catégorie "Principale" utilisée par la page ou le Post
+function br_singleCategories() {
+  if ( is_home() ) {
+    // Je récupère la catégorie Prioritaire sur un article
+    $categorie_Utile = get_category(1);
+  }
+  elseif ( is_single() ) {
+    // Je récupère la catégorie Prioritaire sur un article
+    $categorie_Utile = get_category(br_getParentCatFromChild());
+  }
+  elseif ( is_category() ) {
+    // Je récupère la catégorie Affichée et donc Utile
+    $categorie_Utile = get_category(get_query_var('cat'));
+  }
+  /////////
+  $eventuelle_categorie_parente = $categorie_Utile->parent;
+  if ($eventuelle_categorie_parente > 0) {
+    // Cette catégorie possède un Parent, elle est donc Enfant
+    $mainCategory->child_id = $eventuelle_categorie_parente;
+    $mainCategory->child = get_category($eventuelle_categorie_parente)->slug;
+    // /$mainCategory['Child'] = $categorie_Utile->slug;
+  }
+  else {
+    // La catégorie n'a pas de Parent, elle est donc Parent, pas d'enfant
+    $mainCategory->parent_id = $categorie_Utile->term_id;
+    $mainCategory->parent = $categorie_Utile->slug;
+  }
+  return $mainCategory;
+}
+/*
 // SET LAST VIEWS /////////////////////////////////////////////
 // Enregistre les identifiants des derniers contenus vus en session.
 function br_modules_lastviewsSet() {
@@ -157,8 +187,10 @@ function br_modules_lastviewsSet() {
   }
   return array_values($navbar_items);
 }
+*/
 
 // https://github.com/jubianchi/wp-bootstrap/blob/master/functions.php
+/*
 function bootstrap_breadcrumbs() {
 	global $post, $wp_query, $theme_config;
 
@@ -254,3 +286,4 @@ function bootstrap_breadcrumbs() {
 		echo '</ol>';
 	//}
 }
+  */

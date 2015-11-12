@@ -30,6 +30,7 @@ add_filter( 'posts_groupby', 'custom_posts_groupby', 10, 2 );
 ##         ## ##      ##        ##  ##          ##    ##       ##    ##  ##    ##
 ########   ## ##      ##       #### ########    ##    ######## ##     ##  ######
 */
+
 if ( !function_exists( 'extend_body_classes' ) ) {
   function extend_body_classes($classes) {
     $bodyClass = getBodyClass();
@@ -270,7 +271,7 @@ add_action('wp_head','link_shortcut_icon');
 add_action('wp_head','opengraph');
 add_action('wp_footer', 'add_schemaorg',0); // Supprime les scripts Jetpack
 add_action('wp_footer', 'removeJetpackScripts',0); // Supprime les scripts Jetpack
-add_action('wp_footer', 'add_googleanalytics'); //ADDS GOOGLE ANALYTICS CODE TO FOOTER
+add_action('wp_footer', 'add_googleanalytics',999); //ADDS GOOGLE ANALYTICS CODE TO FOOTER
 
 // ADMIN BACKEND
 add_action( 'login_enqueue_scripts', 'my_custom_login_logo' );
@@ -446,7 +447,8 @@ if ( !function_exists( 'stylesnscripts_options' ) ) {
 }
 if ( !function_exists( 'custom_login_css' ) ) {
   function custom_login_css() {
-    wp_enqueue_style('mystyles', '/css/styles-login.css', false, null, 'all');
+    $path = is_child_theme() ? get_stylesheet_directory_uri() : get_template_directory_uri() ;
+    wp_enqueue_style('mystyles', $path.'/style.css', false, null, 'all');
   }
 }
 if ( !function_exists( 'removeJetpackScripts' ) ) {
@@ -490,7 +492,7 @@ if ( !function_exists( 'my_custom_login_logo' ) ) {
   // Remplace le logo de Wordpress sur la page login.
   function my_custom_login_logo()
   {
-    echo '<style  type="text/css">body.login div#login h1 a {  background-image:url('.get_template_directory_uri().'/assets/images/logo_login_bodyrock.png)  !important; } </style>';
+    echo '<style  type="text/css">body.login div#login h1 a {  background-image:url('.get_template_directory_uri().'/img/logo_login_bodyrock.png)  !important; } </style>';
   }
 }
 if ( !function_exists( 'robots' ) ) {

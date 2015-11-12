@@ -33,12 +33,13 @@ module.exports = function( grunt ) {
             // COMPILATION des deux fichiers .less principaux : bootstrap et style
             wordpress: {
                 files: {
-                    '<%= paths.themepath %>css/styles-login.css': '<%= paths.devpath %>less/login-style.less'
+                    '<%= paths.themepath %>css/style-login.css': '<%= paths.devpath %>less/style-login.less',
+                    '<%= paths.themepath %>css/style-editor.css': '<%= paths.devpath %>less/style-editor.less'
                 }
             },
             devstyle: {
                 files: {
-                    '<%= paths.themepath %>style.dev.css': '<%= paths.devpath %>less/style.less',
+                    '<%= paths.devpath %>css/style.dev.css': '<%= paths.devpath %>less/style.less',
                 }
             }
         },
@@ -48,8 +49,8 @@ module.exports = function( grunt ) {
                 browsers: [ 'last 2 versions', 'ie 8', 'ie 9' ]
             },
             theme: {
-                src: '<%= paths.themepath %>style.dev.css',
-                dest: '<%= paths.themepath %>style.ap.css'
+                src: '<%= paths.devpath %>css/style.dev.css',
+                dest: '<%= paths.devpath %>css/style.ap.css'
             },
         },
         // MINIFICATION
@@ -61,7 +62,7 @@ module.exports = function( grunt ) {
                     banner: '/*\nTheme Name: <%= wp.themename %>\nTheme URI: <%= wp.themeuri %>\nDescription: <%= pkg.description %>\nAuthor: <%= wp.themeauthor %>\nAuthorURI: <%= wp.themeauthoruri %>\nVersion: <%= pkg.version %>\nText Domain: <%= wp.themetextdomain %>\n*/'
                 },
                 files: {
-                    '<%= paths.themepath %>style.css': [ '<%= paths.themepath %>style.ap.css' ]
+                    '<%= paths.themepath %>style.css': [ '<%= paths.devpath %>css/style.ap.css' ]
                 }
             }
         },
@@ -400,7 +401,7 @@ module.exports = function( grunt ) {
         grunt.task.run( [ 'copy:libsFonts' ] );
     } );
     grunt.registerTask( 'reloadCss', function() {
-        grunt.task.run( [ 'less:devstyle', 'autoprefixer:theme', 'cssmin:dev2theme' ] );
+        grunt.task.run( [ 'less', 'autoprefixer:theme', 'cssmin:dev2theme' ] );
     } );
     grunt.registerTask( 'reloadJs', function( target ) {
         if ( target === 'prod' ) {

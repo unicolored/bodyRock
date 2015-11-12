@@ -37,4 +37,5 @@ README.md
 
 # SITE EN PRODUCTION
 dist/bodyrock/dev/
-#dist/bodyrock/assets/inc/_tmp/
+dist/bodyrock/**/_tmp/
+dist/bodyrock/html
