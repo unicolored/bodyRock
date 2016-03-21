@@ -1,4 +1,4 @@
 //
 jQuery( document ).ready( function() {
-  'use strict';
+    'use strict';
 } );

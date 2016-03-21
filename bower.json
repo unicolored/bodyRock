@@ -1,6 +1,6 @@
 {
   "name": "BodyRock",
-  "version": "0.0.15",
+  "version": "0.1.0",
   "authors": [
     "Gilles Hoarau <unicolored@gmail.com>"
   ],
@@ -15,7 +15,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_compenents",
+    "bower_components",
     "test",
     "tests",
     "tmp"

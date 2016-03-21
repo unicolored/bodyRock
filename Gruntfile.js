@@ -384,7 +384,7 @@ module.exports = function( grunt ) {
             - copie du fichier yesimlocal.php dans /dev/
             - suppression du manifest.xml et du .appcache dans /htdocs/
             */
-                grunt.task.run( [ 'copy:yesimlocal', 'clean:webapp' ] );
+                grunt.task.run( [ 'copy:yesimlocal' /*, 'clean:webapp'*/ ] );
             break;
             case 'prod':
                 /*
@@ -392,7 +392,7 @@ module.exports = function( grunt ) {
                 - suppression du fichier imlocal.php dans /dev/
                 - copie des fichiers manifest.xml et .appcache dans /htdocs/
                 */
-                    grunt.task.run( [ 'clean:yesimlocal', 'copy:webapp' ] );
+                    grunt.task.run( [ 'clean:yesimlocal' /*, 'copy:webapp'*/ ] );
                 break;
         }
     } );
@@ -434,7 +434,7 @@ module.exports = function( grunt ) {
     /****************************/
     ///// ETAPE DE RELEASE
     grunt.registerTask( 'production', function() {
-        grunt.task.run( [ 'copy:libsFonts', 'reloadCss', 'reloadJs:prod', 'copy:changelog', 'clean:changelog', 'changelog', 'copy:versioning', /*'reloadHtml',*/ 'dev:prod', 'reloadImg' ] );
+        grunt.task.run( [ 'copy:libsFonts', 'reloadCss', 'reloadJs:prod', 'copy:changelog', /*'clean:changelog',*/ 'changelog', 'copy:versioning', /*'reloadHtml',*/ 'dev:prod', 'reloadImg' ] );
     } );
     grunt.registerTask( 'optimize', function() {
         grunt.option( 'force', true );
