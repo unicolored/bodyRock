@@ -1,0 +1,7 @@
+<?php
+// Custom bodyRock hooks
+
+///////////////////////////////////////////////////////////////////////////////////////
+function bodyrock_add_panier() {
+  do_action( 'bodyrock_add_panier_insert' );
+}

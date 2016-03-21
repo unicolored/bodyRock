@@ -1,21 +1,7 @@
-# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
-bower_components
-node_modules
-
 # Ignore automatically generated cruft
 *.log
 .sass-cache
 .*/
-
-# Ignore config
-tmp/
-dev/screenshots/
-ssl/
-htdocs/wp-content/themes/bodyrock/dev/
-htdocs/wp-content/themes/bodyrock/
-htdocs/wp-content/themes/bodyrock-child/
-htdocs/wp-content/themes/rock-unicomonde/
-test/
 
 # Operating system files
 .Spotlight-V100
@@ -28,11 +14,28 @@ Thumbs.db
 # Vagrant
 .vagrant
 
-# Wordpress
-htdocs/wc-logs/
-htdocs/wp-admin/
-htdocs/wp-includes/
-htdocs/wp-*.php
-htdocs/xmlrpc.php
-
+# HOST JSON
 myhost.json
+
+# Ignore config
+bower_components/
+changelogs/
+config/
+dev/screenshots/
+dev/*_backup/
+dev/yesimlocal.php
+node_modules/
+releases/
+ssl/
+test/
+tmp/
+.gitattributes
+.gitignore
+CHANGELOG.md
+LICENSE
+README.md
+
+# SITE EN PRODUCTION
+dist/bodyrock/dev/
+dist/bodyrock/**/_tmp/
+dist/bodyrock/html

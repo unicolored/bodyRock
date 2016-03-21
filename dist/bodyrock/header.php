@@ -10,30 +10,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title><?php wp_title('|', true, 'right'); ?></title>
-  <meta name="author" content="Gilles Hoarau">
 
-  <?php $SD = get_stylesheet_directory_uri() ?>
-  <link rel="shortcut icon" href="<?php echo $SD ?>/img/ico/favicon.ico">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. All other JS at the end of file. -->
-  <!-- [if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <?php wp_head(); ?>
-  
-  <!-- shortlink -->
-  <?php bitly_url(); ?>
+  <?php
+  wp_head();
+  ?>
 </head>
 
 <body <?php body_class( array('rock') ); ?>>
 
-  <section class="br_header">
-    <div class="container">
-      <?php
-      // Charge la barre de navigation principale
-      get_template_part('tpl/bs_navbar','top');      ?>
-    </div>
-  </section>
+  <header id="Header">
+    <div class="br_header">
+      <div id="wrap_navbar" class="<?php print BR_CONTAINER ?>">
+      <?php if (get_header_image()) { print '<div id="Banner"><a href="/"><img src="'.get_header_image().'" class="img-responsive"></a></div>'; } ?>
+        <?php get_template_part('templates/navbar'); ?>
+      </div>
+      <?php if (get_header_image()) { print '</div>'; } ?>
+  </div>
+</header>
+
+<div class="<?php print BR_CONTAINER ?>">
+  <?php if(BR_BREADCRUMB===1) bootstrap_breadcrumbs() ?>
+  <main id="Main">
+    <div class="br_main">

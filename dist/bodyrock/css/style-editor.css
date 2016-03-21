@@ -1,0 +1,50 @@
+.zXXL {
+  z-index: 40000;
+}
+.zXL {
+  z-index: 20000;
+}
+.zL {
+  z-index: 10000;
+}
+.z1 {
+  z-index: 5000;
+}
+.zS {
+  z-index: 2500;
+}
+.zXS {
+  z-index: 1250;
+}
+.zXXS {
+  z-index: 725;
+}
+.visible-xl,
+.visible-xxl {
+  display: none;
+}
+@media (min-width: 1922px) {
+  .visible-lg,
+  .visible-xl {
+    display: none !important;
+  }
+  .visible-xxl {
+    display: block;
+  }
+}
+@media (min-width: 1602px) {
+  .visible-lg {
+    display: none !important;
+  }
+  .visible-xl {
+    display: block;
+  }
+}
+body#tinymce.wp-editor {
+  background: #d0d2d3;
+  color: #040607;
+  font-size: 16px;
+}
+body#tinymce.wp-editor a {
+  color: #4f0103;
+}

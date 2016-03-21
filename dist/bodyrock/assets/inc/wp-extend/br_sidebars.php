@@ -1,8 +1,7 @@
 <?php
+// Ajout de sidebars pour l'insertion des widgets
 
-
-
-function br_register_sidebars() {  
+function br_register_sidebars() {
 
 	register_sidebar( array(
 		'name' => __( 'Dummy', 'bodyrock' ),
@@ -11,8 +10,8 @@ function br_register_sidebars() {
 		'after_widget' => "</aside>",
 		'before_title' => '',
 		'after_title' => '',
-	) );  
-    
+	) );
+
 	register_sidebar( array(
 		'name' => __( 'Sidebar Left', 'bodyrock' ),
 		'id' => 'sidebar-left',
@@ -21,7 +20,7 @@ function br_register_sidebars() {
 		'before_title' => '<h1>',
 		'after_title' => '</h1>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' => __( 'Sidebar Right', 'bodyrock' ),
 		'id' => 'sidebar-right',
@@ -30,7 +29,7 @@ function br_register_sidebars() {
 		'before_title' => '<h1>',
 		'after_title' => '</h1>',
 	) );
-	
+
 }
 
 ?>

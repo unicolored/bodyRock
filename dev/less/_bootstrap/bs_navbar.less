@@ -1,0 +1,127 @@
+nav.navbar {
+  background:#fafafa !important;
+  border-bottom-width: 1px;
+  margin:0;
+  .sXXL;
+  .zXXL;
+
+  // <!-- UL -->
+  ul.navbar-nav {
+    a {
+      color:@gray;
+    }
+    li.active a {
+      color:@brand-primary-dark;
+    }
+    // Correctif pour des menus dropdown qui soient cliquables
+    li.dropdown {
+      a {
+        text-shadow:none;
+      }
+    }
+    ul.dropdown-menu {
+      a {
+        padding:10px;
+      }
+    }
+    li.dropdown:hover ul.dropdown-menu {
+      display: block;
+    }
+  }
+
+  /*
+  ##         ## ##      ########  ######## ########    ###    ##     ## ##       ########
+  ##         ## ##      ##     ## ##       ##         ## ##   ##     ## ##          ##
+  ##       #########    ##     ## ##       ##        ##   ##  ##     ## ##          ##
+  ##         ## ##      ##     ## ######   ######   ##     ## ##     ## ##          ##
+  ##       #########    ##     ## ##       ##       ######### ##     ## ##          ##
+  ##         ## ##      ##     ## ##       ##       ##     ## ##     ## ##          ##
+  ########   ## ##      ########  ######## ##       ##     ##  #######  ########    ##
+  */
+  &.navbar-default {
+    .br_container {
+      .container;
+    }
+
+    button.navbar-toggle {
+      margin-top:20px;
+    }
+    // <!-- Brand -->
+    a.navbar-brand {
+      color:@logo;
+      font-family:@shareTech;
+      font-size:@font-size-large*1.6;
+      text-shadow:-1px 0 0 @bg;
+      margin-right:12px;
+      padding:14px 12px !important;
+      text-transform:lowercase;
+      letter-spacing:-0.05em;
+      sup {
+
+        position:relative;
+        top:0px;
+      }
+      span.icon {
+        color:@logo;
+        font-size:@font-size-large*1.2;
+        position:relative;
+        top:0.15em;
+        text-shadow: none;
+        .transition(.5s);
+      }
+      &:hover {
+        span.icon {
+          color:@bg;
+          text-shadow: 1px 0 0 @brand-primary-dark;
+          .transition(1s);
+        }
+      }
+    }
+    // <!-- Text -->
+    .navbar-text {
+      color:@gray;
+      position:relative;
+      top:3px;
+    }
+    // <!-- UL -->
+    ul.navbar-nav {
+      a {
+        //color:@logo;
+        font-family:@shareTech;
+        padding-top:18px;
+        padding-bottom:22px;
+        padding-left:32px;
+        padding-right:32px;
+      }
+      li.active a {
+        color:@logo;
+      }
+      // Correctif pour des menus dropdown qui soient cliquables
+      li.dropdown {
+        a {
+          text-shadow:none;
+        }
+      }
+      ul.dropdown-menu {
+        a {
+          padding:10px;
+        }
+      }
+      li.dropdown:hover ul.dropdown-menu {
+        display: block;
+      }
+    }
+  }
+
+  &.navbar-footer {
+    box-shadow: none;
+    .container {
+      background:transparent !important;
+    }
+    ul.navbar-nav {
+      li a {
+        font-size:@font-size-small;
+      }
+    }
+  }
+}

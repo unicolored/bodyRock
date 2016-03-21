@@ -1,0 +1,27 @@
+blockquote {
+  border-color:@blockquote-border-color !important;
+  font-family:@merryweather;
+  font-size:@font-size-base;
+  padding:@padding-small-horizontal @padding-large-horizontal;
+  &.noborder {
+    border:none !important;
+  }
+  h2 {
+    .text-left;
+  }
+  &.blockquote-reverse {
+    h2 {
+      .text-right !important;
+    }
+  }
+  &.citation {
+    border-color:@brand-info-darker !important;
+    color:@text-color;
+    p {
+      color:@gray-lighter !important;
+    }
+    cite {
+      font-family:@openSans;
+    }
+  }
+}

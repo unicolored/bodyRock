@@ -11,25 +11,25 @@
 add_filter('dynamic_sidebar_params', 'first_last_classes');
 
 function br_register_widgets() {
-	require_once 'widgets/bodyloop.php';  // Display Related Posts
-	register_widget('br_widgetsBodyloop'); // Tous les noms de widgets devraient suivrent cette nomenclature
-	
+	//require_once 'widgets/bodyloop.php';  // Display Related Posts
+	//register_widget('br_widgetsBodyloop'); // Tous les noms de widgets devraient suivrent cette nomenclature
+
 	require_once 'widgets/carousel.php';  // basics
 	register_widget('bodyrock_carousel');
-	
+
 	require_once 'widgets/categories.php';  // basics
 	register_widget('bodyrock_categories');
-	
+
 	require_once 'widgets/recentposts.php';  // basics
 	register_widget('bodyrock_recentposts');
 }
 
 // AJOUT D'UN WIDGET DANS SUR LA DASHBOARD WORDPRESS
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
- 
+
 function my_custom_dashboard_widgets() {
 	global $wp_meta_boxes;
-	
+
 	wp_add_dashboard_widget('welcome_bodyrock', 'Bodyrock', 'call_widgetDashboard_welcome');
 }
 

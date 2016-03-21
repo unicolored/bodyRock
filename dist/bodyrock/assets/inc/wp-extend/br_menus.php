@@ -42,19 +42,8 @@ Les différents walkers ci-dessous servent à reproduire les composants Bootstra
 */
 require_once('walkers/navbar_walker.php');
 require_once('walkers/listgroup_walker.php');
+require_once('walkers/listgroupCat_walker.php');
+require_once('walkers/listgroupPage_walker.php');
+require_once('walkers/listgroupcustom_walker.php');
 require_once('walkers/navpills_walker.php');
 require_once('walkers/tabs_walker.php');
-
-
-////// WP_NAV_MENU /////////////////////////////////////////////
-////// Fonction fallback_cb pour un menu si il est vide.
-// Fonction appellée en paramètre de wp_nav_menu(array('fallback_cb'=>'default_menu'))
-// Ci-desso
-function default_menu($args) {
-      echo '
-      <ul class="nav navbar-nav">
-        <li'.(is_home() ? ' class="active"' : false).'><a href="/">Home</a></li>
-      </ul>
-      ';
-      return true;
-}

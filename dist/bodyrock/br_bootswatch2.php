@@ -435,7 +435,7 @@ get_header();
                     <td>Column content</td>
                   </tr>
                 </tbody>
-              </table> 
+              </table>
             </div><!-- /example -->
           </div>
         </div>
@@ -1162,7 +1162,7 @@ get_header();
         </div>
       </div>
 
-<?
+<?php
 
 get_footer();
 ?>
