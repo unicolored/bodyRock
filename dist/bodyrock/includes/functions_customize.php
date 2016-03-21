@@ -34,6 +34,7 @@ if ( $options['image_sizes'] != false ) {
 	}
 }
 
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 // AJOUTS RELATIFS à THEME CHECK
@@ -72,7 +73,7 @@ add_theme_support( "html5", array( 'search-form' ) );
 add_theme_support( "post-formats", array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 add_theme_support( 'post-thumbnails' );
 add_theme_support( "title-tag" );
-if (defined(AUTOMATICFEEDLINKS)) {
+if (defined("AUTOMATICFEEDLINKS")) {
   add_theme_support( 'automatic-feed-links' );
 }
 else {

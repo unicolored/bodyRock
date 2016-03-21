@@ -14,6 +14,8 @@ add_filter ( 'wp_page_menu', 'br_page_menu', 100 ); // MODIFICATION DU MENU wp_p
 add_filter ( 'wp_nav_menu', 'br_nav_menu', 100 ); // MODIFICATION DU MENU wp_nav_menu pour une intégration dans la navbar
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2); // Ajoute une classe au li qui possède le current_page_item
 add_filter('page_menu_css_class' , 'special_page_class' , 10 , 2); // Ajoute une classe au li qui possède le current_page_item
+add_filter( 'the_content_more_link', 'remove_more_link_scroll' ); // Supprime le scroll jusqu'à l'anchor sur le more-link généré par la balise <!--more-->
+add_filter( 'the_content_more_link', 'modify_read_more_link' ); // Modifie le text du lien Read more généré par Wordpress
 
 # SEARCH
 add_filter( 'posts_join', 'custom_posts_join', 10, 2 ); /* Send in the filters / Use posts_join filter to perform an INNER JOIN of the terms, term_relationship, and term_taxonomy tables on the posts table. */
@@ -30,7 +32,15 @@ add_filter( 'posts_groupby', 'custom_posts_groupby', 10, 2 );
 ##         ## ##      ##        ##  ##          ##    ##       ##    ##  ##    ##
 ########   ## ##      ##       #### ########    ##    ######## ##     ##  ######
 */
-
+if ( !function_exists( 'modify_read_more_link' ) ) {
+  function modify_read_more_link() {
+    return '<a class="more-link" href="' . get_permalink() . '">'.__('Lire la suite').'</a>';
+  }
+}
+function remove_more_link_scroll( $link ) {
+  $link = preg_replace( '|#more-[0-9]+|', '', $link );
+  return $link;
+}
 if ( !function_exists( 'extend_body_classes' ) ) {
   function extend_body_classes($classes) {
     $bodyClass = getBodyClass();
@@ -257,17 +267,18 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-add_action('wp_enqueue_scripts', YESWEARE=="dev" ? 'ScriptsLocaux' : 'ScriptsProd');
+add_action('wp_enqueue_scripts', WP_DEBUG==false ? 'ScriptsLocaux' : 'ScriptsProd',200);
 add_action('wp_enqueue_scripts', 'stylesnscripts_options');
 add_action('login_head', 'custom_login_css'); // Ajoute une feuille de style pour la page de connexion
 add_action('wp_print_styles', 'removeJetpackStyle',999); // Supprime la feuille de style Jetpack
 add_action( 'wp_print_scripts', 'wpdocs_dequeue_script', 100 );
 add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
-add_action('init', 'modify_jquery');
-add_action('wp_head','base_css'); // Ajoute les styles minimum dans le head
+add_action('wp_enqueue_scripts', 'modify_jquery_scripts');
+add_action('login_head', 'modify_jquery_login');
+add_action('wp_head','base_css',1); // Ajoute les styles minimum dans le head
 add_action('wp_head','oldIEBrowserSupport'); // Ajoute les scripts pour les anciens IE // DESACTIVE car déjà présent ! Peut-être déjà chargé par BodyRock
-add_action('wp_head','meta_author');
-add_action('wp_head','link_shortcut_icon');
+//add_action('wp_head','meta_author');
+//add_action('wp_head','link_shortcut_icon');
 add_action('wp_head','opengraph');
 add_action('wp_footer', 'add_schemaorg',0); // Supprime les scripts Jetpack
 add_action('wp_footer', 'removeJetpackScripts',0); // Supprime les scripts Jetpack
@@ -318,7 +329,7 @@ if ( !function_exists( 'opengraph' ) ) {
     }
     elseif (is_front_page()) {
       //$title = $blogname;
-        $creator = '@'.$user_login;
+      $creator = '@'.$user_login;
     }
     elseif (is_home()) {
       $title = get_the_title( get_option('page_for_posts', true) );
@@ -360,11 +371,11 @@ if ( !function_exists( 'opengraph' ) ) {
       // $META['twitter']['description'] = '<meta name="twitter:description" content="'.$description.'" />';
       $META['OG']['description'] = '<meta property="og:description" content="'.$description.'" />';
     }
-    if ($image!="") {
+    if (isset($image) && $image!="") {
       //$META['twitter']['image'] = '<meta name="twitter:image" content="'.$image.'" />';
       $META['OG']['image'] = '<meta property="og:image" content="'.$image.'" />';
     }
-    if ($creator!="") {
+    if (isset($creator) && $creator!="") {
       $META['twitter']['creator'] = '<meta name="twitter:creator" content="'.$creator.'" />';
     }
     $META['twitter']['site'] = '<meta name="twitter:site" content="@'.$user_login.'"/>';
@@ -475,18 +486,22 @@ if ( !function_exists( 'twentyten_remove_recent_comments_style' ) ) {
     remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
   }
 }
+/*
 if ( !function_exists( 'meta_author' ) ) {
   function meta_author() {
     $output="\t".'<meta name="author" content="Gilles Hoarau">'."\n";
     echo $output;
   }
 }
+*/
+/*
 if ( !function_exists( 'link_shortcut_icon' ) ) {
   function link_shortcut_icon() {
     $output="\t".'<link rel="shortcut icon" href="'.get_stylesheet_directory_uri().'/img/ico/favicon.ico">'."\n"."\n";
     echo $output;
   }
 }
+*/
 if ( !function_exists( 'my_custom_login_logo' ) ) {
   // MY CUSTOM LOGIN LOGO /////////////////////////////////////////////
   // Remplace le logo de Wordpress sur la page login.
@@ -547,14 +562,18 @@ register_widget('bodyrock_recentposts');
 }
 }
 */
+function modify_jquery_login() {
+  modify_jquery();
+}
+function modify_jquery_scripts() {
+  if (!is_admin()) {
+    modify_jquery();
+  }
+}
 if ( !function_exists( 'modify_jquery' ) ) {
   function modify_jquery() {
-    if (!is_admin()) {
-      // comment out the next two lines to load the local copy of jQuery
-      wp_deregister_script('jquery');
-      wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', false, null, true);
-      //wp_enqueue_script('jquery'); // Inutile de charger jquery directement s'il est appellé comme dépendance d'un autre script ou plugin
-    }
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', false, null, true);
   }
 }
 if ( !function_exists( 'br_register_sidebars' ) ) {

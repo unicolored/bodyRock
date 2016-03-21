@@ -21,6 +21,18 @@ return br_nomdufichier_newmethod();
 Note : concerne principalement les fonctions br_ qui peuvent être utilisée par un thème enfant qui mettrait à jour le thème parent.
 
 */
+/*
+// YESWEARE deprecated 14/11/2015 : Utiliser WP_DEBUG via wp-config.php
+// Définition d'une constante YESWEARE qui indique que le site est en développement
+// Je m'en sers pour charger les scripts js originaux et non concaténés ni minifiés
+// Après la tâche grunt production(aka release), il faut tester la concaténation des fichiers / sur la branche release
+$local_settings = get_stylesheet_directory() . '/dev/yesimlocal.php';
+if (file_exists($local_settings)) {
+  define("YESWEARE","dev");
+}
+else define("YESWEARE","");
+*/
+
 if(!function_exists('bitly_url')) {
 	function bitly_url() {
 		deprecated(__FUNCTION__,'br_backend_filesWrite_videoimg');

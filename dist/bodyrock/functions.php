@@ -41,6 +41,7 @@ br_themeoptionsGet_default() se trouve dans le fichier (assets/inc/)themes-optio
 define('THEME_PATH', 'wp-content/themes/bodyrock/');
 define('BR_PATH', ABSPATH . THEME_PATH); // Liens absolus.
 define('INC_PATH', BR_PATH . 'includes/');
+define('ASSETS_PATH', BR_PATH . 'assets/inc/');
 //define('JS_PATH', '/' . THEME_PATH . 'assets/js/');
 define('BR_CSS_PATH', BR_PATH . 'css/');
 
@@ -50,24 +51,6 @@ define('TPL_SIDEBAR_PATH', TPL_PATH . 'sidebars/');
 define('TPL_BOOTSTRAP_PATH', TPL_PATH . 'bootstrap/');
 define('TPL_SINGULAR_PATH', TPL_PATH . 'singular/');
 
-// LOAD PHP /////////////////////////////////////////////
-//require 'includes/__debug.php';
-//require 'includes/functions__deprecated.php';
-// Inclusions des extensions de fonctionnalités
-// TODO : remettre dans un même dossier, simplifier les includes
-require_once INC_PATH . 'br_themeoptions.php'; // Les options du thème accessibles via Wordpress.
-//require_once INC_PATH . 'br_icones.php'; // Génération d'éléments relatifs aux icônes
-//require_once INC_PATH . 'br_images.php'; // Tout ce qui concerne les paramètres liés aux images.
-//require_once INC_PATH . 'br_textes.php'; // Tout ce qui concerne les paramètres liés aux textes.
-
-require 'includes/functions__hook.php';
-require 'includes/functions__hook_custom.php';
-require 'includes/functions_customize.php';
-require 'includes/functions_extend.php';
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if(is_plugin_active('woocommerce/woocommerce.php')) {
-  require 'includes/functions_woocommerce.php';
-}
 
 ////// WALKERS /////////////////////////////////////////////
 ////// Chargement des différents walkers personnalisés
@@ -76,7 +59,7 @@ Un 'walker' parcoure les éléments du menu et permet de personnaliser la sortie
 Les différents walkers ci-dessous servent à reproduire les composants Bootstrap.
 */
 // FIXME : temporairement désactivés 12/11/2015
-//require_once(INC_PATH.'wp-extend/walkers/navbar_walker.php');
+require_once(ASSETS_PATH.'wp-extend/walkers/navbar_walker.php');
 //require_once(INC_PATH.'wp-extend/walkers/listgroup_walker.php');
 //require_once(INC_PATH.'wp-extend/walkers/listgroupCat_walker.php');
 //require_once(INC_PATH.'wp-extend/walkers/listgroupPage_walker.php');
@@ -102,15 +85,6 @@ Les différents walkers ci-dessous servent à reproduire les composants Bootstra
 ##         ## ##      ##     ## ##       ##     ## ##     ## ##    ##
 ########   ## ##      ########  ######## ########   #######   ######
 */
-// Définition d'une constante YESWEARE qui indique que le site est en développement
-// Je m'en sers pour charger les scripts js originaux et non concaténés ni minifiés
-// Après la tâche grunt production(aka release), il faut tester la concaténation des fichiers / sur la branche release
-$local_settings = get_stylesheet_directory() . '/dev/yesimlocal.php';
-if (file_exists($local_settings)) {
-  define("YESWEARE","dev");
-}
-else define("YESWEARE","");
-
 // VARDUMP /////////////////////////////////////////////
 // Fait un affichage propre de var_dump()
 function vardump($v) {
@@ -126,7 +100,7 @@ function vardump($v) {
 
 function Debug($var,$text=false) {
   if (is_array($var)) {
-    print '<pre>';
+    print '<pre class="debug" style="background:#fff; color:#000; padding:1em; font-size:14px;">';
     print $text != false ? '<strong>'.$text.'</strong><br>' : false;
     print_r($var);
     print '</pre>';
@@ -281,5 +255,33 @@ function time_passed($timestamp){
         $diff = floor($diff/$intervals['year']);
         return $diff == 1 ? 'il&nbsp;y&nbsp;a&nbsp;' . $diff . '&nbsp;an' : 'il&nbsp;y&nbsp;a&nbsp;' . $diff . '&nbsp;ans';
     }
+}
+/*
+##         ## ##      ##        #######     ###    ########
+##         ## ##      ##       ##     ##   ## ##   ##     ##
+##       #########    ##       ##     ##  ##   ##  ##     ##
+##         ## ##      ##       ##     ## ##     ## ##     ##
+##       #########    ##       ##     ## ######### ##     ##
+##         ## ##      ##       ##     ## ##     ## ##     ##
+########   ## ##      ########  #######  ##     ## ########
+*/
+
+// LOAD PHP /////////////////////////////////////////////
+//require 'includes/__debug.php';
+//require 'includes/functions__deprecated.php';
+// Inclusions des extensions de fonctionnalités
+// TODO : remettre dans un même dossier, simplifier les includes
+require_once INC_PATH . 'br_themeoptions.php'; // Les options du thème accessibles via Wordpress.
+//require_once INC_PATH . 'br_icones.php'; // Génération d'éléments relatifs aux icônes
+//require_once INC_PATH . 'br_images.php'; // Tout ce qui concerne les paramètres liés aux images.
+//require_once INC_PATH . 'br_textes.php'; // Tout ce qui concerne les paramètres liés aux textes.
+
+require 'includes/functions__hook.php';
+require 'includes/functions__hook_custom.php';
+require 'includes/functions_customize.php';
+require 'includes/functions_extend.php';
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if(is_plugin_active('woocommerce/woocommerce.php')) {
+  require 'includes/functions_woocommerce.php';
 }
 ?>
