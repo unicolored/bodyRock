@@ -1,0 +1,57 @@
+.zXXL {
+  z-index: 40000;
+}
+.zXL {
+  z-index: 20000;
+}
+.zL {
+  z-index: 10000;
+}
+.z1 {
+  z-index: 5000;
+}
+.zS {
+  z-index: 2500;
+}
+.zXS {
+  z-index: 1250;
+}
+.zXXS {
+  z-index: 725;
+}
+.visible-xl,
+.visible-xxl {
+  display: none;
+}
+@media (min-width: 1922px) {
+  .visible-lg,
+  .visible-xl {
+    display: none !important;
+  }
+  .visible-xxl {
+    display: block;
+  }
+}
+@media (min-width: 1602px) {
+  .visible-lg {
+    display: none !important;
+  }
+  .visible-xl {
+    display: block;
+  }
+}
+body {
+  background: #fafafa !important;
+  color: #131d22 !important;
+}
+body form#loginform {
+  background: #131d22 !important;
+  color: #d0d2d3 !important;
+  border-top-right-radius: 6px !important;
+  border-top-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  -webkit-box-shadow: 0px 0px 7px #dbdbdb;
+  box-shadow: 0px 0px 7px #dbdbdb;
+  z-index: 40000;
+}
